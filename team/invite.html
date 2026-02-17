@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation - Sarah & James</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Cinzel:wght@400;500;600&family=Josefin+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #2c3e50 0%, #1a252f 50%, #0d1318 100%);
+            font-family: 'Cormorant Garamond', serif;
+            padding: 20px;
+            perspective: 2000px;
+        }
+
+        /* Background decoration */
+        .bg-decoration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .bg-decoration::before,
+        .bg-decoration::after {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            border-radius: 50%;
+            opacity: 0.03;
+        }
+
+        .bg-decoration::before {
+            top: -200px;
+            left: -200px;
+            background: radial-gradient(circle, #d4a574 0%, transparent 70%);
+        }
+
+        .bg-decoration::after {
+            bottom: -200px;
+            right: -200px;
+            background: radial-gradient(circle, #d4a574 0%, transparent 70%);
+        }
+
+        /* Main invitation container */
+        .invitation-container {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            z-index: 1;
+        }
+
+        /* Book style invitation */
+        .book {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            transform-style: preserve-3d;
+        }
+
+        /* Cover */
+        .cover {
+            position: relative;
+            width: 100%;
+            min-height: 700px;
+            background: linear-gradient(145deg, #1a3a2a 0%, #0d2818 50%, #0a1f14 100%);
+            border-radius: 5px 20px 20px 5px;
+            box-shadow: 
+                0 30px 60px rgba(0, 0, 0, 0.5),
+                inset 0 0 100px rgba(212, 165, 116, 0.1);
+            transform-origin: left center;
+            transition: transform 1.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+            cursor: pointer;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .cover.open {
+            transform: rotateY(-160deg);
+            pointer-events: none;
+        }
+
+        /* Cover floral border */
+        .cover-border {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            border: 2px solid rgba(212, 165, 116, 0.4);
+            border-radius: 15px;
+            pointer-events: none;
+        }
+
+        .cover-border::before {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 1px solid rgba(212, 165, 116, 0.2);
+            border-radius: 10px;
+        }
+
+        /* Cover floral decorations */
+        .floral-corner {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            opacity: 0.6;
+        }
+
+        .floral-corner svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .floral-tl { top: 15px; left: 15px; }
+        .floral-tr { top: 15px; right: 15px; transform: scaleX(-1); }
+        .floral-bl { bottom: 15px; left: 15px; transform: scaleY(-1); }
+        .floral-br { bottom: 15px; right: 15px; transform: scale(-1); }
+
+        /* Cover content */
+        .cover-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            width: 80%;
+        }
+
+        .cover-ornament {
+            font-size: 40px;
+            color: #d4a574;
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+
+        .cover-title {
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            letter-spacing: 8px;
+            color: #d4a574;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .cover-names {
+            font-family: 'Great Vibes', cursive;
+            font-size: 52px;
+            color: #e8dcc8;
+            line-height: 1.3;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .cover-names .and {
+            display: block;
+            font-size: 36px;
+            color: #d4a574;
+            margin: 5px 0;
+        }
+
+        .cover-date {
+            font-family: 'Cinzel', serif;
+            font-size: 16px;
+            letter-spacing: 4px;
+            color: #d4a574;
+            margin-top: 30px;
+        }
+
+        .cover-instruction {
+            position: absolute;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: rgba(212, 165, 116, 0.6);
+            text-transform: uppercase;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.6; }
+            50% { opacity: 1; }
+        }
+
+        /* Leaf decorations on cover */
+        .leaf-decoration {
+            position: absolute;
+            color: #d4a574;
+            opacity: 0.3;
+            font-size: 100px;
+        }
+
+        .leaf-left {
+            left: -20px;
+            top: 50%;
+            transform: translateY(-50%) rotate(-15deg);
+        }
+
+        .leaf-right {
+            right: -20px;
+            top: 50%;
+            transform: translateY(-50%) rotate(15deg) scaleX(-1);
+        }
+
+        /* Inner pages container */
+        .pages-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            min-height: 700px;
+            background: linear-gradient(145deg, #faf8f5 0%, #f5f0e8 50%, #efe8dc 100%);
+            border-radius: 5px 20px 20px 5px;
+            box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        /* Page styling */
+        .page {
+            display: none;
+            padding: 50px 40px;
+            min-height: 700px;
+            position: relative;
+        }
+
+        .page.active {
+            display: block;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Ornate frame for content */
+        .ornate-frame {
+            position: relative;
+            padding: 40px;
+            min-height: 600px;
+        }
+
+        .ornate-frame::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 3px solid #c9b896;
+            border-radius: 10px;
+        }
+
+        .ornate-frame::after {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            right: 8px;
+            bottom: 8px;
+            border: 1px solid #d4c4a8;
+            border-radius: 8px;
+        }
+
+        /* Frame corner decorations */
+        .frame-corner {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            z-index: 5;
+        }
+
+        .frame-corner svg {
+            width: 100%;
+            height: 100%;
+            fill: #c9b896;
+        }
+
+        .fc-tl { top: -5px; left: -5px; }
+        .fc-tr { top: -5px; right: -5px; transform: scaleX(-1); }
+        .fc-bl { bottom: -5px; left: -5px; transform: scaleY(-1); }
+        .fc-br { bottom: -5px; right: -5px; transform: scale(-1); }
+
+        /* Page 1 - Main invitation */
+        .page-1 .header-ornament {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .page-1 .header-ornament svg {
+            width: 120px;
+            height: 60px;
+            fill: #c9b896;
+        }
+
+        .page-1 .invitation-intro {
+            text-align: center;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 11px;
+            letter-spacing: 5px;
+            color: #8b7355;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .page-1 .family-names {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            color: #6b5a4a;
+            font-style: italic;
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+
+        .page-1 .request-text {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15px;
+            color: #7a6a5a;
+            font-style: italic;
+            margin-bottom: 25px;
+        }
+
+        .page-1 .couple-section {
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        .page-1 .couple-name {
+            font-family: 'Great Vibes', cursive;
+            font-size: 48px;
+            color: #5a4a3a;
+            display: block;
+            line-height: 1.2;
+        }
+
+        .page-1 .couple-and {
+            font-family: 'Great Vibes', cursive;
+            font-size: 36px;
+            color: #c9a227;
+            display: block;
+            margin: 10px 0;
+        }
+
+        .divider-ornament {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .divider-ornament svg {
+            width: 180px;
+            height: 25px;
+            fill: #c9b896;
+        }
+
+        .page-1 .ceremony-text {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            color: #6b5a4a;
+            margin-bottom: 25px;
+        }
+
+        .page-1 .date-section {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .page-1 .wedding-date {
+            font-family: 'Cinzel', serif;
+            font-size: 22px;
+            letter-spacing: 3px;
+            color: #5a4a3a;
+            margin-bottom: 10px;
+        }
+
+        .page-1 .wedding-time {
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 13px;
+            letter-spacing: 4px;
+            color: #8b7355;
+            text-transform: uppercase;
+        }
+
+        .page-1 .venue-section {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .page-1 .venue-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            color: #5a4a3a;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .page-1 .venue-address {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15px;
+            color: #7a6a5a;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        /* Page 2 - Event details & Timeline */
+        .page-2 .page-title {
+            text-align: center;
+            font-family: 'Cinzel', serif;
+            font-size: 18px;
+            letter-spacing: 5px;
+            color: #5a4a3a;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 30px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, transparent, #c9b896, #c9b896, transparent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+            padding-left: 30px;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -24px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            background: #c9a227;
+            border-radius: 50%;
+            border: 3px solid #f5f0e8;
+            box-shadow: 0 0 0 2px #c9b896;
+        }
+
+        .timeline-item .time {
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #c9a227;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item .event {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: #5a4a3a;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .timeline-item .description {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            color: #7a6a5a;
+            font-style: italic;
+        }
+
+        .dress-code {
+            text-align: center;
+            margin: 30px 0;
+            padding: 20px;
+            background: rgba(201, 184, 150, 0.1);
+            border-radius: 10px;
+        }
+
+        .dress-code-title {
+            font-family: 'Cinzel', serif;
+            font-size: 12px;
+            letter-spacing: 4px;
+            color: #8b7355;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .dress-code-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 18px;
+            color: #5a4a3a;
+            font-style: italic;
+        }
+
+        /* Page 3 - RSVP */
+        .page-3 .rsvp-title {
+            text-align: center;
+            font-family: 'Great Vibes', cursive;
+            font-size: 42px;
+            color: #5a4a3a;
+            margin-bottom: 20px;
+        }
+
+        .page-3 .rsvp-subtitle {
+            text-align: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            color: #7a6a5a;
+            font-style: italic;
+            margin-bottom: 30px;
+        }
+
+        .rsvp-form {
+            max-width: 350px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            color: #8b7355;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 16px;
+            color: #5a4a3a;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid #d4c4a8;
+            border-radius: 5px;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #c9a227;
+            box-shadow: 0 0 10px rgba(201, 162, 39, 0.2);
+        }
+
+        .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .attendance-options {
+            display: flex;
+            gap: 15px;
+            margin-top: 8px;
+        }
+
+        .attendance-option {
+            flex: 1;
+            text-align: center;
+        }
+
+        .attendance-option input {
+            display: none;
+        }
+
+        .attendance-option label {
+            display: block;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid #d4c4a8;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .attendance-option input:checked + label {
+            background: linear-gradient(135deg, #c9a227 0%, #d4af37 100%);
+            border-color: #c9a227;
+            color: white;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #5a4a3a 0%, #3a2a1a 100%);
+            color: #e8dcc8;
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .page-3 .contact-info {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #d4c4a8;
+        }
+
+        .contact-info p {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            color: #7a6a5a;
+            margin-bottom: 5px;
+        }
+
+        .contact-info a {
+            color: #c9a227;
+            text-decoration: none;
+        }
+
+        /* Navigation */
+        .page-nav {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+            padding-top: 20px;
+        }
+
+        .nav-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #d4c4a8;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .nav-dot.active {
+            background: #c9a227;
+            transform: scale(1.2);
+        }
+
+        .nav-arrows {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .nav-arrow {
+            padding: 10px 25px;
+            background: transparent;
+            border: 1px solid #c9b896;
+            color: #8b7355;
+            font-family: 'Josefin Sans', sans-serif;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 3px;
+        }
+
+        .nav-arrow:hover {
+            background: #c9a227;
+            border-color: #c9a227;
+            color: white;
+        }
+
+        .nav-arrow:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+
+        /* Footer message */
+        .footer-message {
+            text-align: center;
+            margin-top: 20px;
+            font-family: 'Great Vibes', cursive;
+            font-size: 24px;
+            color: #c9a227;
+        }
+
+        /* Monogram */
+        .monogram {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            border: 2px solid #c9b896;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Great Vibes', cursive;
+            font-size: 32px;
+            color: #c9a227;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .cover, .pages-container {
+                min-height: 600px;
+            }
+
+            .page {
+                padding: 30px 20px;
+                min-height: 600px;
+            }
+
+            .ornate-frame {
+                padding: 25px 15px;
+            }
+
+            .cover-names {
+                font-size: 38px;
+            }
+
+            .page-1 .couple-name {
+                font-size: 36px;
+            }
+
+            .floral-corner {
+                width: 100px;
+                height: 100px;
+            }
+
+            .frame-corner {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        /* Animated decorations */
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+
+        .float-animation {
+            animation: floatSlow 6s ease-in-out infinite;
+        }
+
+        /* Sparkle effect */
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #c9a227;
+            border-radius: 50%;
+            opacity: 0;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <div class="bg-decoration"></div>
+
+    <div class="invitation-container">
+        <div class="book">
+            <!-- Inner Pages -->
+            <div class="pages-container">
+                <!-- Page 1 - Main Invitation -->
+                <div class="page page-1 active" data-page="1">
+                    <div class="ornate-frame">
+                        <!-- Frame corners -->
+                        <div class="frame-corner fc-tl">
+                            <svg viewBox="0 0 60 60">
+                                <path d="M5,30 Q5,5 30,5 L30,8 Q8,8 8,30 Z"/>
+                                <circle cx="30" cy="5" r="2"/>
+                                <circle cx="5" cy="30" r="2"/>
+                                <path d="M12,20 Q12,12 20,12" fill="none" stroke="#c9b896" stroke-width="1"/>
+                                <circle cx="15" cy="15" r="1.5"/>
+                            </svg>
+                        </div>
+                        <div class="frame-corner fc-tr">
+                            <svg viewBox="0 0 60 60">
+                                <path d="M5,30 Q5,5 30,5 L30,8 Q8,8 8,30 Z"/>
+                                <circle cx="30" cy="5" r="2"/>
+                                <circle cx="5" cy="30" r="2"/>
+                                <path d="M12,20 Q12,12 20,12" fill="none" stroke="#c9b896" stroke-width="1"/>
+                                <circle cx="15" cy="15" r="1.5"/>
+                            </svg>
+                        </div>
+                        <div class="frame-corner fc-bl">
+                            <svg viewBox="0 0 60 60">
+                                <path d="M5,30 Q5,5 30,5 L30,8 Q8,8 8,30 Z"/>
+                                <circle cx="30" cy="5" r="2"/>
+                                <circle cx="5" cy="30" r="2"/>
+                                <path d="M12,20 Q12,12 20,12" fill="none" stroke="#c9b896" stroke-width="1"/>
+                                <circle cx="15" cy="15" r="1.5"/>
+                            </svg>
+                        </div>
+                        <div class="frame-corner fc-br">
+                            <svg viewBox="0 0 60 60">
+                                <path d="M5,30 Q5,5 30,5 L30,8 Q8,8 8,30 Z"/>
+                                <circle cx="30" cy="5" r="2"/>
+                                <circle cx="5" cy="30" r="2"/>
+                                <path d="M12,20 Q12,12 20,12" fill="none" stroke="#c9b896" stroke-width="1"/>
+                                <circle cx="15" cy="15" r="1.5"/>
+                            </svg>
+                        </div>
+
+                        <!-- Header ornament -->
+                        <div class="header-ornament float-animation">
+                            <svg viewBox="0 0 120 60">
+                                <path d="M60,10 Q40,10 30,25 Q20,10 0,15 L5,20 Q20,15 30,30 Q40,15 60,15 Q80,15 90,30 Q100,15 115,20 L120,15 Q100,10 90,25 Q80,10 60,10 Z"/>
+                                <circle cx="60" cy="5" r="3"/>
+                                <path d="M55,25 L65,25 M60,20 L60,30" stroke="#c9b896" stroke-width="1" fill="none"/>
+                            </svg>
+                        </div>
+
+                        <p class="invitation-intro">Wedding Invitation</p>
+
+                        <p class="family-names">
+                            Mr. & Mrs. Robert Thompson<br>
+                            and<br>
+                            Mr. & Mrs. William Anderson
+                        </p>
+
+                        <p class="request-text">
+                            Request the pleasure of your company<br>
+                            at the marriage of their children
+                        </p>
+
+                        <div class="couple-section">
+                            <span class="couple-name">Sarah Elizabeth</span>
+                            <span class="couple-and">&</span>
+                            <span class="couple-name">James Michael</span>
+                        </div>
+
+                        <div class="divider-ornament">
+                            <svg viewBox="0 0 180 25">
+                                <line x1="0" y1="12" x2="70" y2="12" stroke="#c9b896" stroke-width="1"/>
+                                <circle cx="90" cy="12" r="8" fill="none" stroke="#c9b896" stroke-width="1"/>
+                                <circle cx="90" cy="12" r="4" fill="#c9a227"/>
+                                <line x1="110" y1="12" x2="180" y2="12" stroke="#c9b896" stroke-width="1"/>
+                            </svg>
+                        </div>
+
+                        <p class="ceremony-text">
+                            Together with their families invite you<br>
+                            to celebrate their union
+                        </p>
+
+                        <div class="date-section">
+                            <p class="wedding-date">Saturday, December 28th, 2024</p>
+                            <p class="wedding-time">Four O'Clock in the Afternoon</p>
+                        </div>
+
+                        <div class="venue-section">
+                            <p class="venue-name">The Grand Estate Gardens</p>
+                            <p class="venue-address">
+                                1234 Enchanted Garden Lane<br>
+                                Beverly Hills, California 90210
+                            </p>
+                        </div>
+
+                        <p class="footer-message">Together Forever</p>
+
+                        <div class="page-nav">
+                            <span class="nav-dot active" data-target="1"></span>
+                            <span class="nav-dot" data-target="2"></span>
+                            <span class="nav-dot" data-target="3"></span>
+                        </div>
+
+                        <div class="nav-arrows">
+                            <button class="nav-arrow" id="prevBtn" disabled>← Back</button>
+                            <button class="nav-arrow" id="nextBtn">Next →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Page 2 - Event Details & Timeline -->
+                <div class="page page-2" data-page="2">
+                    <div class="ornate-frame">
+                        <!-- Frame corners -->
+                        <div class="frame-corner fc-tl">
+                            <svg viewBox="0 0 60 60">
+                                <path d="M5,30 Q5,5 30,5 L30,8 Q8,8 8,30 Z"/>
+                                <circle cx="30" cy="5" r="2"/>
+                                <circle cx="5" cy="30" r="2"/>
+                            </svg>
+                        </div>
+                        <div class="frame-corner fc-tr">
+                            <svg viewBox="0 0 60 60">
+                                <path d="M5,30 Q5,5 30,5 L30,8 Q8,8 8,30 Z"/>
+                                <circle cx="30" cy="5" r="2"/>
+                                <circle cx="5" cy="30" r="2"/>
+                            </svg>
+                        </div>
+                        <div class="frame-corner fc-bl">
+                            <svg viewBox="0 0 60 60">
+                                <path d="M5,30 Q5,5 30,5 L30,8 Q8,8 8,30 Z"/>
+                                <circle cx="30" cy="5" r="2"/>
+                                <circle cx="5" cy="30" r="2"/>
+                            </svg>
+                        </div>
+                        <div class="frame-corner fc-br">
+                            <svg viewBox="0 0 60 60">
+                                <path d="M5,30 Q5,5 30,5 L30,8 Q8,8 8,30 Z"/>
+                                <circle cx="30" cy="5" r="2"/>
+                                <circle cx="5" cy="30" r="2"/>
+                            </svg>
+                        </div>
+
+                        <div class="monogram">S & J</div>
+
+                        <h2 class="page-title">Order of Events</h2>
+
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <p class="time">3:30 PM</p>
+                                <p class="event">Guest Arrival</p>
+                                <p class="description">Welcome drinks and seating</p>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="time">4:00 PM</p>
+                                <p class="event">Wedding Ceremony</p>
+                                <p class="description">Exchange of vows in the garden</p>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="time">5:00 PM</p>
+                                <p class="event">Cocktail Hour</p>
+                                <p class="description">Drinks and canapés on the terrace</p>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="time">6:30 PM</p>
+                                <p class="event">Reception Dinner</p>
+                                <p class="description">Formal dinner in the Grand Ballroom</p>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="time">8:30 PM</p>
+                                <p class="event">First Dance & Celebration</p>
+                                <p class="description">Dancing and celebration until midnight</p>
+                            </div>
+                        </div>
+
+                        <div class="dress-code">
+                            <p class="dress-code-title">Dress Code</p>
+                            <p class="dress-code-text">Black Tie Optional</p>
+                        </div>
+
+                        <div class="page-nav">
+                            <span class="nav-dot" data-target="1"></span>
+                            <span class="nav-dot active" data-target="2"></span>
+                            <span class="nav-dot" data-target="3"></span>
+                        </div>
+
+                        <div class="nav-arrows">
+                            <button class="nav-arrow" id="prevBtn2">← Back</button>
+                            <button class="nav-arrow" id="nextBtn2">Next →</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Page 3 - RSVP -->
+                <div class="page page-3" data-page="3">
+                    <div class="ornate-frame">
+                        <!-- Frame corners -->
+                        <div class="frame-corner fc-tl">
+                            <svg viewBox="0 0 60 60">
+                                <path d="M5,30 Q5,5 30,5 L30,8 Q8,8 8,30 Z"/>
+                                <circle cx="30" cy="5" r="2"/>
+                                <circle cx="5" cy="30" r="2"/>
+                            </svg>
+                        </div>
+                        <div class="frame-corner fc-tr">
+                            <svg viewBox="0 0 60 60">
+                                <path d="M5,30 Q5,5 30,5 L30,8 Q8,8 8,30 Z"/>
+                                <circle cx="30" cy="5" r="2"/>
+                                <circle cx="5" cy="30" r="2"/>
+                            </svg>
+                        </div>
+                        <div class="frame-corner fc-bl">
+                            <svg viewBox="0 0 60 60">
+                                <path d="M5,30 Q5,5 30,5 L30,8 Q8,8 8,30 Z"/>
+                                <circle cx="30" cy="5" r="2"/>
+                                <circle cx="5" cy="30" r="2"/>
+                            </svg>
+                        </div>
+                        <div class="frame-corner fc-br">
+                            <svg viewBox="0 0 60 60">
+                                <path d="M5,30 Q5,5 30,5 L30,8 Q8,8 8,30 Z"/>
+                                <circle cx="30" cy="5" r="2"/>
+                                <circle cx="5" cy="30" r="2"/>
+                            </svg>
+                        </div>
+
+                        <h2 class="rsvp-title">Répondez S'il Vous Plaît</h2>
+                        <p class="rsvp-subtitle">Kindly respond by December 1st, 2024</p>
+
+                        <form class="rsvp-form" id="rsvpForm">
+                            <div class="form-group">
+                                <label>Your Name</label>
+                                <input type="text" placeholder="Enter your full name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" placeholder="Enter your email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Will you be attending?</label>
+                                <div class="attendance-options">
+                                    <div class="attendance-option">
+                                        <input type="radio" name="attendance" id="accept" value="accept">
+                                        <label for="accept">Joyfully Accept</label>
+                                    </div>
+                                    <div class="attendance-option">
+                                        <input type="radio" name="attendance" id="decline" value="decline">
+                                        <label for="decline">Regretfully Decline</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Number of Guests</label>
+                                <select>
+                                    <option value="1">1 Guest</option>
+                                    <option value="2">2 Guests</option>
+                                    <option value="3">3 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Dietary Requirements</label>
+                                <textarea placeholder="Please let us know of any dietary restrictions..."></textarea>
+                            </div>
+
+                            <button type="submit" class="submit-btn">Send RSVP</button>
+                        </form>
+
+                        <div class="contact-info">
+                            <p>For any questions, please contact us at:</p>
+                            <p><a href="mailto:sarah.james.wedding@email.com">sarah.james.wedding@email.com</a></p>
+                            <p>or call <a href="tel:+15551234567">(555) 123-4567</a></p>
+                        </div>
+
+                        <div class="page-nav">
+                            <span class="nav-dot" data-target="1"></span>
+                            <span class="nav-dot" data-target="2"></span>
+                            <span class="nav-dot active" data-target="3"></span>
+                        </div>
+
+                        <div class="nav-arrows">
+                            <button class="nav-arrow" id="prevBtn3">← Back</button>
+                            <button class="nav-arrow" id="nextBtn3" disabled>Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cover -->
+            <div class="cover" id="cover">
+                <!-- Floral corners -->
+                <div class="floral-corner floral-tl">
+                    <svg viewBox="0 0 150 150">
+                        <!-- Main branch -->
+                        <path d="M10,140 Q30,100 50,80 Q70,60 90,50 Q110,40 140,10" 
+                              fill="none" stroke="#d4a574" stroke-width="2"/>
+                        <!-- Leaves -->
+                        <ellipse cx="40" cy="90" rx="15" ry="8" fill="#d4a574" opacity="0.6" transform="rotate(-30 40 90)"/>
+                        <ellipse cx="60" cy="70" rx="12" ry="6" fill="#d4a574" opacity="0.5" transform="rotate(-40 60 70)"/>
+                        <ellipse cx="80" cy="55" rx="10" ry="5" fill="#d4a574" opacity="0.5" transform="rotate(-50 80 55)"/>
+                        <ellipse cx="100" cy="40" rx="12" ry="6" fill="#d4a574" opacity="0.6" transform="rotate(-55 100 40)"/>
+                        <ellipse cx="120" cy="25" rx="10" ry="5" fill="#d4a574" opacity="0.5" transform="rotate(-60 120 25)"/>
+                        <!-- Berries -->
+                        <circle cx="35" cy="105" r="4" fill="#d4a574" opacity="0.7"/>
+                        <circle cx="42" cy="100" r="3" fill="#d4a574" opacity="0.6"/>
+                        <circle cx="55" cy="80" r="3" fill="#d4a574" opacity="0.6"/>
+                        <!-- Small branches -->
+                        <path d="M30,110 Q25,100 35,95" fill="none" stroke="#d4a574" stroke-width="1" opacity="0.5"/>
+                        <path d="M50,85 Q45,78 55,73" fill="none" stroke="#d4a574" stroke-width="1" opacity="0.5"/>
+                    </svg>
+                </div>
+                <div class="floral-corner floral-tr">
+                    <svg viewBox="0 0 150 150">
+                        <path d="M10,140 Q30,100 50,80 Q70,60 90,50 Q110,40 140,10" 
+                              fill="none" stroke="#d4a574" stroke-width="2"/>
+                        <ellipse cx="40" cy="90" rx="15" ry="8" fill="#d4a574" opacity="0.6" transform="rotate(-30 40 90)"/>
+                        <ellipse cx="60" cy="70" rx="12" ry="6" fill="#d4a574" opacity="0.5" transform="rotate(-40 60 70)"/>
+                        <ellipse cx="80" cy="55" rx="10" ry="5" fill="#d4a574" opacity="0.5" transform="rotate(-50 80 55)"/>
+                        <ellipse cx="100" cy="40" rx="12" ry="6" fill="#d4a574" opacity="0.6" transform="rotate(-55 100 40)"/>
+                        <ellipse cx="120" cy="25" rx="10" ry="5" fill="#d4a574" opacity="0.5" transform="rotate(-60 120 25)"/>
+                        <circle cx="35" cy="105" r="4" fill="#d4a574" opacity="0.7"/>
+                        <circle cx="42" cy="100" r="3" fill="#d4a574" opacity="0.6"/>
+                        <circle cx="55" cy="80" r="3" fill="#d4a574" opacity="0.6"/>
+                        <path d="M30,110 Q25,100 35,95" fill="none" stroke="#d4a574" stroke-width="1" opacity="0.5"/>
+                        <path d="M50,85 Q45,78 55,73" fill="none" stroke="#d4a574" stroke-width="1" opacity="0.5"/>
+                    </svg>
+                </div>
+                <div class="floral-corner floral-bl">
+                    <svg viewBox="0 0 150 150">
+                        <path d="M10,140 Q30,100 50,80 Q70,60 90,50 Q110,40 140,10" 
+                              fill="none" stroke="#d4a574" stroke-width="2"/>
+                        <ellipse cx="40" cy="90" rx="15" ry="8" fill="#d4a574" opacity="0.6" transform="rotate(-30 40 90)"/>
+                        <ellipse cx="60" cy="70" rx="12" ry="6" fill="#d4a574" opacity="0.5" transform="rotate(-40 60 70)"/>
+                        <ellipse cx="80" cy="55" rx="10" ry="5" fill="#d4a574" opacity="0.5" transform="rotate(-50 80 55)"/>
+                        <ellipse cx="100" cy="40" rx="12" ry="6" fill="#d4a574" opacity="0.6" transform="rotate(-55 100 40)"/>
+                        <ellipse cx="120" cy="25" rx="10" ry="5" fill="#d4a574" opacity="0.5" transform="rotate(-60 120 25)"/>
+                        <circle cx="35" cy="105" r="4" fill="#d4a574" opacity="0.7"/>
+                        <circle cx="42" cy="100" r="3" fill="#d4a574" opacity="0.6"/>
+                        <circle cx="55" cy="80" r="3" fill="#d4a574" opacity="0.6"/>
+                    </svg>
+                </div>
+                <div class="floral-corner floral-br">
+                    <svg viewBox="0 0 150 150">
+                        <path d="M10,140 Q30,100 50,80 Q70,60 90,50 Q110,40 140,10" 
+                              fill="none" stroke="#d4a574" stroke-width="2"/>
+                        <ellipse cx="40" cy="90" rx="15" ry="8" fill="#d4a574" opacity="0.6" transform="rotate(-30 40 90)"/>
+                        <ellipse cx="60" cy="70" rx="12" ry="6" fill="#d4a574" opacity="0.5" transform="rotate(-40 60 70)"/>
+                        <ellipse cx="80" cy="55" rx="10" ry="5" fill="#d4a574" opacity="0.5" transform="rotate(-50 80 55)"/>
+                        <ellipse cx="100" cy="40" rx="12" ry="6" fill="#d4a574" opacity="0.6" transform="rotate(-55 100 40)"/>
+                        <ellipse cx="120" cy="25" rx="10" ry="5" fill="#d4a574" opacity="0.5" transform="rotate(-60 120 25)"/>
+                        <circle cx="35" cy="105" r="4" fill="#d4a574" opacity="0.7"/>
+                        <circle cx="42" cy="100" r="3" fill="#d4a574" opacity="0.6"/>
+                        <circle cx="55" cy="80" r="3" fill="#d4a574" opacity="0.6"/>
+                    </svg>
+                </div>
+
+                <div class="cover-border"></div>
+
+                <div class="cover-content">
+                    <div class="cover-ornament">❧</div>
+                    <p class="cover-title">Wedding Celebration</p>
+                    <div class="cover-names">
+                        Sarah
+                        <span class="and">&</span>
+                        James
+                    </div>
+                    <p class="cover-date">28 • 12 • 2024</p>
+                </div>
+
+                <p class="cover-instruction">Click to Open</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cover open/close
+        const cover = document.getElementById('cover');
+        let isOpen = false;
+
+        cover.addEventListener('click', () => {
+            if (!isOpen) {
+                cover.classList.add('open');
+                isOpen = true;
+            }
+        });
+
+        // Page navigation
+        let currentPage = 1;
+        const totalPages = 3;
+
+        function showPage(pageNum) {
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            document.querySelector(`.page[data-page="${pageNum}"]`).classList.add('active');
+            
+            // Update all nav dots
+            document.querySelectorAll('.nav-dot').forEach(dot => {
+                dot.classList.remove('active');
+                if (parseInt(dot.dataset.target) === pageNum) {
+                    dot.classList.add('active');
+                }
+            });
+
+            currentPage = pageNum;
+        }
+
+        // Navigation dot clicks
+        document.querySelectorAll('.nav-dot').forEach(dot => {
+            dot.addEventListener('click', () => {
+                showPage(parseInt(dot.dataset.target));
+            });
+        });
+
+        // Arrow navigation
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            if (currentPage > 1) showPage(currentPage - 1);
+        });
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (currentPage < totalPages) showPage(currentPage + 1);
+        });
+        document.getElementById('prevBtn2').addEventListener('click', () => {
+            showPage(1);
+        });
+        document.getElementById('nextBtn2').addEventListener('click', () => {
+            showPage(3);
+        });
+        document.getElementById('prevBtn3').addEventListener('click', () => {
+            showPage(2);
+        });
+        document.getElementById('nextBtn3').addEventListener('click', () => {
+            // Close the invitation or go back to cover
+            cover.classList.remove('open');
+            isOpen = false;
+            setTimeout(() => showPage(1), 500);
+        });
+
+        // RSVP Form submission
+        document.getElementById('rsvpForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = document.querySelector('.submit-btn');
+            btn.textContent = 'Thank You! 💕';
+            btn.style.background = 'linear-gradient(135deg, #27ae60 0%, #2ecc71 100%)';
+            btn.disabled = true;
+            
+            // Show confirmation
+            setTimeout(() => {
+                alert('Thank you for your RSVP! We look forward to celebrating with you.');
+            }, 500);
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' && currentPage < totalPages) {
+                showPage(currentPage + 1);
+            } else if (e.key === 'ArrowLeft' && currentPage > 1) {
+                showPage(currentPage - 1);
+            } else if (e.key === 'Enter' && !isOpen) {
+                cover.classList.add('open');
+                isOpen = true;
+            }
+        });
+    </script>
+</body>
+</html>

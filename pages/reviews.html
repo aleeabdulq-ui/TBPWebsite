@@ -1,0 +1,1849 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Reviews | The Building Practice Ltd.</title>
+    <meta name="description" content="Read what our clients, partners, interns, and vendors say about working with The Building Practice Ltd.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-50: #E0F7FA;
+            --primary-100: #B2EBF2;
+            --primary-200: #80DEEA;
+            --primary-300: #4DD0E1;
+            --primary-400: #26C6DA;
+            --primary-500: #00ACC1;
+            --primary-600: #0097A7;
+            --primary-700: #00838F;
+            --primary-800: #006064;
+            --primary-900: #004D40;
+            --accent-50: #F3E5F5;
+            --accent-100: #E1BEE7;
+            --accent-200: #CE93D8;
+            --accent-300: #BA68C8;
+            --accent-400: #AB47BC;
+            --accent-500: #9C27B0;
+            --accent-600: #8E24AA;
+            --accent-700: #7B1FA2;
+            --accent-800: #6A1B9A;
+            --accent-900: #4A148C;
+            --primary: var(--primary-500);
+            --primary-light: var(--primary-400);
+            --primary-dark: var(--primary-700);
+            --accent: var(--accent-500);
+            --accent-light: var(--accent-400);
+            --accent-dark: var(--accent-600);
+            --gradient-start: #00ACC1;
+            --gradient-mid: #7C4DFF;
+            --gradient-end: #E040FB;
+            --star-filled: #FFB800;
+            --star-empty: #E0E0E0;
+            --cat-client: #00ACC1;
+            --cat-partner: #7C4DFF;
+            --cat-intern: #E040FB;
+            --cat-vendor: #FF6B6B;
+            --cat-contractor: #4CAF50;
+            --white: #FFFFFF;
+            --black: #000000;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+            --bg-primary: var(--white);
+            --bg-secondary: var(--gray-50);
+            --bg-tertiary: var(--gray-100);
+            --text-primary: var(--gray-900);
+            --text-secondary: var(--gray-600);
+            --text-tertiary: var(--gray-400);
+            --text-inverse: var(--white);
+            --border-primary: var(--gray-200);
+            --border-secondary: var(--gray-300);
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-2xl: 24px;
+            --radius-full: 9999px;
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-5: 20px;
+            --space-6: 24px;
+            --space-8: 32px;
+            --space-10: 40px;
+            --space-12: 48px;
+            --space-16: 64px;
+            --space-20: 80px;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --text-xs: 12px;
+            --text-sm: 14px;
+            --text-base: 16px;
+            --text-lg: 18px;
+            --text-xl: 20px;
+            --text-2xl: 24px;
+            --text-3xl: 30px;
+            --text-4xl: 36px;
+            --text-5xl: 48px;
+            --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: var(--gray-900);
+            --bg-secondary: var(--gray-800);
+            --bg-tertiary: var(--gray-700);
+            --text-primary: var(--white);
+            --text-secondary: var(--gray-300);
+            --text-tertiary: var(--gray-500);
+            --border-primary: var(--gray-700);
+            --border-secondary: var(--gray-600);
+            --star-empty: var(--gray-600);
+        }
+
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-size: var(--text-base);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
+        button { font-family: inherit; cursor: pointer; border: none; background: none; }
+        ul, ol { list-style: none; }
+
+        /* SPLASH SCREEN */
+        .splash {
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.4s ease, visibility 0.4s ease;
+        }
+
+        .splash::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(0, 172, 193, 0.1) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 70%, rgba(156, 39, 176, 0.1) 0%, transparent 50%);
+            animation: splashBg 3s ease-in-out infinite;
+        }
+
+        @keyframes splashBg {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        .splash.hide {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .splash-logo-wrapper {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+
+        .splash-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: ringSpin 1.5s linear infinite;
+        }
+
+        @keyframes ringSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .splash-logo {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            animation: logoFade 0.6s ease forwards;
+        }
+
+        @keyframes logoFade {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .splash-title {
+            margin-top: var(--space-4);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            z-index: 1;
+        }
+
+        .splash-tagline {
+            margin-top: var(--space-1);
+            font-size: var(--text-sm);
+            color: var(--text-tertiary);
+            font-style: italic;
+            z-index: 1;
+        }
+
+        .splash-loader {
+            margin-top: var(--space-6);
+            display: flex;
+            gap: var(--space-2);
+            z-index: 1;
+        }
+
+        .splash-loader span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: loaderDot 1.2s ease-in-out infinite;
+        }
+
+        .splash-loader span:nth-child(1) { background: var(--gradient-start); animation-delay: 0s; }
+        .splash-loader span:nth-child(2) { background: var(--gradient-mid); animation-delay: 0.15s; }
+        .splash-loader span:nth-child(3) { background: var(--gradient-end); animation-delay: 0.3s; }
+
+        @keyframes loaderDot {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+            40% { transform: scale(1.1); opacity: 1; }
+        }
+
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-primary);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] .header {
+            background: rgba(17, 24, 39, 0.92);
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .header.scrolled::after {
+            opacity: 1;
+        }
+
+        .header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-5);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+        }
+
+        .nav-brand img {
+            height: 40px;
+            width: auto;
+        }
+
+        .nav-brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-brand-name {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .nav-brand-tagline {
+            font-size: 10px;
+            color: var(--text-tertiary);
+            font-style: italic;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: var(--space-1);
+        }
+
+        .nav-link {
+            padding: var(--space-2) var(--space-3);
+            font-size: var(--text-sm);
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-radius: var(--radius-full);
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+            background: rgba(0, 172, 193, 0.1);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+        }
+
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--text-secondary);
+            background: var(--bg-secondary);
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary);
+            background: var(--bg-tertiary);
+        }
+
+        .nav-toggle {
+            display: none;
+            width: 40px;
+            height: 40px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-toggle.active span:nth-child(2) { opacity: 0; }
+        .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        @media (max-width: 968px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: var(--bg-primary);
+                flex-direction: column;
+                align-items: stretch;
+                padding: var(--space-5);
+                transform: translateX(100%);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+
+            .nav-link {
+                padding: var(--space-4);
+                font-size: var(--text-lg);
+                border-bottom: 1px solid var(--border-primary);
+                border-radius: 0;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+        }
+
+        /* MAIN CONTENT */
+        .main-content {
+            padding-top: 70px;
+            min-height: 100vh;
+        }
+
+        /* PAGE HERO */
+        .page-hero {
+            position: relative;
+            padding: var(--space-16) var(--space-5) var(--space-12);
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            inset: -50%;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 172, 193, 0.08) 0%, transparent 50%),
+                        radial-gradient(circle at 80% 50%, rgba(156, 39, 176, 0.08) 0%, transparent 50%);
+        }
+
+        .page-hero-content {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .page-hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-4);
+            background: linear-gradient(135deg, rgba(0, 172, 193, 0.1), rgba(156, 39, 176, 0.1));
+            color: var(--primary);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            margin-bottom: var(--space-5);
+            border: 1px solid rgba(0, 172, 193, 0.2);
+        }
+
+        .page-hero-title {
+            font-size: clamp(var(--text-3xl), 6vw, var(--text-5xl));
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.1;
+            margin-bottom: var(--space-4);
+        }
+
+        .page-hero-title span {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-hero-description {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* STATS */
+        .stats-section {
+            position: relative;
+            margin-top: -40px;
+            padding: 0 var(--space-5);
+            z-index: 10;
+        }
+
+        .stats-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-4);
+        }
+
+        @media (max-width: 768px) {
+            .stats-container { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 480px) {
+            .stats-container { grid-template-columns: 1fr; }
+        }
+
+        .stat-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-5);
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .stat-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto var(--space-3);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            color: var(--white);
+        }
+
+        .stat-card:nth-child(1) .stat-icon { background: linear-gradient(135deg, var(--cat-client), #00838F); }
+        .stat-card:nth-child(2) .stat-icon { background: linear-gradient(135deg, var(--star-filled), #FF8F00); }
+        .stat-card:nth-child(3) .stat-icon { background: linear-gradient(135deg, var(--cat-partner), #5E35B1); }
+        .stat-card:nth-child(4) .stat-icon { background: linear-gradient(135deg, var(--cat-contractor), #2E7D32); }
+
+        .stat-value {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-1);
+        }
+
+        .stat-label {
+            font-size: var(--text-xs);
+            color: var(--text-tertiary);
+        }
+
+        /* FILTERS */
+        .filters-section {
+            position: sticky;
+            top: 70px;
+            z-index: 100;
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-primary);
+            padding: var(--space-4) var(--space-5);
+        }
+
+        .filters-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-4);
+            flex-wrap: wrap;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: var(--space-2);
+            flex-wrap: wrap;
+            flex: 1;
+        }
+
+        .filter-tab {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-4);
+            font-size: var(--text-sm);
+            font-weight: 500;
+            color: var(--text-tertiary);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-full);
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .filter-tab:hover:not(.active) {
+            color: var(--text-primary);
+            border-color: var(--border-secondary);
+        }
+
+        .filter-tab.active {
+            color: var(--white);
+            border-color: transparent;
+        }
+
+        .filter-tab[data-filter="all"].active { background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid)); }
+        .filter-tab[data-filter="client"].active { background: var(--cat-client); }
+        .filter-tab[data-filter="partner"].active { background: var(--cat-partner); }
+        .filter-tab[data-filter="intern"].active { background: var(--cat-intern); }
+        .filter-tab[data-filter="vendor"].active { background: var(--cat-vendor); }
+        .filter-tab[data-filter="contractor"].active { background: var(--cat-contractor); }
+
+        .filter-tab .count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 8px;
+            border-radius: var(--radius-full);
+            font-size: 11px;
+        }
+
+        .filter-tab:not(.active) .count {
+            background: var(--bg-tertiary);
+        }
+
+        .results-info {
+            font-size: var(--text-sm);
+            color: var(--text-tertiary);
+        }
+
+        .results-info strong {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .filters-container {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .filter-tabs {
+                justify-content: center;
+            }
+
+            .results-info {
+                text-align: center;
+            }
+        }
+
+        /* REVIEWS SECTION */
+        .reviews-section {
+            padding: var(--space-12) var(--space-5) var(--space-20);
+            background: var(--bg-secondary);
+            min-height: 50vh;
+        }
+
+        .reviews-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            columns: 3;
+            column-gap: var(--space-5);
+        }
+
+        @media (max-width: 1024px) { .reviews-grid { columns: 2; } }
+        @media (max-width: 640px) { .reviews-grid { columns: 1; } }
+
+        /* REVIEW CARD */
+        .review-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-5);
+            margin-bottom: var(--space-5);
+            border: 1px solid var(--border-primary);
+            box-shadow: var(--shadow-sm);
+            break-inside: avoid;
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: cardIn 0.5s ease forwards;
+        }
+
+        @keyframes cardIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-light);
+        }
+
+        .review-card.featured {
+            background: linear-gradient(135deg, rgba(0, 172, 193, 0.05), rgba(124, 77, 255, 0.05));
+            border: 2px solid var(--primary-light);
+            position: relative;
+        }
+
+        .review-card.featured::before {
+            content: '⭐ Featured';
+            position: absolute;
+            top: var(--space-3);
+            right: var(--space-3);
+            padding: 4px 10px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+            color: var(--white);
+            font-size: 10px;
+            font-weight: 600;
+            border-radius: var(--radius-full);
+        }
+
+        .review-header {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-3);
+            margin-bottom: var(--space-3);
+        }
+
+        .review-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .review-avatar-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--text-base);
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        .review-avatar[data-category="client"] .review-avatar-placeholder { background: linear-gradient(135deg, var(--cat-client), #00838F); }
+        .review-avatar[data-category="partner"] .review-avatar-placeholder { background: linear-gradient(135deg, var(--cat-partner), #5E35B1); }
+        .review-avatar[data-category="intern"] .review-avatar-placeholder { background: linear-gradient(135deg, var(--cat-intern), #AA00FF); }
+        .review-avatar[data-category="vendor"] .review-avatar-placeholder { background: linear-gradient(135deg, var(--cat-vendor), #D32F2F); }
+        .review-avatar[data-category="contractor"] .review-avatar-placeholder { background: linear-gradient(135deg, var(--cat-contractor), #2E7D32); }
+
+        .review-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .review-name {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        .review-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            flex-wrap: wrap;
+        }
+
+        .review-role {
+            font-size: 11px;
+            color: var(--text-tertiary);
+        }
+
+        .review-badge {
+            padding: 2px 8px;
+            font-size: 9px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-radius: var(--radius-full);
+            color: var(--white);
+        }
+
+        .review-badge[data-category="client"] { background: var(--cat-client); }
+        .review-badge[data-category="partner"] { background: var(--cat-partner); }
+        .review-badge[data-category="intern"] { background: var(--cat-intern); }
+        .review-badge[data-category="vendor"] { background: var(--cat-vendor); }
+        .review-badge[data-category="contractor"] { background: var(--cat-contractor); }
+
+        .review-rating {
+            display: flex;
+            gap: 2px;
+            margin-bottom: var(--space-3);
+        }
+
+        .review-rating i {
+            font-size: 14px;
+            color: var(--star-filled);
+        }
+
+        .review-rating i.empty {
+            color: var(--star-empty);
+        }
+
+        .review-content {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: var(--space-3);
+        }
+
+        .review-content.truncated {
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        .review-toggle {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--primary);
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: var(--space-3);
+        }
+
+        .review-toggle:hover {
+            color: var(--primary-dark);
+        }
+
+        .review-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: var(--space-3);
+            border-top: 1px solid var(--border-primary);
+            gap: var(--space-2);
+        }
+
+        .review-date {
+            font-size: 11px;
+            color: var(--text-tertiary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .review-project {
+            font-size: 11px;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            max-width: 50%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        /* LOAD MORE */
+        .load-more-container {
+            text-align: center;
+            padding: var(--space-10) var(--space-5);
+        }
+
+        .load-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-4) var(--space-8);
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+            color: var(--white);
+            font-size: var(--text-base);
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-md);
+        }
+
+        .load-more-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 172, 193, 0.4);
+        }
+
+        .load-more-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .load-more-btn.loading i {
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .load-more-info {
+            margin-top: var(--space-4);
+            font-size: var(--text-sm);
+            color: var(--text-tertiary);
+        }
+
+        /* NO RESULTS */
+        .no-results {
+            display: none;
+            text-align: center;
+            padding: var(--space-16) var(--space-5);
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .no-results.visible {
+            display: block;
+        }
+
+        .no-results-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(0, 172, 193, 0.1), rgba(156, 39, 176, 0.1));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto var(--space-5);
+            font-size: 28px;
+            color: var(--primary);
+        }
+
+        .no-results-title {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-2);
+        }
+
+        .no-results-text {
+            font-size: var(--text-sm);
+            color: var(--text-tertiary);
+            margin-bottom: var(--space-5);
+        }
+
+        .no-results-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-3) var(--space-6);
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+            color: var(--white);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            border-radius: var(--radius-full);
+        }
+
+        /* FOOTER */
+        .footer {
+            background: var(--bg-tertiary);
+            padding: var(--space-16) var(--space-5) var(--space-8);
+        }
+
+        [data-theme="dark"] .footer {
+            background: #0a0a0a;
+        }
+
+        .footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-10);
+            margin-bottom: var(--space-12);
+        }
+
+        @media (max-width: 968px) { .footer-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 640px) { .footer-grid { grid-template-columns: 1fr; text-align: center; } }
+
+        .footer-brand img {
+            height: 45px;
+            margin-bottom: var(--space-4);
+        }
+
+        @media (max-width: 640px) {
+            .footer-brand img { margin: 0 auto var(--space-4); }
+        }
+
+        .footer-brand p {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-5);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--space-3);
+        }
+
+        @media (max-width: 640px) { .footer-social { justify-content: center; } }
+
+        .footer-social a {
+            width: 42px;
+            height: 42px;
+            background: var(--bg-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 18px;
+            transition: all 0.2s ease;
+        }
+
+        .footer-social a:hover {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .footer-links h5 {
+            font-size: var(--text-base);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-5);
+        }
+
+        .footer-links li {
+            margin-bottom: var(--space-3);
+        }
+
+        .footer-links a {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            transition: all 0.2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        .footer-links a i {
+            font-size: 12px;
+            color: var(--text-tertiary);
+        }
+
+        .footer-contact p {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-3);
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-4);
+        }
+
+        @media (max-width: 640px) { .footer-contact p { justify-content: center; } }
+
+        .footer-contact i {
+            font-size: 18px;
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-primary);
+            padding-top: var(--space-8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-4);
+        }
+
+        @media (max-width: 640px) { .footer-bottom { flex-direction: column; text-align: center; } }
+
+        .footer-bottom p {
+            font-size: var(--text-xs);
+            color: var(--text-tertiary);
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: var(--space-6);
+        }
+
+        .footer-bottom-links a {
+            font-size: var(--text-xs);
+            color: var(--text-tertiary);
+            transition: color 0.2s ease;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--primary);
+        }
+
+        /* BACK TO TOP */
+        .back-to-top {
+            position: fixed;
+            bottom: var(--space-6);
+            right: var(--space-6);
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid));
+            color: var(--white);
+            border-radius: 50%;
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 998;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-4px);
+        }
+
+        /* ANIMATIONS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+            .splash { display: none !important; }
+            body.no-scroll { overflow: auto !important; }
+        }
+    </style>
+</head>
+<body class="no-scroll">
+
+    <!-- SPLASH SCREEN -->
+    <div class="splash" id="splash">
+        <div class="splash-logo-wrapper">
+            <svg class="splash-ring" viewBox="0 0 120 120">
+                <defs>
+                    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#00ACC1"/>
+                        <stop offset="50%" stop-color="#7C4DFF"/>
+                        <stop offset="100%" stop-color="#E040FB"/>
+                    </linearGradient>
+                </defs>
+                <circle cx="60" cy="60" r="52" stroke="url(#ringGrad)" stroke-width="4" fill="none" stroke-dasharray="10 6" stroke-linecap="round"/>
+            </svg>
+            <img src="../images/bp.png" alt="The Building Practice" class="splash-logo" onerror="this.style.display='none'">
+        </div>
+        <h1 class="splash-title">The Building Practice Ltd.</h1>
+        <p class="splash-tagline">...Building Spaces that Feel</p>
+        <div class="splash-loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <img src="../images/bp.png" alt="TBP" onerror="this.style.display='none'">
+                <div class="nav-brand-text">
+                    <span class="nav-brand-name">The Building Practice Ltd.</span>
+                    <span class="nav-brand-tagline">...Building Spaces that Feel</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="reviews.html" class="nav-link active">Reviews</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class='bx bx-sun' id="themeIcon"></i>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+        
+        <!-- PAGE HERO -->
+        <section class="page-hero">
+            <div class="page-hero-content fade-in">
+                <div class="page-hero-badge">
+                    <i class='bx bx-star'></i>
+                    <span>Client Testimonials</span>
+                </div>
+                <h1 class="page-hero-title">
+                    What People Say <span>About Us</span>
+                </h1>
+                <p class="page-hero-description">
+                    Discover why clients, partners, and collaborators trust The Building Practice to bring their architectural visions to life.
+                </p>
+            </div>
+        </section>
+
+        <!-- STATS -->
+        <section class="stats-section fade-in">
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class='bx bx-message-square-dots'></i></div>
+                    <div class="stat-value">150</div>
+                    <div class="stat-label">Total Reviews</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class='bx bx-star'></i></div>
+                    <div class="stat-value">4.9</div>
+                    <div class="stat-label">Average Rating</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class='bx bx-happy-heart-eyes'></i></div>
+                    <div class="stat-value">98%</div>
+                    <div class="stat-label">Satisfaction Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class='bx bx-check-circle'></i></div>
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">Verified Reviews</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FILTERS -->
+        <section class="filters-section">
+            <div class="filters-container">
+                <div class="filter-tabs" id="filterTabs">
+                    <button class="filter-tab active" data-filter="all">
+                        <i class='bx bx-grid-alt'></i>
+                        <span>All</span>
+                        <span class="count" id="countAll">150</span>
+                    </button>
+                    <button class="filter-tab" data-filter="client">
+                        <i class='bx bx-user'></i>
+                        <span>Clients</span>
+                        <span class="count" id="countClient">60</span>
+                    </button>
+                    <button class="filter-tab" data-filter="partner">
+                        <i class='bx bx-briefcase'></i>
+                        <span>Partners</span>
+                        <span class="count" id="countPartner">30</span>
+                    </button>
+                    <button class="filter-tab" data-filter="intern">
+                        <i class='bx bx-book-reader'></i>
+                        <span>Interns</span>
+                        <span class="count" id="countIntern">25</span>
+                    </button>
+                    <button class="filter-tab" data-filter="vendor">
+                        <i class='bx bx-store'></i>
+                        <span>Vendors</span>
+                        <span class="count" id="countVendor">20</span>
+                    </button>
+                    <button class="filter-tab" data-filter="contractor">
+                        <i class='bx bx-hard-hat'></i>
+                        <span>Contractors</span>
+                        <span class="count" id="countContractor">15</span>
+                    </button>
+                </div>
+                <div class="results-info">
+                    Showing <strong id="showingCount">20</strong> of <strong id="totalCount">150</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- REVIEWS -->
+        <section class="reviews-section">
+            <div class="reviews-grid" id="reviewsGrid"></div>
+
+            <div class="no-results" id="noResults">
+                <div class="no-results-icon"><i class='bx bx-message-square-x'></i></div>
+                <h3 class="no-results-title">No reviews found</h3>
+                <p class="no-results-text">Try selecting a different category.</p>
+                <button class="no-results-btn" id="resetFilterBtn">
+                    <i class='bx bx-refresh'></i>
+                    <span>Show All Reviews</span>
+                </button>
+            </div>
+
+            <div class="load-more-container" id="loadMoreContainer">
+                <button class="load-more-btn" id="loadMoreBtn">
+                    <i class='bx bx-loader-alt'></i>
+                    <span>Load More Reviews</span>
+                </button>
+                <p class="load-more-info">Scroll to load more or click the button</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html">
+                        <img src="../images/bp.png" alt="The Building Practice Ltd." onerror="this.style.display='none'">
+                    </a>
+                    <p>Building Spaces that Feel. We transform architectural visions into extraordinary realities with innovation, sustainability, and excellence.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                        <a href="#" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                        <a href="#" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="index.html"><i class='bx bx-chevron-right'></i>Home</a></li>
+                        <li><a href="about.html"><i class='bx bx-chevron-right'></i>About Us</a></li>
+                        <li><a href="services.html"><i class='bx bx-chevron-right'></i>Services</a></li>
+                        <li><a href="projects.html"><i class='bx bx-chevron-right'></i>Projects</a></li>
+                        <li><a href="team.html"><i class='bx bx-chevron-right'></i>Our Team</a></li>
+                        <li><a href="contact.html"><i class='bx bx-chevron-right'></i>Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links">
+                    <h5>Our Services</h5>
+                    <ul>
+                        <li><a href="services.html"><i class='bx bx-chevron-right'></i>Residential Design</a></li>
+                        <li><a href="services.html"><i class='bx bx-chevron-right'></i>Commercial Architecture</a></li>
+                        <li><a href="services.html"><i class='bx bx-chevron-right'></i>Interior Planning</a></li>
+                        <li><a href="services.html"><i class='bx bx-chevron-right'></i>Urban Design</a></li>
+                        <li><a href="services.html"><i class='bx bx-chevron-right'></i>Consultation</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-links footer-contact">
+                    <h5>Contact Info</h5>
+                    <p><i class='bx bx-map'></i><span>Plot 6 Remi Olowude, Lekki Phase 1, Lagos.</span></p>
+                    <p><i class='bx bx-phone'></i><a href="tel:+2349049721840">+234 904 972 1840</a></p>
+                    <p><i class='bx bx-envelope'></i><a href="mailto:info@thebuildingpractice.com">info@thebuildingpractice.com</a></p>
+                    <p><i class='bx bx-time'></i><span>Mon - Fri: 9:00 AM - 5:00 PM</span></p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear">2025</span> The Building Practice Ltd. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
+
+    <script>
+    (function() {
+        'use strict';
+
+        // ===== CONFIG =====
+        const SPLASH_DURATION = 1800; // 1.8 seconds
+        const REVIEWS_PER_PAGE = 20;
+
+        // ===== REVIEWS DATA (150 reviews) =====
+        const reviewsData = [
+            // CLIENTS (60)
+            { id: 1, name: "Adebayo Okonkwo", role: "CEO, Okonkwo Holdings", category: "client", rating: 5, content: "The Building Practice transformed our corporate headquarters into a stunning architectural masterpiece. Their attention to detail and innovative approach exceeded all our expectations.", date: "2024-12-15", project: "Corporate HQ Redesign", featured: true },
+            { id: 2, name: "Chioma Eze", role: "Property Developer", category: "client", rating: 5, content: "Working with TBP was an absolute pleasure. They understood our vision for the residential complex and brought it to life beautifully.", date: "2024-12-10", project: "Green Valley Residences" },
+            { id: 3, name: "Emeka Nwachukwu", role: "Hotel Owner", category: "client", rating: 5, content: "Our boutique hotel has received countless compliments since the renovation. Highly recommended!", date: "2024-12-08", project: "Ocean View Hotel" },
+            { id: 4, name: "Folake Adeleke", role: "Homeowner", category: "client", rating: 5, content: "From the initial consultation to the final walkthrough, the experience was seamless. They designed a home that truly feels like us.", date: "2024-12-05", project: "Adeleke Family Home" },
+            { id: 5, name: "Gbenga Bakare", role: "Restaurant Owner", category: "client", rating: 4, content: "The restaurant design exceeded our expectations. The ambiance has become a talking point for our customers.", date: "2024-12-01", project: "Savannah Grill" },
+            { id: 6, name: "Hadiza Mohammed", role: "School Administrator", category: "client", rating: 5, content: "TBP designed our new school campus with students' learning experience in mind. The spaces have transformed education.", date: "2024-11-28", project: "Sunrise Academy Campus", featured: true },
+            { id: 7, name: "Ibrahim Sule", role: "Factory Owner", category: "client", rating: 5, content: "The industrial facility they designed optimizes workflow and maximizes efficiency. Impressive understanding of manufacturing.", date: "2024-11-25", project: "Sule Manufacturing Plant" },
+            { id: 8, name: "Jennifer Okafor", role: "Clinic Director", category: "client", rating: 5, content: "Our medical facility is now a calming, patient-friendly environment. Thoughtful design at its best.", date: "2024-11-22", project: "Healing Hands Clinic" },
+            { id: 9, name: "Kenneth Ajayi", role: "Church Pastor", category: "client", rating: 5, content: "The new church building blends spiritual significance with modern architecture beautifully.", date: "2024-11-18", project: "Grace Chapel" },
+            { id: 10, name: "Lilian Uche", role: "Spa Owner", category: "client", rating: 5, content: "Every corner of our spa radiates tranquility. TBP understood the importance of creating a sensory experience.", date: "2024-11-15", project: "Serenity Spa & Wellness" },
+            { id: 11, name: "Michael Adeyemi", role: "Tech Startup Founder", category: "client", rating: 5, content: "Our office space reflects our innovative culture perfectly. The design has boosted our team's creativity.", date: "2024-11-12", project: "TechHub Lagos" },
+            { id: 12, name: "Ngozi Obi", role: "Art Gallery Owner", category: "client", rating: 5, content: "They designed a gallery that lets the art speak. The lighting and flow create an immersive experience.", date: "2024-11-08", project: "Contemporary Arts Space" },
+            { id: 13, name: "Olumide Fashola", role: "Real Estate Developer", category: "client", rating: 5, content: "We've completed three projects with TBP and each one has been a success. Their designs attract buyers.", date: "2024-11-05", project: "Lekki Heights Estate" },
+            { id: 14, name: "Patricia Egwu", role: "Daycare Owner", category: "client", rating: 5, content: "The childcare center is colorful, safe, and stimulating for young children. Parents and kids love it.", date: "2024-11-01", project: "Little Stars Daycare" },
+            { id: 15, name: "Quadri Lawal", role: "Gym Owner", category: "client", rating: 4, content: "The fitness center design maximizes space usage while maintaining an energetic atmosphere.", date: "2024-10-28", project: "PowerFit Gym" },
+            { id: 16, name: "Rashida Bello", role: "Boutique Owner", category: "client", rating: 5, content: "My fashion boutique has become an Instagram-worthy destination. The design creates a luxurious shopping experience.", date: "2024-10-25", project: "Chic Mode Boutique" },
+            { id: 17, name: "Samuel Onyeka", role: "Banking Executive", category: "client", rating: 5, content: "The new branch design balances professionalism with approachability. Customer feedback has been overwhelmingly positive.", date: "2024-10-22", project: "First National Bank Branch" },
+            { id: 18, name: "Tolu Akinwande", role: "Event Center Owner", category: "client", rating: 5, content: "Our event center can host everything from weddings to conferences thanks to their flexible design approach.", date: "2024-10-18", project: "Grand Occasions Hall" },
+            { id: 19, name: "Uche Ibe", role: "Pharmaceutical CEO", category: "client", rating: 5, content: "The pharmaceutical facility meets all international standards while being aesthetically pleasing.", date: "2024-10-15", project: "MedCare Pharma Plant" },
+            { id: 20, name: "Victoria Nwosu", role: "Homeowner", category: "client", rating: 5, content: "Our dream home became a reality. Every detail was thoughtfully designed. We couldn't be happier.", date: "2024-10-12", project: "Nwosu Residence" },
+            { id: 21, name: "Wale Ogunleye", role: "Mall Developer", category: "client", rating: 5, content: "The mall design has attracted premium tenants and high foot traffic. A complete lifestyle destination.", date: "2024-10-08", project: "Victoria Island Mall" },
+            { id: 22, name: "Xena Danjuma", role: "Law Firm Partner", category: "client", rating: 5, content: "Our law office exudes professionalism and sophistication. The design impresses clients.", date: "2024-10-05", project: "Danjuma & Associates Office" },
+            { id: 23, name: "Yusuf Aliyu", role: "Warehouse Owner", category: "client", rating: 5, content: "The logistics facility design optimizes storage and movement of goods efficiently.", date: "2024-10-01", project: "Aliyu Logistics Hub" },
+            { id: 24, name: "Zainab Abdullahi", role: "NGO Director", category: "client", rating: 5, content: "They designed our community center with empathy and understanding of our mission.", date: "2024-09-28", project: "Hope Community Center" },
+            { id: 25, name: "Ahmed Musa", role: "Sports Complex Owner", category: "client", rating: 5, content: "The sports facility is world-class. Every aspect was designed for optimal performance.", date: "2024-09-25", project: "Champions Sports Arena" },
+            { id: 26, name: "Blessing Okoro", role: "Retirement Home Director", category: "client", rating: 5, content: "The senior living facility balances accessibility with dignity. Residents love their new home.", date: "2024-09-22", project: "Golden Years Residence" },
+            { id: 27, name: "Chidi Aneke", role: "Tech Campus Developer", category: "client", rating: 5, content: "The tech campus has become a hub for innovation. The design fosters collaboration.", date: "2024-09-18", project: "Innovation Park" },
+            { id: 28, name: "Damilola Adewale", role: "Brewery Owner", category: "client", rating: 4, content: "The brewery combines functional production spaces with an inviting taproom. Visitors love it.", date: "2024-09-15", project: "Craftsman Brewery" },
+            { id: 29, name: "Ezekiel Nnamdi", role: "Cinema Owner", category: "client", rating: 5, content: "The cinema complex offers a premium movie experience. Excellent acoustic design.", date: "2024-09-12", project: "Starlight Cinemas" },
+            { id: 30, name: "Fatima Ibrahim", role: "Fashion Designer", category: "client", rating: 5, content: "My design studio is both a creative workspace and a showroom. Natural lighting inspires creativity.", date: "2024-09-08", project: "Fatima Couture Studio" },
+            { id: 31, name: "George Akpan", role: "Car Dealership Owner", category: "client", rating: 5, content: "The showroom design showcases our vehicles beautifully. Clients are always impressed.", date: "2024-09-05", project: "Premium Auto Gallery" },
+            { id: 32, name: "Hannah Oyelaran", role: "University Dean", category: "client", rating: 5, content: "The new faculty building promotes academic excellence. All spaces work harmoniously.", date: "2024-09-01", project: "University Science Complex" },
+            { id: 33, name: "Isaac Okonkwo", role: "Data Center Owner", category: "client", rating: 5, content: "The data center meets all technical requirements while being energy efficient.", date: "2024-08-28", project: "SecureData Facility" },
+            { id: 34, name: "Janet Adekunle", role: "Bakery Owner", category: "client", rating: 5, content: "Our bakery is as delightful as our pastries! The design creates a warm atmosphere.", date: "2024-08-25", project: "Sweet Delights Bakery" },
+            { id: 35, name: "Kelechi Obiora", role: "Recording Studio Owner", category: "client", rating: 5, content: "The acoustic design is flawless. Artists love recording here.", date: "2024-08-22", project: "SoundWave Studios" },
+            { id: 36, name: "Lola Bamidele", role: "Florist Shop Owner", category: "client", rating: 5, content: "The flower shop design brings the outdoors in. A refreshing environment.", date: "2024-08-18", project: "Bloom & Petals" },
+            { id: 37, name: "Moses Etim", role: "Printing Press Owner", category: "client", rating: 5, content: "The facility balances heavy machinery requirements with a clean workspace.", date: "2024-08-15", project: "PrintMaster Facility" },
+            { id: 38, name: "Nkechi Oduah", role: "Dance Academy Owner", category: "client", rating: 5, content: "The dance studios have perfect flooring, mirrors, and lighting. Students love it.", date: "2024-08-12", project: "Rhythm Dance Academy" },
+            { id: 39, name: "Ojo Adelani", role: "Supermarket Owner", category: "client", rating: 5, content: "The supermarket layout optimizes customer flow. Sales have increased significantly.", date: "2024-08-08", project: "FreshMart Superstore" },
+            { id: 40, name: "Patience Umeh", role: "Veterinary Clinic Owner", category: "client", rating: 5, content: "The clinic design considers both animals and their owners. Calming and efficient.", date: "2024-08-05", project: "PetCare Veterinary Clinic" },
+            { id: 41, name: "Ruth Agbaje", role: "Jewelry Store Owner", category: "client", rating: 5, content: "The boutique design elevates our jewelry presentation. Security is seamlessly integrated.", date: "2024-07-28", project: "Gemstone Gallery" },
+            { id: 42, name: "Stephen Okafor", role: "Auto Workshop Owner", category: "client", rating: 4, content: "The workshop is functional and professional. Good use of space for service bays.", date: "2024-07-25", project: "AutoPro Service Center" },
+            { id: 43, name: "Titilayo Afolabi", role: "Beauty Salon Owner", category: "client", rating: 5, content: "The salon is Instagram-perfect! Clients constantly compliment the chic atmosphere.", date: "2024-07-22", project: "Glow Beauty Lounge" },
+            { id: 44, name: "Usman Danladi", role: "Mosque Chairman", category: "client", rating: 5, content: "The mosque beautifully incorporates Islamic architectural elements with modern standards.", date: "2024-07-18", project: "Al-Noor Mosque" },
+            { id: 45, name: "Vivian Ekwueme", role: "Cooking School Owner", category: "client", rating: 5, content: "The culinary school has professional-grade kitchens. Students love the modern equipment.", date: "2024-07-15", project: "ChefMaster Academy" },
+            { id: 46, name: "Williams Ogbeide", role: "Funeral Home Director", category: "client", rating: 5, content: "The design strikes the perfect balance between solemnity and comfort for families.", date: "2024-07-12", project: "Eternal Peace Chapel" },
+            { id: 47, name: "Xander Obi", role: "Gaming Lounge Owner", category: "client", rating: 5, content: "The gaming center is a hit! The futuristic design creates an immersive experience.", date: "2024-07-08", project: "GameZone Arena" },
+            { id: 48, name: "Yetunde Shokunbi", role: "Bookstore Owner", category: "client", rating: 5, content: "The bookstore invites visitors to linger and explore. A book lover's paradise.", date: "2024-07-05", project: "The Reading Room" },
+            { id: 49, name: "Zara Mahmoud", role: "Photography Studio Owner", category: "client", rating: 5, content: "The studio's versatile spaces accommodate any type of shoot. Clients are impressed.", date: "2024-07-01", project: "Capture Studios" },
+            { id: 50, name: "Abdul Rahman", role: "Import/Export Business Owner", category: "client", rating: 5, content: "The office and warehouse complex perfectly serves our business needs.", date: "2024-06-28", project: "Global Trade Center" },
+            { id: 51, name: "Bukola Oyeleke", role: "Montessori School Founder", category: "client", rating: 5, content: "The school design follows Montessori principles beautifully. Students thrive here.", date: "2024-06-25", project: "Little Explorers Montessori" },
+            { id: 52, name: "Charles Ikenna", role: "Car Wash Owner", category: "client", rating: 5, content: "The car wash facility is efficient and attractive. Great water management systems.", date: "2024-06-22", project: "Sparkle Auto Spa" },
+            { id: 53, name: "Diana Okeke", role: "Dermatology Clinic Owner", category: "client", rating: 5, content: "The clinic's clean yet welcoming design puts patients at ease.", date: "2024-06-18", project: "SkinGlow Dermatology" },
+            { id: 54, name: "Emmanuel Bassey", role: "Furniture Showroom Owner", category: "client", rating: 5, content: "The showroom displays furniture in realistic room settings. Sales have improved.", date: "2024-06-15", project: "Home Elegance Showroom" },
+            { id: 55, name: "Florence Nwankwo", role: "Music School Director", category: "client", rating: 5, content: "Soundproofed practice rooms and a recital hall. The school supports musical education perfectly.", date: "2024-06-12", project: "Harmony Music Academy" },
+            { id: 56, name: "Gabriel Oluwole", role: "Ice Cream Parlor Owner", category: "client", rating: 5, content: "The parlor is colorful, fun, and family-friendly. Kids love it!", date: "2024-06-08", project: "Scoops & Smiles" },
+            { id: 57, name: "Helen Omotayo", role: "Yoga Studio Owner", category: "client", rating: 5, content: "The studio emanates peace and tranquility. Perfect for practice.", date: "2024-06-05", project: "Zen Yoga Studio" },
+            { id: 58, name: "Ikechukwu Nwogu", role: "Electronics Store Owner", category: "client", rating: 5, content: "The store layout encourages product discovery. Customer engagement has increased.", date: "2024-06-01", project: "TechWorld Electronics" },
+            { id: 59, name: "Joy Adebisi", role: "Children's Hospital Director", category: "client", rating: 5, content: "The hospital design reduces anxiety for young patients. Colorful and child-friendly.", date: "2024-05-28", project: "Rainbow Children's Hospital", featured: true },
+            { id: 60, name: "Kunle Ogundimu", role: "Conference Center Owner", category: "client", rating: 5, content: "State-of-the-art facilities for any type of event. Acoustics are perfect.", date: "2024-05-25", project: "Summit Conference Center" },
+
+            // PARTNERS (30)
+            { id: 61, name: "Arch. Olumide Akindele", role: "Partner Architect, AKD Design", category: "partner", rating: 5, content: "Collaborating with The Building Practice has been enriching. Their design philosophy aligns with ours.", date: "2024-12-12", project: "Multiple Collaborations", featured: true },
+            { id: 62, name: "Eng. Chukwuma Obi", role: "Structural Engineer", category: "partner", rating: 5, content: "TBP's designs are always structurally sound and buildable. A pleasure to work with.", date: "2024-12-08", project: "Engineering Partnership" },
+            { id: 63, name: "Surveyor Bola Adeyinka", role: "Principal, Adeyinka Surveys", category: "partner", rating: 5, content: "Their attention to site conditions and survey data is meticulous.", date: "2024-12-01", project: "Survey Services" },
+            { id: 64, name: "Arch. Nneoma Eze", role: "Landscape Architect", category: "partner", rating: 5, content: "TBP values landscape integration from project inception. Excellent collaboration.", date: "2024-11-25", project: "Landscape Collaborations" },
+            { id: 65, name: "Eng. Yusuf Abubakar", role: "MEP Engineer", category: "partner", rating: 5, content: "Their designs accommodate MEP systems elegantly. Smooth coordination process.", date: "2024-11-20", project: "MEP Engineering" },
+            { id: 66, name: "Qty Surv. Adaeze Okwu", role: "Quantity Surveyor", category: "partner", rating: 5, content: "Cost-effective designs without compromising quality. Thorough documentation.", date: "2024-11-15", project: "Cost Consulting" },
+            { id: 67, name: "Arch. Tunde Fashola", role: "Interior Designer", category: "partner", rating: 5, content: "Their architectural designs provide excellent canvases for interior work.", date: "2024-11-10", project: "Interior Design Partnership" },
+            { id: 68, name: "Eng. Grace Okafor", role: "Environmental Consultant", category: "partner", rating: 5, content: "TBP takes sustainability seriously. Rewarding environmental consulting.", date: "2024-11-05", project: "Green Building Certification" },
+            { id: 69, name: "Arch. Segun Oyelaran", role: "Urban Planner", category: "partner", rating: 5, content: "Excellent understanding of urban context. Buildings contribute positively to neighborhoods.", date: "2024-10-30", project: "Urban Planning Integration" },
+            { id: 70, name: "Eng. Halima Sani", role: "Fire Safety Consultant", category: "partner", rating: 5, content: "Fire safety is integrated from the start, not an afterthought. Professional approach.", date: "2024-10-25", project: "Fire Safety Consulting" },
+            { id: 71, name: "Arch. David Ogundimu", role: "Lighting Designer", category: "partner", rating: 5, content: "Their architectural lighting provisions are well-planned. Enhanced final projects.", date: "2024-10-20", project: "Lighting Design" },
+            { id: 72, name: "Eng. Fatimah Bello", role: "Geotechnical Engineer", category: "partner", rating: 5, content: "Foundation designs are always appropriate for site conditions.", date: "2024-10-15", project: "Geotechnical Services" },
+            { id: 73, name: "Arch. Emeka Okonkwo", role: "Acoustic Consultant", category: "partner", rating: 5, content: "Working with TBP on acoustic-sensitive projects is excellent.", date: "2024-10-10", project: "Acoustic Consulting" },
+            { id: 74, name: "Surveyor Mary Ajayi", role: "Building Control Surveyor", category: "partner", rating: 5, content: "Their submissions are always complete and code-compliant. Efficient approvals.", date: "2024-10-05", project: "Building Approvals" },
+            { id: 75, name: "Eng. Ikenna Nwachukwu", role: "Traffic Engineer", category: "partner", rating: 5, content: "Thoughtful consideration of traffic impact. Parking and circulation are well-planned.",                date: "2024-09-30", project: "Traffic Studies" },
+            { id: 76, name: "Arch. Sade Ogunlesi", role: "Heritage Consultant", category: "partner", rating: 5, content: "Sensitive approach to heritage buildings. Restoration work respects historical significance.", date: "2024-09-25", project: "Heritage Conservation" },
+            { id: 77, name: "Eng. Mohammed Aliyu", role: "Elevator Consultant", category: "partner", rating: 5, content: "Vertical transportation is well-integrated. Shaft sizes and specifications are always correct.", date: "2024-09-20", project: "Elevator Systems" },
+            { id: 78, name: "Arch. Chidinma Agu", role: "Accessibility Consultant", category: "partner", rating: 5, content: "Universal design is a priority. Their buildings are genuinely accessible.", date: "2024-09-15", project: "Accessibility Audits" },
+            { id: 79, name: "Eng. Olabisi Falade", role: "Pool Designer", category: "partner", rating: 5, content: "Beautiful water feature integration. Technical coordination is always smooth.", date: "2024-09-10", project: "Aquatic Design" },
+            { id: 80, name: "Arch. Victor Essien", role: "Wayfinding Designer", category: "partner", rating: 5, content: "Their buildings are intuitive to navigate. Signage integration is considered early.", date: "2024-09-05", project: "Wayfinding Design" },
+            { id: 81, name: "Eng. Aisha Garba", role: "Solar Energy Consultant", category: "partner", rating: 5, content: "Proactive about renewable energy. Roof designs accommodate solar panels effectively.", date: "2024-09-01", project: "Solar Integration" },
+            { id: 82, name: "Arch. Kingsley Ofoegbu", role: "Security Consultant", category: "partner", rating: 5, content: "Security considerations are built into the architecture. Well-planned access control.", date: "2024-08-25", project: "Security Design" },
+            { id: 83, name: "Eng. Folake Adeoye", role: "Kitchen Consultant", category: "partner", rating: 5, content: "Commercial kitchen designs are functional and efficient. They understand food service.", date: "2024-08-20", project: "Commercial Kitchen Design" },
+            { id: 84, name: "Arch. Samuel Udoh", role: "BIM Manager", category: "partner", rating: 5, content: "Their BIM models are detailed and coordinated. Makes clash detection easier.", date: "2024-08-15", project: "BIM Services" },
+            { id: 85, name: "Eng. Precious Okonkwo", role: "Façade Consultant", category: "partner", rating: 5, content: "Innovative façade designs that are buildable. Great collaboration on curtain walls.", date: "2024-08-10", project: "Façade Engineering" },
+            { id: 86, name: "Arch. Babatunde Coker", role: "Project Manager", category: "partner", rating: 5, content: "Well-documented projects that are easy to manage. Responsive to design changes.", date: "2024-08-05", project: "Project Management" },
+            { id: 87, name: "Eng. Catherine Obi", role: "Water Conservation Specialist", category: "partner", rating: 5, content: "Sustainable water management integrated into designs. Buildings minimize water waste.", date: "2024-07-30", project: "Water Conservation" },
+            { id: 88, name: "Arch. Adebayo Oni", role: "Masterplanner", category: "partner", rating: 5, content: "Individual buildings fit beautifully into larger masterplans. Urban coherence.", date: "2024-07-25", project: "Masterplanning" },
+            { id: 89, name: "Eng. Rita Nweke", role: "Waste Management Consultant", category: "partner", rating: 5, content: "Thoughtful waste management provisions. Recycling areas are well-designed.", date: "2024-07-20", project: "Waste Management" },
+            { id: 90, name: "Arch. Godwin Ekechi", role: "3D Visualization Specialist", category: "partner", rating: 5, content: "Their design intent is always clear. Beautiful architecture that renders well.", date: "2024-07-15", project: "3D Visualization" },
+
+            // INTERNS (25)
+            { id: 91, name: "Adaora Nnamdi", role: "Architecture Intern, 2024", category: "intern", rating: 5, content: "My internship at TBP was transformative. I worked on real projects and received excellent mentorship.", date: "2024-12-05", project: "Summer Internship 2024", featured: true },
+            { id: 92, name: "Babajide Olumide", role: "Architecture Intern, 2024", category: "intern", rating: 5, content: "The hands-on experience was invaluable. From site visits to client presentations, I was exposed to all aspects.", date: "2024-11-28", project: "Summer Internship 2024" },
+            { id: 93, name: "Chiamaka Obi", role: "Interior Design Intern, 2024", category: "intern", rating: 5, content: "TBP gave me opportunities to contribute design ideas that were actually implemented.", date: "2024-11-20", project: "Interior Design Internship" },
+            { id: 94, name: "Daniel Effiong", role: "Architecture Intern, 2024", category: "intern", rating: 5, content: "The structured internship program covers all project phases. Comprehensive understanding gained.", date: "2024-11-15", project: "Year-long Internship" },
+            { id: 95, name: "Esther Adeyemi", role: "Graphic Design Intern, 2024", category: "intern", rating: 5, content: "Even as a graphic design intern, I learned so much about architectural communication.", date: "2024-11-10", project: "Design Internship" },
+            { id: 96, name: "Femi Bakare", role: "Architecture Intern, 2023", category: "intern", rating: 5, content: "My TBP internship led to a full-time position. The firm invests in developing young talent.", date: "2024-11-05", project: "Internship to Employment" },
+            { id: 97, name: "Gloria Okwuosa", role: "Urban Planning Intern, 2024", category: "intern", rating: 5, content: "Exposure to urban-scale projects broadened my perspective. Multidisciplinary approach was educational.", date: "2024-10-30", project: "Planning Internship" },
+            { id: 98, name: "Hassan Mohammed", role: "Architecture Intern, 2024", category: "intern", rating: 4, content: "Great learning experience overall. The technical skills I gained were substantial.", date: "2024-10-25", project: "Summer Internship 2024" },
+            { id: 99, name: "Ifeoma Chukwu", role: "Sustainability Intern, 2024", category: "intern", rating: 5, content: "I worked on green building certifications and learned practical applications of sustainable design.", date: "2024-10-20", project: "Green Building Internship" },
+            { id: 100, name: "Joshua Akinola", role: "Architecture Intern, 2023", category: "intern", rating: 5, content: "The mentorship I received shaped my architectural thinking. Senior architects were generous with knowledge.", date: "2024-10-15", project: "NYSC Internship" },
+            { id: 101, name: "Khadijah Bello", role: "Architecture Intern, 2024", category: "intern", rating: 5, content: "TBP's studio culture encourages questions and experimentation. I felt like a valued team member.", date: "2024-10-10", project: "Summer Internship 2024" },
+            { id: 102, name: "Lanre Ogunbiyi", role: "BIM Intern, 2024", category: "intern", rating: 5, content: "Intensive BIM training and real project experience. My Revit skills improved dramatically.", date: "2024-10-05", project: "BIM Internship" },
+            { id: 103, name: "Mercy Ojo", role: "Architecture Intern, 2023", category: "intern", rating: 5, content: "The internship prepared me for professional practice. Learned time management and client communication.", date: "2024-09-30", project: "Year-long Internship" },
+            { id: 104, name: "Nonso Okafor", role: "Construction Intern, 2024", category: "intern", rating: 5, content: "Site experience during my internship was eye-opening. Understanding construction made me a better designer.", date: "2024-09-25", project: "Site Internship" },
+            { id: 105, name: "Oluchi Eze", role: "Interior Design Intern, 2024", category: "intern", rating: 5, content: "From space planning to material selection, I experienced the full interior design process.", date: "2024-09-20", project: "Interior Internship" },
+            { id: 106, name: "Peter Nwachukwu", role: "Architecture Intern, 2024", category: "intern", rating: 5, content: "Working on diverse project types expanded my design vocabulary. Each project taught me something new.", date: "2024-09-15", project: "Summer Internship 2024" },
+            { id: 107, name: "Queen Adebayo", role: "Marketing Intern, 2024", category: "intern", rating: 5, content: "Interesting intersection of architecture and marketing. I learned to communicate design value.", date: "2024-09-10", project: "Marketing Internship" },
+            { id: 108, name: "Raymond Udeh", role: "Architecture Intern, 2023", category: "intern", rating: 5, content: "The professional exposure during my NYSC year was exceptional. I'm now confident in my abilities.", date: "2024-09-05", project: "NYSC Program" },
+            { id: 109, name: "Sandra Okorie", role: "Landscape Intern, 2024", category: "intern", rating: 5, content: "Landscape design integrated with architecture from project start. Holistic design thinking.", date: "2024-09-01", project: "Landscape Internship" },
+            { id: 110, name: "Tochukwu Ani", role: "Architecture Intern, 2024", category: "intern", rating: 5, content: "The design reviews were challenging but educational. Critique accelerated my learning.", date: "2024-08-25", project: "Summer Internship 2024" },
+            { id: 111, name: "Uchenna Okonkwo", role: "IT Intern, 2024", category: "intern", rating: 5, content: "Unique perspective on how technology supports architectural practice.", date: "2024-08-20", project: "IT Internship" },
+            { id: 112, name: "Victoria Nwosu", role: "Architecture Intern, 2024", category: "intern", rating: 4, content: "Solid internship experience with good project exposure. The workload prepared me for practice.", date: "2024-08-15", project: "Summer Internship 2024" },
+            { id: 113, name: "Wale Adeleke", role: "QS Intern, 2024", category: "intern", rating: 5, content: "Learned cost estimation and value engineering. Practical skills that complement my education.", date: "2024-08-10", project: "QS Internship" },
+            { id: 114, name: "Xena Oyelaran", role: "Architecture Intern, 2024", category: "intern", rating: 5, content: "The portfolio I built during my internship helped me secure my current job.", date: "2024-08-05", project: "Portfolio Development" },
+            { id: 115, name: "Yemi Fashola", role: "Architecture Intern, 2023", category: "intern", rating: 5, content: "Every task was a learning opportunity. TBP truly develops young architects.", date: "2024-08-01", project: "Year-long Internship" },
+
+            // VENDORS (20)
+            { id: 116, name: "Alhaji Musa Ibrahim", role: "CEO, Premium Marble Nigeria", category: "vendor", rating: 5, content: "TBP specifies quality materials and understands product capabilities. Long-term partnership.", date: "2024-12-01", project: "Material Supply", featured: true },
+            { id: 117, name: "Mrs. Adaeze Nwankwo", role: "MD, Nwankwo Glass Works", category: "vendor", rating: 5, content: "Detailed specifications and clear communication. They appreciate craftsmanship.", date: "2024-11-25", project: "Glass Supply" },
+            { id: 118, name: "Chief Emeka Okafor", role: "Director, Okafor Timber Ltd", category: "vendor", rating: 5, content: "They specify sustainable timber and understand wood grades. Quality products find perfect application.", date: "2024-11-18", project: "Timber Supply" },
+            { id: 119, name: "Mr. Yusuf Abdullahi", role: "Owner, Abdullahi Tiles", category: "vendor", rating: 5, content: "TBP's attention to tile patterns elevates our products. They bring out the best in materials.", date: "2024-11-12", project: "Tile Supply" },
+            { id: 120, name: "Mrs. Funke Adeyemi", role: "CEO, LightSpace Nigeria", category: "vendor", rating: 5, content: "Their lighting specifications are sophisticated yet practical. Our fixtures perform beautifully.", date: "2024-11-05", project: "Lighting Supply" },
+            { id: 121, name: "Mr. Chidi Onyekwere", role: "MD, StrongSteel Industries", category: "vendor", rating: 5, content: "Accurate steel specifications and reasonable delivery schedules. Professional client.", date: "2024-10-28", project: "Steel Supply" },
+            { id: 122, name: "Mrs. Halima Suleiman", role: "Director, Sahara Paints", category: "vendor", rating: 5, content: "Their color specifications inspire our product development. Beautiful paint applications.", date: "2024-10-22", project: "Paint Supply" },
+            { id: 123, name: "Mr. Olu Bakare", role: "CEO, BakTech Hardware", category: "vendor", rating: 5, content: "They specify quality hardware that enhances architectural elements. Attention to detail.", date: "2024-10-15", project: "Hardware Supply" },
+            { id: 124, name: "Mrs. Grace Okoh", role: "MD, GreenScape Nurseries", category: "vendor", rating: 5, content: "Plant specifications that thrive in Nigerian conditions. Perfect landscape settings.", date: "2024-10-08", project: "Plant Supply" },
+            { id: 125, name: "Mr. Ahmed Bello", role: "Owner, Bello Carpets", category: "vendor", rating: 5, content: "Carpet specifications that balance aesthetics with durability. Excellent showcasing.", date: "2024-10-01", project: "Carpet Supply" },
+            { id: 126, name: "Mrs. Ngozi Ibe", role: "Director, ComfortAir Nigeria", category: "vendor", rating: 5, content: "HVAC specifications that prioritize comfort and efficiency. Good coordination.", date: "2024-09-25", project: "HVAC Supply" },
+            { id: 127, name: "Mr. Segun Adelaja", role: "CEO, Adelaja Sanitary", category: "vendor", rating: 5, content: "Bathroom specifications that elevate sanitary ware. Premium products, ideal homes.", date: "2024-09-18", project: "Sanitary Supply" },
+            { id: 128, name: "Mrs. Blessing Okoye", role: "MD, ClearView Windows", category: "vendor", rating: 5, content: "Window specifications that balance security, ventilation, and aesthetics.", date: "2024-09-12", project: "Window Supply" },
+            { id: 129, name: "Mr. Kabiru Garba", role: "Owner, Garba Curtains", category: "vendor", rating: 5, content: "Window treatment specifications that complement interior designs perfectly.", date: "2024-09-05", project: "Curtain Supply" },
+            { id: 130, name: "Mrs. Amara Eze", role: "Director, AquaPure Systems", category: "vendor", rating: 5, content: "Water treatment specifications that ensure healthy buildings.", date: "2024-08-28", project: "Water Systems" },
+            { id: 131, name: "Mr. Tunde Ogunbiyi", role: "CEO, SmartHome Nigeria", category: "vendor", rating: 5, content: "Home automation specifications that are practical and user-friendly.", date: "2024-08-22", project: "Smart Home Supply" },
+            { id: 132, name: "Mrs. Victoria Nwokolo", role: "MD, Victoria Fabrics", category: "vendor", rating: 5, content: "Upholstery and fabric specifications that enhance interior comfort.", date: "2024-08-15", project: "Fabric Supply" },
+            { id: 133, name: "Mr. Emeka Obi", role: "Owner, SunPower Solar", category: "vendor", rating: 5, content: "Solar specifications that maximize energy generation. Roof designs accommodate panels.", date: "2024-08-08", project: "Solar Supply" },
+            { id: 134, name: "Mrs. Fatima Mohammed", role: "Director, SecureTech Nigeria", category: "vendor", rating: 5, content: "Security system specifications that integrate seamlessly. Invisible security that works.", date: "2024-08-01", project: "Security Supply" },
+            { id: 135, name: "Mr. Paul Okwu", role: "CEO, Okwu Elevators", category: "vendor", rating: 5, content: "Elevator specifications that prioritize reliability and aesthetics.", date: "2024-07-25", project: "Elevator Supply" },
+
+            // CONTRACTORS (15)
+            { id: 136, name: "Chief Ade Williams", role: "MD, Williams Construction", category: "contractor", rating: 5, content: "TBP's drawings are buildable and well-coordinated. Site issues are minimal. A contractor's dream client.", date: "2024-12-08", project: "Multiple Projects", featured: true },
+            { id: 137, name: "Engr. Obi Nwachukwu", role: "CEO, ObiBuilt Nigeria", category: "contractor", rating: 5, content: "Clear specifications, reasonable designs, and responsive to queries. Projects proceed smoothly.", date: "2024-11-30", project: "Commercial Projects" },
+            { id: 138, name: "Mr. Hassan Danjuma", role: "Director, Danjuma & Sons", category: "contractor", rating: 5, content: "The level of detail reduces guesswork on site. Well-thought-out designs.", date: "2024-11-22", project: "Residential Projects" },
+            { id: 139, name: "Chief Mrs. Folake Adesanya", role: "MD, FemBuild Construction", category: "contractor", rating: 5, content: "Working with TBP elevates our construction quality. Thorough but fair site inspections.", date: "2024-11-15", project: "Mixed-Use Development" },
+            { id: 140, name: "Engr. Uche Okonkwo", role: "CEO, UcheBuild Ltd", category: "contractor", rating: 5, content: "Their understanding of construction costs prevents budget surprises. Ambitious yet achievable designs.", date: "2024-11-08", project: "Institutional Projects" },
+            { id: 141, name: "Mr. Musa Aliyu", role: "Director, Aliyu Construction", category: "contractor", rating: 5, content: "Responsive to RFIs and design clarifications. Quick turnaround keeps projects on schedule.", date: "2024-10-30", project: "Healthcare Facility" },
+            { id: 142, name: "Chief Emma Okeke", role: "MD, Okeke Brothers", category: "contractor", rating: 5, content: "We've built several TBP projects. Consistent quality in documentation and relationships.", date: "2024-10-22", project: "Long-term Partnership" },
+            { id: 143, name: "Engr. Binta Sule", role: "CEO, Sule Construction", category: "contractor", rating: 4, content: "Good designs overall. The team is always supportive when details need resolution.", date: "2024-10-15", project: "Commercial Building" },
+            { id: 144, name: "Mr. Chukwuemeka Ani", role: "Director, CAni Construction", category: "contractor", rating: 5, content: "Site meetings are productive with issues resolved efficiently. Competent site representatives.", date: "2024-10-08", project: "Residential Complex" },
+            { id: 145, name: "Chief Tayo Ogunleye", role: "MD, TayoBuild Nigeria", category: "contractor", rating: 5, content: "The coordination between disciplines is excellent. Fewer conflicts mean smoother construction.", date: "2024-09-30", project: "Office Development" },
+            { id: 146, name: "Engr. Amaka Eze", role: "CEO, A-Z Construction", category: "contractor", rating: 5, content: "Quality-focused approach results in buildings we're proud to have constructed.", date: "2024-09-22", project: "Luxury Residences" },
+            { id: 147, name: "Mr. Ibrahim Garba", role: "Director, Garba Civil Works", category: "contractor", rating: 5, content: "Civil and structural coordination is always tight. Foundation drawings are clear and accurate.", date: "2024-09-15", project: "Industrial Facility" },
+            { id: 148, name: "Chief Ngozi Okonkwo", role: "MD, NgoziBuilders", category: "contractor", rating: 5, content: "Interior finishes specifications are detailed and achievable. Finished products match design intent.", date: "2024-09-08", project: "Hospitality Project" },
+            { id: 149, name: "Engr. Bola Fashola", role: "CEO, Fashola Construction", category: "contractor", rating: 5, content: "Working with TBP has improved our construction standards. Their expectations push us to deliver best work.", date: "2024-09-01", project: "Educational Facility" },
+            { id: 150, name: "Mr. Sunday Adeleke", role: "Director, Adeleke & Associates", category: "contractor", rating: 5, content: "From tender documentation to final handover, the process is professional. Highly recommend TBP.", date: "2024-08-25", project: "Mixed-Use Complex" }
+        ];
+
+        // ===== STATE =====
+        let currentFilter = 'all';
+        let displayedCount = 0;
+
+        // ===== DOM ELEMENTS =====
+        const $ = sel => document.querySelector(sel);
+        const $$ = sel => document.querySelectorAll(sel);
+
+        const splash = $('#splash');
+        const header = $('#header');
+        const navToggle = $('#navToggle');
+        const navMenu = $('#navMenu');
+        const themeToggle = $('#themeToggle');
+        const themeIcon = $('#themeIcon');
+        const backToTop = $('#backToTop');
+        const reviewsGrid = $('#reviewsGrid');
+        const loadMoreBtn = $('#loadMoreBtn');
+        const loadMoreContainer = $('#loadMoreContainer');
+        const showingCount = $('#showingCount');
+        const totalCount = $('#totalCount');
+        const noResults = $('#noResults');
+        const resetFilterBtn = $('#resetFilterBtn');
+
+        // ===== UTILITIES =====
+        function getInitials(name) {
+            const parts = name.split(' ');
+            return parts.length >= 2 
+                ? (parts[0][0] + parts[parts.length - 1][0]).toUpperCase()
+                : parts[0].substring(0, 2).toUpperCase();
+        }
+
+        function formatDate(dateStr) {
+            return new Date(dateStr).toLocaleDateString('en-US', { 
+                year: 'numeric', month: 'short', day: 'numeric' 
+            });
+        }
+
+        function getFilteredReviews() {
+            return currentFilter === 'all' 
+                ? [...reviewsData] 
+                : reviewsData.filter(r => r.category === currentFilter);
+        }
+
+        // ===== SPLASH SCREEN =====
+        function hideSplash() {
+            if (!splash) return;
+            splash.classList.add('hide');
+            document.body.classList.remove('no-scroll');
+            setTimeout(() => {
+                splash.style.display = 'none';
+                initAnimations();
+            }, 400);
+        }
+
+        // Auto-hide splash after 1.8 seconds
+        setTimeout(hideSplash, SPLASH_DURATION);
+
+        // ===== THEME =====
+        function applyTheme(theme) {
+            const isDark = theme === 'dark' || 
+                (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+            
+            document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+            if (themeIcon) {
+                themeIcon.className = isDark ? 'bx bx-moon' : 'bx bx-sun';
+            }
+            localStorage.setItem('theme', theme);
+        }
+
+        applyTheme(localStorage.getItem('theme') || 'system');
+
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const current = localStorage.getItem('theme') || 'system';
+                applyTheme(current === 'dark' ? 'light' : 'dark');
+            });
+        }
+
+        // ===== NAVIGATION =====
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                document.body.classList.toggle('no-scroll');
+            });
+
+            $$('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    navToggle.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                });
+            });
+        }
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            if (header) {
+                header.classList.toggle('scrolled', window.scrollY > 50);
+            }
+            if (backToTop) {
+                backToTop.classList.toggle('visible', window.scrollY > 500);
+            }
+        });
+
+        // Back to top
+        if (backToTop) {
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // ===== ANIMATIONS =====
+        function initAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            $$('.fade-in').forEach(el => observer.observe(el));
+        }
+
+        // ===== REVIEW CARDS =====
+        function createReviewCard(review, index) {
+            const initials = getInitials(review.name);
+            const date = formatDate(review.date);
+            const isLong = review.content.length > 180;
+
+            let stars = '';
+            for (let i = 1; i <= 5; i++) {
+                stars += `<i class='bx bxs-star${i > review.rating ? ' empty' : ''}'></i>`;
+            }
+
+            const card = document.createElement('div');
+            card.className = `review-card${review.featured ? ' featured' : ''}`;
+            card.style.animationDelay = `${(index % 10) * 0.05}s`;
+            card.dataset.category = review.category;
+
+            card.innerHTML = `
+                <div class="review-header">
+                    <div class="review-avatar" data-category="${review.category}">
+                        <div class="review-avatar-placeholder">${initials}</div>
+                    </div>
+                    <div class="review-info">
+                        <h4 class="review-name">${review.name}</h4>
+                        <div class="review-meta">
+                            <span class="review-role">${review.role}</span>
+                            <span class="review-badge" data-category="${review.category}">${review.category}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="review-rating">${stars}</div>
+                <p class="review-content${isLong ? ' truncated' : ''}">${review.content}</p>
+                ${isLong ? '<span class="review-toggle">Read more</span>' : ''}
+                <div class="review-footer">
+                    <span class="review-date"><i class='bx bx-calendar'></i>${date}</span>
+                    <span class="review-project"><i class='bx bx-building-house'></i>${review.project}</span>
+                </div>
+            `;
+
+            // Toggle read more/less
+            const toggle = card.querySelector('.review-toggle');
+            if (toggle) {
+                toggle.addEventListener('click', () => {
+                    const content = card.querySelector('.review-content');
+                    content.classList.toggle('truncated');
+                    toggle.textContent = content.classList.contains('truncated') ? 'Read more' : 'Read less';
+                });
+            }
+
+            return card;
+        }
+
+        function renderReviews(reset = false) {
+            const filtered = getFilteredReviews();
+
+            if (reset) {
+                reviewsGrid.innerHTML = '';
+                displayedCount = 0;
+            }
+
+            const start = displayedCount;
+            const end = Math.min(start + REVIEWS_PER_PAGE, filtered.length);
+
+            if (filtered.length === 0) {
+                noResults.classList.add('visible');
+                loadMoreContainer.style.display = 'none';
+                showingCount.textContent = '0';
+                totalCount.textContent = '0';
+                return;
+            }
+
+            noResults.classList.remove('visible');
+
+            for (let i = start; i < end; i++) {
+                const card = createReviewCard(filtered[i], i - start);
+                reviewsGrid.appendChild(card);
+            }
+
+            displayedCount = end;
+            showingCount.textContent = displayedCount;
+            totalCount.textContent = filtered.length;
+
+            loadMoreContainer.style.display = displayedCount >= filtered.length ? 'none' : 'block';
+        }
+
+        function updateCounts() {
+            const counts = { all: reviewsData.length, client: 0, partner: 0, intern: 0, vendor: 0, contractor: 0 };
+            reviewsData.forEach(r => counts[r.category]++);
+
+            $('#countAll').textContent = counts.all;
+            $('#countClient').textContent = counts.client;
+            $('#countPartner').textContent = counts.partner;
+            $('#countIntern').textContent = counts.intern;
+            $('#countVendor').textContent = counts.vendor;
+            $('#countContractor').textContent = counts.contractor;
+        }
+
+        // ===== FILTER TABS =====
+        $$('.filter-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                $$('.filter-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                currentFilter = tab.dataset.filter;
+                renderReviews(true);
+            });
+        });
+
+        // ===== LOAD MORE =====
+        if (loadMoreBtn) {
+            loadMoreBtn.addEventListener('click', () => {
+                loadMoreBtn.classList.add('loading');
+                setTimeout(() => {
+                    renderReviews(false);
+                    loadMoreBtn.classList.remove('loading');
+                }, 300);
+            });
+        }
+
+        // ===== RESET FILTER =====
+        if (resetFilterBtn) {
+            resetFilterBtn.addEventListener('click', () => {
+                $$('.filter-tab').forEach(t => t.classList.remove('active'));
+                $('[data-filter="all"]').classList.add('active');
+                currentFilter = 'all';
+                renderReviews(true);
+            });
+        }
+
+        // ===== DYNAMIC YEAR =====
+        const yearEl = $('#currentYear');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+        // ===== INITIALIZE =====
+        updateCounts();
+        renderReviews(true);
+
+        // Reduced motion check
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            if (splash) splash.style.display = 'none';
+            document.body.classList.remove('no-scroll');
+            $$('.fade-in').forEach(el => el.classList.add('visible'));
+        }
+
+    })();
+    </script>
+</body>
+</html>

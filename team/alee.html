@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Proposal: MacBook-Powered Digital Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f5f5f7;
+            color: #1d1d1f;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            line-height: 1.5;
+            font-size: 13px;
+        }
+
+        /* A4 Container - Exact A4 Dimensions */
+        .a4-document {
+            width: 210mm;
+            height: 297mm;
+            background: #ffffff;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Header */
+        .document-header {
+            background: linear-gradient(135deg, #1d1d1f 0%, #2c2c2e 100%);
+            color: white;
+            padding: 16px 28px 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .proposal-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .title-text h1 {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 22px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 4px;
+            background: linear-gradient(135deg, #ffffff, #e8e8ed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .title-text p {
+            font-size: 12px;
+            color: #a1a1a6;
+            max-width: 500px;
+        }
+
+        .investment-amount {
+            background: linear-gradient(135deg, #007AFF, #5856D6);
+            padding: 10px 16px;
+            border-radius: 10px;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .amount-label {
+            font-size: 10px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 2px;
+        }
+
+        .amount-value {
+            font-size: 20px;
+            font-weight: 800;
+        }
+
+        /* Document Metadata */
+        .document-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10px;
+            color: #a1a1a6;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Main Content Area */
+        .document-content {
+            padding: 20px 28px;
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+            overflow-y: auto;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            padding-bottom: 6px;
+            border-bottom: 2px solid #f0f0f5;
+        }
+
+        .section-icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 6px;
+            background: #f0f0f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            color: #007AFF;
+            font-size: 14px;
+        }
+
+        .section-title-text {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-size: 15px;
+            font-weight: 700;
+            color: #1d1d1f;
+        }
+
+        /* Business Overview */
+        .business-overview {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #f8f8fa, #f0f0f5);
+            border-radius: 12px;
+            padding: 18px;
+            border: 1px solid #e5e5e7;
+            margin-bottom: 10px;
+        }
+
+        .overview-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 18px;
+            align-items: center;
+        }
+
+        .overview-text p {
+            margin-bottom: 12px;
+            color: #424245;
+            font-size: 13px;
+        }
+
+        .highlight-box {
+            background: white;
+            border-radius: 10px;
+            padding: 14px;
+            border-left: 4px solid #007AFF;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+            font-size: 12px;
+        }
+
+        .highlight-title {
+            font-weight: 700;
+            color: #1d1d1f;
+            margin-bottom: 6px;
+            font-size: 14px;
+        }
+
+        /* ROI Section */
+        .roi-section {
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.05), rgba(88, 86, 214, 0.05));
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid rgba(0, 122, 255, 0.1);
+        }
+
+        .roi-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 12px;
+        }
+
+        .roi-item {
+            background: white;
+            border-radius: 8px;
+            padding: 12px;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.04);
+        }
+
+        .roi-number {
+            font-size: 18px;
+            font-weight: 800;
+            color: #007AFF;
+            margin-bottom: 4px;
+        }
+
+        .roi-label {
+            font-size: 10px;
+            color: #424245;
+            font-weight: 600;
+        }
+
+        /* Funding Breakdown */
+        .funding-breakdown {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid #e5e5e7;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .funding-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f5;
+            font-size: 12px;
+        }
+
+        .funding-item:last-child {
+            border-bottom: none;
+        }
+
+        .funding-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .funding-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        .dot-saved { background: #34C759; }
+        .dot-needed { background: #FF9500; }
+        .dot-total { background: #007AFF; }
+
+        .funding-amount {
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* Value Proposition Grid */
+        .value-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .value-item {
+            background: white;
+            border-radius: 10px;
+            padding: 14px;
+            border: 1px solid #e5e5e7;
+            transition: transform 0.2s ease;
+            font-size: 12px;
+        }
+
+        .value-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .value-icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: #f0f0f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 12px;
+            color: #007AFF;
+            font-size: 14px;
+        }
+
+        .value-title {
+            font-weight: 700;
+            margin-bottom: 6px;
+            color: #1d1d1f;
+            font-size: 13px;
+        }
+
+        .value-desc {
+            font-size: 11px;
+            color: #424245;
+            line-height: 1.4;
+        }
+
+        /* Charts Container */
+        .charts-container {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 8px 0 16px;
+        }
+
+        .chart-box {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid #e5e5e7;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .chart-title {
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1d1d1f;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Pie Chart */
+        .pie-chart-container {
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .pie-chart {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: conic-gradient(
+                #34C759 0% 25%,
+                #FF9500 25% 87%,
+                #007AFF 87% 100%
+            );
+            position: relative;
+        }
+
+        .pie-center {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            background: white;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 12px;
+            color: #1d1d1f;
+        }
+
+        .pie-legend {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-left: 20px;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 10px;
+        }
+
+        .legend-color {
+            width: 10px;
+            height: 10px;
+            border-radius: 2px;
+        }
+
+        /* Projection Graph */
+        .projection-graph {
+            height: 140px;
+            display: flex;
+            align-items: flex-end;
+            gap: 14px;
+            padding: 0 10px;
+        }
+
+        .graph-bar {
+            flex: 1;
+            background: linear-gradient(180deg, #007AFF, rgba(0, 122, 255, 0.7));
+            border-radius: 4px 4px 0 0;
+            position: relative;
+            min-height: 30px;
+        }
+
+        .bar-label {
+            position: absolute;
+            bottom: -22px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 10px;
+            font-weight: 600;
+            color: #424245;
+        }
+
+        .bar-value {
+            position: absolute;
+            top: -20px;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 10px;
+            font-weight: 700;
+            color: #1d1d1f;
+        }
+
+        /* Promise Section */
+        .promise-section {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #f8f8fa, #f0f0f5);
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 4px;
+        }
+
+        .promise-title {
+            text-align: center;
+            margin-bottom: 14px;
+            color: #1d1d1f;
+            font-size: 16px;
+            font-weight: 700;
+        }
+
+        .promise-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .promise-item {
+            background: white;
+            border-radius: 10px;
+            padding: 14px;
+            text-align: center;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.04);
+        }
+
+        .promise-icon {
+            font-size: 18px;
+            color: #007AFF;
+            margin-bottom: 8px;
+        }
+
+        .promise-number {
+            font-size: 20px;
+            font-weight: 800;
+            color: #1d1d1f;
+            margin-bottom: 4px;
+        }
+
+        .promise-text {
+            font-size: 11px;
+            color: #424245;
+        }
+
+        /* Personal Details */
+        .personal-details {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, rgba(0, 122, 255, 0.05), rgba(88, 86, 214, 0.05));
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 8px;
+            border: 1px solid rgba(0, 122, 255, 0.1);
+            font-size: 12px;
+        }
+
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .detail-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 6px;
+            background: #007AFF;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+        }
+
+        .detail-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: #424245;
+            font-size: 10px;
+        }
+
+        .detail-value {
+            font-weight: 700;
+            color: #1d1d1f;
+        }
+
+        /* Footer */
+        .document-footer {
+            background: #f8f8fa;
+            padding: 14px 28px;
+            border-top: 1px solid #e5e5e7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 11px;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #424245;
+        }
+
+        .alumni-badge {
+            background: linear-gradient(135deg, #007AFF, #5856D6);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            
+            .a4-document {
+                box-shadow: none;
+                width: 210mm;
+                height: 297mm;
+            }
+        }
+
+        /* Scrollbar Styling */
+        .document-content::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .document-content::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 2px;
+        }
+        
+        .document-content::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="a4-document">
+        <!-- Header -->
+        <div class="document-header">
+            <div class="proposal-title">
+                <div class="title-text">
+                    <h1>MacBook Investment Proposal</h1>
+                    <p>Professional Digital Studio to Serve FGCKADOSA Alumni & Local Businesses</p>
+                </div>
+                <div class="investment-amount">
+                    <div class="amount-label">INVESTMENT REQUIRED</div>
+                    <div class="amount-value">₦1,300,000</div>
+                </div>
+            </div>
+            <div class="document-meta">
+                <div>
+                    <i class="fas fa-user"></i> ALI ABDULQUADIR • WEB & SOFTWARE DEVELOPER
+                </div>
+                <div>
+                    <i class="fas fa-calendar"></i> Proposal Date: November 2023
+                </div>
+                <div>
+                    <i class="fas fa-file-alt"></i> Document ID: FGC-MBP-2023-001
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="document-content">
+            <!-- Business Overview -->
+            <div class="business-overview">
+                <div class="overview-content">
+                    <div class="overview-text">
+                        <p>This proposal presents a strategic investment opportunity to acquire a MacBook Pro, a reliable and high‑performance device essential for modern digital development. The MacBook Pro will serve as the foundation for delivering premium websites and mobile applications with superior quality, efficiency, and scalability.<
+<p>With over three years of professional development experience, this investment represents a critical step toward building a sustainable business that generates financial returns while creating meaningful social impact. By leveraging Apple’s native development tools, the initiative will bring our presence online as well as other businesses we hope to support as a family.</p>
+                    </div>
+                    <div class="highlight-box">
+                        <div class="highlight-title">Immediate Deliverables</div>
+                        <ul style="padding-left: 16px;">
+                            <li style="margin-bottom: 6px;">Professional FGCKADOSA Lagos website</li>
+                            <li style="margin-bottom: 6px;">Test mobile app for alumni network</li>
+                            <li>10 free websites for businesses without online presence</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROI Section -->
+            <div class="section roi-section">
+                <div class="section-title">
+                    <div class="section-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="section-title-text">Return on Investment Analysis</div>
+                </div>
+                <div class="roi-grid">
+                    <div class="roi-item">
+                        <div class="roi-number">214%</div>
+                        <div class="roi-label">ROI in Year 1</div>
+                    </div>
+                    <div class="roi-item">
+                        <div class="roi-number">6 Months</div>
+                        <div class="roi-label">Payback Period</div>
+                    </div>
+                    <div class="roi-item">
+                        <div class="roi-number">₦2.5M</div>
+                        <div class="roi-label">Year 3 Revenue</div>
+                    </div>
+                    <div class="roi-item">
+                        <div class="roi-number">15+</div>
+                        <div class="roi-label">Impact Projects</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Funding Breakdown -->
+            <div class="section funding-breakdown">
+                <div class="section-title">
+                    <div class="section-icon">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <div class="section-title-text">Funding Breakdown</div>
+                </div>
+                <div class="funding-items">
+                    <div class="funding-item">
+                        <div class="funding-label">
+                            <div class="funding-dot dot-saved"></div>
+                            <span>Personal Savings</span>
+                        </div>
+                        <div class="funding-amount">₦200,000</div>
+                    </div>
+                    <div class="funding-item">
+                        <div class="funding-label">
+                            <div class="funding-dot dot-needed"></div>
+                            <span>Investment Required</span>
+                        </div>
+                        <div class="funding-amount" style="color: #FF9500;">₦1,300,000</div>
+                    </div>
+                    <div class="funding-item">
+                        <div class="funding-label">
+                            <div class="funding-dot dot-total"></div>
+                            <span>Total Project Cost</span>
+                        </div>
+                        <div class="funding-amount" style="color: #007AFF;">₦1,500,000</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value Proposition -->
+            <div class="section">
+                <div class="section-title">
+                    <div class="section-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="section-title-text">Competitive Advantages</div>
+                </div>
+                <div class="value-grid">
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="value-title">40% Faster Development</div>
+                        <div class="value-desc">Apple's native tools enable significantly faster project delivery compared to Windows workflows.</div>
+                    </div>
+                    <div class="value-item">
+                        <div class="value-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="value-title">iOS Development</div>
+                        <div class="value-desc">Only MacBooks can develop iOS apps, opening a lucrative market unavailable to Windows developers.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Target Market -->
+            <div class="section">
+                <div class="section-title">
+                    <div class="section-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <div class="section-title-text">Target Market</div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 12px;">
+                    <div style="background: #f8f8fa; padding: 12px; border-radius: 8px;">
+                        <div style="font-weight: 700; margin-bottom: 6px; color: #1d1d1f;">Primary Clients</div>
+                        <ul style="padding-left: 16px;">
+                            <li>FGCKADOSA Alumni (500+)</li>
+                            <li>Small & Medium Businesses</li>
+                            <li>Educational Institutions</li>
+                        </ul>
+                    </div>
+                    <div style="background: #f8f8fa; padding: 12px; border-radius: 8px;">
+                        <div style="font-weight: 700; margin-bottom: 6px; color: #1d1d1f;">Secondary Clients</div>
+                        <ul style="padding-left: 16px;">
+                            <li>NGOs & Religious Orgs</li>
+                            <li>Startups & Tech Companies</li>
+                            <li>Government Projects</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Charts Section -->
+            <div class="charts-container">
+                <div class="chart-box">
+                    <div class="chart-title">
+                        <i class="fas fa-chart-pie"></i> Funding Allocation
+                    </div>
+                    <div class="pie-chart-container">
+                        <div class="pie-chart"></div>
+                        <div class="pie-center">₦1.5M</div>
+                        <div class="pie-legend">
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #34C759;"></div>
+                                <span>Saved (13%)</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color" style="background: #FF9500;"></div>
+                                <span>Needed (87%)</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="chart-box">
+                    <div class="chart-title">
+                        <i class="fas fa-chart-bar"></i> Revenue Projection
+                    </div>
+                    <div class="projection-graph">
+                        <div class="graph-bar" style="height: 40%;">
+                            <div class="bar-value">₦500K</div>
+                            <div class="bar-label">Year 1</div>
+                        </div>
+                        <div class="graph-bar" style="height: 70%;">
+                            <div class="bar-value">₦1.2M</div>
+                            <div class="bar-label">Year 2</div>
+                        </div>
+                        <div class="graph-bar" style="height: 100%;">
+                            <div class="bar-value">₦2.5M</div>
+                            <div class="bar-label">Year 3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Commitment Section -->
+            <div class="promise-section">
+                <div class="promise-title">Commitment to FGCKADOSA Community</div>
+                <div class="promise-grid">
+                    <div class="promise-item">
+                        <div class="promise-icon">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div class="promise-number">1</div>
+                        <div class="promise-text">FGCKADOSA Lagos Website</div>
+                    </div>
+                    <div class="promise-item">
+                        <div class="promise-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <div class="promise-number">1</div>
+                        <div class="promise-text">Alumni Mobile App</div>
+                    </div>
+                    <div class="promise-item">
+                        <div class="promise-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <div class="promise-number">10</div>
+                        <div class="promise-text">Free Business Websites</div>
+                    </div>
+                    <div class="promise-item">
+                        <div class="promise-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <div class="promise-number">∞</div>
+                        <div class="promise-text">Alumni Priority</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personal Details -->
+            <div class="personal-details">
+                <div class="details-grid">
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="detail-text">
+                            <div class="detail-label">PROPOSED BY</div>
+                            <div class="detail-value">ALI ABDULQUADIR</div>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="detail-text">
+                            <div class="detail-label">PHONE</div>
+                            <div class="detail-value">08062449667</div>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="detail-text">
+                            <div class="detail-label">EMAIL</div>
+                            <div class="detail-value">ali.abdulq@gmail.com</div>
+                        </div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="detail-text">
+                            <div class="detail-label">BANK DETAILS</div>
+                            <div class="detail-value">8062449667 (OPAY)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="document-footer">
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>08062449667</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>ali.abdulq@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Lagos, Nigeria</span>
+                </div>
+            </div>
+            <div class="alumni-badge">
+                <i class="fas fa-graduation-cap"></i>
+                FGCKADOSA ALUMNI PROPOSAL
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple animation for charts
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate pie chart
+            const pieChart = document.querySelector('.pie-chart');
+            pieChart.style.transform = 'scale(0)';
+            setTimeout(() => {
+                pieChart.style.transition = 'transform 0.8s ease-out';
+                pieChart.style.transform = 'scale(1)';
+            }, 300);
+            
+            // Animate projection bars
+            const bars = document.querySelectorAll('.graph-bar');
+            bars.forEach((bar, index) => {
+                const originalHeight = bar.style.height;
+                bar.style.height = '0%';
+                
+                setTimeout(() => {
+                    bar.style.transition = 'height 1s ease-in-out';
+                    bar.style.height = originalHeight;
+                }, 500 + (index * 200));
+            });
+            
+            // Add interactivity to value items
+            const valueItems = document.querySelectorAll('.value-item');
+            valueItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.style.transform = 'translateY(-4px) scale(0.99)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            });
+            
+            // Print button
+            const printButton = document.createElement('button');
+            printButton.innerHTML = '<i class="fas fa-print"></i>';
+            printButton.style.cssText = `
+                position: fixed;
+                bottom: 15px;
+                right: 15px;
+                background: linear-gradient(135deg, #007AFF, #5856D6);
+                color: white;
+                border: none;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                font-weight: 600;
+                cursor: pointer;
+                box-shadow: 0 4px 12px rgba(0, 122, 255, 0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                z-index: 1000;
+            `;
+            
+            printButton.addEventListener('click', function() {
+                window.print();
+                this.innerHTML = '<i class="fas fa-check"></i>';
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-print"></i>';
+                }, 2000);
+            });
+            
+            document.body.appendChild(printButton);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,3586 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Our Services | The Building Practice Ltd.</title>
+    <meta name="description" content="Explore our comprehensive architectural and construction services including design, construction, project management, and more.">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="../images/bp.png" as="image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <style>
+        /* ========================================
+           CSS VARIABLES - Matching Index/About
+           ======================================== */
+        :root {
+            /* Primary Colors */
+            --primary-50: #E8F4F8;
+            --primary-100: #C5E4EC;
+            --primary-200: #9FD3E0;
+            --primary-300: #78C1D4;
+            --primary-400: #5BB3CA;
+            --primary-500: #1A5F7A;
+            --primary-600: #165169;
+            --primary-700: #134B61;
+            --primary-800: #0F3A4C;
+            --primary-900: #0A2A38;
+            
+            /* Accent Colors */
+            --accent-50: #FDF8E8;
+            --accent-100: #F9ECC5;
+            --accent-200: #F5DF9F;
+            --accent-300: #F1D279;
+            --accent-400: #DBB84A;
+            --accent-500: #C9A227;
+            --accent-600: #A8871F;
+            --accent-700: #876C19;
+            --accent-800: #665112;
+            --accent-900: #45360C;
+            
+            /* Semantic Colors */
+            --primary: var(--primary-500);
+            --primary-light: var(--primary-400);
+            --primary-dark: var(--primary-700);
+            --accent: var(--accent-500);
+            --accent-light: var(--accent-400);
+            --accent-dark: var(--accent-600);
+            
+            /* Status Colors */
+            --success: #10B981;
+            --warning: #F59E0B;
+            --error: #EF4444;
+            --info: #3B82F6;
+            
+            /* Neutrals */
+            --white: #FFFFFF;
+            --black: #000000;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+            
+            /* Background Colors */
+            --bg-primary: var(--white);
+            --bg-secondary: var(--gray-50);
+            --bg-tertiary: var(--gray-100);
+            --bg-card: var(--white);
+            --bg-overlay: rgba(0, 0, 0, 0.5);
+            
+            /* Text Colors */
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --text-tertiary: #6b7280;
+            --text-muted: #9ca3af;
+            --text-inverse: var(--white);
+            
+            /* Border Colors */
+            --border-light: var(--gray-200);
+            --border-default: var(--gray-300);
+            --border-dark: var(--gray-400);
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            --gradient-hero: linear-gradient(135deg, rgba(26, 95, 122, 0.95) 0%, rgba(19, 75, 97, 0.9) 100%);
+            --gradient-blue-gold: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, var(--accent) 100%);
+            --gradient-card: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.8) 100%);
+            --gradient-shine: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            
+            /* Shadows */
+            --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+            --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.06);
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+            --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.16);
+            --shadow-2xl: 0 24px 64px rgba(0, 0, 0, 0.2);
+            --shadow-glow: 0 0 40px rgba(26, 95, 122, 0.3);
+            --shadow-glow-accent: 0 0 40px rgba(201, 162, 39, 0.3);
+            
+            /* Border Radius */
+            --radius-xs: 4px;
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-2xl: 24px;
+            --radius-3xl: 32px;
+            --radius-full: 9999px;
+            
+            /* Spacing */
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-5: 20px;
+            --space-6: 24px;
+            --space-8: 32px;
+            --space-10: 40px;
+            --space-12: 48px;
+            --space-16: 64px;
+            --space-20: 80px;
+            --space-24: 96px;
+            
+            /* Typography */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --font-size-xs: 0.75rem;
+            --font-size-sm: 0.875rem;
+            --font-size-base: 1rem;
+            --font-size-lg: 1.125rem;
+            --font-size-xl: 1.25rem;
+            --font-size-2xl: 1.5rem;
+            --font-size-3xl: 1.875rem;
+            --font-size-4xl: 2.25rem;
+            --font-size-5xl: 3rem;
+            --font-size-6xl: 3.75rem;
+            
+            /* Transitions */
+            --transition-fast: 150ms ease;
+            --transition-base: 250ms ease;
+            --transition-slow: 350ms ease;
+            --transition-slower: 500ms ease;
+            --transition-spring: 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            
+            /* Layout */
+            --header-height: 72px;
+            --container-max: 1400px;
+            --container-padding: 24px;
+        }
+
+        /* ========================================
+           DARK THEME
+           ======================================== */
+        [data-theme="dark"] {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #111118;
+            --bg-tertiary: #1a1a24;
+            --bg-card: #14141c;
+            --bg-overlay: rgba(0, 0, 0, 0.7);
+            
+            --text-primary: #f4f4f6;
+            --text-secondary: #b4b4bc;
+            --text-tertiary: #8888a4;
+            --text-muted: #5a5a70;
+            
+            --border-light: rgba(255, 255, 255, 0.08);
+            --border-default: rgba(255, 255, 255, 0.12);
+            --border-dark: rgba(255, 255, 255, 0.18);
+            
+            --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+            --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.4);
+            --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.5);
+        }
+
+        /* ========================================
+           CSS RESET & BASE
+           ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-size: var(--font-size-base);
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+            transition: background-color var(--transition-base), color var(--transition-base);
+        }
+
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color var(--transition-fast);
+        }
+
+        button {
+            font-family: inherit;
+            font-size: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+            outline: none;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        input, textarea, select {
+            font-family: inherit;
+            font-size: inherit;
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+
+        /* Utility Classes */
+        .gradient-text {
+            background: var(--gradient-blue-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* ========================================
+           PAGE LOADER - Matching Index/About
+           ======================================== */
+        .page-loader {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .page-loader.loaded {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .loader-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-6);
+        }
+
+        .loader-logo {
+            position: relative;
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .loader-spinner {
+            position: absolute;
+            inset: 0;
+            border: 3px solid var(--border-light);
+            border-top-color: var(--primary);
+            border-right-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loader-logo img {
+            width: 70px;
+            height: 70px;
+            object-fit: contain;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+        }
+
+        .loader-text {
+            text-align: center;
+        }
+
+        .loader-text h2 {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: var(--space-2);
+        }
+
+        .loader-text p {
+            font-size: var(--font-size-sm);
+            color: var(--text-tertiary);
+            font-style: italic;
+        }
+
+        .loader-progress {
+            width: 200px;
+            height: 3px;
+            background: var(--border-light);
+            border-radius: var(--radius-full);
+            overflow: hidden;
+        }
+
+        .loader-progress-bar {
+            height: 100%;
+            background: var(--gradient-blue-gold);
+            border-radius: var(--radius-full);
+            animation: loading 1.5s ease-in-out infinite;
+        }
+
+        @keyframes loading {
+            0% { width: 0%; margin-left: 0; }
+            50% { width: 70%; margin-left: 15%; }
+            100% { width: 0%; margin-left: 100%; }
+        }
+
+        /* ========================================
+           HEADER - Matching Index/About
+           ======================================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-light);
+            z-index: 1000;
+            transition: all var(--transition-base);
+        }
+
+        [data-theme="dark"] .header {
+            background: rgba(10, 10, 15, 0.95);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .header .container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Logo */
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            text-decoration: none;
+        }
+
+        .nav-brand-logo {
+            width: 46px;
+            height: 46px;
+            object-fit: contain;
+            transition: transform var(--transition-base);
+        }
+
+        .nav-brand:hover .nav-brand-logo {
+            transform: scale(1.05);
+        }
+
+        .nav-brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-brand-name {
+            font-size: var(--font-size-base);
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .nav-brand-tagline {
+            font-size: var(--font-size-xs);
+            color: var(--text-tertiary);
+            font-style: italic;
+        }
+
+        /* Navigation Menu */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: var(--space-1);
+        }
+
+        .nav-link {
+            position: relative;
+            padding: var(--space-2) var(--space-4);
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-radius: var(--radius-full);
+            transition: all var(--transition-fast);
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+            background: var(--primary-50);
+        }
+
+        [data-theme="dark"] .nav-link:hover {
+            background: rgba(26, 95, 122, 0.15);
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+            background: var(--primary-50);
+        }
+
+        [data-theme="dark"] .nav-link.active {
+            background: rgba(26, 95, 122, 0.2);
+        }
+
+        /* Nav Actions */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+        }
+
+        /* Theme Toggle */
+        .theme-toggle {
+            position: relative;
+            width: 56px;
+            height: 28px;
+            background: var(--bg-tertiary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--primary);
+        }
+
+        .theme-toggle-track {
+            position: absolute;
+            inset: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 4px;
+        }
+
+        .theme-toggle-icon {
+            font-size: 14px;
+            color: var(--text-tertiary);
+            transition: all var(--transition-fast);
+        }
+
+        .theme-toggle-icon.sun {
+            color: var(--accent);
+        }
+
+        [data-theme="dark"] .theme-toggle-icon.moon {
+            color: var(--primary-light);
+        }
+
+        .theme-toggle-thumb {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 22px;
+            height: 22px;
+            background: var(--white);
+            border-radius: 50%;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-base);
+        }
+
+        [data-theme="dark"] .theme-toggle-thumb {
+            left: calc(100% - 24px);
+            background: var(--primary);
+        }
+
+        /* Mobile Toggle */
+        .nav-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .nav-toggle:hover {
+            border-color: var(--primary);
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all var(--transition-base);
+        }
+
+        .nav-toggle.active {
+            background: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .nav-toggle.active span {
+            background: var(--white);
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            position: relative;
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: calc(var(--header-height) + var(--space-16)) var(--container-padding) var(--space-16);
+            background: var(--gradient-hero);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('images/pattern-grid.png') repeat;
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        .hero-particles {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .hero-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            animation: float-particle 15s infinite ease-in-out;
+        }
+
+        @keyframes float-particle {
+            0%, 100% { 
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0.3;
+            }
+            25% { 
+                transform: translateY(-100px) translateX(50px) scale(1.2);
+                opacity: 0.6;
+            }
+            50% { 
+                transform: translateY(-200px) translateX(-30px) scale(0.8);
+                opacity: 0.4;
+            }
+            75% { 
+                transform: translateY(-150px) translateX(80px) scale(1.1);
+                opacity: 0.5;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-5);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-full);
+            margin-bottom: var(--space-6);
+            animation: fadeInUp 0.8s ease-out 0.1s both;
+        }
+
+        .hero-badge i {
+            color: var(--accent);
+            font-size: 18px;
+        }
+
+        .hero-badge span {
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.1;
+            margin-bottom: var(--space-6);
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .hero-title .highlight {
+            position: relative;
+            color: var(--accent);
+        }
+
+        .hero-title .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: underline 0.6s ease-out 1s forwards;
+        }
+
+        @keyframes underline {
+            to { transform: scaleX(1); }
+        }
+
+        .hero-description {
+            font-size: var(--font-size-lg);
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            margin: 0 auto var(--space-8);
+            line-height: 1.8;
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .hero-stats {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-12);
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: var(--font-size-3xl);
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+            margin-bottom: var(--space-2);
+        }
+
+        .hero-stat-label {
+            font-size: var(--font-size-sm);
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: var(--space-8);
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-2);
+            color: rgba(255, 255, 255, 0.6);
+            animation: bounce 2s infinite;
+        }
+
+        .hero-scroll span {
+            font-size: var(--font-size-xs);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero-scroll i {
+            font-size: 24px;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        /* ========================================
+           RESPONSIVE - Header
+           ======================================== */
+        @media (max-width: 1024px) {
+            .nav-link {
+                padding: var(--space-2) var(--space-3);
+                font-size: var(--font-size-xs);
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --header-height: 64px;
+                --container-padding: 16px;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                right: 0;
+                bottom: 0;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 0;
+                padding: var(--space-4);
+                background: var(--bg-primary);
+                border-top: 1px solid var(--border-light);
+                transform: translateX(100%);
+                transition: transform var(--transition-base);
+                overflow-y: auto;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+
+            .nav-link {
+                padding: var(--space-4);
+                font-size: var(--font-size-base);
+                border-radius: var(--radius-lg);
+                border-bottom: 1px solid var(--border-light);
+            }
+
+            .nav-brand-text {
+                display: none;
+            }
+
+            .hero {
+                min-height: 60vh;
+                padding-top: calc(var(--header-height) + var(--space-10));
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-description {
+                font-size: var(--font-size-base);
+            }
+
+            .hero-stats {
+                gap: var(--space-6);
+            }
+
+            .hero-stat-number {
+                font-size: var(--font-size-2xl);
+            }
+
+            .hero-scroll {
+                display: none;
+            }
+        }
+    
+        /* ========================================
+           SERVICES SECTION
+           ======================================== */
+        .services-section {
+            position: relative;
+            padding: var(--space-24) 0;
+            background: var(--bg-primary);
+            overflow: hidden;
+        }
+
+        .services-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 400px;
+            background: linear-gradient(180deg, var(--bg-secondary) 0%, transparent 100%);
+            pointer-events: none;
+        }
+
+        /* Section Header */
+        .section-header {
+            position: relative;
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--space-16);
+            z-index: 1;
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-4);
+            background: var(--primary-50);
+            border: 1px solid var(--primary-100);
+            border-radius: var(--radius-full);
+            margin-bottom: var(--space-4);
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        [data-theme="dark"] .section-badge {
+            background: rgba(26, 95, 122, 0.15);
+            border-color: rgba(26, 95, 122, 0.3);
+        }
+
+        .section-badge i {
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        .section-badge span {
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.75rem);
+            font-weight: 800;
+            color: var(--text-primary);
+            line-height: 1.2;
+            margin-bottom: var(--space-4);
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-blue-gold);
+            margin: 0 auto var(--space-6);
+            border-radius: var(--radius-full);
+        }
+
+        .section-description {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* ========================================
+           SERVICE CARDS GRID
+           ======================================== */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-6);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Service Card */
+        .service-card {
+            position: relative;
+            background: var(--bg-card);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            cursor: pointer;
+            overflow: hidden;
+            transition: all var(--transition-slow);
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .service-card.animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-blue-gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--transition-base);
+        }
+
+        .service-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-shine);
+            transform: translateX(-100%);
+            transition: transform 0.6s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-200);
+            box-shadow: var(--shadow-xl);
+        }
+
+        [data-theme="dark"] .service-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover::after {
+            transform: translateX(100%);
+        }
+
+        /* Card Icon */
+        .service-card-icon {
+            position: relative;
+            width: 70px;
+            height: 70px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-6);
+            transition: all var(--transition-base);
+            overflow: hidden;
+        }
+
+        .service-card-icon::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, transparent 50%);
+        }
+
+        .service-card-icon i {
+            font-size: 32px;
+            color: var(--white);
+            position: relative;
+            z-index: 1;
+            transition: transform var(--transition-base);
+        }
+
+        .service-card:hover .service-card-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .service-card:hover .service-card-icon i {
+            transform: scale(1.1);
+        }
+
+        /* Card Content */
+        .service-card-category {
+            display: inline-block;
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: var(--space-2);
+        }
+
+        .service-card-title {
+            font-size: var(--font-size-xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-3);
+            line-height: 1.3;
+            transition: color var(--transition-fast);
+        }
+
+        .service-card:hover .service-card-title {
+            color: var(--primary);
+        }
+
+        .service-card-description {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--space-6);
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* View More Button */
+        .service-card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-3) var(--space-5);
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-size: var(--font-size-sm);
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            transition: all var(--transition-base);
+        }
+
+        .service-card-btn i {
+            font-size: 18px;
+            transition: transform var(--transition-fast);
+        }
+
+        .service-card:hover .service-card-btn {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        .service-card:hover .service-card-btn i {
+            transform: translateX(4px);
+        }
+
+        /* Card Number Badge */
+        .service-card-number {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            width: 36px;
+            height: 36px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            color: var(--text-tertiary);
+            transition: all var(--transition-base);
+        }
+
+        .service-card:hover .service-card-number {
+            background: var(--accent);
+            border-color: var(--accent);
+            color: var(--white);
+            transform: rotate(360deg);
+        }
+
+        /* ========================================
+           SERVICE MODAL
+           ======================================== */
+        .service-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            visibility: hidden;
+            opacity: 0;
+            transition: all var(--transition-base);
+        }
+
+        .service-modal.active {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .modal-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        .modal-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        .modal-content {
+            position: relative;
+            min-height: 100%;
+            background: var(--bg-primary);
+            transform: translateY(50px);
+            opacity: 0;
+            transition: all var(--transition-slow);
+        }
+
+        .service-modal.active .modal-content {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* Modal Header / Hero */
+        .modal-hero {
+            position: relative;
+            min-height: 50vh;
+            display: flex;
+            align-items: flex-end;
+            padding: var(--space-16) var(--container-padding);
+            overflow: hidden;
+        }
+
+        .modal-hero-bg {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 8s ease;
+        }
+
+        .modal-hero:hover .modal-hero-bg {
+            transform: scale(1.05);
+        }
+
+        .modal-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                to bottom,
+                rgba(26, 95, 122, 0.7) 0%,
+                rgba(19, 75, 97, 0.85) 50%,
+                rgba(10, 42, 56, 0.95) 100%
+            );
+        }
+
+        .modal-hero-particles {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 30px 30px;
+            animation: moveParticles 20s linear infinite;
+        }
+
+        @keyframes moveParticles {
+            from { background-position: 0 0; }
+            to { background-position: 30px 30px; }
+        }
+
+        /* Modal Navigation */
+        .modal-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 var(--container-padding);
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 100;
+        }
+
+        .modal-back-btn {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3) var(--space-5);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-full);
+            color: var(--white);
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .modal-back-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateX(-4px);
+        }
+
+        .modal-back-btn i {
+            font-size: 20px;
+        }
+
+        .modal-close-btn {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 28px;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .modal-close-btn:hover {
+            background: var(--error);
+            border-color: var(--error);
+            transform: rotate(90deg);
+        }
+
+        /* Modal Hero Content */
+        .modal-hero-content {
+            position: relative;
+            z-index: 10;
+            max-width: 800px;
+            padding-top: var(--header-height);
+        }
+
+        .modal-service-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-xl);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: var(--white);
+            margin-bottom: var(--space-6);
+            animation: floatIcon 3s ease-in-out infinite;
+        }
+
+        @keyframes floatIcon {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .modal-service-category {
+            display: inline-block;
+            font-size: var(--font-size-xs);
+            font-weight: 600;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: var(--space-3);
+        }
+
+        .modal-service-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: var(--space-4);
+        }
+
+        .modal-service-subtitle {
+            font-size: var(--font-size-lg);
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+
+        /* ========================================
+           MODAL BODY SECTIONS
+           ======================================== */
+        .modal-body {
+            padding: var(--space-16) var(--container-padding);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .modal-section {
+            margin-bottom: var(--space-16);
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .modal-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .modal-section-header {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            margin-bottom: var(--space-8);
+        }
+
+        .modal-section-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--white);
+        }
+
+        .modal-section-title {
+            font-size: var(--font-size-2xl);
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* Overview Section */
+        .overview-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-10);
+            align-items: start;
+        }
+
+        .overview-text {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+            line-height: 1.9;
+        }
+
+        .overview-image {
+            position: relative;
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .overview-image img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .overview-image:hover img {
+            transform: scale(1.05);
+        }
+
+        .overview-image-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, var(--primary) 0%, transparent 60%);
+            opacity: 0.3;
+        }
+
+        /* Highlights Cards */
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-6);
+            margin-top: var(--space-8);
+        }
+
+        .highlight-card {
+            position: relative;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            text-align: center;
+            transition: all var(--transition-base);
+            overflow: hidden;
+        }
+
+        .highlight-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background: var(--gradient-blue-gold);
+            border-radius: 0 0 4px 4px;
+        }
+
+        .highlight-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-200);
+        }
+
+        .highlight-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--white);
+            margin: 0 auto var(--space-5);
+            transition: transform var(--transition-base);
+        }
+
+        .highlight-card:hover .highlight-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .highlight-title {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-2);
+        }
+
+        .highlight-desc {
+            font-size: var(--font-size-sm);
+            color: var(--text-tertiary);
+            line-height: 1.6;
+        }
+
+        /* Features Section */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-4);
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            padding: var(--space-5);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-base);
+        }
+
+        .feature-item:hover {
+            background: var(--bg-card);
+            border-color: var(--primary-200);
+            transform: translateX(8px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .feature-check {
+            width: 36px;
+            height: 36px;
+            background: var(--success);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .feature-check i {
+            font-size: 20px;
+            color: var(--white);
+        }
+
+        .feature-text {
+            font-size: var(--font-size-base);
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* Process Section */
+        .process-timeline {
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            padding: var(--space-8) 0;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            right: 5%;
+            height: 4px;
+            background: var(--gradient-blue-gold);
+            border-radius: 2px;
+            transform: translateY(-50%);
+        }
+
+        .process-step {
+            position: relative;
+            flex: 1;
+            text-align: center;
+            padding: 0 var(--space-4);
+        }
+
+        .process-step-number {
+            position: relative;
+            width: 60px;
+            height: 60px;
+            background: var(--bg-primary);
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-xl);
+            font-weight: 800;
+            color: var(--primary);
+            margin: 0 auto var(--space-4);
+            transition: all var(--transition-base);
+            z-index: 1;
+        }
+
+        .process-step:hover .process-step-number {
+            background: var(--primary);
+            color: var(--white);
+            transform: scale(1.15);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .process-step-title {
+            font-size: var(--font-size-base);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-2);
+        }
+
+        .process-step-desc {
+            font-size: var(--font-size-sm);
+            color: var(--text-tertiary);
+            line-height: 1.5;
+        }
+
+        /* Stats Section */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-6);
+        }
+
+        .stat-card {
+            position: relative;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+            text-align: center;
+            overflow: hidden;
+            transition: all var(--transition-base);
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, transparent 70%);
+            transition: transform var(--transition-slow);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .stat-card:hover::before {
+            transform: translate(20%, 20%);
+        }
+
+        .stat-number {
+            font-size: var(--font-size-4xl);
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1;
+            margin-bottom: var(--space-2);
+            position: relative;
+        }
+
+        .stat-label {
+            font-size: var(--font-size-sm);
+            color: rgba(255, 255, 255, 0.85);
+            position: relative;
+        }
+
+        /* FAQ Section */
+        .faq-list {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .faq-item {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            transition: all var(--transition-base);
+        }
+
+        .faq-item:hover {
+            border-color: var(--primary-200);
+        }
+
+        .faq-item.active {
+            border-color: var(--primary);
+            box-shadow: var(--shadow-md);
+        }
+
+        .faq-question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: var(--space-4);
+            padding: var(--space-5) var(--space-6);
+            cursor: pointer;
+            transition: background var(--transition-fast);
+        }
+
+        .faq-question:hover {
+            background: var(--bg-tertiary);
+        }
+
+        .faq-q-content {
+            display: flex;
+            align-items: center;
+            gap: var(--space-4);
+            flex: 1;
+        }
+
+        .faq-q-number {
+            width: 32px;
+            height: 32px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: var(--font-size-sm);
+            font-weight: 700;
+            color: var(--white);
+            flex-shrink: 0;
+        }
+
+        .faq-q-text {
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .faq-toggle {
+            width: 36px;
+            height: 36px;
+            background: var(--bg-tertiary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-base);
+        }
+
+        .faq-toggle i {
+            font-size: 22px;
+            color: var(--primary);
+            transition: transform var(--transition-base);
+        }
+
+        .faq-item.active .faq-toggle {
+            background: var(--primary);
+        }
+
+        .faq-item.active .faq-toggle i {
+            color: var(--white);
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-slow);
+        }
+
+        .faq-answer-inner {
+            padding: 0 var(--space-6) var(--space-6) calc(var(--space-6) + 48px);
+            font-size: var(--font-size-base);
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Modal Footer CTA */
+        .modal-cta {
+            background: var(--gradient-primary);
+            padding: var(--space-16) var(--container-padding);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modal-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 20% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+        }
+
+        .modal-cta-content {
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .modal-cta-title {
+            font-size: var(--font-size-3xl);
+            font-weight: 800;
+            color: var(--white);
+            margin-bottom: var(--space-4);
+        }
+
+        .modal-cta-text {
+            font-size: var(--font-size-lg);
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: var(--space-8);
+        }
+
+        .modal-cta-buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-4);
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-4) var(--space-8);
+            background: var(--accent);
+            color: var(--white);
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            transition: all var(--transition-base);
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary:hover {
+            background: var(--accent-dark);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-glow-accent);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-4) var(--space-8);
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            color: var(--white);
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--white);
+        }
+
+        /* Back to Top in Modal */
+        .modal-scroll-top {
+            position: fixed;
+            bottom: var(--space-8);
+            right: var(--space-8);
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 24px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all var(--transition-base);
+            z-index: 100;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .modal-scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .modal-scroll-top:hover {
+            background: var(--primary-dark);
+            transform: translateY(-4px);
+        }
+
+        /* ========================================
+           RESPONSIVE - Services & Modal
+           ======================================== */
+        @media (max-width: 1200px) {
+            .services-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .overview-content {
+                grid-template-columns: 1fr;
+            }
+
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-timeline {
+                flex-direction: column;
+                gap: var(--space-8);
+            }
+
+            .process-timeline::before {
+                top: 0;
+                bottom: 0;
+                left: 30px;
+                right: auto;
+                width: 4px;
+                height: auto;
+                transform: none;
+            }
+
+            .process-step {
+                display: flex;
+                align-items: flex-start;
+                text-align: left;
+                padding: 0;
+                padding-left: var(--space-16);
+            }
+
+            .process-step-number {
+                position: absolute;
+                left: 0;
+                margin: 0;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-5);
+            }
+
+            .service-card {
+                padding: var(--space-6);
+            }
+
+            .modal-hero {
+                min-height: 45vh;
+                padding: var(--space-12) var(--container-padding);
+            }
+
+            .modal-service-title {
+                font-size: 1.75rem;
+            }
+
+            .modal-body {
+                padding: var(--space-10) var(--container-padding);
+            }
+
+            .modal-section {
+                margin-bottom: var(--space-10);
+            }
+
+            .highlights-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: var(--space-4);
+            }
+
+            .stat-card {
+                padding: var(--space-6);
+            }
+
+            .stat-number {
+                font-size: var(--font-size-3xl);
+            }
+
+            .modal-back-btn span {
+                display: none;
+            }
+
+            .modal-cta {
+                padding: var(--space-10) var(--container-padding);
+            }
+
+            .modal-cta-title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .modal-cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .service-card-icon {
+                width: 60px;
+                height: 60px;
+            }
+
+            .service-card-icon i {
+                font-size: 26px;
+            }
+
+            .modal-service-icon {
+                width: 64px;
+                height: 64px;
+                font-size: 28px;
+            }
+
+            .process-step {
+                padding-left: var(--space-12);
+            }
+
+            .process-step-number {
+                width: 48px;
+                height: 48px;
+                font-size: var(--font-size-base);
+            }
+        }
+    
+        /* ========================================
+           FOOTER - Matching Index/About
+           ======================================== */
+        .footer {
+            background: var(--bg-tertiary);
+            padding: var(--space-20) 0 var(--space-8);
+            position: relative;
+            overflow: hidden;
+        }
+
+        [data-theme="dark"] .footer {
+            background: #050508;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-blue-gold);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1.5fr;
+            gap: var(--space-12);
+            margin-bottom: var(--space-12);
+        }
+
+        /* Footer Brand */
+        .footer-brand {
+            max-width: 320px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            margin-bottom: var(--space-5);
+        }
+
+        .footer-logo img {
+            width: 50px;
+            height: 50px;
+            object-fit: contain;
+        }
+
+        .footer-logo-text {
+            font-size: var(--font-size-lg);
+            font-weight: 700;
+            background: var(--gradient-blue-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-brand p {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--space-6);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--space-3);
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 20px;
+            transition: all var(--transition-base);
+        }
+
+        .footer-social a:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-4px);
+        }
+
+        /* Footer Links */
+        .footer-links h4 {
+            font-size: var(--font-size-base);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-5);
+            padding-bottom: var(--space-3);
+            position: relative;
+        }
+
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient-blue-gold);
+            border-radius: 2px;
+        }
+
+        .footer-links ul {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-3);
+        }
+
+        .footer-links a {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            transition: all var(--transition-fast);
+        }
+
+        .footer-links a i {
+            font-size: 16px;
+            color: var(--primary);
+            transition: transform var(--transition-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        .footer-links a:hover i {
+            transform: translateX(2px);
+        }
+
+        /* Footer Contact */
+        .footer-contact ul {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-4);
+        }
+
+        .footer-contact li {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-3);
+        }
+
+        .footer-contact-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-50);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        [data-theme="dark"] .footer-contact-icon {
+            background: rgba(26, 95, 122, 0.2);
+        }
+
+        .footer-contact-icon i {
+            font-size: 18px;
+            color: var(--primary);
+        }
+
+        .footer-contact-text {
+            font-size: var(--font-size-sm);
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+
+        .footer-contact-text strong {
+            display: block;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 2px;
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: var(--space-8);
+            border-top: 1px solid var(--border-light);
+            flex-wrap: wrap;
+            gap: var(--space-4);
+        }
+
+        .footer-copyright {
+            font-size: var(--font-size-sm);
+            color: var(--text-tertiary);
+        }
+
+        .footer-copyright a {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            gap: var(--space-6);
+        }
+
+        .footer-bottom-links a {
+            font-size: var(--font-size-sm);
+            color: var(--text-tertiary);
+            transition: color var(--transition-fast);
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--primary);
+        }
+
+        /* Footer Responsive */
+        @media (max-width: 1024px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: var(--space-12) 0 var(--space-6);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+                text-align: center;
+            }
+
+            .footer-brand {
+                max-width: none;
+            }
+
+            .footer-logo {
+                justify-content: center;
+            }
+
+            .footer-social {
+                justify-content: center;
+            }
+
+            .footer-links h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .footer-contact ul {
+                align-items: center;
+            }
+
+            .footer-contact li {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-bottom-links {
+                justify-content: center;
+            }
+        }
+
+        /* ========================================
+           ANIMATIONS
+           ======================================== */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* Utility animation classes */
+        .animate-fade-in {
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        .animate-slide-up {
+            animation: slideInUp 0.6s ease forwards;
+        }
+
+        .animate-slide-left {
+            animation: slideInLeft 0.6s ease forwards;
+        }
+
+        .animate-scale-in {
+            animation: scaleIn 0.6s ease forwards;
+        }
+
+        /* Stagger delays */
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <!-- ==================== PAGE LOADER ==================== -->
+    <div class="page-loader" id="pageLoader">
+        <div class="loader-content">
+            <div class="loader-logo">
+                <div class="loader-spinner"></div>
+                <img src="../images/bp.png" alt="TBP Logo" width="70" height="70">
+            </div>
+            <div class="loader-text">
+                <h2>The Building Practice Ltd.</h2>
+                <p>...Building Spaces that Feel</p>
+            </div>
+            <div class="loader-progress">
+                <div class="loader-progress-bar"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== HEADER ==================== -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <img src="../images/bp.png" alt="The Building Practice" class="nav-brand-logo" width="46" height="46">
+                <div class="nav-brand-text">
+                    <span class="nav-brand-name">The Building Practice Ltd.</span>
+                    <span class="nav-brand-tagline">...Building Spaces that Feel</span>
+                </div>
+            </a>
+
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link active">Services</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="reviews.html" class="nav-link">Reviews</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <div class="theme-toggle-track">
+                        <i class="bx bx-sun theme-toggle-icon sun"></i>
+                        <i class="bx bx-moon theme-toggle-icon moon"></i>
+                    </div>
+                    <div class="theme-toggle-thumb"></div>
+                </button>
+
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="hero">
+        <!-- Animated Particles -->
+        <div class="hero-particles">
+            <div class="hero-particle" style="left: 10%; top: 20%; animation-delay: 0s;"></div>
+            <div class="hero-particle" style="left: 20%; top: 60%; animation-delay: 2s;"></div>
+            <div class="hero-particle" style="left: 35%; top: 30%; animation-delay: 4s;"></div>
+            <div class="hero-particle" style="left: 50%; top: 70%; animation-delay: 1s;"></div>
+            <div class="hero-particle" style="left: 65%; top: 25%; animation-delay: 3s;"></div>
+            <div class="hero-particle" style="left: 80%; top: 55%; animation-delay: 5s;"></div>
+            <div class="hero-particle" style="left: 90%; top: 35%; animation-delay: 2.5s;"></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="bx bx-star"></i>
+                <span>Excellence in Every Detail</span>
+            </div>
+            <h1 class="hero-title">
+                Comprehensive <span class="highlight">Architectural</span> & Construction Solutions
+            </h1>
+            <p class="hero-description">
+                From innovative design concepts to flawless project execution, we deliver 
+                end-to-end services that transform your vision into remarkable reality.
+            </p>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <div class="hero-stat-number">12+</div>
+                    <div class="hero-stat-label">Services</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">500+</div>
+                    <div class="hero-stat-label">Projects</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">15+</div>
+                    <div class="hero-stat-label">Years</div>
+                </div>
+                <div class="hero-stat">
+                    <div class="hero-stat-number">98%</div>
+                    <div class="hero-stat-label">Satisfaction</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <span>Scroll Down</span>
+            <i class="bx bx-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- ==================== SERVICES SECTION ==================== -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <header class="section-header">
+                <div class="section-badge">
+                    <i class="bx bx-briefcase"></i>
+                    <span>What We Offer</span>
+                </div>
+                <h2 class="section-title">Our <span class="gradient-text">Core Services</span></h2>
+                <div class="section-divider"></div>
+                <p class="section-description">
+                    Specialized architectural and construction services designed to meet diverse 
+                    project needs with precision, creativity, and unwavering excellence.
+                </p>
+            </header>
+
+            <div class="services-grid" id="servicesGrid">
+                <!-- Service cards will be dynamically generated -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="../images/bp.png" alt="TBP Logo" width="50" height="50">
+                        <span class="footer-logo-text">The Building Practice</span>
+                    </div>
+                    <p>Building Spaces that Feel. We transform architectural visions into extraordinary realities with innovation, sustainability, and excellence across Nigeria and beyond.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/thebuildingpractice" target="_blank" rel="noopener" aria-label="Facebook">
+                            <i class="bx bxl-facebook"></i>
+                        </a>
+                        <a href="https://www.instagram.com/thebuildingpractice" target="_blank" rel="noopener" aria-label="Instagram">
+                            <i class="bx bxl-instagram"></i>
+                        </a>
+                        <a href="https://x.com/thebplimited" target="_blank" rel="noopener" aria-label="Twitter">
+                            <i class="bx bxl-twitter"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/the-building-practice-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                            <i class="bx bxl-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html"><i class="bx bx-chevron-right"></i> Home</a></li>
+                        <li><a href="about.html"><i class="bx bx-chevron-right"></i> About Us</a></li>
+                        <li><a href="services.html"><i class="bx bx-chevron-right"></i> Services</a></li>
+                        <li><a href="projects.html"><i class="bx bx-chevron-right"></i> Projects</a></li>
+                        <li><a href="team.html"><i class="bx bx-chevron-right"></i> Our Team</a></li>
+                        <li><a href="contact.html"><i class="bx bx-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services Links -->
+                <div class="footer-links">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="#" data-service="architectural-design"><i class="bx bx-chevron-right"></i> Architectural Design</a></li>
+                        <li><a href="#" data-service="interior-design"><i class="bx bx-chevron-right"></i> Interior Design</a></li>
+                        <li><a href="#" data-service="construction-management"><i class="bx bx-chevron-right"></i> Construction Mgmt</a></li>
+                        <li><a href="#" data-service="building-construction"><i class="bx bx-chevron-right"></i> Building Construction</a></li>
+                        <li><a href="#" data-service="3d-visualization"><i class="bx bx-chevron-right"></i> 3D Visualization</a></li>
+                        <li><a href="#" data-service="renovation-remodeling"><i class="bx bx-chevron-right"></i> Renovation</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="footer-links footer-contact">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li>
+                            <div class="footer-contact-icon">
+                                <i class="bx bx-map"></i>
+                            </div>
+                            <div class="footer-contact-text">
+                                <strong>Address</strong>
+                                Plot 6, Remi Olowude Street, Lekki Phase 1, Lagos
+                            </div>
+                        </li>
+                        <li>
+                            <div class="footer-contact-icon">
+                                <i class="bx bx-phone"></i>
+                            </div>
+                            <div class="footer-contact-text">
+                                <strong>Phone</strong>
+                                +234 904 972 1840
+                            </div>
+                        </li>
+                        <li>
+                            <div class="footer-contact-icon">
+                                <i class="bx bx-envelope"></i>
+                            </div>
+                            <div class="footer-contact-text">
+                                <strong>Email</strong>
+                                info@buildingpractice.biz
+                            </div>
+                        </li>
+                        <li>
+                            <div class="footer-contact-icon">
+                                <i class="bx bx-time"></i>
+                            </div>
+                            <div class="footer-contact-text">
+                                <strong>Hours</strong>
+                                Mon - Fri: 9:00 AM - 5:00 PM
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    &copy; <span id="currentYear">2025</span> <a href="index.html">The Building Practice Ltd.</a> All Rights Reserved.
+                </p>
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== SERVICE MODAL ==================== -->
+    <div class="service-modal" id="serviceModal">
+        <div class="modal-backdrop"></div>
+        <div class="modal-container" id="modalContainer">
+            <div class="modal-content">
+                <!-- Modal Nav -->
+                <nav class="modal-nav">
+                    <button class="modal-back-btn" id="modalBackBtn">
+                        <i class="bx bx-arrow-back"></i>
+                        <span>Back to Services</span>
+                    </button>
+                    <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close">
+                        <i class="bx bx-x"></i>
+                    </button>
+                </nav>
+
+                <!-- Modal Hero -->
+                <div class="modal-hero">
+                    <div class="modal-hero-bg" id="modalHeroBg"></div>
+                    <div class="modal-hero-overlay"></div>
+                    <div class="modal-hero-particles"></div>
+                    <div class="modal-hero-content">
+                        <div class="modal-service-icon" id="modalIcon">
+                            <i class="bx bx-building"></i>
+                        </div>
+                        <span class="modal-service-category" id="modalCategory">Design Service</span>
+                        <h1 class="modal-service-title" id="modalTitle">Service Title</h1>
+                        <p class="modal-service-subtitle" id="modalSubtitle">Service subtitle goes here</p>
+                    </div>
+                </div>
+
+                <!-- Modal Body -->
+                <div class="modal-body" id="modalBody">
+                    <!-- Overview Section -->
+                    <section class="modal-section" id="overviewSection">
+                        <div class="modal-section-header">
+                            <div class="modal-section-icon">
+                                <i class="bx bx-info-circle"></i>
+                            </div>
+                            <h2 class="modal-section-title">Overview</h2>
+                        </div>
+                        <div class="overview-content">
+                            <div class="overview-text" id="modalOverview">
+                                Service overview text goes here...
+                            </div>
+                            <div class="overview-image">
+                                <img src="" alt="" id="overviewImage">
+                                <div class="overview-image-overlay"></div>
+                            </div>
+                        </div>
+                        <div class="highlights-grid" id="modalHighlights">
+                            <!-- Highlights inserted dynamically -->
+                        </div>
+                    </section>
+
+                    <!-- Features Section -->
+                    <section class="modal-section" id="featuresSection">
+                        <div class="modal-section-header">
+                            <div class="modal-section-icon">
+                                <i class="bx bx-check-shield"></i>
+                            </div>
+                            <h2 class="modal-section-title">What's Included</h2>
+                        </div>
+                        <div class="features-grid" id="modalFeatures">
+                            <!-- Features inserted dynamically -->
+                        </div>
+                    </section>
+
+                    <!-- Process Section -->
+                    <section class="modal-section" id="processSection">
+                        <div class="modal-section-header">
+                            <div class="modal-section-icon">
+                                <i class="bx bx-git-branch"></i>
+                            </div>
+                            <h2 class="modal-section-title">Our Process</h2>
+                        </div>
+                        <div class="process-timeline" id="modalProcess">
+                            <!-- Process steps inserted dynamically -->
+                        </div>
+                    </section>
+
+                    <!-- Stats Section -->
+                    <section class="modal-section" id="statsSection">
+                        <div class="modal-section-header">
+                            <div class="modal-section-icon">
+                                <i class="bx bx-bar-chart-alt-2"></i>
+                            </div>
+                            <h2 class="modal-section-title">By The Numbers</h2>
+                        </div>
+                        <div class="stats-grid" id="modalStats">
+                            <!-- Stats inserted dynamically -->
+                        </div>
+                    </section>
+
+                    <!-- FAQ Section -->
+                    <section class="modal-section" id="faqSection">
+                        <div class="modal-section-header">
+                            <div class="modal-section-icon">
+                                <i class="bx bx-help-circle"></i>
+                            </div>
+                            <h2 class="modal-section-title">Frequently Asked Questions</h2>
+                        </div>
+                        <div class="faq-list" id="modalFaq">
+                            <!-- FAQ items inserted dynamically -->
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Modal CTA -->
+                <div class="modal-cta">
+                    <div class="modal-cta-content">
+                        <h3 class="modal-cta-title">Ready to Get Started?</h3>
+                        <p class="modal-cta-text">Let's discuss how we can help bring your vision to life with our expertise.</p>
+                        <div class="modal-cta-buttons">
+                            <a href="contact.html" class="btn-primary">
+                                <i class="bx bx-envelope"></i>
+                                <span>Contact Us</span>
+                            </a>
+                            <button class="btn-secondary" id="ctaBackBtn">
+                                <i class="bx bx-arrow-back"></i>
+                                <span>Back to Services</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll to Top -->
+        <button class="modal-scroll-top" id="modalScrollTop" aria-label="Scroll to top">
+            <i class="bx bx-up-arrow-alt"></i>
+        </button>
+    </div>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+        // ==================== SERVICES DATA ====================
+        const servicesData = {
+            "architectural-design": {
+                icon: "bx bx-building",
+                category: "Design Service",
+                title: "Architectural Design",
+                subtitle: "Creating innovative, functional spaces through comprehensive design excellence",
+                heroImage: "../images/services/architecturalDesign.jpg",
+                overviewImage: "../images/services/ArchitecturalDesign.jpg",
+                overview: "Our architectural design service encompasses the full spectrum of design activities from initial concept development through detailed construction documentation. We create buildings that are not only aesthetically striking but also functionally efficient, environmentally responsible, and built to last. Our team of experienced architects works closely with clients to understand their unique needs, translating vision into reality through innovative design solutions that respect context, optimize space, and create lasting value.",
+                highlights: [
+                    { icon: "bx bx-pencil", title: "Concept Design", desc: "Creative vision development and initial sketches that capture your dreams" },
+                    { icon: "bx bx-file", title: "Documentation", desc: "Detailed drawings, specifications & comprehensive BOQ preparation" },
+                    { icon: "bx bx-check-circle", title: "Approvals", desc: "Building permit coordination & full regulatory compliance" }
+                ],
+                features: [
+                    "Concept and schematic design development",
+                    "Design development and space planning",
+                    "Construction documentation and working drawings",
+                    "3D visualization and photorealistic rendering",
+                    "Sustainable and green design integration",
+                    "Building code compliance and analysis",
+                    "Permit application and coordination",
+                    "Site analysis and feasibility studies"
+                ],
+                process: [
+                    { title: "Brief", desc: "Understanding your vision and requirements" },
+                    { title: "Concept", desc: "Developing initial design ideas" },
+                    { title: "Development", desc: "Refining design with details" },
+                    { title: "Documentation", desc: "Producing construction drawings" },
+                    { title: "Support", desc: "Guidance during construction" }
+                ],
+                stats: [
+                    { number: "500+", label: "Projects Designed" },
+                    { number: "15+", label: "Years Experience" },
+                    { number: "50+", label: "Design Awards" },
+                    { number: "98%", label: "Client Satisfaction" }
+                ],
+                faq: [
+                    { q: "What is included in architectural design services?", a: "Our services include concept development, schematic design, design development, construction documentation, specification writing, and construction administration support. We handle everything from initial site analysis through to final construction drawings." },
+                    { q: "How long does the design process take?", a: "Timeline varies based on project complexity. Typical residential projects take 8-12 weeks, while larger commercial projects may require 16-24 weeks or more. We provide a detailed schedule at project commencement." },
+                    { q: "Do you handle building permits?", a: "Yes, we prepare all documentation for building permit applications and coordinate with local authorities throughout the approval process in Lagos, Abuja, and other Nigerian cities." }
+                ]
+            },
+            "interior-design": {
+                icon: "bx bx-palette",
+                category: "Design Service",
+                title: "Interior Design",
+                subtitle: "Transforming spaces into inspiring environments that reflect your unique style",
+                heroImage: "../images/services/interiorDesign.jpg",
+                overviewImage: "../images/services/interiorDesign.jpg",
+                overview: "Our interior design service transforms spaces into environments that inspire, function beautifully, and reflect the unique personality of their occupants. We carefully consider every element – from space planning and material selection to lighting design and furniture curation – to create cohesive, stunning interiors. Whether it's a cozy home, a dynamic office, or a luxurious hotel, we bring creativity, functionality, and attention to detail to every project.",
+                highlights: [
+                    { icon: "bx bx-layout", title: "Space Planning", desc: "Optimized layouts designed for perfect flow and maximum functionality" },
+                    { icon: "bx bx-color", title: "Materials & Finishes", desc: "Premium selections and detailed specifications for lasting quality" },
+                    { icon: "bx bx-bulb", title: "Lighting Design", desc: "Atmospheric lighting that creates the perfect ambiance" }
+                ],
+                features: [
+                    "Space planning and layout optimization",
+                    "Material and finish selection",
+                    "Custom furniture design and specification",
+                    "Lighting design and fixture selection",
+                    "Color scheme development and coordination",
+                    "Art and accessories curation",
+                    "Furniture procurement coordination",
+                    "Installation supervision and styling"
+                ],
+                process: [
+                    { title: "Consultation", desc: "Understanding your style and needs" },
+                    { title: "Concept", desc: "Developing the design direction" },
+                    { title: "Design", desc: "Creating detailed layouts" },
+                    { title: "Procurement", desc: "Sourcing materials & furniture" },
+                    { title: "Installation", desc: "Supervising implementation" }
+                ],
+                stats: [
+                    { number: "300+", label: "Interiors Designed" },
+                    { number: "100+", label: "Custom Furniture" },
+                    { number: "25+", label: "Industry Awards" },
+                    { number: "100%", label: "Project Completion" }
+                ],
+                faq: [
+                    { q: "Do you work with existing furniture?", a: "Absolutely! We can incorporate your existing pieces into a new design scheme, blending them with new elements to create a cohesive look that respects your budget and sentimental items." },
+                    { q: "Can you source materials locally?", a: "Yes, we have an extensive network of local suppliers, craftsmen, and manufacturers in Nigeria. We also source internationally when specific materials are required." },
+                    { q: "How do you determine the budget?", a: "We work with you to establish a realistic budget based on your priorities. We can design to various price points and will always be transparent about costs." }
+                ]
+            },
+                        "construction-management": {
+                icon: "bx bx-hard-hat",
+                category: "Management Service",
+                title: "Construction Management",
+                subtitle: "On-site leadership delivering projects on time and within budget",
+                heroImage: "../images/services/constructionManagement.jpg",
+                overviewImage: "../images/services/constructionManagement.jpg",
+                overview: "Our construction management service provides comprehensive on-site leadership and project oversight to ensure your construction project is delivered on time, within budget, and to the highest quality standards. We act as your representative on site, coordinating all contractors, managing schedules, controlling costs, and ensuring safety compliance. Our experienced construction managers bring discipline, expertise, and accountability to every project.",
+                highlights: [
+                    { icon: "bx bx-calendar", title: "Schedule Management", desc: "Detailed planning and real-time progress tracking" },
+                    { icon: "bx bx-shield", title: "Safety & Compliance", desc: "Comprehensive HSE management and risk mitigation" },
+                    { icon: "bx bx-wallet", title: "Cost Control", desc: "Rigorous budget monitoring and transparent reporting" }
+                ],
+                features: [
+                    "Project planning and master scheduling",
+                    "Daily construction oversight and coordination",
+                    "Subcontractor management and coordination",
+                    "Quality assurance and inspection",
+                    "Risk identification and mitigation",
+                    "Health, safety and environmental management",
+                    "Cost tracking and reporting",
+                    "Project documentation and record keeping"
+                ],
+                process: [
+                    { title: "Planning", desc: "Establish schedules and budgets" },
+                    { title: "Mobilization", desc: "Site setup and team deployment" },
+                    { title: "Execution", desc: "Manage daily construction" },
+                    { title: "Monitoring", desc: "Track progress and costs" },
+                    { title: "Closeout", desc: "Handover and documentation" }
+                ],
+                stats: [
+                    { number: "200+", label: "Projects Managed" },
+                    { number: "94%", label: "On Budget Delivery" },
+                    { number: "96%", label: "On Schedule" },
+                    { number: "Zero", label: "Lost Time Injuries" }
+                ],
+                faq: [
+                    { q: "What is construction management?", a: "Construction management involves professional planning, coordination and oversight of construction projects from inception to completion. It covers scheduling, procurement, quality control, cost management, and safety." },
+                    { q: "How does it differ from a general contractor?", a: "A construction manager acts as your representative, providing transparent oversight and advocating purely for your interests, unlike a general contractor who has a vested interest in the construction contract value." },
+                    { q: "Do you manage contractors directly?", a: "Yes, we coordinate all contractors and subcontractors on your behalf, managing their contracts, monitoring performance, and ensuring all work meets specifications." }
+                ]
+            },
+            "building-construction": {
+                icon: "bx bx-building-house",
+                category: "Construction Service",
+                title: "Building Construction",
+                subtitle: "Delivering quality buildings from foundation to finishing with excellence",
+                heroImage: "../images/services/constructionServices.jpg",
+                overviewImage: "../images/services/constructionServices.jpg",
+                overview: "Our building construction service delivers complete construction solutions from site preparation through to finishing works. With experienced teams, quality materials, and robust project management, we bring architectural designs to life with precision and craftsmanship. We construct residential, commercial, and institutional buildings, including specialized works like swimming pools and external landscaping.",
+                highlights: [
+                    { icon: "bx bx-home", title: "Residential", desc: "Luxury homes, apartments, and gated estates" },
+                    { icon: "bx bx-store", title: "Commercial", desc: "Offices, retail spaces, and facilities" },
+                    { icon: "bx bx-water", title: "Specialty Works", desc: "Pools, landscaping, and premium amenities" }
+                ],
+                features: [
+                    "Site preparation and earthworks",
+                    "Foundation and structural construction",
+                    "Block/brick work and masonry",
+                    "Roofing systems installation",
+                    "Mechanical, electrical and plumbing (MEP)",
+                    "Plastering, screeding and finishing",
+                    "Swimming pool construction",
+                    "Landscaping and external works"
+                ],
+                process: [
+                    { title: "Mobilization", desc: "Site preparation and permits" },
+                    { title: "Substructure", desc: "Excavation and foundation" },
+                    { title: "Superstructure", desc: "Columns, beams, roofing" },
+                    { title: "Finishing", desc: "MEP, plastering, tiling" },
+                    { title: "Handover", desc: "Testing and commissioning" }
+                ],
+                stats: [
+                    { number: "500+", label: "Buildings Delivered" },
+                    { number: "₦30B+", label: "Total Project Value" },
+                    { number: "50+", label: "Active Team Members" },
+                    { number: "100%", label: "Completion Rate" }
+                ],
+                faq: [
+                    { q: "What types of buildings do you construct?", a: "We construct residential, commercial, industrial, and institutional buildings of various scales, from luxury villas to commercial complexes." },
+                    { q: "Do you build swimming pools?", a: "Yes, we construct various swimming pool types including infinity pools, lap pools, plunge pools, and recreational pools with complete equipment installation." },
+                    { q: "What warranty do you provide?", a: "We provide defects liability periods typically ranging from 6-12 months after handover, during which we address any workmanship issues at no additional cost." }
+                ]
+            },
+            "real-estate-development": {
+                icon: "bx bx-landscape",
+                category: "Development Service",
+                title: "Real Estate Development",
+                subtitle: "Creating homes and communities through strategic development",
+                heroImage: "../images/services/realEstateDev.jpg",
+                overviewImage: "../images/services/realEstateDev.jpg",
+                overview: "As an experienced real estate developer, we manage the entire development process from market analysis and site selection through design, construction, marketing, and property management. We create valuable, sustainable developments that meet market demands – from residential estates and apartment complexes to commercial properties and mixed-use developments.",
+                highlights: [
+                    { icon: "bx bx-building", title: "Commercial", desc: "Office parks and retail developments" },
+                    { icon: "bx bx-home-heart", title: "Residential", desc: "Estates, homes, and vibrant communities" },
+                    { icon: "bx bx-trending-up", title: "Investment", desc: "Return-driven strategic developments" }
+                ],
+                features: [
+                    "Market research and feasibility studies",
+                    "Site identification and acquisition",
+                    "Development planning and approvals",
+                    "Design coordination and optimization",
+                    "Construction management and delivery",
+                    "Sales and marketing strategy",
+                    "Property and facility management",
+                    "Investment returns optimization"
+                ],
+                process: [
+                    { title: "Feasibility", desc: "Market research and modeling" },
+                    { title: "Acquisition", desc: "Site selection and purchase" },
+                    { title: "Planning", desc: "Design and approvals" },
+                    { title: "Delivery", desc: "Construction management" },
+                    { title: "Exit", desc: "Sales, leasing, management" }
+                ],
+                stats: [
+                    { number: "₦50B+", label: "Development Value" },
+                    { number: "25+", label: "Developments" },
+                    { number: "2000+", label: "Units Delivered" },
+                    { number: "15+", label: "Years Experience" }
+                ],
+                faq: [
+                    { q: "What is real estate development?", a: "Real estate development is the process of creating value by transforming land or properties into profitable assets through strategic planning, design, construction, marketing, and management." },
+                    { q: "Do you offer investment opportunities?", a: "Yes, we partner with investors on select developments, offering various participation structures based on project type, risk profile, and investment horizon." },
+                    { q: "How long does a development project take?", a: "Timeline varies by scale – small residential projects take 18-24 months, while larger estate or commercial developments can span 3-5 years." }
+                ]
+            },
+            "green-building-advisory": {
+                icon: "bx bx-leaf",
+                category: "Advisory Service",
+                title: "Green Building Advisory",
+                subtitle: "EDGE & LEED certification support and sustainable design guidance",
+                heroImage: "../images/services/greenBuildingAdvisory.jpg",
+                overviewImage: "../images/services/greenBuildingAdvisory.jpg",
+                overview: "We guide projects through sustainable design practices and green building certification processes including EDGE (Excellence in Design for Greater Efficiencies) and LEED (Leadership in Energy and Environmental Design). Our services include sustainability strategy development, documentation preparation, energy and water modeling, material assessment, and certification coordination.",
+                highlights: [
+                    { icon: "bx bx-certification", title: "Certification", desc: "EDGE & LEED documentation and support" },
+                    { icon: "bx bx-bolt", title: "Energy Efficiency", desc: "Optimization strategies and modeling" },
+                    { icon: "bx bx-droplet", title: "Water Conservation", desc: "Smart conservation and management" }
+                ],
+                features: [
+                    "Green building strategy development",
+                    "EDGE certification documentation",
+                    "LEED certification advisory",
+                    "Energy modeling and optimization",
+                    "Water efficiency strategies",
+                    "Sustainable material assessment",
+                    "Indoor environmental quality planning",
+                    "Renewable energy integration"
+                ],
+                process: [
+                    { title: "Assessment", desc: "Baseline evaluation and goals" },
+                    { title: "Strategy", desc: "Develop sustainability roadmap" },
+                    { title: "Integration", desc: "Incorporate green features" },
+                    { title: "Documentation", desc: "Prepare certifications" },
+                    { title: "Verification", desc: "Audits and certification" }
+                ],
+                stats: [
+                    { number: "50+", label: "Green Projects" },
+                    { number: "30+", label: "EDGE Certifications" },
+                    { number: "10+", label: "LEED Projects" },
+                    { number: "40%", label: "Avg Energy Savings" }
+                ],
+                faq: [
+                    { q: "What is EDGE certification?", a: "EDGE (Excellence in Design for Greater Efficiencies) is a green building certification system developed by IFC for emerging markets, requiring minimum 20% savings in energy, water, and embodied energy." },
+                    { q: "Does green building cost more?", a: "Initial costs may be slightly higher (1-5%), but lifecycle savings typically provide payback within 3-7 years, with ongoing savings thereafter." },
+                    { q: "Can existing buildings be certified?", a: "Yes, there are certification pathways for existing buildings including LEED O+M and EDGE certification for existing buildings." }
+                ]
+            },
+            "urban-development": {
+                icon: "bx bx-map-alt",
+                category: "Planning Service",
+                title: "Urban Development",
+                subtitle: "Creating vibrant communities through thoughtful masterplanning",
+                heroImage: "../images/services/urbanDev.jpg",
+                overviewImage: "../images/services/urbanDev.jpg",
+                overview: "Our urban development and masterplanning service shapes the future of communities through comprehensive planning and design. We create places where people want to live, work, and play – balancing density with livability, progress with sustainability, and efficiency with character.",
+                highlights: [
+                    { icon: "bx bx-map", title: "Masterplanning", desc: "Strategic vision and comprehensive layout design" },
+                    { icon: "bx bx-group", title: "Community Focus", desc: "People-centered place-making approach" },
+                    { icon: "bx bx-world", title: "Sustainability", desc: "Future-ready, resilient development" }
+                ],
+                features: [
+                    "Site analysis and opportunity assessment",
+                    "Masterplan development and framework design",
+                    "Urban design guidelines and codes",
+                    "Public realm and open space design",
+                    "Mixed-use planning and land allocation",
+                    "Infrastructure coordination and planning",
+                    "Community and stakeholder engagement",
+                    "Phasing and implementation strategies"
+                ],
+                process: [
+                    { title: "Vision", desc: "Establishing goals and aspirations" },
+                    { title: "Analysis", desc: "Understanding context" },
+                    { title: "Framework", desc: "Creating overall structure" },
+                    { title: "Detailing", desc: "Developing specific areas" },
+                    { title: "Implementation", desc: "Supporting delivery" }
+                ],
+                stats: [
+                    { number: "15+", label: "Masterplans" },
+                    { number: "2000+", label: "Hectares Planned" },
+                    { number: "50K+", label: "Future Residents" },
+                    { number: "₦200B+", label: "Development Value" }
+                ],
+                faq: [
+                    { q: "What is masterplanning?", a: "Masterplanning is the comprehensive design of a large-scale development including land use distribution, infrastructure layout, movement networks, open spaces, and design principles." },
+                    { q: "How long does masterplanning take?", a: "Depending on scale and complexity, masterplanning typically takes 6-18 months including research, analysis, concept development, and documentation." },
+                    { q: "Do you handle government approvals?", a: "Yes, we coordinate with planning authorities throughout the approval process for all regulatory requirements." }
+                ]
+            },
+            "project-management": {
+                icon: "bx bx-task",
+                category: "Management Service",
+                title: "Project Management",
+                subtitle: "Comprehensive oversight ensuring successful project delivery",
+                heroImage: "../images/services/projectManagement.jpg",
+                overviewImage: "../images/services/projectManagement.jpg",
+                overview: "Our project management service provides complete oversight of your construction project from inception through completion and beyond. We coordinate all stakeholders – designers, consultants, contractors, and authorities – while managing timelines, budgets, quality, and risks. Acting as your single point of accountability, we ensure that your project objectives are achieved efficiently.",
+                highlights: [
+                    { icon: "bx bx-time-five", title: "Time Management", desc: "Precise scheduling and deadline control" },
+                    { icon: "bx bx-wallet", title: "Cost Control", desc: "Budget monitoring and value engineering" },
+                    { icon: "bx bx-check-double", title: "Quality Assurance", desc: "Standards and specification compliance" }
+                ],
+                features: [
+                    "Project planning and feasibility assessment",
+                    "Scope definition and requirements management",
+                    "Budget development and cost control",
+                    "Master scheduling and progress tracking",
+                    "Procurement strategy and contractor selection",
+                    "Design coordination and management",
+                    "Quality assurance and control",
+                    "Risk identification and mitigation"
+                ],
+                process: [
+                    { title: "Initiation", desc: "Define objectives and scope" },
+                    { title: "Planning", desc: "Develop schedules and plans" },
+                    { title: "Procurement", desc: "Select contractors" },
+                    { title: "Execution", desc: "Coordinate and manage" },
+                    { title: "Closeout", desc: "Handover and documentation" }
+                ],
+                stats: [
+                    { number: "180+", label: "Projects Managed" },
+                    { number: "94%", label: "On Budget" },
+                    { number: "96%", label: "On Schedule" },
+                    { number: "Zero", label: "Major Disputes" }
+                ],
+                faq: [
+                    { q: "What's the difference between project and construction management?", a: "Project management covers the entire project lifecycle including design coordination, while construction management focuses specifically on the construction phase." },
+                    { q: "How do you handle project delays?", a: "We proactively identify potential delays through rigorous monitoring and implement mitigation measures early to minimize impacts." },
+                    { q: "What reporting will I receive?", a: "You'll receive weekly progress reports and monthly executive summaries with detailed analysis, forecasting, and recommendations." }
+                ]
+            },
+            "3d-visualization": {
+                icon: "bx bx-cube-alt",
+                category: "Visualization Service",
+                title: "3D Visualization",
+                subtitle: "Bringing designs to life with stunning photorealistic imagery",
+                heroImage: "../images/services/3dVisualization.jpg",
+                overviewImage: "../images/services/3dVisualization.jpg",
+                overview: "Our 3D visualization service transforms architectural concepts into stunning visual experiences. Using cutting-edge rendering technology and artistic expertise, we create photorealistic images, immersive virtual tours, and dynamic animations that communicate design intent with clarity and impact.",
+                highlights: [
+                    { icon: "bx bx-image-alt", title: "Photorealistic Renders", desc: "Stunning high-resolution imagery" },
+                    { icon: "bx bx-walk", title: "Virtual Tours", desc: "Interactive 360° immersive experiences" },
+                    { icon: "bx bx-movie-play", title: "Animation", desc: "Dynamic video walkthroughs" }
+                ],
+                features: [
+                    "Photorealistic exterior rendering",
+                    "Interior visualization and staging",
+                    "360° panoramic virtual tours",
+                    "Architectural flythrough animations",
+                    "Material and finish visualization",
+                    "Lighting studies (day and night)",
+                    "VR-ready immersive experiences",
+                    "Marketing imagery and brochure visuals"
+                ],
+                process: [
+                    { title: "Brief", desc: "Gather design data and goals" },
+                    { title: "Modeling", desc: "Create 3D digital models" },
+                    { title: "Materials", desc: "Apply textures and lighting" },
+                    { title: "Rendering", desc: "Produce high-res images" },
+                    { title: "Post-Production", desc: "Enhancement and delivery" }
+                ],
+                stats: [
+                    { number: "2000+", label: "Renders Produced" },
+                    { number: "8K", label: "Max Resolution" },
+                    { number: "24hr", label: "Express Available" },
+                    { number: "100%", label: "Client Satisfaction" }
+                ],
+                faq: [
+                    { q: "How realistic are your renderings?", a: "Our renderings achieve photorealistic quality using advanced rendering engines (V-Ray, Corona, Lumion), physically accurate materials, and professional HDR lighting." },
+                    { q: "What information do you need?", a: "We need architectural drawings (plans, sections, elevations), material specifications or references, and direction on the desired style and mood." },
+                    { q: "How long does a render take?", a: "A single exterior render typically takes 3-5 business days. Express services are available for urgent needs." }
+                ]
+            },
+            "design-consultation": {
+                icon: "bx bx-chat",
+                category: "Consultation Service",
+                title: "Design Consultation",
+                subtitle: "Expert architectural guidance for informed decision-making",
+                heroImage: "../images/services/designConsultation.jpg",
+                overviewImage: "../images/services/designConsultation.jpg",
+                overview: "Our design consultation service provides expert architectural guidance to help you make informed decisions about your building project. Whether you're starting a new project, reviewing existing designs, seeking a second opinion, or need help understanding your options, our experienced architects offer professional advice tailored to your specific situation.",
+                highlights: [
+                    { icon: "bx bx-analyse", title: "Feasibility Analysis", desc: "Site and project viability assessment" },
+                    { icon: "bx bx-search-alt", title: "Design Review", desc: "Independent evaluation of proposals" },
+                    { icon: "bx bx-compass", title: "Strategic Guidance", desc: "Clear direction and recommendations" }
+                ],
+                features: [
+                    "Site feasibility and development potential analysis",
+                    "Project brief development and requirements",
+                    "Design concept exploration and options",
+                    "Independent design review and critique",
+                    "Second opinion on architectural proposals",
+                    "Space planning and layout optimization advice",
+                    "Material and finish selection guidance",
+                    "Budget estimation and cost guidance"
+                ],
+                process: [
+                    { title: "Enquiry", desc: "Share your situation and goals" },
+                    { title: "Preparation", desc: "We review your materials" },
+                    { title: "Consultation", desc: "In-depth discussion" },
+                    { title: "Documentation", desc: "Written recommendations" },
+                    { title: "Follow-up", desc: "Ongoing support" }
+                ],
+                stats: [
+                    { number: "500+", label: "Consultations" },
+                    { number: "85%", label: "Proceed to Projects" },
+                    { number: "₦2B+", label: "Savings Enabled" },
+                    { number: "100%", label: "Satisfaction" }
+                ],
+                faq: [
+                    { q: "What can I expect from a consultation?", a: "An in-depth discussion, professional analysis, clear recommendations and options, and a written summary for your reference." },
+                    { q: "When should I seek consultation?", a: "Before buying land, at project start, when reviewing designs, when facing challenges, or before major decisions." },
+                    { q: "How much does it cost?", a: "Initial consultations range from ₦50,000 to ₦150,000 depending on complexity. We provide custom quotes for detailed assessments." }
+                ]
+            },
+            "construction-consultation": {
+                icon: "bx bx-wrench",
+                category: "Consultation Service",
+                title: "Construction Consultation",
+                subtitle: "Professional construction advisory for project success",
+                heroImage: "../images/services/consultationConstruction.jpg",
+                overviewImage: "../images/services/consultationConstruction.jpg",
+                overview: "Our construction consultation service provides professional advisory support for clients navigating the complexities of building construction. Whether you need help estimating costs, selecting contractors, understanding construction quality, or resolving issues, our experienced team offers practical guidance based on real-world expertise.",
+                highlights: [
+                    { icon: "bx bx-calculator", title: "Cost Advisory", desc: "Accurate budgeting and estimation guidance" },
+                    { icon: "bx bx-user-check", title: "Contractor Selection", desc: "Procurement and vetting support" },
+                    { icon: "bx bx-search", title: "Quality Review", desc: "Independent inspection and assessment" }
+                ],
+                features: [
+                    "Construction cost estimation and budgeting",
+                    "Contractor prequalification and selection",
+                    "Review of construction contracts and terms",
+                    "Independent site inspections and quality assessments",
+                    "Construction progress monitoring and reporting",
+                    "Dispute resolution and claims advisory",
+                    "Value engineering recommendations",
+                    "Post-construction evaluation"
+                ],
+                process: [
+                    { title: "Enquiry", desc: "Understanding your needs" },
+                    { title: "Assessment", desc: "Evaluate current situation" },
+                    { title: "Advice", desc: "Professional recommendations" },
+                    { title: "Support", desc: "Ongoing guidance" },
+                    { title: "Resolution", desc: "Help resolve issues" }
+                ],
+                stats: [
+                    { number: "400+", label: "Consultations" },
+                    { number: "₦5B+", label: "Savings Enabled" },
+                    { number: "95%", label: "Issue Resolution" },
+                    { number: "100%", label: "Satisfaction" }
+                ],
+                faq: [
+                    { q: "When should I engage a construction consultant?", a: "Before starting construction, when facing issues, or when you need independent professional advice about your project." },
+                    { q: "Can you help with contractor disputes?", a: "Yes, we provide expert advice and support for resolving contractor disputes and managing claims." },
+                    { q: "Do you inspect ongoing construction?", a: "Yes, we provide independent quality inspections and progress monitoring to protect your interests." }
+                ]
+            },
+            "renovation-remodeling": {
+                icon: "bx bx-refresh",
+                category: "Renovation Service",
+                title: "Renovation & Remodeling",
+                subtitle: "Breathing new life into existing structures with modern upgrades",
+                heroImage: "../images/services/reconstructionRemodelling.jpg",
+                overviewImage: "../images/services/reconstructionRemodelling.jpg",
+                overview: "Our renovation and remodeling service breathes new life into existing structures through thoughtful renovation, adaptive reuse, and modern upgrades. We transform outdated spaces into contemporary, functional environments that meet current needs while respecting the building's character and potential.",
+                highlights: [
+                    { icon: "bx bx-home-smile", title: "Residential", desc: "Complete home renovations and upgrades" },
+                    { icon: "bx bx-store-alt", title: "Commercial", desc: "Office and retail space remodeling" },
+                    { icon: "bx bx-history", title: "Heritage", desc: "Careful restoration and preservation" }
+                ],
+                features: [
+                    "Renovation design and planning",
+                    "Structural modifications and upgrades",
+                    "MEP system upgrades and modernization",
+                    "Interior remodeling and fit-out",
+                    "Facade renovation and restoration",
+                    "Space reconfiguration and optimization",
+                    "Heritage restoration and preservation",
+                    "Sustainable upgrades and energy efficiency"
+                ],
+                process: [
+                    { title: "Assessment", desc: "Evaluate existing conditions" },
+                    { title: "Design", desc: "Develop renovation plans" },
+                    { title: "Planning", desc: "Permits and approvals" },
+                    { title: "Execution", desc: "Implement renovations" },
+                    { title: "Completion", desc: "Final touches and handover" }
+                ],
+                stats: [
+                    { number: "200+", label: "Renovations" },
+                    { number: "100K+", label: "Sqm Renovated" },
+                    { number: "30%", label: "Avg Value Increase" },
+                    { number: "98%", label: "Satisfaction" }
+                ],
+                faq: [
+                    { q: "Can you renovate while we're living/working there?", a: "Yes, we can phase works to minimize disruption and maintain functionality during the renovation process." },
+                    { q: "Do renovations require permits?", a: "Depending on scope, some renovations require permits which we help coordinate with the relevant authorities." },
+                    { q: "How do you handle unexpected issues?", a: "We conduct thorough assessments to minimize surprises and have contingency plans for any unexpected discoveries during the work." }
+                ]
+            }
+        };
+
+        // ==================== DOM ELEMENTS ====================
+        const DOM = {
+            pageLoader: document.getElementById('pageLoader'),
+            header: document.getElementById('header'),
+            navMenu: document.getElementById('navMenu'),
+            navToggle: document.getElementById('navToggle'),
+            themeToggle: document.getElementById('themeToggle'),
+            servicesGrid: document.getElementById('servicesGrid'),
+            serviceModal: document.getElementById('serviceModal'),
+            modalContainer: document.getElementById('modalContainer'),
+            modalBackBtn: document.getElementById('modalBackBtn'),
+            modalCloseBtn: document.getElementById('modalCloseBtn'),
+            ctaBackBtn: document.getElementById('ctaBackBtn'),
+            modalScrollTop: document.getElementById('modalScrollTop'),
+            currentYear: document.getElementById('currentYear')
+        };
+
+        // ==================== UTILITIES ====================
+        const debounce = (fn, delay) => {
+            let timeout;
+            return (...args) => {
+                clearTimeout(timeout);
+                timeout = setTimeout(() => fn(...args), delay);
+            };
+        };
+
+        // ==================== PAGE LOADER ====================
+        const hideLoader = () => {
+            DOM.pageLoader.classList.add('loaded');
+        };
+
+        // Fast load
+        if (document.readyState === 'complete') {
+            setTimeout(hideLoader, 500);
+        } else {
+            window.addEventListener('load', () => setTimeout(hideLoader, 500));
+        }
+        // Fallback
+        setTimeout(hideLoader, 1800);
+
+        // ==================== HEADER SCROLL ====================
+        const handleScroll = debounce(() => {
+            DOM.header.classList.toggle('scrolled', window.scrollY > 50);
+        }, 10);
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+
+        // ==================== MOBILE NAVIGATION ====================
+        DOM.navToggle.addEventListener('click', () => {
+            DOM.navToggle.classList.toggle('active');
+            DOM.navMenu.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        });
+
+        // Close menu on link click
+        DOM.navMenu.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                DOM.navToggle.classList.remove('active');
+                DOM.navMenu.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        });
+
+        // ==================== THEME TOGGLE ====================
+        const setTheme = (theme) => {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+        };
+
+        // Initialize theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        setTheme(savedTheme);
+
+        DOM.themeToggle.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        });
+
+        // ==================== GENERATE SERVICE CARDS ====================
+        const generateServiceCards = () => {
+            const fragment = document.createDocumentFragment();
+            let index = 0;
+
+            Object.entries(servicesData).forEach(([key, service]) => {
+                index++;
+                const card = document.createElement('article');
+                card.className = 'service-card';
+                card.dataset.service = key;
+                card.style.transitionDelay = `${index * 0.05}s`;
+
+                card.innerHTML = `
+                    <span class="service-card-number">${String(index).padStart(2, '0')}</span>
+                    <div class="service-card-icon">
+                        <i class="${service.icon}"></i>
+                    </div>
+                    <span class="service-card-category">${service.category}</span>
+                    <h3 class="service-card-title">${service.title}</h3>
+                    <p class="service-card-description">${service.subtitle}</p>
+                    <button class="service-card-btn" data-service="${key}">
+                        <span>View Details</span>
+                        <i class="bx bx-right-arrow-alt"></i>
+                    </button>
+                `;
+
+                fragment.appendChild(card);
+            });
+
+            DOM.servicesGrid.appendChild(fragment);
+
+            // Animate cards on scroll
+            observeServiceCards();
+
+            // Add click handlers
+            DOM.servicesGrid.addEventListener('click', (e) => {
+                const btn = e.target.closest('.service-card-btn');
+                const card = e.target.closest('.service-card');
+                if (btn || card) {
+                    e.preventDefault();
+                    const serviceKey = btn?.dataset.service || card?.dataset.service;
+                    if (serviceKey) openModal(serviceKey);
+                }
+            });
+        };
+
+        // ==================== INTERSECTION OBSERVER FOR CARDS ====================
+        const observeServiceCards = () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate-in');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            document.querySelectorAll('.service-card').forEach(card => observer.observe(card));
+        };
+
+        // ==================== MODAL FUNCTIONS ====================
+        const openModal = (serviceKey) => {
+            const service = servicesData[serviceKey];
+            if (!service) return;
+
+            // Populate modal content
+            document.getElementById('modalIcon').innerHTML = `<i class="${service.icon}"></i>`;
+            document.getElementById('modalCategory').textContent = service.category;
+            document.getElementById('modalTitle').textContent = service.title;
+            document.getElementById('modalSubtitle').textContent = service.subtitle;
+            document.getElementById('modalHeroBg').style.backgroundImage = `url('${service.heroImage}')`;
+            document.getElementById('modalOverview').textContent = service.overview;
+            document.getElementById('overviewImage').src = service.overviewImage;
+            document.getElementById('overviewImage').alt = service.title;
+
+            // Highlights
+            document.getElementById('modalHighlights').innerHTML = service.highlights.map(h => `
+                <div class="highlight-card">
+                    <div class="highlight-icon"><i class="${h.icon}"></i></div>
+                    <h4 class="highlight-title">${h.title}</h4>
+                    <p class="highlight-desc">${h.desc}</p>
+                </div>
+            `).join('');
+
+            // Features
+            document.getElementById('modalFeatures').innerHTML = service.features.map(f => `
+                <div class="feature-item">
+                    <div class="feature-check"><i class="bx bx-check"></i></div>
+                    <span class="feature-text">${f}</span>
+                </div>
+            `).join('');
+
+            // Process
+            document.getElementById('modalProcess').innerHTML = service.process.map((p, i) => `
+                <div class="process-step">
+                    <div class="process-step-number">${i + 1}</div>
+                    <div class="process-step-content">
+                        <h4 class="process-step-title">${p.title}</h4>
+                        <p class="process-step-desc">${p.desc}</p>
+                    </div>
+                </div>
+            `).join('');
+
+            // Stats
+            document.getElementById('modalStats').innerHTML = service.stats.map(s => `
+                <div class="stat-card">
+                    <div class="stat-number">${s.number}</div>
+                    <div class="stat-label">${s.label}</div>
+                </div>
+            `).join('');
+
+            // FAQ
+            document.getElementById('modalFaq').innerHTML = service.faq.map((f, i) => `
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <div class="faq-q-content">
+                            <span class="faq-q-number">Q${i + 1}</span>
+                            <span class="faq-q-text">${f.q}</span>
+                        </div>
+                        <div class="faq-toggle"><i class="bx bx-plus"></i></div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">${f.a}</div>
+                    </div>
+                </div>
+            `).join('');
+
+            // Setup FAQ accordion
+            setupFaqAccordion();
+
+            // Observe modal sections
+            observeModalSections();
+
+            // Show modal
+            DOM.serviceModal.classList.add('active');
+            document.body.classList.add('no-scroll');
+            DOM.modalContainer.scrollTop = 0;
+        };
+
+        const closeModal = () => {
+            DOM.serviceModal.classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        };
+
+        // Modal close buttons
+        DOM.modalBackBtn.addEventListener('click', closeModal);
+        DOM.modalCloseBtn.addEventListener('click', closeModal);
+        DOM.ctaBackBtn.addEventListener('click', closeModal);
+
+        // Close on backdrop click
+        document.querySelector('.modal-backdrop').addEventListener('click', closeModal);
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && DOM.serviceModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+
+        // ==================== MODAL SECTION OBSERVER ====================
+        const observeModalSections = () => {
+            const sections = document.querySelectorAll('.modal-section');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1, root: DOM.modalContainer });
+
+            sections.forEach(section => {
+                section.classList.remove('visible');
+                observer.observe(section);
+            });
+        };
+
+        // ==================== FAQ ACCORDION ====================
+        const setupFaqAccordion = () => {
+            const faqList = document.getElementById('modalFaq');
+            
+            faqList.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('click', () => {
+                    const item = question.closest('.faq-item');
+                    const answer = item.querySelector('.faq-answer');
+                    const isActive = item.classList.contains('active');
+
+                    // Close all
+                    faqList.querySelectorAll('.faq-item').forEach(i => {
+                        i.classList.remove('active');
+                        i.querySelector('.faq-answer').style.maxHeight = '0';
+                    });
+
+                    // Open clicked if wasn't active
+                    if (!isActive) {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    }
+                });
+            });
+        };
+
+        // ==================== MODAL SCROLL TO TOP ====================
+        DOM.modalContainer.addEventListener('scroll', debounce(() => {
+            DOM.modalScrollTop.classList.toggle('visible', DOM.modalContainer.scrollTop > 500);
+        }, 50), { passive: true });
+
+        DOM.modalScrollTop.addEventListener('click', () => {
+            DOM.modalContainer.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // ==================== FOOTER SERVICE LINKS ====================
+        document.querySelectorAll('[data-service]').forEach(link => {
+            if (link.closest('.footer-links')) {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    openModal(link.dataset.service);
+                });
+            }
+        });
+
+        // ==================== UPDATE YEAR ====================
+        DOM.currentYear.textContent = new Date().getFullYear();
+
+        // ==================== INITIALIZE ====================
+        generateServiceCards();
+    </script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+/*=================================
+  Line Icons & Box Icons Integration
+  Using Boxicons as the primary icon library
+===================================*/
+
+/* Ensure Boxicons are loaded properly */
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+/* Base icon styles */
+[class^="icon-"],
+[class*=" icon-"],
+[class^="bx-"],
+[class*=" bx-"] {
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: middle;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Icon sizing utilities */
+.icon-sm {
+  font-size: 16px;
+}
+
+.icon-md {
+  font-size: 24px;
+}
+
+.icon-lg {
+  font-size: 32px;
+}
+
+.icon-xl {
+  font-size: 48px;
+}
+
+.icon-2x {
+  font-size: 2em;
+}
+
+.icon-3x {
+  font-size: 3em;
+}
+
+.icon-4x {
+  font-size: 4em;
+}
+
+/* Icon animations */
+.icon-spin {
+  animation: icon-spin 2s linear infinite;
+}
+
+@keyframes icon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.icon-pulse {
+  animation: icon-pulse 2s ease-in-out infinite;
+}
+
+@keyframes icon-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+/* Icon with background */
+.icon-circle {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+
+.icon-square {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
+
+/* Icon colors */
+.icon-primary {
+  color: #2c3e50;
+}
+
+.icon-secondary {
+  color: #e74c3c;
+}
+
+.icon-success {
+  color: #27ae60;
+}
+
+.icon-danger {
+  color: #e74c3c;
+}
+
+.icon-warning {
+  color: #f39c12;
+}
+
+.icon-info {
+  color: #3498db;
+}
+
+.icon-light {
+  color: #ecf0f1;
+}
+
+.icon-dark {
+  color: #1a1a1a;
+}
+
+.icon-white {
+  color: #ffffff;
+}
+
+/* Legacy icon mapping for backward compatibility */
+.icon-browser::before {
+  font-family: 'boxicons' !important;
+  content: "\eb8c";
+}
+
+.icon-bargraph::before {
+  font-family: 'boxicons' !important;
+  content: "\eb2f";
+}
+
+.icon-camera::before {
+  font-family: 'boxicons' !important;
+  content: "\eb94";
+}
+
+.icon-tools::before {
+  font-family: 'boxicons' !important;
+  content: "\ec17";
+}
+
+.icon-calendar::before {
+  font-family: 'boxicons' !important;
+  content: "\eb90";
+}
+
+.icon-scissors::before {
+  font-family: 'boxicons' !important;
+  content: "\ebf9";
+}
+
+.icon-strategy::before {
+  font-family: 'boxicons' !important;
+  content: "\ec3f";
+}
+
+.icon-trophy::before {
+  font-family: 'boxicons' !important;
+  content: "\ec2e";
+}
+
+.icon-happy::before {
+  font-family: 'boxicons' !important;
+  content: "\eda7";
+}
+
+.icon-paintbrush::before {
+  font-family: 'boxicons' !important;
+  content: "\ebcb";
+}
+
+.icon-heart::before {
+  font-family: 'boxicons' !important;
+  content: "\eb51";
+}
+
+.icon-cloud::before {
+  font-family: 'boxicons' !important;
+  content: "\eb7b";
+}
+
+.icon-upload::before {
+  font-family: 'boxicons' !important;
+  content: "\eb8f";
+}
+
+.icon-download::before {
+  font-family: 'boxicons' !important;
+  content: "\eb90";
+}
+
+/* Hover effects for icons */
+.icon-hover:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.icon-rotate-hover:hover {
+  transform: rotate(360deg);
+  transition: transform 0.6s ease;
+}
+
+/* Icon list styles */
+.icon-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.icon-list li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.icon-list li i {
+  margin-right: 15px;
+  font-size: 20px;
+  color: #e74c3c;
+  min-width: 30px;
+}
+
+/* Icon buttons */
+.btn-icon {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-icon:hover {
+  transform: scale(1.1);
+}
+
+/* Icon badges */
+.icon-badge {
+  position: relative;
+  display: inline-block;
+}
+
+.icon-badge::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 10px;
+  height: 10px;
+  background-color: #e74c3c;
+  border-radius: 50%;
+  border: 2px solid white;
+}
+
+/* Responsive icon sizes */
+@media (max-width: 768px) {
+  .icon-responsive {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 576px) {
+  .icon-responsive {
+    font-size: 20px;
+  }
+}

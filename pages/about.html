@@ -1,0 +1,3738 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>About Us | The Building Practice Ltd.</title>
+    <meta name="description" content="Learn about The Building Practice Ltd. - An architectural firm dedicated to shaping spaces that inspire, endure, and connect since 2013.">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    
+    <style>
+        /* ========================================
+           CSS VARIABLES - DESIGN TOKENS
+           ======================================== */
+        :root {
+            /* Primary Colors */
+            --primary-50: #E8F4F8;
+            --primary-100: #C5E4EC;
+            --primary-200: #9FD3E0;
+            --primary-300: #78C1D4;
+            --primary-400: #5BB3CA;
+            --primary-500: #1A5F7A;
+            --primary-600: #165169;
+            --primary-700: #134B61;
+            --primary-800: #0F3A4C;
+            --primary-900: #0A2A38;
+            
+            /* Accent Colors */
+            --accent-50: #FDF8E8;
+            --accent-100: #F9ECC5;
+            --accent-200: #F5DF9F;
+            --accent-300: #F1D279;
+            --accent-400: #DBB84A;
+            --accent-500: #C9A227;
+            --accent-600: #A8871F;
+            --accent-700: #876C19;
+            --accent-800: #665112;
+            --accent-900: #45360C;
+            
+            /* Semantic Shortcuts */
+            --primary: var(--primary-500);
+            --primary-light: var(--primary-400);
+            --primary-dark: var(--primary-700);
+            --accent: var(--accent-500);
+            --accent-light: var(--accent-400);
+            --accent-dark: var(--accent-600);
+            
+            /* Neutral Colors */
+            --white: #FFFFFF;
+            --black: #000000;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-500: #6B7280;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --gray-900: #111827;
+            
+            /* Background Colors */
+            --bg-primary: var(--white);
+            --bg-secondary: var(--gray-50);
+            --bg-tertiary: var(--gray-100);
+            --bg-dark: var(--gray-900);
+            
+            /* Text Colors - IMPROVED FOR READABILITY */
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --text-tertiary: #7a7a8c;
+            --text-inverse: var(--white);
+            --text-on-primary: var(--white);
+            --text-on-accent: var(--white);
+            
+            /* Border Colors */
+            --border-primary: var(--gray-200);
+            --border-secondary: var(--gray-300);
+            --border-light: rgba(255, 255, 255, 0.1);
+            --border-dark: rgba(0, 0, 0, 0.1);
+            
+            /* Glass Morphism */
+            --bg-glass: rgba(255, 255, 255, 0.08);
+            --bg-glass-light: rgba(255, 255, 255, 0.95);
+            --bg-glass-dark: rgba(0, 0, 0, 0.4);
+            
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            --gradient-blue-gold: linear-gradient(135deg, #1A5F7A 0%, #5BB3CA 35%, #C9A227 100%);
+            --gradient-hero: linear-gradient(135deg, rgba(26, 95, 122, 0.95) 0%, rgba(19, 75, 97, 0.9) 100%);
+            --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+            
+            /* Shadows */
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            --shadow-glow-primary: 0 0 30px rgba(26, 95, 122, 0.3);
+            --shadow-glow-accent: 0 0 30px rgba(201, 162, 39, 0.4);
+            
+            /* Border Radius */
+            --radius-sm: 6px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+            --radius-xl: 16px;
+            --radius-2xl: 24px;
+            --radius-full: 9999px;
+            
+            /* Spacing */
+            --space-1: 4px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+            --space-5: 20px;
+            --space-6: 24px;
+            --space-8: 32px;
+            --space-10: 40px;
+            --space-12: 48px;
+            --space-16: 64px;
+            --space-20: 80px;
+            --space-24: 96px;
+            
+            /* Typography */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+            --text-xs: 12px;
+            --text-sm: 14px;
+            --text-base: 16px;
+            --text-lg: 18px;
+            --text-xl: 20px;
+            --text-2xl: 24px;
+            --text-3xl: 30px;
+            --text-4xl: 36px;
+            --text-5xl: 48px;
+            --text-6xl: 60px;
+            
+            /* Transitions */
+            --duration-fast: 150ms;
+            --duration-normal: 300ms;
+            --duration-slow: 500ms;
+            --ease-out: cubic-bezier(0.4, 0, 0.2, 1);
+            --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        /* ========================================
+           DARK MODE
+           ======================================== */
+        [data-theme="dark"] {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-tertiary: #1a1a25;
+            
+            --text-primary: #f5f5f7;
+            --text-secondary: #b8b8c0;
+            --text-tertiary: #7a7a8c;
+            
+            --border-primary: rgba(255, 255, 255, 0.1);
+            --border-secondary: rgba(255, 255, 255, 0.15);
+            
+            --bg-glass: rgba(255, 255, 255, 0.05);
+            --bg-glass-light: rgba(255, 255, 255, 0.08);
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
+        }
+
+        /* ========================================
+           BASE RESET
+           ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-text-size-adjust: 100%;
+        }
+
+        body {
+            font-family: var(--font-family);
+            font-size: var(--text-base);
+            line-height: 1.7;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--duration-fast) var(--ease-out);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        button {
+            font-family: inherit;
+            cursor: pointer;
+            border: none;
+            background: none;
+        }
+
+        ul, ol {
+            list-style: none;
+        }
+
+        /* ========================================
+           UTILITY CLASSES
+           ======================================== */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 var(--space-5);
+        }
+
+        .section {
+            padding: var(--space-20) 0;
+            position: relative;
+        }
+
+        .section--light {
+            background: var(--bg-secondary);
+        }
+
+        .section--dark {
+            background: var(--gradient-hero);
+            color: var(--text-inverse);
+        }
+
+        .gradient-text {
+            background: var(--gradient-blue-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        /* ========================================
+           SPLASH SCREEN
+           ======================================== */
+        .splash {
+            position: fixed;
+            inset: 0;
+            background: var(--white);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        [data-theme="dark"] .splash {
+            background: var(--bg-primary);
+        }
+
+        .splash.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .splash-logo-wrapper {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .splash-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: splashRingSpin 2s linear infinite;
+        }
+
+        @keyframes splashRingSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .splash-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            animation: splashLogoFade 1s ease forwards;
+        }
+
+        @keyframes splashLogoFade {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .splash-title {
+            margin-top: var(--space-5);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--primary);
+            opacity: 0;
+            animation: splashTextIn 0.6s ease 0.3s forwards;
+        }
+
+        .splash-tagline {
+            margin-top: var(--space-2);
+            font-size: var(--text-sm);
+            color: var(--text-tertiary);
+            font-style: italic;
+            opacity: 0;
+            animation: splashTextIn 0.6s ease 0.5s forwards;
+        }
+
+        @keyframes splashTextIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .splash-loader {
+            margin-top: var(--space-8);
+            display: flex;
+            gap: var(--space-2);
+            opacity: 0;
+            animation: splashTextIn 0.6s ease 0.7s forwards;
+        }
+
+        .splash-loader span {
+            width: 10px;
+            height: 10px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: splashDot 1.4s ease-in-out infinite;
+        }
+
+        .splash-loader span:nth-child(2) { animation-delay: 0.2s; }
+        .splash-loader span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes splashDot {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        .splash-skip {
+            position: absolute;
+            bottom: var(--space-12);
+            font-size: var(--text-sm);
+            color: var(--text-tertiary);
+            cursor: pointer;
+            opacity: 0;
+            animation: splashTextIn 0.6s ease 1s forwards;
+            transition: color 0.2s ease;
+        }
+
+        .splash-skip:hover {
+            color: var(--primary);
+        }
+
+        /* ========================================
+           HEADER / NAVIGATION (MATCHING INDEX.HTML)
+           ======================================== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: saturate(180%) blur(20px);
+            -webkit-backdrop-filter: saturate(180%) blur(20px);
+            border-bottom: 1px solid var(--border-primary);
+            z-index: 1000;
+            transition: all var(--duration-normal) var(--ease-out);
+        }
+
+        [data-theme="dark"] .header {
+            background: rgba(10, 10, 15, 0.85);
+        }
+
+        .header.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .header .container {
+            height: 100%;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            text-decoration: none;
+        }
+
+        .nav-brand img {
+            height: 42px;
+            width: auto;
+            transition: transform var(--duration-normal) var(--ease-spring);
+        }
+
+        .nav-brand:hover img {
+            transform: scale(1.05);
+        }
+
+        .nav-brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .nav-brand-name {
+            font-size: var(--text-base);
+            font-weight: 600;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .nav-brand-tagline {
+            font-size: var(--text-xs);
+            color: var(--text-tertiary);
+            font-style: italic;
+        }
+
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: var(--space-1);
+        }
+
+        .nav-link {
+            padding: var(--space-2) var(--space-4);
+            font-size: var(--text-sm);
+            font-weight: 500;
+            color: var(--text-secondary);
+            border-radius: var(--radius-full);
+            transition: all 0.2s ease;
+            position: relative;
+            text-decoration: none;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 4px;
+            left: 50%;
+            transform: translateX(-50%) scaleX(0);
+            width: 20px;
+            height: 2px;
+            background: var(--primary);
+            border-radius: 1px;
+            transition: transform var(--duration-normal) var(--ease-spring);
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            transform: translateX(-50%) scaleX(1);
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+            background: rgba(26, 95, 122, 0.08);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+        }
+
+        .theme-toggle {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: var(--text-secondary);
+            background: var(--bg-secondary);
+            border-radius: 50%;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .theme-toggle:hover {
+            color: var(--primary);
+            background: var(--bg-tertiary);
+            transform: rotate(15deg);
+        }
+
+        .nav-toggle {
+            display: none;
+            width: 42px;
+            height: 42px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all var(--duration-normal) ease;
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        @media (max-width: 968px) {
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: var(--bg-primary);
+                flex-direction: column;
+                align-items: stretch;
+                padding: var(--space-5);
+                gap: 0;
+                transform: translateX(100%);
+                transition: transform var(--duration-normal) ease;
+                overflow-y: auto;
+            }
+
+            .nav-menu.active {
+                transform: translateX(0);
+            }
+
+            .nav-link {
+                padding: var(--space-4);
+                font-size: var(--text-lg);
+                border-bottom: 1px solid var(--border-primary);
+                border-radius: 0;
+            }
+
+            .nav-link::after {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-brand-text {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .nav-brand img {
+                height: 36px;
+            }
+        }
+    
+        /* ========================================
+           BUTTONS
+           ======================================== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            padding: var(--space-3) var(--space-6);
+            font-size: var(--text-sm);
+            font-weight: 600;
+            border-radius: var(--radius-lg);
+            transition: all var(--duration-normal) var(--ease-spring);
+            white-space: nowrap;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn i {
+            font-size: 18px;
+            transition: transform var(--duration-normal) var(--ease-spring);
+        }
+
+        .btn:hover i {
+            transform: translateX(3px);
+        }
+
+        .btn--primary {
+            background: var(--gradient-accent);
+            color: var(--white);
+            box-shadow: var(--shadow-glow-accent);
+        }
+
+        .btn--primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(201, 162, 39, 0.5);
+        }
+
+        .btn--secondary {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn--secondary:hover {
+            background: var(--primary);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .btn--outline-light {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .btn--outline-light:hover {
+            background: var(--white);
+            color: var(--primary);
+            transform: translateY(-3px);
+        }
+
+        .btn--lg {
+            padding: var(--space-4) var(--space-8);
+            font-size: var(--text-base);
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px var(--space-5) var(--space-20);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+        }
+
+        .hero-bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, 
+                rgba(26, 95, 122, 0.92) 0%, 
+                rgba(19, 75, 97, 0.88) 50%,
+                rgba(10, 42, 56, 0.85) 100%);
+            z-index: -1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-3) var(--space-5);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: var(--radius-full);
+            margin-bottom: var(--space-6);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-badge-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.7; }
+        }
+
+        .hero-badge span {
+            font-size: var(--text-sm);
+            color: rgba(255, 255, 255, 0.9);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .hero-title {
+            font-size: clamp(var(--text-3xl), 8vw, var(--text-6xl));
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: var(--space-6);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.4s forwards;
+        }
+
+        .hero-title .highlight {
+            display: block;
+            background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 5s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% center; }
+            50% { background-position: 100% center; }
+        }
+
+        .hero-description {
+            font-size: var(--text-lg);
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            margin: 0 auto var(--space-10);
+            line-height: 1.8;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.6s forwards;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-6);
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 0.8s forwards;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6) var(--space-8);
+            text-align: center;
+            transition: all var(--duration-normal) var(--ease-spring);
+            min-width: 140px;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.25);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .stat-number {
+            font-size: var(--text-4xl);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), var(--accent-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: var(--space-2);
+        }
+
+        .stat-label {
+            font-size: var(--text-sm);
+            color: rgba(255, 255, 255, 0.7);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        .hero-scroll {
+            position: absolute;
+            bottom: var(--space-10);
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--space-3);
+            color: rgba(255, 255, 255, 0.6);
+            opacity: 0;
+            animation: fadeInUp 0.8s ease 1s forwards;
+        }
+
+        .hero-scroll span {
+            font-size: var(--text-xs);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .hero-scroll-mouse {
+            width: 24px;
+            height: 36px;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: var(--radius-full);
+            position: relative;
+        }
+
+        .hero-scroll-wheel {
+            width: 4px;
+            height: 8px;
+            background: var(--accent);
+            border-radius: 2px;
+            position: absolute;
+            top: 6px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollWheel 2s ease-in-out infinite;
+        }
+
+        @keyframes scrollWheel {
+            0%, 100% { top: 6px; opacity: 1; }
+            50% { top: 18px; opacity: 0.3; }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                padding: 100px var(--space-4) var(--space-16);
+            }
+
+            .hero-stats {
+                gap: var(--space-4);
+            }
+
+            .stat-card {
+                padding: var(--space-4) var(--space-6);
+                min-width: 120px;
+            }
+
+            .stat-number {
+                font-size: var(--text-2xl);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-stats {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .stat-card {
+                width: 100%;
+                max-width: 200px;
+            }
+        }
+
+        /* ========================================
+           SECTION HEADER
+           ======================================== */
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto var(--space-16);
+        }
+
+        .section-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-4);
+            background: var(--primary-50);
+            border: 1px solid var(--primary-100);
+            border-radius: var(--radius-full);
+            margin-bottom: var(--space-4);
+        }
+
+        [data-theme="dark"] .section-badge {
+            background: rgba(26, 95, 122, 0.2);
+            border-color: rgba(26, 95, 122, 0.3);
+        }
+
+        .section-badge i {
+            color: var(--primary);
+            font-size: 16px;
+        }
+
+        .section-badge span {
+            font-size: var(--text-xs);
+            color: var(--primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-size: clamp(var(--text-2xl), 5vw, var(--text-4xl));
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--text-primary);
+            margin-bottom: var(--space-4);
+            line-height: 1.2;
+        }
+
+        .section-divider {
+            width: 60px;
+            height: 4px;
+            background: var(--gradient-blue-gold);
+            margin: 0 auto var(--space-5);
+            border-radius: var(--radius-full);
+        }
+
+        .section-description {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Light header for dark sections */
+        .section-header--light .section-badge {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .section-header--light .section-badge i,
+        .section-header--light .section-badge span {
+            color: var(--accent);
+        }
+
+        .section-header--light .section-title {
+            color: var(--white);
+        }
+
+        .section-header--light .section-description {
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* ========================================
+           WHO WE ARE SECTION
+           ======================================== */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-16);
+            align-items: center;
+        }
+
+        @media (max-width: 968px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-10);
+            }
+        }
+
+        .about-content {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: all 0.8s var(--ease-out);
+        }
+
+        .about-content.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .content-label {
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-2) var(--space-4);
+            background: var(--primary-50);
+            border-radius: var(--radius-full);
+            margin-bottom: var(--space-4);
+        }
+
+        [data-theme="dark"] .content-label {
+            background: rgba(26, 95, 122, 0.2);
+        }
+
+        .content-label span {
+            font-size: var(--text-xs);
+            color: var(--primary);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .content-title {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-6);
+            line-height: 1.2;
+        }
+
+        .content-text p {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: var(--space-5);
+        }
+
+        .content-text p:first-child::first-letter {
+            font-size: 4rem;
+            float: left;
+            line-height: 1;
+            padding-right: var(--space-3);
+            padding-top: var(--space-1);
+            background: var(--gradient-blue-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 700;
+        }
+
+        .founded-card {
+            display: flex;
+            align-items: center;
+            gap: var(--space-5);
+            padding: var(--space-5);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-xl);
+            margin-top: var(--space-8);
+            transition: all var(--duration-normal) var(--ease-spring);
+        }
+
+        .founded-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-200);
+        }
+
+        .founded-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .founded-icon i {
+            font-size: 24px;
+            color: var(--white);
+        }
+
+        .founded-info h4 {
+            font-size: var(--text-xs);
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: var(--space-1);
+        }
+
+        .founded-info p {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* About Image */
+        .about-visual {
+            position: relative;
+            opacity: 0;
+            transform: translateX(40px);
+            transition: all 0.8s var(--ease-out);
+            transition-delay: 0.2s;
+        }
+
+        .about-visual.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        @media (max-width: 968px) {
+            .about-visual {
+                order: -1;
+            }
+        }
+
+        .image-container {
+            position: relative;
+            border-radius: var(--radius-2xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-xl);
+        }
+
+        .image-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, transparent 50%, rgba(26, 95, 122, 0.6) 100%);
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .image-container:hover .about-img {
+            transform: scale(1.05);
+        }
+
+        .floating-badge {
+            position: absolute;
+            bottom: -20px;
+            left: -20px;
+            background: var(--gradient-accent);
+            padding: var(--space-5) var(--space-6);
+            border-radius: var(--radius-xl);
+            text-align: center;
+            z-index: 10;
+            box-shadow: var(--shadow-glow-accent);
+            animation: floatBadge 3s ease-in-out infinite;
+        }
+
+        @keyframes floatBadge {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-8px); }
+        }
+
+        .floating-badge h3 {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .floating-badge p {
+            font-size: var(--text-xs);
+            color: rgba(255, 255, 255, 0.85);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: var(--space-1);
+        }
+
+        .deco-ring {
+            position: absolute;
+            top: -25px;
+            right: -25px;
+            width: 100px;
+            height: 100px;
+            border: 2px solid var(--primary-200);
+            border-radius: 50%;
+            animation: ringRotate 20s linear infinite;
+            z-index: -1;
+        }
+
+        .deco-ring::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            width: 12px;
+            height: 12px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        @keyframes ringRotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .about-img {
+                height: 350px;
+            }
+
+            .floating-badge {
+                bottom: -15px;
+                left: -10px;
+                padding: var(--space-4) var(--space-5);
+            }
+
+            .floating-badge h3 {
+                font-size: var(--text-2xl);
+            }
+        }
+    
+        /* ========================================
+           EXPERTISE SECTION
+           ======================================== */
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-5);
+        }
+
+        @media (max-width: 1100px) {
+            .expertise-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .expertise-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .expertise-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            position: relative;
+            overflow: hidden;
+            transition: all var(--duration-normal) var(--ease-spring);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .expertise-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-blue-gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform var(--duration-normal) var(--ease-out);
+        }
+
+        .expertise-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-200);
+        }
+
+        .expertise-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .expertise-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-4);
+            transition: all var(--duration-normal) var(--ease-spring);
+        }
+
+        .expertise-icon i {
+            font-size: 24px;
+            color: var(--primary);
+            transition: color var(--duration-fast);
+        }
+
+        .expertise-card:hover .expertise-icon {
+            background: var(--gradient-primary);
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .expertise-card:hover .expertise-icon i {
+            color: var(--white);
+        }
+
+        .expertise-card h3 {
+            font-size: var(--text-base);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-3);
+            line-height: 1.4;
+        }
+
+        .expertise-card p {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* New Service Badge */
+        .expertise-card.new-service {
+            border-color: rgba(201, 162, 39, 0.3);
+        }
+
+        .new-badge {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            background: var(--gradient-accent);
+            color: var(--white);
+            padding: var(--space-1) var(--space-3);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-radius: var(--radius-full);
+            animation: badgePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes badgePulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(201, 162, 39, 0.4); }
+            50% { transform: scale(1.05); box-shadow: 0 0 15px rgba(201, 162, 39, 0.5); }
+        }
+
+        /* ========================================
+           MISSION & VISION
+           ======================================== */
+        .mv-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-8);
+        }
+
+        @media (max-width: 768px) {
+            .mv-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .mv-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-10);
+            position: relative;
+            overflow: hidden;
+            transition: all var(--duration-normal) var(--ease-spring);
+            opacity: 0;
+            transform: translateY(40px);
+        }
+
+        .mv-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .mv-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--gradient-blue-gold);
+            border-radius: 4px 0 0 4px;
+        }
+
+        .mv-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--primary-200);
+        }
+
+        .mv-number {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-6);
+            font-size: 5rem;
+            font-weight: 800;
+            background: var(--gradient-blue-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.15;
+            line-height: 1;
+        }
+
+        .mv-icon {
+            width: 64px;
+            height: 64px;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: var(--space-5);
+            transition: all var(--duration-normal) var(--ease-spring);
+        }
+
+        .mv-icon i {
+            font-size: 28px;
+            color: var(--primary);
+        }
+
+        .mv-card:hover .mv-icon {
+            background: var(--gradient-primary);
+            transform: scale(1.1);
+        }
+
+        .mv-card:hover .mv-icon i {
+            color: var(--white);
+        }
+
+        .mv-card h3 {
+            font-size: var(--text-2xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-4);
+        }
+
+        .mv-card p {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            line-height: 1.9;
+        }
+
+        /* ========================================
+           DESIGN ETHOS SECTION
+           ======================================== */
+        .ethos-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: var(--space-12);
+            align-items: start;
+        }
+
+        @media (max-width: 968px) {
+            .ethos-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+            }
+        }
+
+        .quote-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-10);
+            position: relative;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s var(--ease-out);
+        }
+
+        .quote-card.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .quote-icon {
+            position: absolute;
+            top: var(--space-4);
+            left: var(--space-6);
+            font-size: 5rem;
+            font-family: Georgia, serif;
+            background: var(--gradient-blue-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.2;
+            line-height: 1;
+        }
+
+        .quote-card blockquote {
+            font-size: var(--text-xl);
+            font-weight: 500;
+            color: var(--text-primary);
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: var(--space-5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .quote-card cite {
+            font-size: var(--text-sm);
+            color: var(--text-tertiary);
+            font-style: normal;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+        }
+
+        .quote-card cite::before {
+            content: '';
+            width: 30px;
+            height: 2px;
+            background: var(--gradient-blue-gold);
+        }
+
+        .ethos-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-5);
+        }
+
+        @media (max-width: 600px) {
+            .ethos-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .ethos-item {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            transition: all var(--duration-normal) var(--ease-spring);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .ethos-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .ethos-item:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-200);
+        }
+
+        .ethos-item h4 {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: var(--space-3);
+        }
+
+        .ethos-item p {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ========================================
+           PHILOSOPHY SECTION
+           ======================================== */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-16);
+            align-items: center;
+        }
+
+        @media (max-width: 968px) {
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-10);
+            }
+        }
+
+        .philosophy-content {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s var(--ease-out);
+        }
+
+        .philosophy-content.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .philosophy-content h2 {
+            font-size: var(--text-3xl);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-5);
+        }
+
+        .philosophy-content > p {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            line-height: 1.9;
+            margin-bottom: var(--space-5);
+        }
+
+        .highlight-box {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--primary);
+            border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+            padding: var(--space-6);
+            margin: var(--space-6) 0;
+        }
+
+        .highlight-box p {
+            font-size: var(--text-lg);
+            font-style: italic;
+            color: var(--text-primary);
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .philosophy-quotes {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-5);
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s var(--ease-out);
+            transition-delay: 0.2s;
+        }
+
+        .philosophy-quotes.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .philosophy-quote-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-8);
+            position: relative;
+            overflow: hidden;
+            transition: all var(--duration-normal) var(--ease-spring);
+        }
+
+        .philosophy-quote-card::before {
+            content: '"';
+            position: absolute;
+            top: var(--space-2);
+            left: var(--space-5);
+            font-size: 4rem;
+            font-family: Georgia, serif;
+            background: var(--gradient-blue-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            opacity: 0.15;
+            line-height: 1;
+        }
+
+        .philosophy-quote-card:hover {
+            transform: translateX(8px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-200);
+        }
+
+        .philosophy-quote-card p {
+            font-size: var(--text-lg);
+            font-style: italic;
+            color: var(--text-primary);
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* ========================================
+           CERTIFICATIONS SECTION
+           ======================================== */
+        .cert-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto var(--space-12);
+        }
+
+        .cert-intro p {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-5);
+            margin-bottom: var(--space-12);
+        }
+
+        @media (max-width: 1100px) {
+            .cert-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cert-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all var(--duration-normal) var(--ease-spring);
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .cert-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-blue-gold);
+            transform: scaleX(0);
+            transition: transform var(--duration-normal);
+        }
+
+        .cert-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-200);
+        }
+
+        .cert-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .cert-badge-icon {
+            position: absolute;
+            top: var(--space-3);
+            right: var(--space-3);
+            color: #34C759;
+            font-size: 20px;
+        }
+
+        .cert-icon {
+            width: 72px;
+            height: 72px;
+            margin: 0 auto var(--space-4);
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: all var(--duration-normal) var(--ease-spring);
+        }
+
+        .cert-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .cert-icon i {
+            font-size: 32px;
+            color: var(--primary);
+        }
+
+        .cert-card:hover .cert-icon {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--gradient-primary);
+        }
+
+        .cert-card:hover .cert-icon i {
+            color: var(--white);
+        }
+
+        .cert-card h4 {
+            font-size: var(--text-base);
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: var(--space-2);
+        }
+
+        .cert-card p {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Certificate Gallery */
+        .cert-gallery {
+            margin-top: var(--space-12);
+        }
+
+        .cert-gallery-header {
+            text-align: center;
+            margin-bottom: var(--space-8);
+        }
+
+        .cert-gallery-header h3 {
+            font-size: var(--text-2xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-2);
+        }
+
+        .cert-gallery-header p {
+            font-size: var(--text-sm);
+            color: var(--text-tertiary);
+        }
+
+        .cert-gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-5);
+        }
+
+        @media (max-width: 968px) {
+            .cert-gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cert-gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .cert-gallery-item {
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s var(--ease-out);
+        }
+
+        .cert-gallery-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cert-placeholder {
+            height: 160px;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: all var(--duration-normal) var(--ease-spring);
+        }
+
+        .cert-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: var(--space-3);
+        }
+
+        .cert-gallery-item:hover .cert-placeholder {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-200);
+        }
+
+        .cert-gallery-item h5 {
+            font-size: var(--text-sm);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: var(--space-3);
+        }
+    
+        /* ========================================
+           CLIENTS & PARTNERS SECTION
+           ======================================== */
+        .cp-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto var(--space-10);
+        }
+
+        .cp-intro p {
+            font-size: var(--text-base);
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        .cp-tabs {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4);
+            margin-bottom: var(--space-10);
+        }
+
+        .cp-tab {
+            display: flex;
+            align-items: center;
+            gap: var(--space-2);
+            padding: var(--space-4) var(--space-8);
+            background: var(--bg-primary);
+            border: 2px solid var(--border-primary);
+            border-radius: var(--radius-full);
+            font-size: var(--text-base);
+            font-weight: 600;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all var(--duration-normal) var(--ease-spring);
+        }
+
+        .cp-tab:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .cp-tab.active {
+            background: var(--gradient-primary);
+            border-color: var(--primary);
+            color: var(--white);
+            box-shadow: var(--shadow-glow-primary);
+        }
+
+        .cp-tab i {
+            font-size: 18px;
+        }
+
+        @media (max-width: 480px) {
+            .cp-tabs {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cp-tab {
+                width: 100%;
+                max-width: 250px;
+                justify-content: center;
+            }
+        }
+
+        .cp-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .cp-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .clients-grid,
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: var(--space-4);
+        }
+
+        @media (max-width: 1100px) {
+            .clients-grid,
+            .partners-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .clients-grid,
+            .partners-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .clients-grid,
+            .partners-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .client-card,
+        .partner-card {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--space-5);
+            text-align: center;
+            transition: all var(--duration-normal) var(--ease-spring);
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .client-card.visible,
+        .partner-card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .client-card:hover,
+        .partner-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-200);
+            background: var(--bg-primary);
+        }
+
+        .client-card.featured,
+        .partner-card.featured {
+            border-color: var(--accent-200);
+        }
+
+        .client-card.featured::after,
+        .partner-card.featured::after {
+            content: '★';
+            position: absolute;
+            top: var(--space-2);
+            right: var(--space-3);
+            color: var(--accent);
+            font-size: 12px;
+        }
+
+        .client-card h5,
+        .partner-card h5 {
+            font-size: var(--text-xs);
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* ========================================
+           CONTACT INFO SECTION
+           ======================================== */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: var(--space-12);
+            align-items: start;
+        }
+
+        @media (max-width: 968px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-8);
+            }
+        }
+
+        .contact-main {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s var(--ease-out);
+        }
+
+        .contact-main.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .contact-card-large {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-10);
+            position: relative;
+        }
+
+        .contact-card-large::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: var(--gradient-blue-gold);
+            border-radius: var(--radius-2xl) var(--radius-2xl) 0 0;
+        }
+
+        .contact-item-large {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-5);
+            padding-bottom: var(--space-6);
+            margin-bottom: var(--space-6);
+            border-bottom: 1px solid var(--border-primary);
+        }
+
+        .contact-item-large:last-child {
+            padding-bottom: 0;
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .contact-icon-large {
+            width: 52px;
+            height: 52px;
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all var(--duration-normal) var(--ease-spring);
+        }
+
+        .contact-icon-large i {
+            font-size: 22px;
+            color: var(--primary);
+        }
+
+        .contact-item-large:hover .contact-icon-large {
+            background: var(--gradient-primary);
+            transform: scale(1.1);
+        }
+
+        .contact-item-large:hover .contact-icon-large i {
+            color: var(--white);
+        }
+
+        .contact-details h4 {
+            font-size: var(--text-xs);
+            color: var(--text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: var(--space-2);
+        }
+
+        .contact-details p,
+        .contact-details a {
+            font-size: var(--text-base);
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+
+        .contact-details a {
+            color: var(--primary);
+        }
+
+        .contact-details a:hover {
+            color: var(--accent);
+        }
+
+        /* Social Section */
+        .social-section {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s var(--ease-out);
+            transition-delay: 0.2s;
+        }
+
+        .social-section.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .social-card {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-2xl);
+            padding: var(--space-8);
+        }
+
+        .social-card h3 {
+            font-size: var(--text-xl);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-6);
+            text-align: center;
+        }
+
+        .social-links-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: var(--space-3);
+        }
+
+        @media (max-width: 480px) {
+            .social-links-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .social-link-card {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            padding: var(--space-4);
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-lg);
+            text-decoration: none;
+            transition: all var(--duration-normal) var(--ease-spring);
+        }
+
+        .social-link-card:hover {
+            transform: translateX(5px);
+            box-shadow: var(--shadow-sm);
+            border-color: var(--primary-200);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            color: var(--white);
+            font-size: 18px;
+        }
+
+        .social-icon.instagram { background: linear-gradient(135deg, #833AB4, #FD1D1D, #F77737); }
+        .social-icon.facebook { background: #1877F2; }
+        .social-icon.youtube { background: #FF0000; }
+        .social-icon.linkedin { background: #0A66C2; }
+        .social-icon.x-twitter { background: #000000; }
+        .social-icon.website { background: var(--gradient-blue-gold); }
+
+        .social-link-card span {
+            font-size: var(--text-sm);
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* ========================================
+           CTA SECTION
+           ======================================== */
+        .cta-section {
+            text-align: center;
+            padding: var(--space-24) var(--space-5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-blue-gold);
+            opacity: 0.05;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s var(--ease-out);
+        }
+
+        .cta-content.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .cta-content h2 {
+            font-size: clamp(var(--text-2xl), 5vw, var(--text-4xl));
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: var(--space-4);
+        }
+
+        .cta-content p {
+            font-size: var(--text-lg);
+            color: var(--text-secondary);
+            margin-bottom: var(--space-8);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-4);
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 480px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            background: var(--bg-tertiary);
+            padding: var(--space-16) 0 var(--space-8);
+        }
+
+        [data-theme="dark"] .footer {
+            background: #050508;
+        }
+
+                /* ========================================
+           FOOTER (CONTINUED)
+           ======================================== */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: var(--space-10);
+            margin-bottom: var(--space-12);
+        }
+
+        @media (max-width: 968px) {
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        .footer-brand {
+            max-width: 300px;
+        }
+
+        @media (max-width: 640px) {
+            .footer-brand {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: var(--space-3);
+            margin-bottom: var(--space-4);
+            text-decoration: none;
+        }
+
+        @media (max-width: 640px) {
+            .footer-logo {
+                justify-content: center;
+            }
+        }
+
+        .footer-logo img {
+            height: 48px;
+            width: auto;
+        }
+
+        .footer-logo-text {
+            font-size: var(--text-lg);
+            font-weight: 600;
+            background: var(--gradient-blue-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-brand > p {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: var(--space-5);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: var(--space-3);
+        }
+
+        @media (max-width: 640px) {
+            .footer-social {
+                justify-content: center;
+            }
+        }
+
+        .footer-social a {
+            width: 44px;
+            height: 44px;
+            background: var(--bg-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 18px;
+            text-decoration: none;
+            transition: all var(--duration-normal) var(--ease-spring);
+        }
+
+        .footer-social a:hover {
+            background: var(--gradient-primary);
+            border-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-4px);
+        }
+
+        .footer-column h4 {
+            font-size: var(--text-base);
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: var(--space-5);
+            position: relative;
+            padding-bottom: var(--space-3);
+        }
+
+        .footer-column h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30px;
+            height: 3px;
+            background: var(--gradient-blue-gold);
+            border-radius: 3px;
+        }
+
+        @media (max-width: 640px) {
+            .footer-column h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: var(--space-3);
+        }
+
+        .footer-links a {
+            font-size: var(--text-sm);
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: var(--space-2);
+            transition: all var(--duration-fast) var(--ease-out);
+        }
+
+        .footer-links a i {
+            font-size: 12px;
+            color: var(--text-tertiary);
+            transition: transform var(--duration-fast);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(4px);
+        }
+
+        .footer-links a:hover i {
+            color: var(--primary);
+        }
+
+        @media (max-width: 640px) {
+            .footer-links a:hover {
+                transform: none;
+            }
+        }
+
+        .footer-bottom {
+            border-top: 1px solid var(--border-primary);
+            padding-top: var(--space-8);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: var(--space-4);
+        }
+
+        @media (max-width: 640px) {
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .footer-copyright {
+            font-size: var(--text-sm);
+            color: var(--text-tertiary);
+        }
+
+        .footer-copyright a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: var(--space-6);
+        }
+
+        .footer-legal a {
+            font-size: var(--text-sm);
+            color: var(--text-tertiary);
+            text-decoration: none;
+            transition: color var(--duration-fast);
+        }
+
+        .footer-legal a:hover {
+            color: var(--primary);
+        }
+
+        /* ========================================
+           BACK TO TOP BUTTON
+           ======================================== */
+        .back-to-top {
+            position: fixed;
+            bottom: var(--space-6);
+            right: var(--space-6);
+            width: 52px;
+            height: 52px;
+            background: var(--gradient-primary);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-lg);
+            font-size: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all var(--duration-normal) var(--ease-spring);
+            z-index: 998;
+            box-shadow: var(--shadow-glow-primary);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            background: var(--gradient-accent);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow-accent);
+        }
+
+        @media (max-width: 640px) {
+            .back-to-top {
+                width: 46px;
+                height: 46px;
+                bottom: var(--space-4);
+                right: var(--space-4);
+                font-size: 20px;
+            }
+        }
+
+        /* ========================================
+           SCROLL PROGRESS BAR
+           ======================================== */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 3px;
+            background: var(--gradient-blue-gold);
+            z-index: 10001;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+
+        /* ========================================
+           ANIMATIONS
+           ======================================== */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s var(--ease-out);
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-in-left {
+            opacity: 0;
+            transform: translateX(-30px);
+            transition: all 0.8s var(--ease-out);
+        }
+
+        .fade-in-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .fade-in-right {
+            opacity: 0;
+            transform: translateX(30px);
+            transition: all 0.8s var(--ease-out);
+        }
+
+        .fade-in-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Stagger delays */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+        .delay-6 { transition-delay: 0.6s; }
+        .delay-7 { transition-delay: 0.7s; }
+        .delay-8 { transition-delay: 0.8s; }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+            .splash { display: none !important; }
+        }
+    </style>
+</head>
+
+<body class="no-scroll">
+    <!-- ==================== SCROLL PROGRESS ==================== -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ==================== SPLASH SCREEN ==================== -->
+    <div class="splash" id="splash">
+        <div class="splash-logo-wrapper">
+            <svg class="splash-ring" viewBox="0 0 120 120">
+                <defs>
+                    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#1A5F7A"/>
+                        <stop offset="50%" stop-color="#5BB3CA"/>
+                        <stop offset="100%" stop-color="#C9A227"/>
+                    </linearGradient>
+                </defs>
+                <circle cx="60" cy="60" r="54" stroke="url(#ringGrad)" stroke-width="3" fill="none" stroke-dasharray="12 8" stroke-linecap="round"/>
+            </svg>
+            <img src="../images/bp.png" alt="TBP Logo" class="splash-logo">
+        </div>
+        <h1 class="splash-title">The Building Practice Ltd.</h1>
+        <p class="splash-tagline">...Building Spaces that Feel</p>
+        <div class="splash-loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <button class="splash-skip" id="splashSkip">Tap to skip</button>
+    </div>
+
+    <!-- ==================== HEADER (MATCHING INDEX.HTML) ==================== -->
+    <header class="header" id="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="nav-brand">
+                    <img src="../images/bp.png" alt="The Building Practice Ltd.">
+                    <div class="nav-brand-text">
+                        <span class="nav-brand-name">The Building Practice Ltd.</span>
+                        <span class="nav-brand-tagline">...Building Spaces that Feel</span>
+                    </div>
+                </a>
+
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="services.html" class="nav-link">Services</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="team.html" class="nav-link">Team</a></li>
+                    <li><a href="reviews.html" class="nav-link">Reviews</a></li>
+                    <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+
+                <div class="nav-actions">
+                    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                        <i class='bx bx-sun' id="themeIcon"></i>
+                    </button>
+                    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <img src="../images/hero/about-hero.jpg" alt="About TBP Hero" onerror="this.src='../images/WEBSITE PICTURES/PICTURES/BLOOM TOWERS/BLOOM 1A copy.jpg'">
+        </div>
+        <div class="hero-overlay"></div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                <span>About Our Practice</span>
+            </div>
+            
+            <h1 class="hero-title">
+                Shaping Spaces That<br>
+                <span class="highlight">Inspire & Endure</span>
+            </h1>
+            
+            <p class="hero-description">
+                We are an architectural firm dedicated to creating thoughtful, sustainable, 
+                and contextually relevant designs that connect people and spaces.
+            </p>
+            
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number" data-count="11">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="200">0</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">Team Members</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-count="8">0</div>
+                    <div class="stat-label">Expertise Areas</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-scroll">
+            <span>Scroll to Explore</span>
+            <div class="hero-scroll-mouse">
+                <div class="hero-scroll-wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== WHO WE ARE SECTION ==================== -->
+    <section class="section" id="who-we-are">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content" data-animate>
+                    <div class="content-label">
+                        <span>Who We Are</span>
+                    </div>
+                    <h2 class="content-title">The Building Practice Ltd.</h2>
+                    <div class="content-text">
+                        <p>The Building Practice Ltd. (TBP) is an architectural firm dedicated to shaping spaces that inspire, endure, and connect. Since its founding in October 2013, TBP has evolved into a trusted name in the Nigerian built environment, delivering thoughtful, sustainable, and contextually relevant designs across residential, commercial, hospitality, educational, retail, industrial and institutional sectors.</p>
+                        <p>From concept development to construction management, every TBP project reflects a deep commitment to functionality, beauty, and cultural resonance. We approach each design challenge as an opportunity to tell a story - one that reflects our client's purpose, the site's character, and our belief in architecture as a transformative force.</p>
+                    </div>
+                    <div class="founded-card">
+                        <div class="founded-icon">
+                            <i class='bx bx-calendar'></i>
+                        </div>
+                        <div class="founded-info">
+                            <h4>Year Founded</h4>
+                            <p>October, 2013</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual" data-animate>
+                    <div class="deco-ring"></div>
+                    <div class="image-container">
+                        <img src="../images/projects/LFZ/Welcome centre/LFZ_Image 1.png" alt="TBP Architecture" class="about-img" onerror="this.src='../images/WEBSITE PICTURES/PICTURES/AKPATA HOUSE BENIN CITY/AKPATA HOUSE 2022/OLUMIDE AKPATA HOUSE  BENIN 5.jpg'">
+                    </div>
+                    <div class="floating-badge">
+                        <h3>12+</h3>
+                        <p>Years of Excellence</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- ==================== EXPERTISE SECTION ==================== -->
+    <section class="section section--light" id="expertise">
+        <div class="container">
+            <header class="section-header">
+                <div class="section-badge">
+                    <i class='bx bx-bulb'></i>
+                    <span>Our Expertise</span>
+                </div>
+                <h2 class="section-title">Areas of <span class="gradient-text">Specialization</span></h2>
+                <div class="section-divider"></div>
+                <p class="section-description">
+                    Our comprehensive range of services covers every aspect of the architectural 
+                    and construction process, from initial concept to project completion.
+                </p>
+            </header>
+
+            <div class="expertise-grid">
+                <div class="expertise-card" data-animate data-delay="0">
+                    <div class="expertise-icon">
+                        <i class='bx bx-edit'></i>
+                    </div>
+                    <h3>Architectural Planning, Design & Documentation</h3>
+                    <p>Comprehensive architectural services from conceptualization through detailed construction documentation.</p>
+                </div>
+
+                <div class="expertise-card" data-animate data-delay="100">
+                    <div class="expertise-icon">
+                        <i class='bx bx-hard-hat'></i>
+                    </div>
+                    <h3>Construction Management</h3>
+                    <p>Expert oversight of construction processes ensuring quality, timeline adherence, and budget management.</p>
+                </div>
+
+                <div class="expertise-card" data-animate data-delay="200">
+                    <div class="expertise-icon">
+                        <i class='bx bx-building'></i>
+                    </div>
+                    <h3>Building Construction</h3>
+                    <p>Full-scale construction services delivering exceptional quality in every project we undertake.</p>
+                </div>
+
+                <div class="expertise-card" data-animate data-delay="300">
+                    <div class="expertise-icon">
+                        <i class='bx bx-home-heart'></i>
+                    </div>
+                    <h3>Interior Design</h3>
+                    <p>Creating interior spaces that blend aesthetics with functionality for enhanced user experience.</p>
+                </div>
+
+                <div class="expertise-card" data-animate data-delay="400">
+                    <div class="expertise-icon">
+                        <i class='bx bx-task'></i>
+                    </div>
+                    <h3>Project Management</h3>
+                    <p>Strategic project coordination ensuring seamless execution from inception to completion.</p>
+                </div>
+
+                <div class="expertise-card" data-animate data-delay="500">
+                    <div class="expertise-icon">
+                        <i class='bx bx-building-house'></i>
+                    </div>
+                    <h3>Real Estate Development</h3>
+                    <p>Strategic real estate development solutions that maximize value and market potential.</p>
+                </div>
+
+                <div class="expertise-card new-service" data-animate data-delay="600">
+                    <span class="new-badge">New</span>
+                    <div class="expertise-icon">
+                        <i class='bx bxs-flame'></i>
+                    </div>
+                    <h3>Architectural Fire Consultancy</h3>
+                    <p>Specialized fire safety design and consultancy ensuring compliance with international fire codes.</p>
+                </div>
+
+                <div class="expertise-card new-service" data-animate data-delay="700">
+                    <span class="new-badge">New</span>
+                    <div class="expertise-icon">
+                        <i class='bx bx-leaf'></i>
+                    </div>
+                    <h3>Green Buildings Documentation & Advisory</h3>
+                    <p>Sustainable building solutions with EDGE and LEED documentation and advisory services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== MISSION & VISION SECTION ==================== -->
+    <section class="section" id="mission-vision">
+        <div class="container">
+            <header class="section-header">
+                <div class="section-badge">
+                    <i class='bx bx-compass'></i>
+                    <span>Our Purpose</span>
+                </div>
+                <h2 class="section-title">Mission & <span class="gradient-text">Vision</span></h2>
+                <div class="section-divider"></div>
+            </header>
+
+            <div class="mv-grid">
+                <div class="mv-card" data-animate>
+                    <span class="mv-number">01</span>
+                    <div class="mv-icon">
+                        <i class='bx bx-target-lock'></i>
+                    </div>
+                    <h3>Our Mission</h3>
+                    <p>To elevate the user experience of our stakeholders through exceptionally sustainable and meticulously designed buildings and spaces.</p>
+                </div>
+
+                <div class="mv-card" data-animate data-delay="200">
+                    <span class="mv-number">02</span>
+                    <div class="mv-icon">
+                        <i class='bx bx-show'></i>
+                    </div>
+                    <h3>Our Vision</h3>
+                    <p>To be an international force of African origin in the delivery of excellent architectural services.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== DESIGN ETHOS SECTION ==================== -->
+    <section class="section section--light" id="ethos">
+        <div class="container">
+            <header class="section-header">
+                <div class="section-badge">
+                    <i class='bx bx-palette'></i>
+                    <span>Design Philosophy</span>
+                </div>
+                <h2 class="section-title">Our Design <span class="gradient-text">Ethos</span></h2>
+                <div class="section-divider"></div>
+            </header>
+
+            <div class="ethos-grid">
+                <div class="quote-card" data-animate>
+                    <span class="quote-icon">"</span>
+                    <blockquote>At TBP, we don't just solve design problems - we ensure each project is tied to a traditional or cultural relevance.</blockquote>
+                    <cite>The Building Practice Philosophy</cite>
+                </div>
+
+                <div class="ethos-cards">
+                    <div class="ethos-item" data-animate data-delay="100">
+                        <h4>Curiosity</h4>
+                        <p>We approach each project with an inquisitive mindset, exploring innovative solutions that push the boundaries of conventional design.</p>
+                    </div>
+
+                    <div class="ethos-item" data-animate data-delay="200">
+                        <h4>Accountability</h4>
+                        <p>Every project is approached with a deep sense of responsibility, ensuring we deliver on our promises and exceed expectations.</p>
+                    </div>
+
+                    <div class="ethos-item" data-animate data-delay="300">
+                        <h4>Quality</h4>
+                        <p>An unrelenting pursuit of excellence drives every decision, from material selection to the finest design details.</p>
+                    </div>
+
+                    <div class="ethos-item" data-animate data-delay="400">
+                        <h4>Transformation</h4>
+                        <p>Architecture becomes not only functional but transformative - reflecting both identity and innovation in every space.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PHILOSOPHY SECTION ==================== -->
+    <section class="section" id="philosophy">
+        <div class="container">
+            <div class="philosophy-grid">
+                <div class="philosophy-content" data-animate>
+                    <div class="content-label">
+                        <span>Our Beliefs</span>
+                    </div>
+                    <h2>Our Philosophy</h2>
+                    <p>Our Philosophy is that design should be simple, be people oriented and complete, that it must enhance the user's experience.</p>
+                    
+                    <div class="highlight-box">
+                        <p>"At The Building Practice, there are no superstars, we are just ordinary people that achieve extraordinary feats."</p>
+                    </div>
+                    
+                    <p>The Building Practice Ltd is a group of dynamic professionals whose sole aim is to provide outstanding architectural services that evoke appealing moods and ideas capable of absolutely stoking human emotions. The company employs the use of in-depth knowledge, skill and artistry to stay at the frontier of the industry at all times.</p>
+                </div>
+
+                <div class="philosophy-quotes" data-animate>
+                    <div class="philosophy-quote-card">
+                        <p>"There is no substitute for good architecture."</p>
+                    </div>
+                    <div class="philosophy-quote-card">
+                        <p>"Design is a statement of one's intentions. Our intention is to solve problems in delightful ways."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- ==================== CERTIFICATIONS SECTION ==================== -->
+    <section class="section section--light" id="certifications">
+        <div class="container">
+            <header class="section-header">
+                <div class="section-badge">
+                    <i class='bx bx-certification'></i>
+                    <span>Credentials</span>
+                </div>
+                <h2 class="section-title">Certifications & <span class="gradient-text">Memberships</span></h2>
+                <div class="section-divider"></div>
+            </header>
+
+            <div class="cert-intro">
+                <p>Our work is guided by the highest standards of practice, professionalism, and integrity. TBP maintains active membership and certifications with leading architectural and project-management bodies, ensuring that every design meets global benchmarks in safety, sustainability, and delivery.</p>
+            </div>
+
+            <div class="cert-grid">
+                <div class="cert-card" data-animate data-delay="0">
+                    <i class='bx bx-check-circle cert-badge-icon'></i>
+                    <div class="cert-icon">
+                        <img src="../images/certifications/arcon.jpg" alt="ARCON" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'bx bx-compass\'></i>';">
+                    </div>
+                    <h4>ARCON</h4>
+                    <p>Architects Registration Council of Nigeria</p>
+                </div>
+
+                <div class="cert-card" data-animate data-delay="100">
+                    <i class='bx bx-check-circle cert-badge-icon'></i>
+                    <div class="cert-icon">
+                        <img src="../images/certifications/leed.jpg" alt="LEED" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'bx bx-leaf\'></i>';">
+                    </div>
+                    <h4>LEED</h4>
+                    <p>Leadership in Energy and Environmental Design</p>
+                </div>
+
+                <div class="cert-card" data-animate data-delay="200">
+                    <i class='bx bx-check-circle cert-badge-icon'></i>
+                    <div class="cert-icon">
+                        <img src="../images/certifications/pmp.jpg" alt="PMP" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'bx bx-task\'></i>';">
+                    </div>
+                    <h4>PMP</h4>
+                    <p>Project Management Professional Certification</p>
+                </div>
+
+                <div class="cert-card" data-animate data-delay="300">
+                    <i class='bx bx-check-circle cert-badge-icon'></i>
+                    <div class="cert-icon">
+                        <img src="../images/certifications/nia.jpg" alt="NIA" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'bx bx-building\'></i>';">
+                    </div>
+                    <h4>NIA</h4>
+                    <p>Nigerian Institute of Architects</p>
+                </div>
+
+                <div class="cert-card" data-animate data-delay="400">
+                    <i class='bx bx-check-circle cert-badge-icon'></i>
+                    <div class="cert-icon">
+                        <img src="../images/certifications/edge.png" alt="EDGE" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'bx bx-world\'></i>';">
+                    </div>
+                    <h4>EDGE</h4>
+                    <p>Excellence in Design for Greater Efficiencies</p>
+                </div>
+
+                <div class="cert-card" data-animate data-delay="500">
+                    <i class='bx bx-check-circle cert-badge-icon'></i>
+                    <div class="cert-icon">
+                        <img src="../images/certifications/nfpa.png" alt="NFPA" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'bx bxs-flame\'></i>';">
+                    </div>
+                    <h4>NFPA</h4>
+                    <p>National Fire Protection Association</p>
+                </div>
+
+                <div class="cert-card" data-animate data-delay="600">
+                    <i class='bx bx-check-circle cert-badge-icon'></i>
+                    <div class="cert-icon">
+                        <img src="../images/certifications/acan.png" alt="ACAN" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'bx bx-group\'></i>';">
+                    </div>
+                    <h4>ACAN</h4>
+                    <p>Association of Consulting Architects Nigeria</p>
+                </div>
+
+                <div class="cert-card" data-animate data-delay="700">
+                    <i class='bx bx-check-circle cert-badge-icon'></i>
+                    <div class="cert-icon">
+                        <img src="../images/certifications/corbon.jpg" alt="CORBON" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'bx bx-hard-hat\'></i>';">
+                    </div>
+                    <h4>CORBON</h4>
+                    <p>Council of Registered Builders of Nigeria</p>
+                </div>
+            </div>
+
+            <!-- Certificate Gallery -->
+            <div class="cert-gallery">
+                <div class="cert-gallery-header">
+                    <h3>Professional <span class="gradient-text">Certificates</span></h3>
+                    <p>View our official accreditations and professional memberships</p>
+                </div>
+                <div class="cert-gallery-grid">
+                    <div class="cert-gallery-item" data-animate>
+                        <div class="cert-placeholder">
+                            <img src="../images/certifications/arcon.jpg" alt="ARCON Certificate" onerror="this.parentElement.innerHTML='<i class=\'bx bx-file\'></i><span>Certificate</span>';">
+                        </div>
+                        <h5>ARCON Registration</h5>
+                    </div>
+                    <div class="cert-gallery-item" data-animate data-delay="100">
+                        <div class="cert-placeholder">
+                            <img src="../images/certifications/leed.jpg" alt="LEED Certificate" onerror="this.parentElement.innerHTML='<i class=\'bx bx-file\'></i><span>Certificate</span>';">
+                        </div>
+                        <h5>LEED Accreditation</h5>
+                    </div>
+                    <div class="cert-gallery-item" data-animate data-delay="200">
+                        <div class="cert-placeholder">
+                            <img src="../images/certifications/pmp.jpg" alt="PMP Certificate" onerror="this.parentElement.innerHTML='<i class=\'bx bx-file\'></i><span>Certificate</span>';">
+                        </div>
+                        <h5>PMP Certification</h5>
+                    </div>
+                    <div class="cert-gallery-item" data-animate data-delay="300">
+                        <div class="cert-placeholder">
+                            <img src="../images/certifications/nia.jpg" alt="NIA Certificate" onerror="this.parentElement.innerHTML='<i class=\'bx bx-file\'></i><span>Certificate</span>';">
+                        </div>
+                        <h5>NIA Membership</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CLIENTS & PARTNERS SECTION ==================== -->
+    <section class="section" id="clients-partners">
+        <div class="container">
+            <header class="section-header">
+                <div class="section-badge">
+                    <i class='bx bx-handshake'></i>
+                    <span>Collaborations</span>
+                </div>
+                <h2 class="section-title">Clients & <span class="gradient-text">Partners</span></h2>
+                <div class="section-divider"></div>
+            </header>
+
+            <div class="cp-intro">
+                <p>At TBP, collaboration sits at the core of everything we do. Over the years, we have built enduring relationships with clients and partners who share our vision for thoughtful, high-performance, and culturally relevant architecture.</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="cp-tabs">
+                <button class="cp-tab active" data-tab="clients">
+                    <i class='bx bx-user'></i>
+                    Our Clients
+                </button>
+                <button class="cp-tab" data-tab="partners">
+                    <i class='bx bx-handshake'></i>
+                    Our Partners
+                </button>
+            </div>
+
+            <!-- Clients Content -->
+            <div class="cp-content active" id="clients">
+                <div class="clients-grid">
+                    <div class="client-card featured" data-animate><h5>Riggs Ventures West Africa</h5></div>
+                    <div class="client-card" data-animate data-delay="50"><h5>The German Technology Ltd</h5></div>
+                    <div class="client-card" data-animate data-delay="100"><h5>New Comex Nigeria Ltd</h5></div>
+                    <div class="client-card" data-animate data-delay="150"><h5>Regent Construction Ltd</h5></div>
+                    <div class="client-card" data-animate data-delay="200"><h5>First Synergy Homes Ltd</h5></div>
+                    <div class="client-card" data-animate data-delay="250"><h5>Scarlet Lodge Ltd</h5></div>
+                    <div class="client-card featured" data-animate data-delay="300"><h5>Unified Payments Services Ltd</h5></div>
+                    <div class="client-card" data-animate data-delay="350"><h5>Augustine Alegeh (SAN)</h5></div>
+                    <div class="client-card featured" data-animate data-delay="400"><h5>Nigerian Bar Association</h5></div>
+                    <div class="client-card" data-animate data-delay="450"><h5>TLS Contact Centre</h5></div>
+                    <div class="client-card" data-animate data-delay="500"><h5>Glitters Boutique</h5></div>
+                    <div class="client-card featured" data-animate data-delay="550"><h5>Q.F.A Nigeria Ltd (Krispy Kreme)</h5></div>
+                    <div class="client-card" data-animate data-delay="600"><h5>Telile Investment Ltd</h5></div>
+                    <div class="client-card featured" data-animate data-delay="650"><h5>Federal University of Petroleum Resources</h5></div>
+                    <div class="client-card" data-animate data-delay="700"><h5>Nigerian Stored Products Research Institute</h5></div>
+                    <div class="client-card" data-animate data-delay="750"><h5>Aruba Development Ltd</h5></div>
+                    <div class="client-card featured" data-animate data-delay="800"><h5>Promasidor Nigeria Ltd</h5></div>
+                    <div class="client-card" data-animate data-delay="850"><h5>Lagos State Development & Property Corporation</h5></div>
+                </div>
+            </div>
+
+            <!-- Partners Content -->
+            <div class="cp-content" id="partners">
+                <div class="partners-grid">
+                    <div class="partner-card featured" data-animate><h5>FEZ Integrated Services Ltd</h5></div>
+                    <div class="partner-card" data-animate data-delay="50"><h5>Builders Craft Ltd</h5></div>
+                    <div class="partner-card" data-animate data-delay="100"><h5>EA and Associates Ltd</h5></div>
+                    <div class="partner-card" data-animate data-delay="150"><h5>Sub-Stratum Design Concepts</h5></div>
+                    <div class="partner-card" data-animate data-delay="200"><h5>Pathway Engineering</h5></div>
+                    <div class="partner-card" data-animate data-delay="250"><h5>KF & Associates</h5></div>
+                    <div class="partner-card featured" data-animate data-delay="300"><h5>Engineering Partnership Ltd</h5></div>
+                    <div class="partner-card" data-animate data-delay="350"><h5>Phoz Nigeria Ltd</h5></div>
+                    <div class="partner-card" data-animate data-delay="400"><h5>Firstlakeside Technologies Ltd</h5></div>
+                    <div class="partner-card" data-animate data-delay="450"><h5>Standard Consultancy Services</h5></div>
+                    <div class="partner-card featured" data-animate data-delay="500"><h5>Projects + Potentials</h5></div>
+                    <div class="partner-card" data-animate data-delay="550"><h5>Runall Integrated Services</h5></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+        <!-- ==================== CONTACT INFO SECTION ==================== -->
+    <section class="section section--light" id="contact-info">
+        <div class="container">
+            <header class="section-header">
+                <div class="section-badge">
+                    <i class='bx bx-envelope'></i>
+                    <span>Get In Touch</span>
+                </div>
+                <h2 class="section-title">Connect <span class="gradient-text">With Us</span></h2>
+                <div class="section-divider"></div>
+            </header>
+
+            <div class="contact-grid">
+                <div class="contact-main" data-animate>
+                    <div class="contact-card-large">
+                        <div class="contact-item-large">
+                            <div class="contact-icon-large">
+                                <i class='bx bx-globe'></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Website</h4>
+                                <p><a href="https://www.buildingpractice.biz" target="_blank">www.buildingpractice.biz</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item-large">
+                            <div class="contact-icon-large">
+                                <i class='bx bx-envelope'></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Email</h4>
+                                <p><a href="mailto:info@buildingpractice.biz">info@buildingpractice.biz</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item-large">
+                            <div class="contact-icon-large">
+                                <i class='bx bx-map'></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Office Location</h4>
+                                <p>Plot 6, Remi Olowude Street,<br>Lekki Phase 1, Lagos State, Nigeria</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item-large">
+                            <div class="contact-icon-large">
+                                <i class='bx bx-phone'></i>
+                            </div>
+                            <div class="contact-details">
+                                <h4>Phone Number</h4>
+                                <p><a href="tel:+2349049721840">+234 (904) 972 1840</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="social-section" data-animate>
+                    <div class="social-card">
+                        <h3>Follow <span class="gradient-text">Us</span></h3>
+                        <div class="social-links-grid">
+                            <a href="https://www.instagram.com/thebuildingpractice" target="_blank" class="social-link-card">
+                                <div class="social-icon instagram">
+                                    <i class='bx bxl-instagram'></i>
+                                </div>
+                                <span>Instagram</span>
+                            </a>
+
+                            <a href="https://www.facebook.com/thebuildingpractice" target="_blank" class="social-link-card">
+                                <div class="social-icon facebook">
+                                    <i class='bx bxl-facebook'></i>
+                                </div>
+                                <span>Facebook</span>
+                            </a>
+
+                            <a href="https://www.youtube.com/@thebuildingpractice" target="_blank" class="social-link-card">
+                                <div class="social-icon youtube">
+                                    <i class='bx bxl-youtube'></i>
+                                </div>
+                                <span>YouTube</span>
+                            </a>
+
+                            <a href="https://www.linkedin.com/company/the-building-practice-ltd/" target="_blank" class="social-link-card">
+                                <div class="social-icon linkedin">
+                                    <i class='bx bxl-linkedin'></i>
+                                </div>
+                                <span>LinkedIn</span>
+                            </a>
+
+                            <a href="https://x.com/thebplimited" target="_blank" class="social-link-card">
+                                <div class="social-icon x-twitter">
+                                    <i class='bx bxl-twitter'></i>
+                                </div>
+                                <span>X (Twitter)</span>
+                            </a>
+
+                            <a href="https://www.buildingpractice.biz" target="_blank" class="social-link-card">
+                                <div class="social-icon website">
+                                    <i class='bx bx-globe'></i>
+                                </div>
+                                <span>Website</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CTA SECTION ==================== -->
+    <section class="section cta-section" id="cta">
+        <div class="container">
+            <div class="cta-content" data-animate>
+                <h2>Ready to Build Your <span class="gradient-text">Vision</span>?</h2>
+                <p>Let's collaborate to create spaces that inspire, endure, and transform the built environment.</p>
+                <div class="cta-buttons">
+                    <a href="contact.html" class="btn btn--primary btn--lg">
+                        <span>Start a Project</span>
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </a>
+                    <a href="projects.html" class="btn btn--secondary btn--lg">
+                        <span>View Our Work</span>
+                        <i class='bx bx-images'></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" id="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="../images/bp.png" alt="TBP Logo">
+                        <span class="footer-logo-text">The Building Practice</span>
+                    </a>
+                    <p>An architectural firm dedicated to shaping spaces that inspire, endure, and connect. Creating thoughtful, sustainable, and contextually relevant designs since 2013.</p>
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/thebuildingpractice" target="_blank" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                        <a href="https://x.com/thebplimited" target="_blank" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                        <a href="https://www.instagram.com/thebuildingpractice" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                        <a href="https://www.linkedin.com/company/the-building-practice-ltd/" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class='bx bx-chevron-right'></i><span>Home</span></a></li>
+                        <li><a href="about.html"><i class='bx bx-chevron-right'></i><span>About Us</span></a></li>
+                        <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Services</span></a></li>
+                        <li><a href="projects.html"><i class='bx bx-chevron-right'></i><span>Projects</span></a></li>
+                        <li><a href="team.html"><i class='bx bx-chevron-right'></i><span>Our Team</span></a></li>
+                        <li><a href="contact.html"><i class='bx bx-chevron-right'></i><span>Contact</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Architectural Design</span></a></li>
+                        <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Interior Design</span></a></li>
+                        <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Project Management</span></a></li>
+                        <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Construction</span></a></li>
+                        <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Fire Consultancy</span></a></li>
+                        <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Green Buildings</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <i class='bx bx-map'></i>
+                            <span>Plot 6, Remi Olowude Street, Lekki Phase 1, Lagos</span>
+                        </li>
+                        <li>
+                            <i class='bx bx-phone'></i>
+                            <a href="tel:+2349049721840">+234 904 972 1840</a>
+                        </li>
+                        <li>
+                            <i class='bx bx-envelope'></i>
+                            <a href="mailto:info@buildingpractice.biz">info@buildingpractice.biz</a>
+                        </li>
+                        <li>
+                            <i class='bx bx-time'></i>
+                            <span>Mon - Fri: 9:00 AM - 5:00 PM</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p class="footer-copyright">
+                    © <span id="currentYear">2024</span> The Building Practice Ltd. All Rights Reserved.
+                </p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== BACK TO TOP BUTTON ==================== -->
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
+
+    <!-- ==================== JAVASCRIPT ==================== -->
+    <script>
+    (function() {
+        'use strict';
+
+        // ========== CONFIGURATION ==========
+        const CONFIG = {
+            splashDuration: 2000,
+            scrollOffset: 100,
+            counterDuration: 2500,
+            observerThreshold: 0.15
+        };
+
+        // ========== DOM HELPERS ==========
+        const $ = (selector) => document.querySelector(selector);
+        const $$ = (selector) => document.querySelectorAll(selector);
+
+        // ========== ELEMENTS ==========
+        const elements = {
+            splash: $('#splash'),
+            splashSkip: $('#splashSkip'),
+            header: $('#header'),
+            navToggle: $('#navToggle'),
+            navMenu: $('#navMenu'),
+            themeToggle: $('#themeToggle'),
+            themeIcon: $('#themeIcon'),
+            backToTop: $('#backToTop'),
+            scrollProgress: $('#scrollProgress'),
+            currentYear: $('#currentYear')
+        };
+
+        // ========== UTILITIES ==========
+        const utils = {
+            throttle(fn, limit) {
+                let inThrottle;
+                return function(...args) {
+                    if (!inThrottle) {
+                        fn.apply(this, args);
+                        inThrottle = true;
+                        setTimeout(() => inThrottle = false, limit);
+                    }
+                };
+            },
+            prefersReducedMotion() {
+                return window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            }
+        };
+
+        // ========== SPLASH SCREEN ==========
+        const splash = {
+            hide() {
+                if (!elements.splash) return;
+                elements.splash.classList.add('hide');
+                document.body.classList.remove('no-scroll');
+                setTimeout(() => {
+                    elements.splash.style.display = 'none';
+                    animations.init();
+                }, 500);
+            },
+            init() {
+                if (!elements.splash) {
+                    document.body.classList.remove('no-scroll');
+                    animations.init();
+                    return;
+                }
+                setTimeout(() => this.hide(), CONFIG.splashDuration);
+                elements.splashSkip?.addEventListener('click', () => this.hide());
+                document.addEventListener('keydown', (e) => {
+                    if ((e.key === 'Enter' || e.key === 'Escape') && elements.splash && !elements.splash.classList.contains('hide')) {
+                        this.hide();
+                    }
+                });
+            }
+        };
+
+        // ========== THEME MANAGEMENT ==========
+        const theme = {
+            current: localStorage.getItem('theme') || 'light',
+            apply(themeName) {
+                this.current = themeName;
+                localStorage.setItem('theme', themeName);
+                if (themeName === 'dark') {
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    if (elements.themeIcon) elements.themeIcon.className = 'bx bx-moon';
+                } else {
+                    document.documentElement.removeAttribute('data-theme');
+                    if (elements.themeIcon) elements.themeIcon.className = 'bx bx-sun';
+                }
+            },
+            toggle() {
+                this.apply(this.current === 'dark' ? 'light' : 'dark');
+            },
+            init() {
+                this.apply(this.current);
+                elements.themeToggle?.addEventListener('click', () => this.toggle());
+            }
+        };
+
+        // ========== NAVIGATION ==========
+        const navigation = {
+            isOpen: false,
+            toggle() {
+                this.isOpen = !this.isOpen;
+                elements.navToggle?.classList.toggle('active', this.isOpen);
+                elements.navMenu?.classList.toggle('active', this.isOpen);
+                document.body.classList.toggle('no-scroll', this.isOpen);
+            },
+            close() {
+                this.isOpen = false;
+                elements.navToggle?.classList.remove('active');
+                elements.navMenu?.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            },
+            handleScroll() {
+                // Header shadow
+                elements.header?.classList.toggle('scrolled', window.scrollY > 50);
+                
+                // Scroll progress
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrollPercent = (scrollTop / docHeight) * 100;
+                if (elements.scrollProgress) {
+                    elements.scrollProgress.style.width = scrollPercent + '%';
+                }
+            },
+            init() {
+                elements.navToggle?.addEventListener('click', () => this.toggle());
+                
+                // Close on nav link click (mobile)
+                $$('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => this.close());
+                });
+
+                window.addEventListener('scroll', utils.throttle(() => this.handleScroll(), 16));
+                
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && this.isOpen) this.close();
+                });
+            }
+        };
+
+        // ========== BACK TO TOP ==========
+        const backToTop = {
+            handleScroll() {
+                elements.backToTop?.classList.toggle('visible', window.scrollY > 500);
+            },
+            init() {
+                window.addEventListener('scroll', utils.throttle(() => this.handleScroll(), 100));
+                elements.backToTop?.addEventListener('click', () => {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+            }
+        };
+
+        // ========== SCROLL ANIMATIONS ==========
+        const animations = {
+            observer: null,
+            init() {
+                if (utils.prefersReducedMotion()) {
+                    $$('[data-animate]').forEach(el => el.classList.add('visible'));
+                    return;
+                }
+
+                this.observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const delay = entry.target.getAttribute('data-delay') || 0;
+                            setTimeout(() => {
+                                entry.target.classList.add('visible');
+                                // Counter animation
+                                if (entry.target.classList.contains('stat-number')) {
+                                    counters.animate(entry.target);
+                                }
+                            }, parseInt(delay));
+                            this.observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: CONFIG.observerThreshold, rootMargin: '0px 0px -50px 0px' });
+
+                $$('[data-animate]').forEach(el => this.observer.observe(el));
+                $$('.stat-number').forEach(el => this.observer.observe(el));
+            }
+        };
+
+        // ========== COUNTER ANIMATION ==========
+        const counters = {
+            animate(element) {
+                const target = parseInt(element.getAttribute('data-count'));
+                const duration = CONFIG.counterDuration;
+                const startTime = performance.now();
+
+                function easeOutQuart(t) {
+                    return 1 - Math.pow(1 - t, 4);
+                }
+
+                function update(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const easedProgress = easeOutQuart(progress);
+                    element.textContent = Math.floor(target * easedProgress) + '+';
+                    if (progress < 1) requestAnimationFrame(update);
+                }
+
+                requestAnimationFrame(update);
+            }
+        };
+
+        // ========== TABS (Clients/Partners) ==========
+        const tabs = {
+            init() {
+                const tabBtns = $$('.cp-tab');
+                const contents = $$('.cp-content');
+
+                tabBtns.forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        tabBtns.forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        
+                        contents.forEach(c => c.classList.remove('active'));
+                        const tabId = btn.getAttribute('data-tab');
+                        $(`#${tabId}`)?.classList.add('active');
+
+                        // Re-animate visible cards
+                        const activeContent = $(`#${tabId}`);
+                        activeContent?.querySelectorAll('[data-animate]').forEach(el => {
+                            el.classList.remove('visible');
+                            setTimeout(() => {
+                                animations.observer?.observe(el);
+                            }, 100);
+                        });
+                    });
+                });
+            }
+        };
+
+        // ========== SMOOTH SCROLL ==========
+        const smoothScroll = {
+            init() {
+                $$('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function(e) {
+                        const href = this.getAttribute('href');
+                        if (href !== '#') {
+                            e.preventDefault();
+                            const target = $(href);
+                            if (target) {
+                                const headerOffset = 80;
+                                const offsetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerOffset;
+                                window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                            }
+                        }
+                    });
+                });
+            }
+        };
+
+        // ========== DYNAMIC YEAR ==========
+        const setCurrentYear = () => {
+            if (elements.currentYear) {
+                elements.currentYear.textContent = new Date().getFullYear();
+            }
+        };
+
+        // ========== CONSOLE BRANDING ==========
+        const consoleBranding = () => {
+            console.log('%c The Building Practice Ltd. ', 'background: linear-gradient(135deg, #1A5F7A, #C9A227); color: white; font-size: 18px; padding: 10px 20px; border-radius: 8px; font-weight: bold;');
+            console.log('%c About Page Loaded Successfully ✓ ', 'color: #34C759; font-size: 12px;');
+        };
+
+        // ========== INITIALIZATION ==========
+        const init = () => {
+            splash.init();
+            theme.init();
+            navigation.init();
+            backToTop.init();
+            tabs.init();
+            smoothScroll.init();
+            setCurrentYear();
+            consoleBranding();
+        };
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', init);
+        } else {
+            init();
+        }
+
+    })();
+    </script>
+</body>
+</html>
