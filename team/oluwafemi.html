@@ -1,0 +1,1618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../js/theme-head.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Meet Oluwafemi Ayanniyi - Architect at The Building Practice Ltd, an experienced AEC professional with about a decade of expertise." />
+  <meta name="theme-color" content="#f5f7fa">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Oluwafemi Ayanniyi - Architect | The Building Practice Ltd">
+  <meta property="og:description" content="Experienced, results-driven architect with about a decade of expertise across design, technical detailing, project coordination, and construction administration.">
+  <meta property="og:image" content="../images/team/femi.jpg">
+  <meta property="og:type" content="profile">
+
+  <title>Oluwafemi Ayanniyi - Architect | The Building Practice Ltd</title>
+
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      --glass-white: rgba(255, 255, 255, 0.7);
+      --glass-white-strong: rgba(255, 255, 255, 0.9);
+      --glass-background: rgba(255, 255, 255, 0.5);
+      --glass-border: rgba(255, 255, 255, 0.3);
+      --glass-shadow: rgba(0, 0, 0, 0.1);
+
+      --primary-bg: #FFFFFF;
+      --secondary-bg: #F8F9FA;
+      --accent-color: #007AFF;
+      --accent-hover: #0051D5;
+      --text-primary: #1C1C1E;
+      --text-secondary: #48484A;
+      --text-tertiary: #8E8E93;
+      --border-color: rgba(0, 0, 0, 0.08);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+      --spacing-xs: 6px;
+      --spacing-sm: 10px;
+      --spacing-md: 14px;
+      --spacing-lg: 20px;
+      --spacing-xl: 28px;
+      --spacing-2xl: 40px;
+      --spacing-3xl: 56px;
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --radius-2xl: 24px;
+      --radius-full: 9999px;
+
+      --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+      --header-height: 60px;
+    }
+    /* Dark Mode Theme */
+    [data-theme="dark"] {
+      --glass-white: rgba(30, 30, 30, 0.6);
+      --glass-white-strong: rgba(25, 25, 25, 0.85);
+      --glass-background: rgba(40, 40, 40, 0.4);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-shadow: rgba(0, 0, 0, 0.3);
+
+      --primary-bg: #0F0F0F;
+      --secondary-bg: #1A1A1A;
+      --accent-color: #4DA6FF;
+      --accent-hover: #66B3FF;
+      --text-primary: #FFFFFF;
+      --text-secondary: #E0E0E0;
+      --text-tertiary: #A0A0A0;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-primary);
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      background-attachment: fixed;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-top: var(--header-height);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      transition: background-color var(--transition-base), background-image var(--transition-base);
+    }
+
+    [data-theme="dark"] body {
+      background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 100%);
+      background-attachment: fixed;
+    }
+
+    /* Fix: background-attachment: fixed breaks on iOS */
+    @supports (-webkit-touch-callout: none) {
+      body {
+        background-attachment: scroll;
+      }
+    }
+
+    .glass {
+      background: var(--glass-white);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid var(--glass-border);
+    }
+
+    .glass-strong {
+      background: var(--glass-white-strong);
+      backdrop-filter: blur(30px) saturate(200%);
+      -webkit-backdrop-filter: blur(30px) saturate(200%);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    h1, h2, h3, h4 {
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    h1 { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; }
+    h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+    h4 { font-size: clamp(1.1rem, 2vw, 1.25rem); }
+
+    p {
+      margin-bottom: var(--spacing-md);
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.7;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      z-index: 1000;
+      transition: var(--transition-base);
+      background: var(--glass-white);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid var(--glass-border);
+      box-shadow: var(--shadow-sm);
+      background-color: var(--primary-bg);
+    }
+
+    .header-container {
+      height: 100%;
+      max-width: 1800px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 1.125rem;
+      transition: var(--transition-base);
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: var(--radius-lg);
+    }
+
+    .logo:hover {
+      color: var(--accent-color);
+      background: var(--glass-background);
+      transform: translateY(-2px);
+    }
+
+    .logo-icon {
+      font-size: 1.5rem;
+    }
+
+    /* Profile Layout */
+    .profile-container {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: var(--spacing-lg);
+      max-width: 1800px;
+      margin: 0 auto;
+      padding: var(--spacing-lg);
+      min-height: calc(100vh - var(--header-height));
+    }
+
+    /* Left Sidebar */
+    .profile-left {
+      position: sticky;
+      top: calc(var(--header-height) + var(--spacing-lg));
+      height: fit-content;
+      max-height: calc(100vh - var(--header-height) - var(--spacing-lg) * 2);
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition-slow);
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .profile-left:hover {
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+    }
+
+    .profile-left::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .profile-left::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .profile-left::-webkit-scrollbar-thumb {
+      background: rgba(0, 122, 255, 0.2);
+      border-radius: var(--radius-full);
+    }
+
+    .profile-left::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 122, 255, 0.3);
+    }
+
+    .profile-card {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-image-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 160px;
+      margin: 0 auto var(--spacing-lg);
+      aspect-ratio: 1;
+    }
+
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, var(--secondary-bg), var(--glass-background));
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition-slow);
+    }
+
+    .profile-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 122, 255, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+      opacity: 0;
+      transition: var(--transition-base);
+      z-index: 1;
+    }
+
+    .profile-image:hover::before {
+      opacity: 1;
+    }
+
+    .profile-image:hover {
+      transform: translateY(-2px);
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .profile-image-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--accent-color), #764ba2);
+      color: white;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border-radius: var(--radius-2xl);
+    }
+
+    .profile-image-ring {
+      position: absolute;
+      inset: -4px;
+      border-radius: var(--radius-2xl);
+      background: linear-gradient(135deg, var(--accent-color), #764ba2);
+      opacity: 0;
+      transition: var(--transition-base);
+      z-index: -1;
+    }
+
+    .profile-image-wrapper:hover .profile-image-ring {
+      opacity: 0.3;
+      inset: -8px;
+    }
+
+    /* Fix: was <h1>, now styled as <div> to avoid duplicate h1 */
+    .profile-name {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-xs);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+
+    .profile-title {
+      font-size: 0.75rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: var(--spacing-md);
+      padding: var(--spacing-xs) var(--spacing-sm);
+      background: rgba(0, 122, 255, 0.08);
+      border-radius: var(--radius-full);
+      display: inline-block;
+    }
+
+    .profile-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+      margin: var(--spacing-md) 0;
+    }
+
+    .profile-quick-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-xs);
+      margin-bottom: var(--spacing-md);
+      width: 100%;
+    }
+
+    .quick-stat {
+      text-align: center;
+      padding: var(--spacing-sm) var(--spacing-xs);
+      border-radius: var(--radius-md);
+      background: var(--glass-background);
+      border: 1px solid var(--border-color);
+      transition: var(--transition-base);
+    }
+
+    /* Fix: CSS-only hover, no JS override */
+    .quick-stat:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      background: var(--glass-white);
+    }
+
+    .quick-stat-number {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .quick-stat-label {
+      font-size: 0.5625rem;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .profile-info-section {
+      margin-bottom: var(--spacing-sm);
+      text-align: left;
+      width: 100%;
+    }
+
+    .profile-info-title {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .profile-info-title i {
+      color: var(--accent-color);
+      font-size: 0.875rem;
+    }
+
+    .profile-info-item {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      padding: var(--spacing-xs);
+      border-radius: var(--radius-sm);
+      transition: var(--transition-base);
+      text-align: left;
+      margin-bottom: 2px;
+      font-size: 0.75rem;
+    }
+
+    .profile-info-item:hover {
+      background: var(--glass-background);
+    }
+
+    .profile-info-item i {
+      color: var(--accent-color);
+      font-size: 0.875rem;
+      min-width: 16px;
+    }
+
+    .profile-info-item a,
+    .profile-info-item span {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition-fast);
+      font-size: 0.75rem;
+    }
+
+    .profile-info-item a:hover {
+      color: var(--accent-color);
+    }
+
+    .profile-quick-contact {
+      display: flex;
+      gap: var(--spacing-sm);
+      justify-content: center;
+      flex-wrap: wrap;
+      padding-top: var(--spacing-sm);
+    }
+
+    .quick-contact-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      background: var(--glass-background);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-primary);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition-bounce);
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quick-contact-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--accent-color);
+      opacity: 0;
+      transition: var(--transition-base);
+    }
+
+    .quick-contact-btn:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-color);
+    }
+
+    .quick-contact-btn:hover::before {
+      opacity: 0.1;
+    }
+
+    .quick-contact-btn i {
+      position: relative;
+      z-index: 1;
+    }
+
+    .quick-contact-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* Right Panel */
+    .profile-right {
+      padding: var(--spacing-xl);
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-lg);
+      overflow-y: auto;
+      max-height: calc(100vh - var(--header-height) - var(--spacing-lg) * 2);
+      animation: slideInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .profile-right::-webkit-scrollbar {
+      width: 10px;
+    }
+
+    .profile-right::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .profile-right::-webkit-scrollbar-thumb {
+      background: rgba(0, 122, 255, 0.2);
+      border-radius: var(--radius-full);
+      border: 2px solid transparent;
+      background-clip: padding-box;
+    }
+
+    .profile-right::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 122, 255, 0.3);
+      border: 2px solid transparent;
+      background-clip: padding-box;
+    }
+
+    .content-section {
+      max-width: 1000px;
+      flex: 1;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+      margin-bottom: var(--spacing-xl);
+      padding: var(--spacing-sm) var(--spacing-md);
+      background: var(--glass-background);
+      border-radius: var(--radius-lg);
+      width: fit-content;
+      border: 1px solid var(--border-color);
+    }
+
+    .breadcrumb a {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: var(--transition-fast);
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent-color);
+      background: var(--glass-background);
+    }
+
+    .breadcrumb i {
+      font-size: 0.75rem;
+    }
+
+    /* Content Intro */
+    .content-intro {
+      margin-bottom: var(--spacing-2xl);
+      animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .content-intro h1 {
+      margin-bottom: var(--spacing-md);
+      background: linear-gradient(135deg, var(--text-primary), var(--accent-color));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    .content-intro h1 i {
+      background: linear-gradient(135deg, var(--accent-color), #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .lead {
+      font-size: 1.125rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      font-weight: 500;
+      display: flex;
+      align-items: flex-start;
+      gap: var(--spacing-sm);
+    }
+
+    .lead i {
+      color: var(--accent-color);
+      font-size: 1.25rem;
+      margin-top: 4px;
+    }
+
+    /* Section Dividers & Titles */
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+      margin: var(--spacing-2xl) 0;
+    }
+
+    .section-title {
+      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+      font-weight: 700;
+      margin-bottom: var(--spacing-lg);
+      color: var(--text-primary);
+      position: relative;
+      padding-bottom: var(--spacing-sm);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    .section-title i {
+      color: var(--accent-color);
+      font-size: 1.5rem;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent-color), transparent);
+      border-radius: var(--radius-full);
+    }
+
+    .sub-section-title {
+      margin-top: var(--spacing-lg);
+      font-size: 1rem;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-md);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    .sub-section-title i {
+      color: var(--accent-color);
+      font-size: 1.25rem;
+    }
+
+    /* Fix: replaces inline-styled margin-top paragraphs */
+    .spaced-paragraph {
+      margin-top: var(--spacing-lg);
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: var(--spacing-lg);
+      margin: var(--spacing-xl) 0;
+    }
+
+    .stat-card {
+      padding: var(--spacing-xl);
+      border-radius: var(--radius-xl);
+      text-align: center;
+      transition: var(--transition-slow);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      background-color: var(--primary-bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .stat-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 122, 255, 0.05), rgba(118, 75, 162, 0.05));
+      opacity: 0;
+      transition: var(--transition-base);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent-color);
+    }
+
+    .stat-card:hover::before {
+      opacity: 1;
+    }
+
+    .stat-icon {
+      font-size: 2rem;
+      color: var(--accent-color);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--accent-color), #764ba2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.2;
+      margin-bottom: var(--spacing-xs);
+      position: relative;
+    }
+
+    .stat-label {
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 600;
+    }
+
+    /* Fix: replaces inline styles on strength cards */
+    .strength-title {
+      font-size: 1rem;
+      margin: var(--spacing-sm) 0;
+      color: var(--text-primary);
+    }
+
+    .strength-description {
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+    }
+
+    /* Career Timeline */
+    .career-timeline {
+      position: relative;
+      padding-left: var(--spacing-xl);
+      margin: var(--spacing-xl) 0;
+    }
+
+    .career-timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 24px;
+      height: calc(100% - 48px);
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent-color), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: var(--spacing-xl);
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-xl);
+      background: var(--glass-background);
+      border: 1px solid var(--border-color);
+      transition: var(--transition-slow);
+    }
+
+    .timeline-item:hover {
+      transform: translateX(8px);
+      background: var(--glass-white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: calc(-1 * var(--spacing-xl) - 6px);
+      top: var(--spacing-lg);
+      width: 14px;
+      height: 14px;
+      border-radius: var(--radius-full);
+      background: var(--primary-bg);
+      border: 3px solid var(--accent-color);
+      box-shadow: 0 0 0 4px var(--primary-bg);
+      transition: var(--transition-base);
+    }
+
+    .timeline-item:hover::before {
+      transform: scale(1.3);
+      box-shadow: 0 0 0 6px rgba(0, 122, 255, 0.1);
+    }
+
+    .timeline-period {
+      font-weight: 700;
+      color: var(--accent-color);
+      margin-bottom: var(--spacing-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      padding: 4px 12px;
+      background: rgba(0, 122, 255, 0.08);
+      border-radius: var(--radius-full);
+    }
+
+    .timeline-period i {
+      font-size: 0.875rem;
+    }
+
+    .timeline-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: var(--spacing-xs);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+    }
+
+    .timeline-title i {
+      color: var(--accent-color);
+      font-size: 1rem;
+    }
+
+    .timeline-company {
+      color: var(--text-secondary);
+      font-weight: 600;
+      margin-bottom: var(--spacing-sm);
+      font-size: 0.875rem;
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+    }
+
+    .timeline-company i {
+      color: var(--text-tertiary);
+      font-size: 0.875rem;
+    }
+
+    .timeline-description {
+      color: var(--text-tertiary);
+      line-height: 1.7;
+      font-size: 0.875rem;
+    }
+
+    /* Contact Grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: var(--spacing-lg);
+      margin: var(--spacing-xl) 0;
+    }
+
+    .contact-card {
+      padding: var(--spacing-xl);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      background-color: var(--primary-bg);
+      transition: var(--transition-slow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent-color), #764ba2);
+      transform: scaleX(0);
+      transition: var(--transition-base);
+      transform-origin: left;
+    }
+
+    .contact-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .contact-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .contact-card h4 {
+      font-size: 1rem;
+      margin-bottom: var(--spacing-lg);
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    .contact-card h4 i {
+      color: var(--accent-color);
+      font-size: 1.125rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-md);
+      padding: var(--spacing-sm);
+      border-radius: var(--radius-md);
+      transition: var(--transition-base);
+    }
+
+    .contact-item:hover {
+      background: var(--glass-background);
+    }
+
+    .contact-icon {
+      color: var(--accent-color);
+      font-size: 1.125rem;
+      min-width: 20px;
+      margin-top: 2px;
+    }
+
+    .contact-label {
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .contact-value {
+      color: var(--text-secondary);
+      line-height: 1.6;
+      font-size: 0.875rem;
+    }
+
+    .contact-value a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition-fast);
+      padding: 2px 4px;
+      border-radius: 4px;
+      display: inline-block;
+    }
+
+    .contact-value a:hover {
+      color: var(--accent-color);
+      background: rgba(0, 122, 255, 0.08);
+    }
+
+    /* Expertise Tags � Fix: non-interactive, no cursor: pointer */
+    .expertise-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+      margin: var(--spacing-lg) 0;
+    }
+
+    .tag {
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: var(--radius-full);
+      font-size: 0.8125rem;
+      color: var(--text-primary);
+      font-weight: 600;
+      border: 1px solid var(--border-color);
+      background: var(--glass-background);
+      transition: var(--transition-base);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .tag i {
+      font-size: 0.875rem;
+      color: var(--accent-color);
+    }
+
+    .tag:hover {
+      background: rgba(0, 122, 255, 0.08);
+      border-color: rgba(0, 122, 255, 0.3);
+      transform: translateY(-2px);
+    }
+
+    /* Styled Lists */
+    .styled-list {
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin: var(--spacing-lg) 0;
+      padding-left: var(--spacing-lg);
+      list-style: none;
+    }
+
+    .styled-list li {
+      margin-bottom: var(--spacing-md);
+      position: relative;
+      padding-left: var(--spacing-lg);
+    }
+
+    .styled-list li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 6px;
+      height: 6px;
+      background: var(--accent-color);
+      border-radius: 50%;
+    }
+
+    .styled-list li i {
+      color: var(--accent-color);
+      margin-right: var(--spacing-xs);
+    }
+
+    /* Quote Box */
+    .quote-box {
+      font-style: italic;
+      padding: var(--spacing-xl);
+      background: var(--glass-background);
+      border-left: 4px solid var(--accent-color);
+      border-radius: var(--radius-lg);
+      margin: var(--spacing-xl) 0;
+      position: relative;
+    }
+
+    .quote-box::before {
+      content: '\201C';
+      position: absolute;
+      top: -10px;
+      left: var(--spacing-lg);
+      font-size: 4rem;
+      color: var(--accent-color);
+      opacity: 0.2;
+      font-family: Georgia, serif;
+    }
+
+    .quote-box p {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* Footer */
+    .content-footer {
+      margin-top: var(--spacing-3xl);
+      padding-top: var(--spacing-xl);
+      border-top: 1px solid var(--border-color);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: var(--spacing-lg);
+      padding: var(--spacing-lg);
+      background: var(--glass-background);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--border-color);
+    }
+
+    .footer-logo-section {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 0.9375rem;
+    }
+
+    .footer-logo-section i {
+      font-size: 1.5rem;
+      color: var(--accent-color);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: var(--spacing-md);
+      flex-wrap: wrap;
+    }
+
+    .footer-link {
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: var(--transition-fast);
+      font-size: 0.8125rem;
+      padding: var(--spacing-xs) var(--spacing-sm);
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer-link i {
+      font-size: 0.875rem;
+    }
+
+    .footer-link:hover {
+      color: var(--accent-color);
+      background: var(--glass-background);
+    }
+
+    .footer-copyright {
+      width: 100%;
+      text-align: center;
+      color: var(--text-tertiary);
+      font-size: 0.75rem;
+      padding-top: var(--spacing-md);
+      margin-top: var(--spacing-md);
+      border-top: 1px solid var(--border-color);
+    }
+
+    /* Fix: No-JS safe scroll animations */
+    .js-loaded .animate-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .js-loaded .animate-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .profile-container {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .profile-left {
+        position: relative;
+        top: 0;
+        max-height: none;
+        height: auto;
+      }
+
+      .profile-right {
+        max-height: none;
+        height: auto;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .profile-container {
+        padding: var(--spacing-md);
+        gap: var(--spacing-md);
+      }
+
+      .profile-left,
+      .profile-right {
+        padding: var(--spacing-lg);
+      }
+
+      .stats-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-quick-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-xs);
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="glass">
+    <div class="header-container">
+      <a href="../pages/index.html" class="logo">
+        <i class="bx bx-buildings logo-icon"></i>
+        The Building Practice Ltd
+      </a>
+    </div>
+  </header>
+
+  <div class="profile-container">
+    <aside class="profile-left glass-strong">
+      <div class="profile-card">
+        <div class="profile-image-wrapper">
+          <div class="profile-image-ring"></div>
+          <div class="profile-image">
+            <img src="../images/team/femi.jpg" alt="Oluwafemi Ayanniyi" loading="lazy">
+            <div class="profile-image-fallback">OA</div>
+          </div>
+        </div>
+
+        <div class="profile-name" role="heading" aria-level="2">Oluwafemi Ayanniyi</div>
+        <p class="profile-title">Architect</p>
+
+        <div class="profile-divider"></div>
+
+        <div class="profile-quick-stats">
+          <div class="quick-stat">
+            <span class="quick-stat-number">10</span>
+            <span class="quick-stat-label">Years</span>
+          </div>
+          <div class="quick-stat">
+            <span class="quick-stat-number">ARCON</span>
+            <span class="quick-stat-label">Reg.</span>
+          </div>
+          <div class="quick-stat">
+            <span class="quick-stat-number">M.Tech</span>
+            <span class="quick-stat-label">Degree</span>
+          </div>
+        </div>
+
+        <div class="profile-divider"></div>
+
+        <div class="profile-info-section">
+          <div class="profile-info-title">
+            <i class="bx bx-envelope"></i>
+            Contact
+          </div>
+          <div class="profile-info-item">
+            <i class="bx bx-envelope"></i>
+            <a href="mailto:info@buildingpractice.biz">info@buildingpractice.biz</a>
+          </div>
+          <div class="profile-info-item">
+            <i class="bx bx-phone"></i>
+            <a href="tel:+2349049721840">+234 904 972 1840</a>
+          </div>
+        </div>
+
+        <div class="profile-divider"></div>
+
+        <div class="profile-info-section">
+          <div class="profile-info-title">
+            <i class="bx bx-map"></i>
+            Location
+          </div>
+          <div class="profile-info-item">
+            <i class="bx bx-building"></i>
+            <span>Lagos, Nigeria</span>
+          </div>
+          <div class="profile-info-item">
+            <i class="bx bx-briefcase"></i>
+            <span>Architect</span>
+          </div>
+        </div>
+
+        <div class="profile-divider"></div>
+
+        <div class="profile-quick-contact">
+          <a href="mailto:info@buildingpractice.biz" class="quick-contact-btn" title="Email">
+            <i class="bx bx-envelope"></i>
+          </a>
+          <a href="tel:+2349049721840" class="quick-contact-btn" title="Phone">
+            <i class="bx bx-phone"></i>
+          </a>
+          <a href="https://linkedin.com" class="quick-contact-btn" title="LinkedIn" target="_blank" rel="noopener">
+            <i class="bx bxl-linkedin"></i>
+          </a>
+          <a href="https://twitter.com" class="quick-contact-btn" title="Twitter" target="_blank" rel="noopener">
+            <i class="bx bxl-twitter"></i>
+          </a>
+          <a href="https://instagram.com" class="quick-contact-btn" title="Instagram" target="_blank" rel="noopener">
+            <i class="bx bxl-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <main class="profile-right glass-strong">
+      <div class="content-section">
+        <div class="breadcrumb">
+          <a href="../pages/index.html"><i class="bx bx-home-alt"></i> Home</a>
+          <i class="bx bx-chevron-right"></i>
+          <a href="../pages/team.html"><i class="bx bx-group"></i> Team</a>
+          <i class="bx bx-chevron-right"></i>
+          <span>Oluwafemi Ayanniyi</span>
+        </div>
+
+        <div class="content-intro">
+          <h1><i class="bx bx-user-circle"></i>Oluwafemi Ayanniyi</h1>
+          <p class="lead"><i class="bx bx-quote-alt-left"></i> Experienced, results-driven architect with about a decade of expertise across the Architecture, Engineering, and Construction industry.</p>
+        </div>
+
+        <p>Oluwafemi is an experienced and results-driven architect with about a decade of expertise in the Architecture, Engineering, and Construction industry.</p>
+
+        <p>His career spans residential, commercial, institutional, and mixed-use developments. With a comprehensive understanding of design, technical detailing, project coordination, and construction administration, he manages projects from concept through completion while aligning client goals, regulatory requirements, and sustainable design principles.</p>
+
+        <p>Skilled in project management, he has led multidisciplinary teams, overseen budgets and timelines, and maintained quality control throughout all project phases.</p>
+
+        <div class="section-divider"></div>
+
+        <h2 class="section-title"><i class="bx bx-bulb"></i> Professional Philosophy</h2>
+        <div class="quote-box">
+          <p>Oluwafemi believes strong architecture depends on disciplined coordination, technical clarity, regulatory awareness, and sustained quality control from concept to completion.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="section-title"><i class="bx bx-badge-check"></i> Core Competencies</h2>
+        <div class="expertise-tags">
+          <span class="tag"><i class="bx bx-building-house"></i> Architectural Design</span>
+          <span class="tag"><i class="bx bx-ruler"></i> Technical Detailing</span>
+          <span class="tag"><i class="bx bx-network-chart"></i> Project Coordination</span>
+          <span class="tag"><i class="bx bx-hard-hat"></i> Construction Administration</span>
+          <span class="tag"><i class="bx bx-task"></i> Project Management</span>
+          <span class="tag"><i class="bx bx-check-shield"></i> Quality Control</span>
+          <span class="tag"><i class="bx bx-leaf"></i> Sustainable Principles</span>
+          <span class="tag"><i class="bx bx-group"></i> Multidisciplinary Leadership</span>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="section-title"><i class="bx bx-star"></i> Professional Highlights</h2>
+        <div class="stats-grid">
+          <div class="stat-card glass">
+            <i class="bx bx-time-five stat-icon"></i>
+            <div class="stat-number">10</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-card glass">
+            <i class="bx bx-certification stat-icon"></i>
+            <div class="stat-number">ARCON</div>
+            <div class="stat-label">Registered</div>
+          </div>
+          <div class="stat-card glass">
+            <i class="bx bx-briefcase stat-icon"></i>
+            <div class="stat-number">AEC</div>
+            <div class="stat-label">Industry Expertise</div>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="section-title"><i class="bx bx-briefcase-alt"></i> Career Journey</h2>
+        <div class="career-timeline">
+          <div class="timeline-item">
+            <div class="timeline-period"><i class="bx bx-calendar"></i> Current</div>
+            <h3 class="timeline-title"><i class="bx bx-building-house"></i> Architect</h3>
+            <div class="timeline-company"><i class="bx bx-buildings"></i> The Building Practice Ltd</div>
+            <p class="timeline-description">Contributes architecture, project coordination, technical detailing, and construction administration expertise across project phases.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-period"><i class="bx bx-calendar"></i> AEC Career</div>
+            <h3 class="timeline-title"><i class="bx bx-briefcase"></i> Architecture & Project Delivery</h3>
+            <div class="timeline-company"><i class="bx bx-hard-hat"></i> AEC Industry</div>
+            <p class="timeline-description">Delivered work across residential, commercial, institutional, and mixed-use developments with responsibility for design, timelines, budgets, and quality.</p>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="section-title"><i class="bx bx-book-reader"></i> Education &amp; Academic Excellence</h2>
+        <div class="career-timeline">
+          <div class="timeline-item">
+            <div class="timeline-period"><i class="bx bx-calendar"></i> Master's Degree</div>
+            <h3 class="timeline-title"><i class="bx bx-graduation"></i> M.Tech Architecture</h3>
+            <div class="timeline-company"><i class="bx bx-library"></i> Federal University of Technology, Akure</div>
+            <p class="timeline-description">Advanced architectural education supporting technical and project delivery expertise.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-period"><i class="bx bx-calendar"></i> Bachelor's Degree</div>
+            <h3 class="timeline-title"><i class="bx bx-graduation"></i> B.Tech Architecture</h3>
+            <div class="timeline-company"><i class="bx bx-library"></i> Federal University of Technology, Akure</div>
+            <p class="timeline-description">Foundation in architectural design, building technology, and design problem solving.</p>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="section-title"><i class="bx bx-certification"></i> Professional Development</h2>
+
+        <h3 class="sub-section-title"><i class="bx bx-trending-up"></i> Continuing Growth</h3>
+        <ul class="styled-list">
+          <li><i class="bx bx-medal"></i> <strong>ARCON Registration</strong> - Fully registered with the Architects Registration Council of Nigeria.</li>
+          <li><i class="bx bx-medal"></i> <strong>NIA Membership</strong> - Full member of the Nigerian Institute of Architects.</li>
+          <li><i class="bx bx-medal"></i> <strong>PMI Membership</strong> - Member of the Project Management Institute.</li>
+        </ul>
+
+        <p class="spaced-paragraph">Oluwafemi is committed to continuous growth and professional development, with focus areas including:</p>
+        <ul class="styled-list">
+          <li><i class="bx bx-check-circle"></i> Project management and delivery systems</li>
+          <li><i class="bx bx-check-circle"></i> Regulatory compliance</li>
+          <li><i class="bx bx-check-circle"></i> Sustainable design principles</li>
+          <li><i class="bx bx-check-circle"></i> Budget and timeline oversight</li>
+          <li><i class="bx bx-check-circle"></i> Construction administration</li>
+          <li><i class="bx bx-check-circle"></i> Quality control across project phases</li>
+        </ul>
+
+        <div class="section-divider"></div>
+
+        <h2 class="section-title"><i class="bx bx-star"></i> Key Strengths</h2>
+        <div class="stats-grid">
+          <div class="stat-card glass">
+            <i class="bx bx-ruler stat-icon"></i>
+            <h4 class="strength-title">Technical Clarity</h4>
+            <p class="strength-description">Strong detailing and documentation</p>
+          </div>
+          <div class="stat-card glass">
+            <i class="bx bx-task stat-icon"></i>
+            <h4 class="strength-title">Project Control</h4>
+            <p class="strength-description">Manages timelines, budgets, and quality</p>
+          </div>
+          <div class="stat-card glass">
+            <i class="bx bx-group stat-icon"></i>
+            <h4 class="strength-title">Team Leadership</h4>
+            <p class="strength-description">Coordinates multidisciplinary teams</p>
+          </div>
+          <div class="stat-card glass">
+            <i class="bx bx-check-shield stat-icon"></i>
+            <h4 class="strength-title">Quality Focus</h4>
+            <p class="strength-description">Maintains standards across phases</p>
+          </div>
+          <div class="stat-card glass">
+            <i class="bx bx-leaf stat-icon"></i>
+            <h4 class="strength-title">Sustainable Thinking</h4>
+            <p class="strength-description">Balances design with long-term value</p>
+          </div>
+          <div class="stat-card glass">
+            <i class="bx bx-briefcase stat-icon"></i>
+            <h4 class="strength-title">Sector Range</h4>
+            <p class="strength-description">Residential, commercial, institutional, mixed-use</p>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="section-title"><i class="bx bx-clipboard"></i> Project Experience</h2>
+        <p>Oluwafemi has worked across diverse AEC sectors, contributing to projects from concept through construction completion. His experience includes:</p>
+        <ul class="styled-list">
+          <li><i class="bx bx-home"></i> <strong>Residential Developments</strong> - Design and delivery coordination for living environments</li>
+          <li><i class="bx bx-store"></i> <strong>Commercial Projects</strong> - Client-focused commercial and workplace design support</li>
+          <li><i class="bx bx-library"></i> <strong>Institutional Buildings</strong> - Planning and technical coordination for institutional contexts</li>
+          <li><i class="bx bx-buildings"></i> <strong>Mixed-use Developments</strong> - Balancing diverse programme and stakeholder needs</li>
+          <li><i class="bx bx-hard-hat"></i> <strong>Construction Administration</strong> - Site and delivery coordination through project phases</li>
+          <li><i class="bx bx-check-shield"></i> <strong>Quality Management</strong> - Maintaining standards across budgets and timelines</li>
+        </ul>
+
+        <p class="spaced-paragraph">This work reflects a commitment to purposeful delivery, practical collaboration, and thoughtful contribution to The Building Practice Ltd's multidisciplinary team.</p>
+        <div class="expertise-tags">
+          <span class="tag"><i class="bx bx-building-house"></i> Architecture</span>
+          <span class="tag"><i class="bx bx-ruler"></i> Detailing</span>
+          <span class="tag"><i class="bx bx-task"></i> Project Management</span>
+          <span class="tag"><i class="bx bx-hard-hat"></i> Construction</span>
+          <span class="tag"><i class="bx bx-check-shield"></i> Quality</span>
+          <span class="tag"><i class="bx bx-leaf"></i> Sustainability</span>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <h2 class="section-title"><i class="bx bx-phone-call"></i> Contact Information</h2>
+        <div class="contact-grid">
+          <div class="contact-card glass">
+            <h4><i class="bx bx-envelope"></i> Professional Contact</h4>
+            <div class="contact-item">
+              <span class="contact-icon"><i class="bx bx-envelope"></i></span>
+              <div>
+                <div class="contact-label">Email Address</div>
+                <div class="contact-value"><a href="mailto:info@buildingpractice.biz">info@buildingpractice.biz</a></div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon"><i class="bx bx-phone"></i></span>
+              <div>
+                <div class="contact-label">Direct Line</div>
+                <div class="contact-value"><a href="tel:+2349049721840">+234 904 972 1840</a></div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon"><i class="bx bxl-linkedin"></i></span>
+              <div>
+                <div class="contact-label">LinkedIn Profile</div>
+                <div class="contact-value"><a href="https://linkedin.com" target="_blank" rel="noopener">Connect on LinkedIn</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card glass">
+            <h4><i class="bx bx-map"></i> Office Location</h4>
+            <div class="contact-item">
+              <span class="contact-icon"><i class="bx bx-building"></i></span>
+              <div>
+                <div class="contact-label">Headquarters</div>
+                <div class="contact-value">The Building Practice Ltd<br>Lagos, Nigeria</div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon"><i class="bx bx-briefcase"></i></span>
+              <div>
+                <div class="contact-label">Current Role</div>
+                <div class="contact-value">Architect</div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon"><i class="bx bx-time"></i></span>
+              <div>
+                <div class="contact-label">Office Hours</div>
+                <div class="contact-value">Monday - Friday<br>8:00 AM - 5:00 PM WAT</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-footer">
+        <div class="footer-content">
+          <div class="footer-logo-section">
+            <i class="bx bx-buildings"></i>
+            <span>The Building Practice Ltd</span>
+          </div>
+
+          <div class="footer-links">
+            <a href="../pages/about.html" class="footer-link"><i class="bx bx-info-circle"></i> About</a>
+            <a href="../pages/services.html" class="footer-link"><i class="bx bx-wrench"></i> Services</a>
+            <a href="../pages/projects.html" class="footer-link"><i class="bx bx-briefcase"></i> Projects</a>
+            <a href="../pages/team.html" class="footer-link"><i class="bx bx-group"></i> Team</a>
+            <a href="../pages/contact.html" class="footer-link"><i class="bx bx-envelope"></i> Contact</a>
+            <a href="../pages/privacy.html" class="footer-link"><i class="bx bx-shield" aria-hidden="true"></i> Privacy</a>
+          </div>
+
+          <div class="footer-copyright">
+            &copy; 2024 The Building Practice Ltd. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+        document.documentElement.classList.add('js-loaded');
+
+        const profileImg = document.querySelector('.profile-image img');
+    if (profileImg) {
+      profileImg.addEventListener('error', function () {
+        this.style.display = 'none';
+        const fallback = this.nextElementSibling;
+        if (fallback) fallback.style.display = 'flex';
+      });
+    }
+
+        const scrollContainer = document.querySelector('.profile-right');
+
+    const observerOptions = {
+      root: scrollContainer,
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+        document.querySelectorAll('.timeline-item, .stat-card, .contact-card').forEach(el => {
+      el.classList.add('animate-in');
+      observer.observe(el);
+    });
+
+          </script>
+  <!-- Include theme synchronization script -->
+  <script src="../js/theme-sync.js" defer></script>
+</body>
+</html>
+
+
+
+

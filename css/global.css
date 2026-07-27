@@ -1,0 +1,184 @@
+/* GLOBAL STYLES - 3D NEOMORPHIC UTILITIES */
+/* Universal 3D classes for ALL divs/sections/tags/team/admin/blog/projects */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* BASE RESET */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* UNIVERSAL 3D CONTAINER - APPLY TO ALL PAGES */
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.neu-3d-container,
+.neu-section,
+.neu-card,
+.neu-div,
+div[class*="neu-"],
+section[class*="neu-"] {
+  background: var(--bg-primary, #ffffff);
+  border-radius: var(--radius-xl, 1rem);
+  box-shadow: var(--shadow-3d-sm);
+  transition: all var(--duration-normal, 300ms) var(--ease-spring);
+  position: relative;
+  overflow: hidden;
+}
+
+/* 3D SHADOW UTILITIES - MIX & MATCH */
+.shadow-3d-xs { box-shadow: var(--shadow-3d-xs) !important; }
+.shadow-3d-sm { box-shadow: var(--shadow-3d-sm) !important; }
+.shadow-3d-md { box-shadow: var(--shadow-3d-md) !important; }
+.shadow-3d-lg { box-shadow: var(--shadow-3d-lg) !important; }
+.shadow-3d-xl { box-shadow: var(--shadow-3d-xl) !important; }
+
+.shadow-press { box-shadow: var(--shadow-press-md) !important; }
+.shadow-hover-lift {
+  transition: all var(--duration-normal) var(--ease-spring) !important;
+}
+.shadow-hover-lift:hover {
+  box-shadow: var(--shadow-3d-lg) !important;
+  transform: translateY(-6px) !important;
+}
+
+/* SERVICE TAGS / TEAM TAGS - 3D */
+.neu-tag,
+.tag,
+[class*="service-tag"],
+[class*="team-tag"] {
+  box-shadow: var(--shadow-3d-xs) !important;
+  transition: all var(--duration-fast) !important;
+}
+.neu-tag:hover,
+.tag:hover {
+  box-shadow: var(--shadow-3d-sm) !important;
+  transform: translateY(-2px) rotate(1deg) !important;
+}
+
+/* TEAM MEMBERS / PROFILES */
+.team-card,
+.team-profile,
+[class*="team-member"] {
+  box-shadow: var(--shadow-3d-md) !important;
+}
+.team-card:hover,
+.team-profile:hover {
+  box-shadow: var(--shadow-3d-xl) !important;
+  transform: translateY(-8px) !important;
+}
+
+/* ADMIN DASHBOARD / EDITOR PANELS */
+.admin-panel,
+.dashboard-card,
+.editor-section,
+.blog-admin [class*="panel"] {
+  box-shadow: var(--shadow-3d-sm) !important;
+}
+.admin-panel:hover {
+  box-shadow: var(--shadow-3d-md) !important;
+}
+
+/* BUTTONS / LINKS */
+.neu-btn,
+.btn,
+a[class*="btn"] {
+  box-shadow: var(--shadow-3d-xs) !important;
+}
+.neu-btn:hover,
+.btn:hover {
+  box-shadow: var(--shadow-3d-sm) !important;
+  transform: translateY(-3px) scale(1.02) !important;
+}
+.neu-btn:active {
+  box-shadow: var(--shadow-press-xs) !important;
+}
+
+/* PROJECTS / REVIEWS / BLOG POSTS */
+.project-card,
+.review-card,
+.blog-post,
+.sub-project {
+  box-shadow: var(--shadow-3d-md) !important;
+}
+.project-card:hover {
+  box-shadow: var(--shadow-3d-lg) !important;
+}
+
+/* RESPONSIVE 3D SCALING */
+@media (max-width: 768px) {
+  .shadow-3d-sm { box-shadow: var(--shadow-3d-xs) !important; }
+  .shadow-3d-md { box-shadow: var(--shadow-3d-sm) !important; }
+  .shadow-3d-lg { box-shadow: var(--shadow-3d-md) !important; }
+}
+
+/* NAVBAR SHADOW REMOVAL - Both Themes */
+.navbar,
+.header,
+.navbar.scrolled {
+  box-shadow: none !important;
+}
+
+[data-theme="dark"] .navbar,
+[data-theme="dark"] .header,
+[data-theme="dark"] .navbar.scrolled {
+  box-shadow: none !important;
+}
+
+/* Override neomorphic shadows specifically on navbars */
+.navbar [class*="shadow-3d"],
+.header [class*="shadow-3d"],
+.navbar * [class*="neu-"],
+.header * [class*="neu-"] {
+  box-shadow: none !important;
+}
+
+/* NAVBAR SHADOW REMOVAL - FIX #3 */
+.header,
+.navbar,
+.nav-menu,
+.navigation {
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--border-primary, #e5e7eb) !important;
+}
+
+[data-theme="dark"] .header,
+[data-theme="dark"] .navbar,
+[data-theme="dark"] .nav-menu,
+[data-theme="dark"] .navigation {
+  box-shadow: none !important;
+  border-bottom: 1px solid var(--border-primary, #374151) !important;
+}
+
+/* MOBILE NAVBAR */
+@media (max-width: 968px) {
+  .header.scrolled,
+  .navbar.scrolled {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  [data-theme="dark"] .header.scrolled,
+  [data-theme="dark"] .navbar.scrolled {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3) !important;
+  }
+}
+
+
+/* PRESS EFFECT UNIVERSAL */
+*:active {
+  transform: translateY(1px) !important;
+}
+
+/* SMOOTH HOVER EVERYWHERE */
+* {
+  transition: box-shadow 0.2s ease, transform 0.3s var(--ease-spring) !important;
+}
+
+/* NAVBAR NO-SHADOW FIX - Both themes */
+.header, .navbar, .navbar-scrolled, [data-theme="dark"] .header, [data-theme="dark"] .navbar {
+  box-shadow: none !important;
+}
+

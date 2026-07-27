@@ -1,0 +1,383 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .footer {
+      background: var(--bg-surface, #ffffff);
+      border-top: 1px solid var(--border-light, #e5e7eb);
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', sans-serif;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1.5fr;
+      gap: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 3rem 1rem 2rem;
+    }
+
+    @media (max-width: 968px) {
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        padding: 2rem 1rem 1.5rem;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 1.5rem 1rem 1rem;
+      }
+    }
+
+    .footer-brand {
+      max-width: 300px;
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+      text-decoration: none;
+    }
+
+    .footer-logo img {
+      height: 2rem;
+      width: auto;
+      border-radius: 0.5rem;
+    }
+
+    .footer-logo-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary, #111827);
+    }
+
+    .footer-brand p {
+      font-size: 0.875rem;
+      color: var(--text-secondary, #6b7280);
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .footer-social a {
+      width: 2.75rem;
+      height: 2.75rem;
+      background: var(--bg-base, #f9fafb);
+      border: 1px solid var(--border-primary, #e5e7eb);
+      border-radius: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary, #6b7280);
+      font-size: 1.25rem;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .footer-social a:hover {
+      background: var(--primary-500, #1a5f7a);
+      border-color: var(--primary-500, #1a5f7a);
+      color: white;
+      transform: translateY(-0.25rem);
+    }
+
+    .footer-column h4 {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--text-primary, #111827);
+      margin-bottom: 1rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-column h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 1.5rem;
+      height: 0.125rem;
+      background: linear-gradient(90deg, #1a5f7a, #c9a227);
+      border-radius: 0.125rem;
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-links a {
+      font-size: 0.75rem;
+      color: var(--text-secondary, #6b7280);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: all 0.2s ease-out;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary-500, #1a5f7a);
+      transform: translateX(0.25rem);
+    }
+
+    .footer-links a i {
+      font-size: 0.875rem;
+      color: var(--text-tertiary, #9ca3af);
+      transition: color 0.2s ease-out;
+    }
+
+    .footer-links a:hover i {
+      color: var(--primary-500, #1a5f7a);
+    }
+
+    .footer-contact ul {
+      list-style: none;
+    }
+
+    .footer-contact li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .footer-contact-icon {
+      width: 2.25rem;
+      height: 2.25rem;
+      background: var(--bg-base, #f9fafb);
+      border: 1px solid var(--border-primary, #e5e7eb);
+      border-radius: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 1.125rem;
+      color: var(--primary-500, #1a5f7a);
+    }
+
+    .footer-contact-text {
+      font-size: 0.75rem;
+      color: var(--text-secondary, #6b7280);
+      line-height: 1.6;
+    }
+
+    .footer-contact-text strong {
+      display: block;
+      font-weight: 600;
+      color: var(--text-primary, #111827);
+      margin-bottom: 0.125rem;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-primary, #e5e7eb);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.75rem;
+      color: var(--text-tertiary, #9ca3af);
+    }
+
+    @media (max-width: 640px) {
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 0.75rem;
+      }
+    }
+
+    .footer-copyright {
+      margin: 0;
+    }
+
+    .footer-copyright a {
+      color: var(--primary-500, #1a5f7a);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-legal a {
+      color: var(--text-tertiary, #9ca3af);
+      text-decoration: none;
+      transition: color 0.2s ease-out;
+    }
+
+    .footer-legal a:hover {
+      color: var(--primary-500, #1a5f7a);
+    }
+
+    @media (max-width: 640px) {
+      .footer-legal {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+
+    /* Newsletter */
+    .newsletter-wrapper {
+      background: var(--bg-primary, #f9fafb);
+      border: 1px solid var(--border-primary, #e5e7eb);
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .newsletter-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-primary, #111827);
+      margin-bottom: 0.25rem;
+    }
+
+    .newsletter-description {
+      font-size: 0.875rem;
+      color: var(--text-secondary, #6b7280);
+      margin-bottom: 1rem;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      border: 1px solid var(--border-primary, #e5e7eb);
+      border-radius: 0.75rem;
+      padding: 0.75rem 1rem;
+      font-size: 0.875rem;
+      background: var(--bg-base, #ffffff);
+    }
+
+    .newsletter-form button {
+      white-space: nowrap;
+      padding: 0.75rem 1.25rem;
+      font-size: 0.875rem;
+    }
+
+    .newsletter-privacy {
+      font-size: 0.6875rem;
+      color: var(--text-tertiary, #9ca3af);
+      margin-top: 0.75rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo">
+          <img src="../images/bp.png" alt="The Building Practice Ltd">
+          <span class="footer-logo-text">The Building Practice</span>
+        </a>
+        <p>Transforming visions into enduring architectural legacies across Nigeria and beyond.</p>
+        <div class="footer-social">
+          <a href="https://facebook.com/thebuildingpractice" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <i class="bx bxl-facebook"></i>
+          </a>
+          <a href="https://instagram.com/thebuildingpractice" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <i class="bx bxl-instagram"></i>
+          </a>
+          <a href="https://linkedin.com/company/the-building-practice-ltd" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+            <i class="bx bxl-linkedin"></i>
+          </a>
+          <a href="https://youtube.com/@TheBuildingpracticeLtd" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+            <i class="bx bxl-youtube"></i>
+          </a>
+          <a href="https://twitter.com/thebplimited" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+            <i class="bx bxl-twitter"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class='bx bx-chevron-right'></i> Home</a></li>
+          <li><a href="about.html"><i class='bx bx-chevron-right'></i> About</a></li>
+          <li><a href="services.html"><i class='bx bx-chevron-right'></i> Services</a></li>
+          <li><a href="projects.html"><i class='bx bx-chevron-right'></i> Projects</a></li>
+          <li><a href="team.html"><i class='bx bx-chevron-right'></i> Team</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column">
+        <h4>Services</h4>
+        <ul class="footer-links">
+          <li><a href="services.html#residential"><i class='bx bx-chevron-right'></i> Residential</a></li>
+          <li><a href="services.html#commercial"><i class='bx bx-chevron-right'></i> Commercial</a></li>
+          <li><a href="services.html#management"><i class='bx bx-chevron-right'></i> Project Management</a></li>
+          <li><a href="services.html#construction"><i class='bx bx-chevron-right'></i> Construction</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-column footer-main-bottom">
+        <h4>Get In Touch</h4>
+        <div class="footer-contact-links">
+          <div><i class='bx bx-map'></i> Plot 6, Remi Olowude St, Lekki Phase 1, Lagos</div>
+          <div><i class='bx bx-phone'></i> +234 904 972 1840</div>
+          <div><a href="mailto:info@buildingpractice.biz"><i class='bx bx-envelope'></i> info@buildingpractice.biz</a></div>
+        </div>
+        <div class="footer-cta">
+          <a href="tel:+2349049721840" class="tag tag--primary tag--sm">Call Now</a>
+          <a href="contact.html" class="tag tag--accent tag--sm">Get Quote</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        &copy; <span id="currentYear">2025</span> The Building Practice Ltd. All rights reserved.
+      </p>
+      <div class="footer-legal">
+        <a href="privacy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Service</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Set current year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+    
+    // Newsletter form handler
+    const newsletterForm = document.querySelector('.newsletter-wrapper form');
+    if (newsletterForm) {
+      newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const input = newsletterForm.querySelector('input');
+        if (input && input.value.includes('@')) {
+          alert('Thank you for subscribing!');
+          input.value = '';
+        }
+      });
+    }
+  </script>
+</body>
+</html>
+

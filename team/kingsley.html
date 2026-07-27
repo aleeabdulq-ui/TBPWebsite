@@ -1,14 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script src="../js/theme-head.js"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="description" content="Meet Uche Anyanwu - Senior Associate at The Building Practice Ltd, specializing in sustainable design, creative architecture, and green building solutions." />
   
   <title>Uche Anyanwu - Senior Associate | The Building Practice Ltd</title>
   
-  <!-- Apple Touch Icons -->
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- SEO & Social Media Meta Tags -->
+  <meta property="og:title" content="Uche Anyanwu - Senior Associate | The Building Practice Ltd">
+  <meta property="og:description" content="Creative Enthusiast and Design Harmonist specializing in sustainable design and green building solutions with over 9 years of experience.">
+  <meta property="og:image" content="https://yourdomain.com/images/team/uche.jpg">
+  <meta property="og:type" content="profile">
+  
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Uche Anyanwu - Senior Associate">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://yourdomain.com/team/uche-anyanwu.html">
+  
+  <!-- Apple Touch Icons - FIXED PATH -->
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  
+  <!-- Preconnect for External Resources -->
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
   
   <!-- Box Icons -->
   <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
@@ -61,12 +78,39 @@
       /* Layout */
       --header-height: 60px;
     }
+    /* Dark Mode Theme */
+    [data-theme="dark"] {
+      --glass-white: rgba(30, 30, 30, 0.6);
+      --glass-white-strong: rgba(25, 25, 25, 0.85);
+      --glass-background: rgba(40, 40, 40, 0.4);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-shadow: rgba(0, 0, 0, 0.3);
+
+      --primary-bg: #0F0F0F;
+      --secondary-bg: #1A1A1A;
+      --accent-color: #4DA6FF;
+      --accent-hover: #66B3FF;
+      --text-primary: #FFFFFF;
+      --text-secondary: #E0E0E0;
+      --text-tertiary: #A0A0A0;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
     
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* ADDED: Focus styles for accessibility */
+    *:focus-visible {
+      outline: 2px solid var(--accent-color);
+      outline-offset: 2px;
+      border-radius: 4px;
     }
     
     body {
@@ -82,6 +126,31 @@
       overflow-x: hidden;
     }
     
+    /* ADDED: Skip link for accessibility */
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      background: var(--accent-color);
+      color: white;
+      padding: 8px;
+      text-decoration: none;
+      z-index: 10000;
+    }
+    
+    .skip-link:focus {
+      top: 0;
+    }
+    [data-theme="dark"] body {
+      background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 100%);
+      background-attachment: fixed;
+    }
+
+    
+    [data-theme="dark"] body {
+      background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 100%);
+      background-attachment: fixed;
+    }
     /* Glassmorphism Effects */
     .glass {
       background: var(--glass-white);
@@ -95,6 +164,16 @@
       backdrop-filter: blur(30px) saturate(200%);
       -webkit-backdrop-filter: blur(30px) saturate(200%);
       border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+    
+    /* ADDED: Fallback for browsers without backdrop-filter support */
+    @supports not (backdrop-filter: blur(20px)) {
+      .glass {
+        background: rgba(255, 255, 255, 0.95);
+      }
+      .glass-strong {
+        background: rgba(255, 255, 255, 0.98);
+      }
     }
     
     /* Typography */
@@ -160,49 +239,67 @@
       font-size: 1.5rem;
     }
     
-    /* Profile Container */
+    /* FIXED: Changed to 320px fixed width sidebar */
     .profile-container {
       display: grid;
-      grid-template-columns: 28% 72%;
+      grid-template-columns: 320px 1fr;
       gap: var(--spacing-lg);
-      height: calc(100vh - var(--header-height));
       max-width: 1800px;
       margin: 0 auto;
       padding: var(--spacing-lg);
+      min-height: calc(100vh - var(--header-height));
     }
     
-    /* LEFT SIDE - COMPACT STATIC PROFILE CARD */
+    /* FIXED: Changed to fit-content + max-height + overflow */
     .profile-left {
       position: sticky;
       top: calc(var(--header-height) + var(--spacing-lg));
-      height: calc(100vh - var(--header-height) - var(--spacing-lg) * 2);
+      height: fit-content;
+      max-height: calc(100vh - var(--header-height) - var(--spacing-lg) * 2);
       padding: var(--spacing-lg);
       border-radius: var(--radius-2xl);
       box-shadow: var(--shadow-lg);
       transition: var(--transition-slow);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
+      overflow-y: auto;
+      overflow-x: hidden;
     }
     
     .profile-left:hover {
-      transform: translateY(-4px);
       box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
     }
     
+    /* ADDED: Custom scrollbar for left panel */
+    .profile-left::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .profile-left::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    .profile-left::-webkit-scrollbar-thumb {
+      background: rgba(0, 122, 255, 0.2);
+      border-radius: var(--radius-full);
+    }
+    
+    .profile-left::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 122, 255, 0.3);
+    }
+    
+    /* ADDED: flex column with centered children */
     .profile-card {
       text-align: center;
       position: relative;
       z-index: 2;
       display: flex;
       flex-direction: column;
-      flex: 1;
+      align-items: center;
     }
     
     .profile-image-wrapper {
       position: relative;
       width: 100%;
-      max-width: 180px;
+      max-width: 160px;
       margin: 0 auto var(--spacing-lg);
       aspect-ratio: 1;
     }
@@ -213,6 +310,7 @@
       border-radius: var(--radius-2xl);
       overflow: hidden;
       position: relative;
+      background: linear-gradient(135deg, var(--secondary-bg), var(--glass-background));
       box-shadow: var(--shadow-lg);
       transition: var(--transition-slow);
     }
@@ -232,14 +330,29 @@
     }
     
     .profile-image:hover {
-      transform: scale(1.02);
+      transform: translateY(-2px);
     }
     
     .profile-image img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
       display: block;
+    }
+    
+    /* ADDED: Image fallback styling */
+    .profile-image-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--accent-color), #764ba2);
+      color: white;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border-radius: var(--radius-2xl);
     }
     
     .profile-image-ring {
@@ -258,15 +371,16 @@
     }
     
     .profile-name {
-      font-size: 1.5rem;
+      font-size: 1.375rem;
       font-weight: 700;
       color: var(--text-primary);
       margin-bottom: var(--spacing-xs);
       letter-spacing: -0.03em;
+      line-height: 1.2;
     }
     
     .profile-title {
-      font-size: 0.8125rem;
+      font-size: 0.75rem;
       color: var(--accent-color);
       font-weight: 600;
       text-transform: uppercase;
@@ -278,7 +392,9 @@
       display: inline-block;
     }
     
+    /* ADDED: width 100% for full-width children */
     .profile-divider {
+      width: 100%;
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--border-color), transparent);
       margin: var(--spacing-md) 0;
@@ -287,13 +403,14 @@
     .profile-quick-stats {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: var(--spacing-sm);
+      gap: var(--spacing-xs);
       margin-bottom: var(--spacing-md);
+      width: 100%;
     }
     
     .quick-stat {
       text-align: center;
-      padding: var(--spacing-sm);
+      padding: var(--spacing-sm) var(--spacing-xs);
       border-radius: var(--radius-md);
       background: var(--glass-background);
       border: 1px solid var(--border-color);
@@ -301,13 +418,13 @@
     }
     
     .quick-stat:hover {
-      transform: translateY(-4px);
+      transform: translateY(-2px);
       box-shadow: var(--shadow-md);
       background: var(--glass-white);
     }
     
     .quick-stat-number {
-      font-size: 1.25rem;
+      font-size: 1.125rem;
       font-weight: 700;
       color: var(--accent-color);
       display: block;
@@ -315,7 +432,7 @@
     }
     
     .quick-stat-label {
-      font-size: 0.625rem;
+      font-size: 0.5625rem;
       color: var(--text-tertiary);
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -323,24 +440,26 @@
     }
     
     .profile-info-section {
-      margin-bottom: var(--spacing-md);
+      margin-bottom: var(--spacing-sm);
+      text-align: left;
+      width: 100%;
     }
     
     .profile-info-title {
       display: flex;
       align-items: center;
       gap: var(--spacing-xs);
-      font-size: 0.75rem;
+      font-size: 0.6875rem;
       font-weight: 700;
       color: var(--text-primary);
       text-transform: uppercase;
       letter-spacing: 0.08em;
-      margin-bottom: var(--spacing-sm);
+      margin-bottom: var(--spacing-xs);
     }
     
     .profile-info-title i {
       color: var(--accent-color);
-      font-size: 1rem;
+      font-size: 0.875rem;
     }
     
     .profile-info-item {
@@ -351,8 +470,8 @@
       border-radius: var(--radius-sm);
       transition: var(--transition-base);
       text-align: left;
-      margin-bottom: 4px;
-      font-size: 0.8125rem;
+      margin-bottom: 2px;
+      font-size: 0.75rem;
     }
     
     .profile-info-item:hover {
@@ -361,14 +480,17 @@
     
     .profile-info-item i {
       color: var(--accent-color);
-      font-size: 0.9375rem;
-      min-width: 18px;
+      font-size: 0.875rem;
+      min-width: 16px;
     }
     
-    .profile-info-item a {
+    /* ADDED: span styling alongside a */
+    .profile-info-item a,
+    .profile-info-item span {
       color: var(--text-secondary);
       text-decoration: none;
       transition: var(--transition-fast);
+      font-size: 0.75rem;
     }
     
     .profile-info-item a:hover {
@@ -380,13 +502,12 @@
       gap: var(--spacing-sm);
       justify-content: center;
       flex-wrap: wrap;
-      margin-top: auto;
-      padding-top: var(--spacing-md);
+      padding-top: var(--spacing-sm);
     }
     
     .quick-contact-btn {
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
       border-radius: var(--radius-full);
       background: var(--glass-background);
       border: 1px solid var(--border-color);
@@ -394,7 +515,7 @@
       align-items: center;
       justify-content: center;
       color: var(--text-primary);
-      font-size: 1.125rem;
+      font-size: 1rem;
       cursor: pointer;
       transition: var(--transition-bounce);
       text-decoration: none;
@@ -430,13 +551,13 @@
       transform: scale(0.95);
     }
     
-    /* RIGHT SIDE - SCROLLABLE CONTENT WITH FOOTER */
+    /* FIXED: Changed to max-height for flexibility */
     .profile-right {
       padding: var(--spacing-xl);
       border-radius: var(--radius-2xl);
       box-shadow: var(--shadow-lg);
       overflow-y: auto;
-      height: calc(100vh - var(--header-height) - var(--spacing-lg) * 2);
+      max-height: calc(100vh - var(--header-height) - var(--spacing-lg) * 2);
       animation: slideInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1);
       position: relative;
       display: flex;
@@ -589,6 +710,7 @@
       transition: var(--transition-slow);
       border: 1px solid var(--border-color);
       box-shadow: var(--shadow-sm);
+      background-color: var(--primary-bg);
       position: relative;
       overflow: hidden;
     }
@@ -758,6 +880,7 @@
       border-radius: var(--radius-xl);
       border: 1px solid var(--border-color);
       box-shadow: var(--shadow-sm);
+      background-color: var(--primary-bg);
       transition: var(--transition-slow);
       position: relative;
       overflow: hidden;
@@ -1039,10 +1162,35 @@
       background-clip: padding-box;
     }
     
+    /* ADDED: Animation classes for IntersectionObserver */
+    .timeline-item,
+    .stat-card,
+    .contact-card {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    
+    .is-visible {
+      opacity: 1 !important;
+      transform: translateY(0) !important;
+    }
+    
+    /* ADDED: Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+    
     /* Responsive Design */
     @media (max-width: 1200px) {
       .profile-container {
-        grid-template-columns: 32% 68%;
+        grid-template-columns: 300px 1fr;
       }
     }
     
@@ -1055,12 +1203,13 @@
       .profile-left {
         position: relative;
         top: 0;
+        max-height: none;
         height: auto;
       }
       
       .profile-right {
-        height: auto;
         max-height: none;
+        height: auto;
       }
       
       .stats-grid {
@@ -1102,10 +1251,14 @@
 </head>
 
 <body>
+  <!-- ADDED: Skip link for accessibility -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
   <!-- Header -->
   <header class="glass">
     <div class="header-container">
-      <a href="index.html" class="logo">
+      <!-- FIXED: Changed to ../pages/index.html -->
+      <a href="../pages/index.html" class="logo">
         <i class="bx bx-buildings logo-icon"></i>
         The Building Practice Ltd
       </a>
@@ -1114,14 +1267,17 @@
 
   <!-- Profile Container -->
   <div class="profile-container">
-    <!-- LEFT SIDE - COMPACT STATIC PROFILE CARD -->
+    <!-- LEFT SIDE - SCROLLABLE PROFILE CARD -->
     <aside class="profile-left glass-strong">
       <div class="profile-card">
         <!-- Profile Image -->
         <div class="profile-image-wrapper">
           <div class="profile-image-ring"></div>
           <div class="profile-image">
-            <img src="./images/kingsley.jpg" alt="Uche Anyanwu" loading="lazy">
+            <!-- FIXED: Changed image src and ADDED onerror handler with fallback -->
+            <img src="../images/team/kingsley.jpg" alt="Uche Anyanwu" loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="profile-image-fallback">UA</div>
           </div>
         </div>
         
@@ -1157,11 +1313,11 @@
           </div>
           <div class="profile-info-item">
             <i class="bx bx-envelope"></i>
-            <a href="mailto:uanwanwu@buildingpractice.biz">Contact via Email</a>
+            <a href="mailto:uanyanwu@buildingpractice.biz">uanyanwu@buildingpractice.biz</a>
           </div>
           <div class="profile-info-item">
             <i class="bx bx-phone"></i>
-            <a href="tel:+234">+234 (Call Office)</a>
+            <span>Contact Office</span>
           </div>
         </div>
         
@@ -1183,16 +1339,27 @@
         
         <!-- Social Links -->
         <div class="profile-quick-contact">
-          <a href="mailto:uanwanwu@buildingpractice.biz" class="quick-contact-btn" title="Email">
+          <!-- ADDED: aria-label and rel="noopener noreferrer" -->
+          <a href="mailto:uanyanwu@buildingpractice.biz" 
+             class="quick-contact-btn" 
+             title="Email"
+             aria-label="Email Uche Anyanwu">
             <i class="bx bx-envelope"></i>
           </a>
-          <a href="tel:+234" class="quick-contact-btn" title="Phone">
-            <i class="bx bx-phone"></i>
-          </a>
-          <a href="https://linkedin.com" class="quick-contact-btn" title="LinkedIn" target="_blank" rel="noopener">
+          <a href="https://linkedin.com" 
+             class="quick-contact-btn" 
+             title="LinkedIn" 
+             aria-label="Visit Uche Anyanwu's LinkedIn profile"
+             target="_blank" 
+             rel="noopener noreferrer">
             <i class="bx bxl-linkedin"></i>
           </a>
-          <a href="https://twitter.com" class="quick-contact-btn" title="Twitter" target="_blank" rel="noopener">
+          <a href="https://twitter.com" 
+             class="quick-contact-btn" 
+             title="Twitter" 
+             aria-label="Visit Uche Anyanwu's Twitter profile"
+             target="_blank" 
+             rel="noopener noreferrer">
             <i class="bx bxl-twitter"></i>
           </a>
         </div>
@@ -1200,13 +1367,14 @@
     </aside>
 
     <!-- RIGHT SIDE - SCROLLABLE CONTENT -->
-    <main class="profile-right glass-strong">
+    <main class="profile-right glass-strong" id="main-content">
       <div class="content-section">
         <!-- Breadcrumb -->
         <div class="breadcrumb">
-          <a href="index.html"><i class="bx bx-home-alt"></i> Home</a> 
+          <!-- FIXED: Changed to ../pages/ paths -->
+          <a href="../pages/index.html"><i class="bx bx-home-alt"></i> Home</a> 
           <i class="bx bx-chevron-right"></i> 
-          <a href="team.html"><i class="bx bx-group"></i> Team</a> 
+          <a href="../pages/team.html"><i class="bx bx-group"></i> Team</a> 
           <i class="bx bx-chevron-right"></i> 
           <span>Uche Anyanwu</span>
         </div>
@@ -1329,7 +1497,7 @@
         
         <div class="section-divider"></div>
         
-               <!-- Specialized Skills & Approach -->
+        <!-- Specialized Skills & Approach -->
         <h2 class="section-title"><i class="bx bx-trophy"></i> Specialized Skills & Design Approach</h2>
         <p>Uche brings a unique combination of creative vision and technical expertise to every project:</p>
         
@@ -1393,25 +1561,6 @@
         
         <div class="section-divider"></div>
         
-        <!-- Cultural & Design Philosophy -->
-        <h2 class="section-title"><i class="bx bx-world"></i> Design Philosophy & Cultural Approach</h2>
-        <p>Uche's design philosophy is deeply rooted in creating harmony between built environments and their natural and cultural contexts:</p>
-        
-        <div class="quote-box">
-          <p><strong>"Great architecture should serve as a bridge between human needs and environmental stewardship.</strong> As a Design Harmonist, I believe in creating spaces that not only function efficiently but also inspire and uplift the human spirit. Every project presents an opportunity to balance creative expression with practical solutions, tradition with innovation, and local context with global best practices."</p>
-        </div>
-        
-        <h3 style="margin-top: var(--spacing-xl); font-size: 1.125rem; color: var(--text-primary); margin-bottom: var(--spacing-md); display: flex; align-items: center; gap: var(--spacing-sm);"><i class="bx bx-heart" style="color: var(--accent-color);"></i> Core Design Principles</h3>
-        <ul class="styled-list">
-          <li><i class="bx bx-check-circle"></i> <strong>Human-Centered Design</strong> - Prioritizing user experience and human comfort in all design decisions</li>
-          <li><i class="bx bx-check-circle"></i> <strong>Contextual Integration</strong> - Creating designs that respond to and enhance their specific environments</li>
-          <li><i class="bx bx-check-circle"></i> <strong>Sustainable Innovation</strong> - Balancing cutting-edge design with environmental responsibility</li>
-          <li><i class="bx bx-check-circle"></i> <strong>Cultural Sensitivity</strong> - Respecting and incorporating local cultural elements and traditions</li>
-          <li><i class="bx bx-check-circle"></i> <strong>Technical Excellence</strong> - Ensuring all designs are buildable, durable, and maintainable</li>
-        </ul>
-        
-        <div class="section-divider"></div>
-        
         <!-- Contact Information -->
         <h2 class="section-title"><i class="bx bx-phone-call"></i> Contact Information</h2>
         <div class="contact-grid">
@@ -1429,7 +1578,7 @@
               <span class="contact-icon"><i class="bx bx-phone"></i></span>
               <div>
                 <div class="contact-label">Office Line</div>
-                <div class="contact-value"><a href="tel:+234">Contact Office</a></div>
+                <div class="contact-value">Contact Office</div>
               </div>
             </div>
             
@@ -1437,7 +1586,7 @@
               <span class="contact-icon"><i class="bx bxl-linkedin"></i></span>
               <div>
                 <div class="contact-label">LinkedIn Profile</div>
-                <div class="contact-value"><a href="https://linkedin.com" target="_blank" rel="noopener">Connect on LinkedIn</a></div>
+                <div class="contact-value"><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></div>
               </div>
             </div>
           </div>
@@ -1487,12 +1636,13 @@
           </div>
           
           <div class="footer-links">
-            <a href="about.html" class="footer-link"><i class="bx bx-info-circle"></i> About</a>
-            <a href="services.html" class="footer-link"><i class="bx bx-wrench"></i> Services</a>
-            <a href="projects.html" class="footer-link"><i class="bx bx-briefcase"></i> Projects</a>
-            <a href="team.html" class="footer-link"><i class="bx bx-group"></i> Team</a>
-            <a href="contact.html" class="footer-link"><i class="bx bx-envelope"></i> Contact</a>
-            <a href="privacy.html" class="footer-link"><i class="bx bx-shield"></i> Privacy</a>
+            <!-- FIXED: Changed to ../pages/ paths -->
+            <a href="../pages/about.html" class="footer-link"><i class="bx bx-info-circle"></i> About</a>
+            <a href="../pages/services.html" class="footer-link"><i class="bx bx-wrench"></i> Services</a>
+            <a href="../pages/projects.html" class="footer-link"><i class="bx bx-briefcase"></i> Projects</a>
+            <a href="../pages/team.html" class="footer-link"><i class="bx bx-group"></i> Team</a>
+            <a href="../pages/contact.html" class="footer-link"><i class="bx bx-envelope"></i> Contact</a>
+            <a href="../pages/privacy.html" class="footer-link"><i class="bx bx-shield"></i> Privacy</a>
           </div>
           
           <div class="footer-copyright">
@@ -1503,9 +1653,13 @@
     </main>
   </div>
 
+  <!-- IMPROVED: Better JavaScript with class-based animations and error handling -->
   <script>
-    // Smooth scroll reveal animations
+    // Use scrollable container as IntersectionObserver root
+    const scrollContainer = document.querySelector('.profile-right');
+
     const observerOptions = {
+      root: scrollContainer,
       threshold: 0.1,
       rootMargin: '0px 0px -50px 0px'
     };
@@ -1513,17 +1667,14 @@
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target); // Stop observing once visible for performance
         }
       });
     }, observerOptions);
 
     // Observe elements for scroll animations
     document.querySelectorAll('.timeline-item, .stat-card, .contact-card').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(el);
     });
 
@@ -1538,19 +1689,25 @@
       });
     });
 
-    // Smooth scroll behavior
+    // Improved smooth scroll with error handling
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          target.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
+        const targetId = this.getAttribute('href');
+        const target = document.querySelector(targetId);
+        
+        if (target && scrollContainer) {
+          const targetPosition = target.offsetTop - 80; // Account for header
+          scrollContainer.scrollTo({
+            top: targetPosition,
+            behavior: 'smooth'
           });
         }
       });
     });
   </script>
+  <!-- Include theme synchronization script -->
+  <script src="../js/theme-sync.js" defer></script>
 </body>
 </html>
+

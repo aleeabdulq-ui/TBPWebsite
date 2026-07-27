@@ -1,0 +1,76 @@
+/* ENHANCED NEOMORPHIC 3D DESIGN SYSTEM - VIVID 3D EFFECTS EVERYWHERE */
+/* Universal 3D shadows for ALL divs/sections/team/service-tags/admin/blog/projects */
+
+:root {
+  /* === ENHANCED NEOMORPHIC COLORS === */
+  --neu-shadow-light: #f8fafc;
+  --neu-shadow-dark: #cbd5e1;
+  
+  /* === CORE NEOMORPHIC SHADOWS === */
+  --shadow-neu: 12px 12px 24px var(--neu-shadow-dark), -12px -12px 24px var(--neu-shadow-light);
+  --shadow-neu-sm: 6px 6px 12px var(--neu-shadow-dark), -6px -6px 12px var(--neu-shadow-light);
+  --shadow-neu-lg: 16px 16px 32px var(--neu-shadow-dark), -16px -16px 32px var(--neu-shadow-light);
+  --shadow-neu-inset: inset 8px 8px 16px var(--neu-shadow-dark), inset -8px -8px 16px var(--neu-shadow-light);
+  --shadow-neu-inset-sm: inset 4px 4px 8px var(--neu-shadow-dark), inset -4px -4px 8px var(--neu-shadow-light);
+  
+  /* === NEW 3D SHADOW TIERS - FOR ALL DIVS/SECTIONS/TAGS === */
+  --shadow-3d-xs: 4px 4px 8px var(--neu-shadow-dark), -4px -4px 8px var(--neu-shadow-light);
+  --shadow-3d-sm: 8px 8px 16px var(--neu-shadow-dark), -8px -8px 16px var(--neu-shadow-light);
+  --shadow-3d-md: 12px 12px 24px var(--neu-shadow-dark), -12px -12px 24px var(--neu-shadow-light);
+  --shadow-3d-lg: 16px 16px 32px var(--neu-shadow-dark), -16px -16px 32px var(--neu-shadow-light);
+  --shadow-3d-xl: 20px 20px 40px var(--neu-shadow-dark), -20px -20px 40px var(--neu-shadow-light);
+  
+  /* === PRESS/ACTIVE STATES === */
+  --shadow-press-xs: inset 2px 2px 4px var(--neu-shadow-dark), inset -2px -2px 4px var(--neu-shadow-light);
+  --shadow-press-md: inset 4px 4px 8px var(--neu-shadow-dark), inset -4px -4px 8px var(--neu-shadow-light);
+  
+  /* === BUTTON HOVER STATES === */
+  --neu-btn-hover: -6px -6px 16px var(--neu-shadow-light), 6px 6px 16px var(--neu-shadow-dark);
+  --neu-btn-pressed: inset 3px 3px 9px var(--neu-shadow-dark), inset -3px -3px 9px var(--neu-shadow-light);
+}
+
+[data-theme="dark"] {
+  /* DARK MODE - DEEPER 3D FOR MAX EFFECT */
+  --neu-shadow-light: #2a3440;
+  --neu-shadow-dark: #000102;
+  
+  /* Dark mode maintains vivid 3D */
+  --shadow-3d-xs: 3px 3px 6px var(--neu-shadow-dark), -3px -3px 6px var(--neu-shadow-light);
+  --shadow-3d-sm: 6px 6px 12px var(--neu-shadow-dark), -6px -6px 12px var(--neu-shadow-light);
+}
+
+/* === SIMPLIFIED NEOMORPHIC - BUTTONS ONLY === */
+.neu-btn {
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-3d-xs);
+  transition: all var(--duration-normal) var(--ease-spring);
+}
+
+.neu-btn:hover {
+  box-shadow: var(--shadow-3d-md);
+  transform: translateY(-2px);
+}
+
+/* === SIMPLIFIED BUTTON SHADOWS === */
+.neu-btn {
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-3d-xs);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.neu-btn:hover {
+  box-shadow: var(--shadow-3d-sm);
+  transform: translateY(-1px);
+}
+
+
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .neu-card {
+    --shadow-neu: 8px 8px 16px var(--neu-shadow-dark), -8px -8px 16px var(--neu-shadow-light);
+  }
+}
+

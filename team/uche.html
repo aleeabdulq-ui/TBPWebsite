@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../js/theme-head.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Meet Uchechukwu Oleribe - Junior Associate at The Building Practice Ltd, an architect with Master's from University of Lagos specializing in residential, commercial, mixed-use projects with technology focus." />
+
+  <title>Uchechukwu Oleribe - Junior Associate | The Building Practice Ltd</title>
+
+  <!-- Apple Touch Icons -->
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+
+  <!-- Box Icons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      /* iOS 20 Glass Design System */
+      --glass-white: rgba(255, 255, 255, 0.7);
+      --glass-white-strong: rgba(255, 255, 255, 0.9);
+      --glass-background: rgba(255, 255, 255, 0.5);
+      --glass-border: rgba(255, 255, 255, 0.3);
+      --glass-shadow: rgba(0, 0, 0, 0.1);
+
+      /* Color Palette */
+      --primary-bg: #FFFFFF;
+      --secondary-bg: #F8F9FA;
+      --accent-color: #007AFF;
+      --accent-hover: #0051D5;
+      --text-primary: #1C1C1E;
+      --text-secondary: #48484A;
+      --text-tertiary: #8E8E93;
+      --border-color: rgba(0, 0, 0, 0.08);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.08);
+      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.12);
+
+      /* FIX: Changed --> to valid CSS comment close */
+      /* Spacing */
+      --spacing-xs: 6px;
+      --spacing-sm: 10px;
+      --spacing-md: 14px;
+      --spacing-lg: 20px;
+      --spacing-xl: 28px;
+      --spacing-2xl: 40px;
+      --spacing-3xl: 56px;
+
+      /* Border Radius */
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --radius-xl: 20px;
+      --radius-2xl: 24px;
+      --radius-full: 9999px;
+
+      /* Transitions */
+      --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-base: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-slow: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+      /* Layout */
+      --header-height: 60px;
+    }
+    /* Dark Mode Theme */
+    [data-theme="dark"] {
+      --glass-white: rgba(30, 30, 30, 0.6);
+      --glass-white-strong: rgba(25, 25, 25, 0.85);
+      --glass-background: rgba(40, 40, 40, 0.4);
+      --glass-border: rgba(255, 255, 255, 0.1);
+      --glass-shadow: rgba(0, 0, 0, 0.3);
+
+      --primary-bg: #0F0F0F;
+      --secondary-bg: #1A1A1A;
+      --accent-color: #4DA6FF;
+      --accent-hover: #66B3FF;
+      --text-primary: #FFFFFF;
+      --text-secondary: #E0E0E0;
+      --text-tertiary: #A0A0A0;
+      --border-color: rgba(255, 255, 255, 0.1);
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
+      --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: var(--text-primary);
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      background-attachment: fixed;
+      line-height: 1.6;
+      min-height: 100vh;
+      padding-top: var(--header-height);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+    [data-theme="dark"] body {
+      background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 100%);
+      background-attachment: fixed;
+    }
+
+
+    [data-theme="dark"] body {
+      background: linear-gradient(135deg, #0F0F0F 0%, #1A1A1A 100%);
+      background-attachment: fixed;
+    }
+    /* Glassmorphism Effects */
+    .glass {
+      background: var(--glass-white);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border: 1px solid var(--glass-border);
+    }
+
+    .glass-strong {
+      background: var(--glass-white-strong);
+      backdrop-filter: blur(30px) saturate(200%);
+      -webkit-backdrop-filter: blur(30px) saturate(200%);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 600;
+      line-height: 1.3;
+      letter-spacing: -0.02em;
+      color: var(--text-primary);
+    }
+
+    h1 { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 700; }
+    h2 { font-size: clamp(1.5rem, 3vw, 2rem); font-weight: 700; }
+    h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+    h4 { font-size: clamp(1.1rem, 2vw, 1.25rem); }
+
+    p {
+      margin-bottom: var(--spacing-md);
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.7;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: var(--header-height);
+      z-index: 1000;
+      transition: var(--transition-base);
+    }
+
+    .header-container {
+      height: 100%;
+      max-width: 1800px;
+      margin: 0 auto;
+      padding: 0 var(--spacing-lg);
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      text-decoration: none;
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 1.125rem;
+      transition: var(--transition-base);
+      padding: var(--spacing-sm) var(--spacing-md);
+      border-radius: var(--radius-lg);
+    }
+
+    .logo:hover {
+      color: var(--accent-color);
+      background: var(--glass-background);
+      transform: translateY(-2px);
+    }
+
+    .logo-icon {
+      font-size: 1.5rem;
+    }
+
+    /* Profile Container */
+    .profile-container {
+      display: grid;
+      grid-template-columns: 320px 1fr;
+      gap: var(--spacing-lg);
+      max-width: 1800px;
+      margin: 0 auto;
+      padding: var(--spacing-lg);
+      min-height: calc(100vh - var(--header-height));
+    }
+
+    .profile-left {
+      position: sticky;
+      top: calc(var(--header-height) + var(--spacing-lg));
+      height: fit-content;
+      max-height: calc(100vh - var(--header-height) - var(--spacing-lg) * 2);
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition-slow);
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    .profile-left:hover {
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.15);
+    }
+
+    .profile-left::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .profile-left::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    .profile-left::-webkit-scrollbar-thumb {
+      background: rgba(0, 122, 255, 0.2);
+      border-radius: var(--radius-full);
+    }
+
+    .profile-left::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 122, 255, 0.3);
+    }
+
+    .profile-card {
+      text-align: center;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .profile-image-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 160px;
+      margin: 0 auto var(--spacing-lg);
+      aspect-ratio: 1;
+    }
+
+    .profile-image {
+      width: 100%;
+      height: 100%;
+      border-radius: var(--radius-2xl);
+      overflow: hidden;
+      position: relative;
+      background: linear-gradient(135deg, var(--secondary-bg), var(--glass-background));
+      box-shadow: var(--shadow-lg);
+      transition: var(--transition-slow);
+    }
+
+    .profile-image::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(0, 122, 255, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+      opacity: 0;
+      transition: var(--transition-base);
+      z-index: 1;
+    }
+
+    .profile-image:hover::before {
+      opacity: 1;
+    }
+
+    .profile-image:hover {
+      transform: translateY(-2px);
+    }
+
+    .profile-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* FIX: This is the fallback that shows when img fails to load */
+    .profile-image-fallback {
+      display: none;
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--accent-color), #764ba2);
+      color: white;
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      border-radius: var(--radius-2xl);
+    }
+
+    .profile-image-ring {
+      position: absolute;
+      inset: -4px;
+      border-radius: var(--radius-2xl);
+      background: linear-gradient(135deg, var(--accent-color), #764ba2);
+      opacity: 0;
+      transition: var(--transition-base);
+      z-index: -1;
+    }
+
+    .profile-image-wrapper:hover .profile-image-ring {
+      opacity: 0.3;
+      inset: -8px;
+    }
+
+    .profile-name {
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-xs);
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+
+    .profile-title {
+      font-size: 0.75rem;
+      color: var(--accent-color);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: var(--spacing-md);
+      padding: var(--spacing-xs) var(--spacing-sm);
+      background: rgba(0, 122, 255, 0.08);
+      border-radius: var(--radius-full);
+      display: inline-block;
+    }
+
+    .profile-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+      margin: var(--spacing-md) 0;
+    }
+
+    .profile-quick-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-xs);
+      margin-bottom: var(--spacing-md);
+      width: 100%;
+    }
+
+    .quick-stat {
+      text-align: center;
+      padding: var(--spacing-sm) var(--spacing-xs);
+      border-radius: var(--radius-md);
+      background: var(--glass-background);
+      border: 1px solid var(--border-color);
+      transition: var(--transition-base);
+    }
+
+    .quick-stat:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      background: var(--glass-white);
+    }
+
+    .quick-stat-number {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--accent-color);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .quick-stat-label {
+      font-size: 0.5625rem;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    .profile-info-section {
+      margin-bottom: var(--spacing-sm);
+      text-align: left;
+      width: 100%;
+    }
+
+    .profile-info-title {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      font-size: 0.6875rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .profile-info-title i {
+      color: var(--accent-color);
+      font-size: 0.875rem;
+    }
+
+    .profile-info-item {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      padding: var(--spacing-xs);
+      border-radius: var(--radius-sm);
+      transition: var(--transition-base);
+      text-align: left;
+      margin-bottom: 2px;
+      font-size: 0.75rem;
+    }
+
+    .profile-info-item:hover {
+      background: var(--glass-background);
+    }
+
+    .profile-info-item i {
+      color: var(--accent-color);
+      font-size: 0.875rem;
+      min-width: 16px;
+    }
+
+    .profile-info-item a,
+    .profile-info-item span {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: var(--transition-fast);
+      font-size: 0.75rem;
+    }
+
+    .profile-info-item a:hover {
+      color: var(--accent-color);
+    }
+
+    .profile-quick-contact {
+      display: flex;
+      gap: var(--spacing-sm);
+      justify-content: center;
+      flex-wrap: wrap;
+      padding-top: var(--spacing-sm);
+    }
+
+    .quick-contact-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-full);
+      background: var(--glass-background);
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-primary);
+      font-size: 1rem;
+      cursor: pointer;
+      transition: var(--transition-bounce);
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .quick-contact-btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--accent-color);
+      opacity: 0;
+      transition: var(--transition-base);
+    }
+
+    .quick-contact-btn:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent-color);
+    }
+
+    .quick-contact-btn:hover::before {
+      opacity: 0.1;
+    }
+
+    .quick-contact-btn i {
+      position: relative;
+      z-index: 1;
+    }
+
+    .quick-contact-btn:active {
+      transform: scale(0.95);
+    }
+
+    /* RIGHT SIDE - SCROLLABLE CONTENT */
+    .profile-right {
+      padding: var(--spacing-xl);
+      border-radius: var(--radius-2xl);
+      box-shadow: var(--shadow-lg);
+      overflow-y: auto;
+      max-height: calc(100vh - var(--header-height) - var(--spacing-lg) * 2);
+      animation: slideInRight 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* FIX: Added missing keyframes */
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* ========================================
+       FIX: All missing content styles below
+    ======================================== */
+
+    /* Content Section */
+    .content-section {
+      flex: 1;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+      margin-bottom: var(--spacing-xl);
+      flex-wrap: wrap;
+    }
+
+    .breadcrumb a {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: var(--transition-fast);
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+    }
+
+    .breadcrumb a:hover {
+      color: var(--accent-color);
+      background: rgba(0, 122, 255, 0.06);
+    }
+
+    .breadcrumb > i {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      opacity: 0.5;
+    }
+
+    .breadcrumb span {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    /* Content Intro */
+    .content-intro {
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .content-intro h1 {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .content-intro h1 i {
+      color: var(--accent-color);
+    }
+
+    .lead {
+      font-size: 1.0625rem;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      padding: var(--spacing-md) var(--spacing-lg);
+      background: linear-gradient(135deg, rgba(0, 122, 255, 0.04), rgba(118, 75, 162, 0.04));
+      border-left: 3px solid var(--accent-color);
+      border-radius: 0 var(--radius-md) var(--radius-md) 0;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .lead i {
+      color: var(--accent-color);
+      margin-right: var(--spacing-xs);
+      opacity: 0.6;
+    }
+
+    /* Section Divider */
+    .section-divider {
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-color), transparent);
+      margin: var(--spacing-2xl) 0;
+    }
+
+    /* Section Title */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-lg);
+      font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .section-title i {
+      color: var(--accent-color);
+      font-size: 1.25em;
+    }
+
+    /* Quote Box */
+    .quote-box {
+      padding: var(--spacing-lg) var(--spacing-xl);
+      background: linear-gradient(135deg, rgba(0, 122, 255, 0.06), rgba(118, 75, 162, 0.06));
+      border-left: 4px solid var(--accent-color);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .quote-box p {
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 0;
+    }
+
+    /* Expertise Tags */
+    .expertise-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-sm);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: var(--spacing-xs) var(--spacing-md);
+      background: var(--glass-background);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-full);
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: var(--transition-base);
+      cursor: default;
+    }
+
+    .tag i {
+      color: var(--accent-color);
+      font-size: 0.9375rem;
+    }
+
+    .tag:hover {
+      background: rgba(0, 122, 255, 0.08);
+      border-color: rgba(0, 122, 255, 0.3);
+      color: var(--accent-color);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+      background-color: var(--primary-bg);
+    }
+
+    /* Stats Grid */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .stat-card {
+      text-align: center;
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-xl);
+      transition: var(--transition-base);
+    }
+
+    .stat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stat-icon {
+      font-size: 1.75rem;
+      color: var(--accent-color);
+      margin-bottom: var(--spacing-sm);
+      display: block;
+    }
+
+    .stat-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+    }
+
+    /* FIX: Replaces inline styles on stat-card h4 and p */
+    .stat-card .stat-card-title {
+      font-size: 1rem;
+      margin: var(--spacing-sm) 0;
+      color: var(--text-primary);
+    }
+
+    .stat-card .stat-card-desc {
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+      margin-bottom: 0;
+    }
+
+    /* Career Timeline */
+    .career-timeline {
+      position: relative;
+      padding-left: var(--spacing-xl);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .career-timeline::before {
+      content: '';
+      position: absolute;
+      left: 8px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(180deg, var(--accent-color), rgba(0, 122, 255, 0.1));
+      border-radius: 1px;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding: var(--spacing-lg);
+      background: var(--glass-background);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-lg);
+      margin-bottom: var(--spacing-md);
+      transition: var(--transition-base);
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: calc(-1 * var(--spacing-xl) + 4px);
+      top: var(--spacing-lg);
+      width: 10px;
+      height: 10px;
+      background: var(--accent-color);
+      border-radius: 50%;
+      border: 2px solid var(--primary-bg);
+      box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.2);
+    }
+
+    .timeline-item:hover {
+      background: var(--glass-white);
+      box-shadow: var(--shadow-md);
+      transform: translateX(4px);
+    }
+
+    .timeline-period {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--accent-color);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .timeline-period i {
+      font-size: 0.875rem;
+    }
+
+    .timeline-title {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .timeline-title i {
+      color: var(--accent-color);
+      font-size: 1.125rem;
+    }
+
+    .timeline-company {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .timeline-company i {
+      font-size: 0.875rem;
+      color: var(--accent-color);
+      opacity: 0.6;
+    }
+
+    .timeline-description {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 0;
+    }
+
+    /* Contact Grid */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .contact-card {
+      padding: var(--spacing-lg);
+      border-radius: var(--radius-xl);
+      transition: var(--transition-base);
+    }
+
+    .contact-card:hover {
+      box-shadow: var(--shadow-md);
+    }
+
+    .contact-card h4 {
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-md);
+      padding-bottom: var(--spacing-sm);
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .contact-card h4 i {
+      color: var(--accent-color);
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--spacing-sm);
+      padding: var(--spacing-sm) 0;
+    }
+
+    .contact-item + .contact-item {
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .contact-icon {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      background: rgba(0, 122, 255, 0.08);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent-color);
+      font-size: 0.9375rem;
+    }
+
+    .contact-label {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+
+    .contact-value {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    .contact-value a {
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: var(--transition-fast);
+    }
+
+    .contact-value a:hover {
+      color: var(--accent-hover);
+      text-decoration: underline;
+    }
+
+    /* Content Footer */
+    .content-footer {
+      margin-top: auto;
+      padding-top: var(--spacing-2xl);
+    }
+
+    .footer-content {
+      padding: var(--spacing-lg);
+      background: var(--glass-background);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-xl);
+      text-align: center;
+    }
+
+    .footer-logo-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-xs);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .footer-logo-section i {
+      color: var(--accent-color);
+      font-size: 1.25rem;
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--spacing-md);
+      flex-wrap: wrap;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .footer-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 4px 8px;
+      border-radius: var(--radius-sm);
+      transition: var(--transition-fast);
+    }
+
+    .footer-link:hover {
+      color: var(--accent-color);
+      background: rgba(0, 122, 255, 0.06);
+    }
+
+    .footer-link i {
+      font-size: 0.875rem;
+    }
+
+    .footer-copyright {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+    }
+
+    /* ========================================
+       RESPONSIVE
+    ======================================== */
+    @media (max-width: 1024px) {
+      .profile-container {
+        grid-template-columns: 1fr;
+        height: auto;
+      }
+
+      .profile-left {
+        position: relative;
+        top: 0;
+        max-height: none;
+        height: auto;
+      }
+
+      .profile-right {
+        max-height: none;
+        height: auto;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .profile-container {
+        padding: var(--spacing-md);
+        gap: var(--spacing-md);
+      }
+
+      .profile-left,
+      .profile-right {
+        padding: var(--spacing-lg);
+      }
+
+      .stats-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-quick-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--spacing-xs);
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
+      }
+
+      .breadcrumb {
+        font-size: 0.75rem;
+      }
+
+      .lead {
+        padding: var(--spacing-sm) var(--spacing-md);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .stats-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .expertise-tags {
+        gap: var(--spacing-xs);
+      }
+
+      .tag {
+        font-size: 0.75rem;
+        padding: 4px var(--spacing-sm);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="glass">
+    <div class="header-container">
+      <a href="../pages/index.html" class="logo">
+        <i class="bx bx-buildings logo-icon"></i>
+        The Building Practice Ltd
+      </a>
+    </div>
+  </header>
+
+  <!-- Profile Container -->
+  <div class="profile-container">
+    <!-- LEFT SIDE - COMPACT STATIC PROFILE CARD -->
+    <aside class="profile-left glass-strong">
+      <div class="profile-card">
+        <!-- Profile Image -->
+        <div class="profile-image-wrapper">
+          <div class="profile-image-ring"></div>
+          <div class="profile-image">
+            <img src="../images/team/uche.jpg" alt="Uchechukwu Oleribe" loading="lazy"
+                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <!-- FIX: Changed class from card-placeholder to profile-image-fallback
+                 and removed redundant inline style (CSS handles display:none) -->
+            <div class="profile-image-fallback">UO</div>
+          </div>
+        </div>
+
+        <!-- Name & Title -->
+        <h1 class="profile-name">Uchechukwu Oleribe</h1>
+        <p class="profile-title">Junior Associate</p>
+
+        <div class="profile-divider"></div>
+
+        <!-- Quick Stats -->
+        <div class="profile-quick-stats">
+          <div class="quick-stat">
+            <span class="quick-stat-number">3+</span>
+            <span class="quick-stat-label">Years</span>
+          </div>
+          <div class="quick-stat">
+            <span class="quick-stat-number">2024</span>
+            <span class="quick-stat-label">Joined</span>
+          </div>
+          <div class="quick-stat">
+            <span class="quick-stat-number">Master's</span>
+            <span class="quick-stat-label">Degree</span>
+          </div>
+        </div>
+
+        <div class="profile-divider"></div>
+
+        <!-- Contact Info -->
+        <div class="profile-info-section">
+          <div class="profile-info-title">
+            <i class="bx bx-envelope"></i>
+            Contact
+          </div>
+          <div class="profile-info-item">
+            <i class="bx bx-envelope"></i>
+            <a href="mailto:uchechukwu@thebuildingpractice.com">uchechukwu@thebuildingpractice.com</a>
+          </div>
+          <div class="profile-info-item">
+            <i class="bx bx-phone"></i>
+            <a href="tel:+2348012345681">+234 801 234 5681</a>
+          </div>
+        </div>
+
+        <div class="profile-divider"></div>
+
+        <!-- Location -->
+        <div class="profile-info-section">
+          <div class="profile-info-title">
+            <i class="bx bx-map"></i>
+            Location
+          </div>
+          <div class="profile-info-item">
+            <i class="bx bx-building"></i>
+            <span>Lagos, Nigeria</span>
+          </div>
+          <div class="profile-info-item">
+            <i class="bx bx-briefcase"></i>
+            <span>Junior Associate</span>
+          </div>
+        </div>
+
+        <div class="profile-divider"></div>
+
+        <!-- Social Links -->
+        <div class="profile-quick-contact">
+          <a href="mailto:uchechukwu@thebuildingpractice.com" class="quick-contact-btn" title="Email">
+            <i class="bx bx-envelope"></i>
+          </a>
+          <a href="tel:+2348012345681" class="quick-contact-btn" title="Phone">
+            <i class="bx bx-phone"></i>
+          </a>
+          <a href="https://linkedin.com" class="quick-contact-btn" title="LinkedIn" target="_blank" rel="noopener">
+            <i class="bx bxl-linkedin"></i>
+          </a>
+          <a href="https://twitter.com" class="quick-contact-btn" title="Twitter" target="_blank" rel="noopener">
+            <i class="bx bxl-twitter"></i>
+          </a>
+          <a href="https://instagram.com" class="quick-contact-btn" title="Instagram" target="_blank" rel="noopener">
+            <i class="bx bxl-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <!-- RIGHT SIDE - SCROLLABLE CONTENT -->
+    <main class="profile-right glass-strong">
+      <div class="content-section">
+        <!-- Breadcrumb -->
+        <div class="breadcrumb">
+          <a href="../pages/index.html"><i class="bx bx-home-alt"></i> Home</a>
+          <i class="bx bx-chevron-right"></i>
+          <a href="../pages/team.html"><i class="bx bx-group"></i> Team</a>
+          <i class="bx bx-chevron-right"></i>
+          <span>Uchechukwu Oleribe</span>
+        </div>
+
+        <!-- Introduction -->
+        <div class="content-intro">
+          <h1><i class="bx bx-user-circle"></i>Uchechukwu Oleribe</h1>
+          <p class="lead"><i class="bx bx-quote-alt-left"></i> Thoughtful architect bringing hands-on experience in residential, commercial, mixed-use projects with focus on technology-enhanced design.</p>
+        </div>
+
+        <p>Uchechukwu Oleribe holds a Master&rsquo;s degree from the University of Lagos and brings a thoughtful, hands-on approach to architecture. His experience spans residential, commercial, and mixed-use projects, with a focus on delivering well-considered designs that work in context and stand the test of time.</p>
+
+        <p>He has a strong interest in the use of technology to improve how architecture is designed and delivered&mdash;from digital design tools to smarter project workflows. This curiosity drives his approach to problem-solving and helps ensure that every project benefits from both creative thinking and technical clarity.</p>
+
+        <div class="section-divider"></div>
+
+        <!-- Professional Philosophy -->
+        <h2 class="section-title"><i class="bx bx-bulb"></i> Professional Philosophy</h2>
+        <div class="quote-box">
+          <p>Uchechukwu values design that responds to real needs and believes good architecture should be as practical as it is inspiring.</p>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Core Competencies -->
+        <h2 class="section-title"><i class="bx bx-badge-check"></i> Core Competencies</h2>
+        <div class="expertise-tags">
+          <span class="tag"><i class="bx bx-building-house"></i> Residential Design</span>
+          <span class="tag"><i class="bx bx-store-alt"></i> Commercial Architecture</span>
+          <span class="tag"><i class="bx bx-grid-alt"></i> Mixed-Use Projects</span>
+          <span class="tag"><i class="bx bx-chip"></i> Digital Design Tools</span>
+          <span class="tag"><i class="bx bx-git-compare"></i> Project Workflows</span>
+          <span class="tag"><i class="bx bx-brain"></i> Problem Solving</span>
+          <span class="tag"><i class="bx bx-cog"></i> Technical Clarity</span>
+          <span class="tag"><i class="bx bx-puzzle"></i> Contextual Design</span>
+          <span class="tag"><i class="bx bx-line-chart"></i> Durable Solutions</span>
+          <span class="tag"><i class="bx bx-lightbulb"></i> Creative Thinking</span>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Professional Highlights -->
+        <h2 class="section-title"><i class="bx bx-star"></i> Professional Highlights</h2>
+        <div class="stats-grid">
+          <div class="stat-card glass">
+            <i class="bx bx-time-five stat-icon"></i>
+            <div class="stat-number">3+</div>
+            <div class="stat-label">Years Experience</div>
+          </div>
+          <div class="stat-card glass">
+            <i class="bx bx-calendar-check stat-icon"></i>
+            <div class="stat-number">2024</div>
+            <div class="stat-label">Joined TBP</div>
+          </div>
+          <div class="stat-card glass">
+            <i class="bx bx-briefcase stat-icon"></i>
+            <div class="stat-number">20+</div>
+            <div class="stat-label">Projects</div>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Career Journey -->
+        <h2 class="section-title"><i class="bx bx-briefcase-alt"></i> Career Journey</h2>
+        <div class="career-timeline">
+          <div class="timeline-item">
+            <div class="timeline-period"><i class="bx bx-calendar"></i> 2024 - Present</div>
+            <h3 class="timeline-title"><i class="bx bx-award"></i> Junior Associate</h3>
+            <div class="timeline-company"><i class="bx bx-buildings"></i> The Building Practice Ltd</div>
+            <p class="timeline-description">Junior Associate delivering thoughtful designs across residential, commercial, and mixed-use projects. Focuses on technology integration and practical, context-responsive architecture.</p>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-period"><i class="bx bx-calendar"></i> Architecture Professional</div>
+            <h3 class="timeline-title"><i class="bx bx-building-house"></i> Architectural Designer</h3>
+            <div class="timeline-company"><i class="bx bx-briefcase"></i> Various Projects</div>
+            <p class="timeline-description">Gained hands-on experience across residential, commercial, and mixed-use developments. Developed expertise in contextual design and technology-enhanced workflows.</p>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Education -->
+        <h2 class="section-title"><i class="bx bx-book-reader"></i> Education</h2>
+        <div class="career-timeline">
+          <div class="timeline-item">
+            <div class="timeline-period"><i class="bx bx-calendar"></i> Master's Degree</div>
+            <h3 class="timeline-title"><i class="bx bx-graduation"></i> Master's in Architecture</h3>
+            <div class="timeline-company"><i class="bx bx-school"></i> University of Lagos</div>
+            <p class="timeline-description">Advanced studies focusing on architectural design principles, technology integration, and project delivery methodologies.</p>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Key Strengths -->
+        <!-- FIX: Replaced all inline styles with proper CSS classes -->
+        <h2 class="section-title"><i class="bx bx-star"></i> Key Strengths</h2>
+        <div class="stats-grid">
+          <div class="stat-card glass">
+            <i class="bx bx-microchip stat-icon"></i>
+            <h4 class="stat-card-title">Technology Focus</h4>
+            <p class="stat-card-desc">Digital tools &amp; smart workflows</p>
+          </div>
+          <div class="stat-card glass">
+            <i class="bx bx-buildings stat-icon"></i>
+            <h4 class="stat-card-title">Multi-Typology</h4>
+            <p class="stat-card-desc">Residential, commercial, mixed-use</p>
+          </div>
+          <div class="stat-card glass">
+            <i class="bx bx-brain stat-icon"></i>
+            <h4 class="stat-card-title">Thoughtful Approach</h4>
+            <p class="stat-card-desc">Contextual, durable designs</p>
+          </div>
+          <div class="stat-card glass">
+            <i class="bx bx-puzzle stat-icon"></i>
+            <h4 class="stat-card-title">Problem Solver</h4>
+            <p class="stat-card-desc">Technical clarity + creativity</p>
+          </div>
+        </div>
+
+        <div class="section-divider"></div>
+
+        <!-- Contact Information -->
+        <h2 class="section-title"><i class="bx bx-phone-call"></i> Contact Information</h2>
+        <div class="contact-grid">
+          <div class="contact-card glass">
+            <h4><i class="bx bx-envelope"></i> Professional Contact</h4>
+            <div class="contact-item">
+              <span class="contact-icon"><i class="bx bx-envelope"></i></span>
+              <div>
+                <div class="contact-label">Email Address</div>
+                <div class="contact-value"><a href="mailto:uchechukwu@thebuildingpractice.com">uchechukwu@thebuildingpractice.com</a></div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon"><i class="bx bx-phone"></i></span>
+              <div>
+                <div class="contact-label">Direct Line</div>
+                <div class="contact-value"><a href="tel:+2348012345681">+234 801 234 5681</a></div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon"><i class="bx bxl-linkedin"></i></span>
+              <div>
+                <div class="contact-label">LinkedIn Profile</div>
+                <div class="contact-value"><a href="https://linkedin.com" target="_blank" rel="noopener">Connect on LinkedIn</a></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-card glass">
+            <h4><i class="bx bx-map"></i> Office Location</h4>
+            <div class="contact-item">
+              <span class="contact-icon"><i class="bx bx-building"></i></span>
+              <div>
+                <div class="contact-label">Headquarters</div>
+                <div class="contact-value">The Building Practice Ltd<br>Plot 6 Remi Olowude, Lekki Phase 1<br>Lagos, Nigeria</div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon"><i class="bx bx-briefcase"></i></span>
+              <div>
+                <div class="contact-label">Current Role</div>
+                <div class="contact-value">Junior Associate</div>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon"><i class="bx bx-time"></i></span>
+              <div>
+                <div class="contact-label">Office Hours</div>
+                <div class="contact-value">Monday - Friday<br>8:00 AM - 5:00 PM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Inside Right Panel -->
+      <div class="content-footer">
+        <div class="footer-content">
+          <div class="footer-logo-section">
+            <i class="bx bx-buildings"></i>
+            <span>The Building Practice Ltd</span>
+          </div>
+
+          <div class="footer-links">
+            <a href="../pages/about.html" class="footer-link"><i class="bx bx-info-circle"></i> About</a>
+            <a href="../pages/services.html" class="footer-link"><i class="bx bx-wrench"></i> Services</a>
+            <a href="../pages/projects.html" class="footer-link"><i class="bx bx-briefcase"></i> Projects</a>
+            <a href="../pages/team.html" class="footer-link"><i class="bx bx-group"></i> Team</a>
+            <a href="../pages/contact.html" class="footer-link"><i class="bx bx-envelope"></i> Contact</a>
+            <a href="../pages/privacy.html" class="footer-link"><i class="bx bx-shield" aria-hidden="true"></i> Privacy</a>
+          </div>
+
+          <div class="footer-copyright">
+            &copy; 2024 The Building Practice Ltd. All rights reserved.
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Smooth scroll reveal animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, observerOptions);
+
+    // Observe elements for scroll animations
+    document.querySelectorAll('.timeline-item, .stat-card, .contact-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      observer.observe(el);
+    });
+
+    // Add hover effect to stats
+    document.querySelectorAll('.quick-stat').forEach(stat => {
+      stat.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-4px) scale(1.05)';
+      });
+
+      stat.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+      });
+    });
+
+    // Smooth scroll behavior
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+  <!-- Include theme synchronization script -->
+  <script src="../js/theme-sync.js" defer></script>
+</body>
+</html>
+

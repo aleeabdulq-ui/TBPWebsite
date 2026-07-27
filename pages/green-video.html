@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../js/theme-head.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Green Video Demo - TBP</title>
+  <link href="css/enhanced-styles.css" rel="stylesheet">
+  <link href="../vendor/boxicons.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 2rem;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .container {
+      max-width: 800px;
+      width: 100%;
+      text-align: center;
+    }
+    h1 { color: #1a5f7a; margin-bottom: 1rem; font-weight: 800; }
+    .video-section {
+      background: white;
+      border-radius: 24px;
+      padding: 3rem;
+      box-shadow: 0 25px 50px rgba(0,0,0,0.1);
+      margin-bottom: 2rem;
+    }
+    .video-embed {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16/9;
+      border-radius: 16px;
+      overflow: hidden;
+      background: #000;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    .video-player-local video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .video-play {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      background: rgba(0,0,0,0.4);
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .video-play:hover { background: rgba(0,0,0,0.6); }
+    .video-play i {
+      font-size: 4rem;
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+    .status {
+      padding: 1rem 2rem;
+      background: #10b981;
+      color: white;
+      border-radius: 12px;
+      font-weight: 600;
+    }
+    .instructions {
+      background: #f1f5f9;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      text-align: left;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    .instructions code {
+      background: #e2e8f0;
+      padding: 0.2rem 0.5rem;
+      border-radius: 6px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🎬 Green.mp4 Video Player Test</h1>
+    <p style="color: #64748b; margin-bottom: 2rem;">Simple standalone player using the production video system. Sticky player + controls active.</p>
+
+    <div class="video-section">
+      <div class="video-embed local-video-ready" id="greenVideoEmbed">
+        <video preload="metadata" src="videos/Green.mp4" muted playsinline class="video-player-local" poster="https://img.youtube.com/vi/dQw4w9WgXcQ/hqdefault.jpg"></video>
+        <button class="video-play" onclick="playGreenVideo()">
+          <i class='bx bx-play'></i>
+        </button>
+      </div>
+      <div class="status" id="status">✅ Green.mp4 loaded | Click ▶️ to play (sticky player activates)</div>
+    </div>
+
+    <div class="instructions">
+      <h3>📋 How it Works:</h3>
+      <ul style="margin: 1rem 0; text-align: left;">
+        <li><code>data-video-path="videos/Green.mp4"</code> → Auto-detects local</li>
+        <li>Sticky player appears on play</li>
+        <li>Toggle button (top-right) switches modes</li>
+        <li>Full production JS loaded</li>
+      </ul>
+      <p><strong>Open in browser → Click play → Scroll to test sticky!</strong></p>
+    </div>
+  </div>
+
+  <script src="js/script.js"></script>
+  <script>
+    function playGreenVideo() {
+      const embed = document.getElementById('greenVideoEmbed');
+      const video = embed.querySelector('video');
+      video.play();
+      embed.classList.add('playing');
+      video.muted = false; // Unmute after play
+    }
+  </script>
+  <script src="../js/theme-sync.js" defer></script>
+</body>
+</html>
+

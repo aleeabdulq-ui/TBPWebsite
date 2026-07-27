@@ -16,3 +16,25 @@ backups/
 *.swp
 *.swo
 *~
+
+# Node
+node_modules/
+package-lock.json
+
+# API uploads
+api/uploads/
+
+# Project scans
+_project_scan.txt
+image_paths_complete.txt
+services.txt
+scan-projects.js
+
+# Workspace files
+*.code-workspace
+
+# Tmp
+tmp/
+
+# Playwright
+.playwright-mcp/

@@ -1,0 +1,7 @@
+- [x] Add image updates in hero sections only
+- [x] Update `pages/index.html` hero section images
+- [x] Update `pages/about.html` hero section image
+- [ ] Unify footer across all pages using `pages/index.html` footer as source
+- [ ] Identify all pages with non-unified footer blocks
+- [ ] Replace footer blocks in all `pages/*.html`
+- [ ] Verify unified footer on key pages

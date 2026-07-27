@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <script src="../js/theme-head.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TBP Architecture Projects Portfolio | Lagos Abuja Nigeria</title>
+    <meta name="description" content="Award-winning residential, commercial, and institutional projects across Nigeria. Lagos, Abuja, Port Harcourt architecture portfolio.">
+    <meta property="og:title" content="TBP Projects Portfolio">
+    <meta property="og:description" content="Architecture excellence across Nigeria">
+    <link rel="stylesheet" href="../css/neomorphic.css">
+    <link rel="stylesheet" href="../css/global.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header (same as team.html) -->
+    <header class="header" id="header">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <img src="../images/bp.png" alt="TBP">
+                <div class="nav-brand-text">
+                    <span>The Building Practice Ltd.</span>
+                    <span>Architecture</span>
+                </div>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="team.html" class="nav-link">Team</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <span id="themeIcon"></span>
+                </button>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="page-hero">
+        <div class="page-hero-content fade-in">
+            <div class="page-hero-badge">
+                <i class='bx bx-images'></i> <span>Portfolio</span>
+            </div>
+            <h1>Our <span>Architecture Projects</span></h1>
+            <p>Award-winning designs transforming visions into landmarks across Nigeria</p>
+        </div>
+    </section>
+
+    <!-- Controls -->
+    <section class="controls-section">
+        <div class="controls-container">
+            <div class="search-wrapper">
+                <i class='bx bx-search'></i>
+                <input class="search-input" id="projectSearch" placeholder="Search projects by name or type...">
+            </div>
+            <div class="controls-right">
+                <div class="result-count">
+                    Showing <strong id="projectCount">12</strong> projects
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" id="gridBtn">
+                        <i class='bx bx-grid-alt'></i> Grid
+                    </button>
+                    <button class="view-btn" id="listBtn">
+                        <i class='bx bx-list-ul'></i> List
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="team-section">
+        <div class="team-grid" id="projectGrid">
+            <!-- Dynamic content -->
+        </div>
+        <div class="no-results" id="noProjects" style="display:none;">
+            <i class='bx bx-search-alt'></i>
+            <h3>No projects match your search</h3>
+            <p>Try different keywords</p>
+        </div>
+    </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer" id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-main">
+          <div class="footer-brand">
+            <a href="index.html" class="footer-logo">
+              <img src="../images/bp.png" alt="TBP Logo">
+              <span class="footer-logo-text">The Building Practice</span>
+            </a>
+            <p>An architectural firm dedicated to shaping spaces that inspire, endure, and connect. Creating thoughtful, sustainable, and contextually relevant designs since 2013.</p>
+            <div class="footer-social">
+              <a href="https://www.facebook.com/thebuildingpractice" target="_blank" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+              <a href="https://x.com/thebplimited" target="_blank" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+              <a href="https://www.instagram.com/thebuildingpractice" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+              <a href="https://www.youtube.com/@TheBuildingpracticeLtd" target="_blank" aria-label="YouTube"><i class='bx bxl-youtube'></i></a>
+              <a href="https://www.linkedin.com/company/the-building-practice-ltd/" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="index.html"><i class='bx bx-chevron-right'></i><span>Home</span></a></li>
+              <li><a href="about.html"><i class='bx bx-chevron-right'></i><span>About</span></a></li>
+              <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Services</span></a></li>
+              <li><a href="projects.html"><i class='bx bx-chevron-right'></i><span>Projects</span></a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Our Services</h4>
+            <ul class="footer-links">
+              <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Architecture</span></a></li>
+              <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Interior Design</span></a></li>
+              <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Construction</span></a></li>
+              <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Consultancy</span></a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column footer-main-bottom">
+            <h4>Contact Info</h4>
+            <ul class="footer-links">
+              <li><i class='bx bx-map'></i><span>Plot 6, Remi Olowude, Lekki Phase 1</span></li>
+              <li><a href="tel:+2349049721840"><i class='bx bx-phone'></i><span>+234 904 972 1840</span></a></li>
+              <li><a href="mailto:info@buildingpractice.biz"><i class='bx bx-envelope'></i><span>info@buildingpractice.biz</span></a></li>
+              <li><i class='bx bx-time'></i><span>Mon - Fri: 9AM - 5PM</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4 class="newsletter-title">Subscribe</h4>
+          <p class="newsletter-description">Get the latest updates and insights</p>
+          <form class="newsletter-form" id="footerNewsletterForm" novalidate>
+            <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
+            <button type="submit" class="btn btn--primary btn--sm">
+              Subscribe
+            </button>
+          </form>
+          <p class="newsletter-privacy">
+            We respect your privacy.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          © <span id="currentYear">2024</span> The Building Practice Ltd. All Rights Reserved.
+        </p>
+        <div class="footer-legal">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+    // Complete 12 projects (real images from tbpix)
+    const projects = [
+        {
+            name: "Bloom Towers", 
+            category: "Residential", 
+            image: "../images/tbpix/BloomTowers.png",
+            desc: "27-storey luxury high-rise with rooftop amenities"
+        },
+        {
+            name: "Lagos Free Zone ARC", 
+            category: "Cultural", 
+            image: "../images/tbpix/LFZ.png",
+            desc: "Award-winning landmark gateway structure"
+        },
+        {
+            name: "Peace Tower", 
+            category: "Commercial", 
+            image: "../images/tbpix/PeaceTower.png",
+            desc: "Mixed-use development with office/retail"
+        },
+        {
+            name: "Oculus Center", 
+            category: "Institutional", 
+            image: "../images/tbpix/Oculus.JPG",
+            desc: "Modern educational facility campus"
+        },
+        {
+            name: "Alexander 11", 
+            category: "Residential", 
+            image: "../images/tbpix/Alexander11.jpg",
+            desc: "Contemporary luxury villa design"
+        },
+        {
+            name: "Bourdillon 48", 
+            category: "Residential", 
+            image: "../images/tbpix/Bourdillon48.jpg",
+            desc: "Ikoyi exclusive private residence"
+        },
+        {
+            name: "Melrose Arch", 
+            category: "Urban", 
+            image: "../images/tbpix/Melrose.png",
+            desc: "Masterplanned mixed-use development"
+        },
+        {
+            name: "24 Awolowo Road", 
+            category: "Commercial", 
+            image: "../images/tbpix/24Awolowo.jpg",
+            desc: "Corporate office headquarters"
+        },
+        {
+            name: "Green Valley Estate", 
+            category: "Residential", 
+            image: "../images/tbpix/greenvalley.jpg",
+            desc: "Sustainable gated community"
+        },
+        {
+            name: "Victoria Plaza", 
+            category: "Retail", 
+            image: "../images/tbpix/victoriaplaza.jpg", 
+            desc: "Premium shopping destination"
+        },
+        {
+            name: "TechHub Lagos", 
+            category: "Commercial", 
+            image: "../images/tbpix/techhub.jpg",
+            desc: "Innovation campus headquarters"
+        },
+        {
+            name: "Sunrise Academy", 
+            category: "Institutional", 
+            image: "../images/tbpix/sunriseacademy.jpg",
+            desc: "K-12 educational campus"
+        }
+    ];
+
+    function initProjects() {
+        const grid = document.getElementById('projectGrid');
+        const search = document.getElementById('projectSearch');
+        const count = document.getElementById('projectCount');
+        const noResults = document.getElementById('noProjects');
+        const gridBtn = document.getElementById('gridBtn');
+        const listBtn = document.getElementById('listBtn');
+
+        function render(query = '') {
+            let filtered = projects.filter(p => 
+                p.name.toLowerCase().includes(query.toLowerCase()) ||
+                p.category.toLowerCase().includes(query.toLowerCase())
+            );
+
+            grid.innerHTML = '';
+            count.textContent = filtered.length;
+
+            if (filtered.length === 0) {
+                noResults.style.display = 'block';
+                return;
+            }
+            noResults.style.display = 'none';
+
+            filtered.forEach((project, i) => {
+                const div = document.createElement('div');
+                div.className = 'team-card';
+                div.dataset.name = project.name.toLowerCase();
+                div.innerHTML = `
+                    <div class="card-image-wrapper">
+                        <img src="${project.image}" alt="${project.name}" loading="lazy">
+                        <div class="card-placeholder">${project.name[0]}${project.name.split(' ')[1]?.[0] || 'P'}</div>
+                        <div class="card-role-icon"><i class='bx bx-${project.category === 'Residential' ? 'home' : 'building-house'}'></i></div>
+                        <div class="card-badge">
+                            <i class='bx bx-medal'></i>
+                            <span>${project.category}</span>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3>${project.name}</h3>
+
+  <script src="../js/theme-sync.js" defer></script>

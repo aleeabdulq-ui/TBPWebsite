@@ -1,0 +1,2772 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <script src="../js/theme-head.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Careers | Architecture Jobs Nigeria | Architect Vacancies Lagos | TBP</title>
+    <meta name="description" content="Architecture careers Nigeria - Architect jobs Lagos, interior designer vacancies Abuja, construction manager Port Harcourt. Join TBP's award-winning team.">
+    <meta name="keywords" content="architecture jobs Nigeria, architect Lagos, interior designer Abuja, construction manager Port Harcourt, architecture careers Nigeria, ARCON jobs">
+    <link rel="canonical" href="https://thebuildingpractice.com/pages/careers.html">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Architecture Careers Nigeria | Architect Jobs Lagos | TBP">
+    <meta property="og:description" content="Join our team! Architect vacancies Lagos, interior design jobs Abuja, construction management Port Harcourt. Award-winning architecture firm Nigeria.">
+    <meta property="og:image" content="https://thebuildingpractice.com/images/og/careers.jpg">
+    <meta property="og:url" content="https://thebuildingpractice.com/pages/careers.html">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Architecture Jobs Nigeria | TBP Careers">
+    <meta name="twitter:description" content="Architect jobs Lagos, interior designer Abuja, construction manager careers Port Harcourt Nigeria.">
+    <meta name="twitter:image" content="https://thebuildingpractice.com/images/og/careers.jpg">
+    
+    <!-- Fonts & Icons -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="vendor/boxicons.min.css" rel="stylesheet">
+
+    <script src="../js/icons8.js"></script>
+    
+    <style>
+        /* Splash Screen */
+        .splash {
+            position: fixed;
+            inset: 0;
+            background: var(--bg-primary);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .splash.hide {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .splash-logo-wrapper {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .splash-ring {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: splashRingSpin 2s linear infinite;
+        }
+
+        .splash-ring-circle {
+            transform-origin: center;
+        }
+
+        @keyframes splashRingSpin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .splash-logo {
+            width: 80px;
+            height: 80px;
+            object-fit: contain;
+            animation: splashLogoFade 1s ease forwards;
+        }
+
+        @keyframes splashLogoFade {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .splash-title {
+            margin-top: 24px;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            animation: splashTextIn 0.6s ease 0.3s forwards;
+            opacity: 0;
+        }
+
+        .splash-tagline {
+            margin-top: 8px;
+            font-size: 14px;
+            color: var(--text-secondary);
+            animation: splashTextIn 0.6s ease 0.5s forwards;
+            opacity: 0;
+        }
+
+        @keyframes splashTextIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .splash-loader {
+            margin-top: 32px;
+            display: flex;
+            gap: 6px;
+            animation: splashTextIn 0.6s ease 0.7s forwards;
+            opacity: 0;
+        }
+
+        .splash-loader span {
+            width: 8px;
+            height: 8px;
+            background: var(--primary);
+            border-radius: 50%;
+            animation: splashDot 1.4s ease-in-out infinite;
+        }
+
+        .splash-loader span:nth-child(2) { animation-delay: 0.2s; }
+        .splash-loader span:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes splashDot {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+
+        .splash-skip {
+            position: absolute;
+            bottom: 40px;
+            background: none;
+            border: none;
+            color: var(--text-tertiary);
+            font-size: 13px;
+            cursor: pointer;
+            animation: splashTextIn 0.6s ease 1s forwards;
+            opacity: 0;
+        }
+
+        .splash-skip:hover {
+            color: var(--primary);
+        }
+
+        [data-theme="dark"] .splash {
+            background: #0a0a0a;
+        }
+
+        :root {
+            --primary-50: #E8F4F8;
+            --primary-100: #C5E4EC;
+            --primary-200: #9FD3E0;
+            --primary-300: #78C1D4;
+            --primary-400: #5BB3CA;
+            --primary-500: #00ACC1;
+            --primary-600: #0097A7;
+            --primary-700: #00838F;
+            --primary-800: #006064;
+            --primary-900: #00363A;
+            
+            --accent-50: #FDF8E8;
+            --accent-100: #F9ECC5;
+            --accent-200: #F5DF9F;
+            --accent-300: #F1D279;
+            --accent-400: #DBB84A;
+            --accent-500: #7C4DFF;
+            --accent-600: #651FFF;
+            --accent-700: #4615B2;
+            --accent-800: #320080;
+            
+            --primary: var(--primary-500);
+            --primary-light: var(--primary-400);
+            --primary-dark: var(--primary-700);
+            --accent: var(--accent-500);
+            
+            --bg-primary: #ffffff;
+            --bg-secondary: #f7f7f8;
+            --bg-tertiary: #efefef;
+            --text-primary: #111111;
+            --text-secondary: #5c5c5c;
+            --text-tertiary: #8a8a8a;
+            --border-light: #e7e7e8;
+            --border-primary: #d0d0d0;
+            
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --radius-xl: 32px;
+            --radius-full: 9999px;
+            
+            --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --shadow-lg: 0 12px 40px rgba(0,0,0,0.12);
+            --shadow-xl: 0 24px 60px rgba(0,0,0,0.16);
+            
+            --transition-fast: 0.15s ease;
+            --transition-base: 0.25s ease;
+            --transition-slow: 0.4s ease;
+
+            /* Added compatibility tokens used by footer/tags */
+            --white: #ffffff;
+            --gradient-primary: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-700) 100%);
+            --gradient-accent: linear-gradient(135deg, var(--accent-500) 0%, var(--accent-700) 100%);
+            --gradient-blue-gold: linear-gradient(135deg, #1A5F7A 0%, #C9A227 100%);
+            --duration-fast: 0.15s;
+            --duration-normal: 0.25s;
+            --ease-out: ease-out;
+            --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --text-xs: 12px;
+            --text-base: 16px;
+            --space-2: 8px;
+            --space-3: 12px;
+            --space-4: 16px;
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #111111;
+            --bg-tertiary: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #a0a0a0;
+            --text-tertiary: #707070;
+            --border-light: #2a2a2a;
+            --border-primary: #3a3a3a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color var(--transition-fast);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ========== HEADER ========== */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-light);
+            transition: all var(--transition-base);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--primary);
+        }
+
+        .logo img {
+            height: 44px;
+            width: auto;
+        }
+
+        .logo span {
+            display: none;
+        }
+
+        @media (min-width: 768px) {
+            .logo span {
+                display: block;
+            }
+        }
+
+        .nav-desktop {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-link {
+            padding: 10px 18px;
+            border-radius: var(--radius-full);
+            font-weight: 500;
+            font-size: 15px;
+            color: var(--text-secondary);
+            transition: all var(--transition-fast);
+        }
+
+        .nav-link:hover {
+            color: var(--primary);
+            background: var(--bg-secondary);
+        }
+
+        .nav-link.active {
+            color: var(--primary);
+            background: rgba(0, 172, 193, 0.1);
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theme-toggle {
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-secondary);
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .theme-toggle:hover {
+            background: var(--bg-tertiary);
+            transform: rotate(15deg);
+        }
+
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            padding: 8px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            transition: all var(--transition-fast);
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            padding: 160px 0 100px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.94) 0%, rgba(247,247,248,0.82) 48%, rgba(232,244,248,0.7) 100%),
+                        url('../images/careers/career.jpg') center/cover no-repeat;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><rect fill="none" stroke="%2300ACC1" stroke-width="0.5" x="10" y="10" width="180" height="180"/><rect fill="none" stroke="%2300ACC1" stroke-width="0.3" x="30" y="30" width="140" height="140"/><rect fill="none" stroke="%2300ACC1" stroke-width="0.2" x="50" y="50" width="100" height="100"/><line x1="10" y1="10" x2="190" y2="190" stroke="%2300ACC1" stroke-width="0.3"/><line x1="190" y1="10" x2="10" y2="190" stroke="%2300ACC1" stroke-width="0.3"/></svg>') repeat;
+            opacity: 0.15;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            position: relative;
+            z-index: 1;
+        }
+
+        [data-theme="dark"] .hero {
+            background: linear-gradient(135deg, rgba(10,10,10,0.92) 0%, rgba(17,17,17,0.84) 55%, rgba(0, 54, 58, 0.74) 100%),
+                        url('../images/careers/career.jpg') center/cover no-repeat;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(0, 172, 193, 0.1);
+            border-radius: var(--radius-full);
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 6vw, 72px);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin-bottom: 40px;
+            line-height: 1.7;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 16px 32px;
+            border-radius: var(--radius-full);
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0, 172, 193, 0.3);
+        }
+
+        .btn-secondary {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-light);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* ========== SECTION STYLES ========== */
+        .section {
+            padding: 100px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .section-label {
+            display: inline-block;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 16px;
+        }
+
+        .section-title {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            margin-bottom: 20px;
+        }
+
+        .section-desc {
+            font-size: 17px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* ========== ABOUT WORK SECTION ========== */
+        .about-work {
+            background: var(--bg-secondary);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--bg-tertiary);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.04);
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.3), transparent);
+        }
+
+        .about-content h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .about-content p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .about-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 32px;
+        }
+
+        .about-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .about-feature-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 172, 193, 0.1);
+            border-radius: var(--radius-md);
+            color: var(--primary);
+        }
+
+        .about-feature span {
+            font-weight: 500;
+        }
+
+        /* ========== VALUES SECTION ========== */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        .value-card {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-xl);
+            padding: 40px 32px;
+            text-align: center;
+            transition: all var(--transition-base);
+            border: 1px solid var(--border-light);
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary);
+        }
+
+        .value-icon {
+            width: 72px;
+            height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: var(--radius-lg);
+            margin: 0 auto 24px;
+        }
+
+        .value-icon svg {
+            width: 32px;
+            height: 32px;
+            color: white;
+        }
+
+        .value-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .value-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        /* ========== BENEFITS SECTION ========== */
+        .benefits {
+            background: var(--bg-secondary);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .benefit-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-lg);
+            padding: 32px;
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            transition: all var(--transition-base);
+            border: 1px solid var(--border-light);
+        }
+
+        .benefit-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .benefit-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 172, 193, 0.1);
+            border-radius: var(--radius-md);
+            flex-shrink: 0;
+        }
+
+        .benefit-icon svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+        }
+
+        .benefit-content h4 {
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .benefit-content p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        /* ========== JOBS SECTION ========== */
+        .jobs-filters {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .filter-select {
+            padding: 12px 20px;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-full);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            min-width: 160px;
+        }
+
+        .jobs-grid {
+            display: grid;
+            gap: 20px;
+        }
+
+        .job-card {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-xl);
+            padding: 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-base);
+        }
+
+        .job-card.is-hidden {
+            display: none;
+        }
+
+        .job-card:hover {
+            border-color: var(--primary);
+            transform: translateX(8px);
+        }
+
+        .job-info h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        .job-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .job-type {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(0, 172, 193, 0.1);
+            color: var(--primary);
+            border-radius: var(--radius-full);
+            font-size: 13px;
+            font-weight: 600;
+            margin-top: 12px;
+        }
+
+        .job-apply .btn {
+            padding: 14px 28px;
+        }
+
+        /* ========== TEAM SPOTLIGHT ========== */
+        .team-spotlight {
+            background: var(--bg-secondary);
+        }
+
+        .spotlight-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .spotlight-card {
+            background: var(--bg-primary);
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+            transition: all var(--transition-base);
+        }
+
+        .spotlight-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .spotlight-image {
+            height: 280px;
+            background: var(--bg-tertiary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-tertiary);
+            overflow: hidden;
+        }
+
+        .spotlight-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform var(--transition-slow), filter var(--transition-base);
+        }
+
+        .spotlight-card:hover .spotlight-image img {
+            transform: scale(1.06);
+            filter: saturate(1.08);
+        }
+
+        .spotlight-content {
+            padding: 28px;
+        }
+
+        .spotlight-content h4 {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .spotlight-content span {
+            color: var(--primary);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .spotlight-quote {
+            margin-top: 16px;
+            font-style: italic;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .spotlight-quote::before {
+            content: '"';
+            position: absolute;
+            left: 0;
+            top: -8px;
+            font-size: 48px;
+            color: var(--primary);
+            opacity: 0.3;
+            font-family: Georgia, serif;
+        }
+
+        /* ========== HIRING PROCESS ========== */
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 60px;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: var(--border-light);
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg-primary);
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .process-step h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .process-step p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            max-width: 160px;
+            margin: 0 auto;
+        }
+
+        /* ========== INTERNSHIPS ========== */
+        .internships {
+            background: var(--bg-secondary);
+        }
+
+        .internship-card {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            border-radius: var(--radius-xl);
+            padding: 60px;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .internship-content h3 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .internship-content p {
+            opacity: 0.9;
+            font-size: 17px;
+            max-width: 600px;
+        }
+
+        .internship-content .btn {
+            background: white;
+            color: var(--primary);
+        }
+
+        .internship-content .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+
+        /* ========== FAQ ========== */
+        .faq-list {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--bg-secondary);
+            border-radius: var(--radius-lg);
+            margin-bottom: 16px;
+            border: 1px solid var(--border-light);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 17px;
+        }
+
+        .faq-question svg {
+            width: 24px;
+            height: 24px;
+            color: var(--primary);
+            transition: transform var(--transition-fast);
+        }
+
+        .faq-item.open .faq-question svg {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 24px 24px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            display: none;
+        }
+
+        .faq-item.open .faq-answer {
+            display: block;
+        }
+
+        /* ========== CTA SECTION ========== */
+        .cta {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 700;
+            color: white;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            color: rgba(255,255,255,0.9);
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        .cta .btn {
+            background: white;
+            color: var(--primary);
+        }
+
+        .cta .section-tags {
+            margin-bottom: 34px;
+        }
+
+        .cta .section-tags + .btn {
+            margin-top: 4px;
+        }
+
+        .cta .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+        }
+
+        /* ========== FOOTER ========== */
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+    .footer {
+      background: var(--bg-tertiary);
+      padding: 18px 0 10px;
+    }
+
+    [data-theme="dark"] .footer {
+      background: #050508;
+    }
+
+    /* ========================================
+       FOOTER (CONTINUED)
+       ======================================== */
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+      margin-bottom: 12px;
+      align-items: start;
+    }
+
+    .footer-main {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1.2fr 1fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .footer-main-bottom {
+      grid-column: auto;
+      margin-top: 0;
+    }
+
+    @media (max-width: 968px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .footer-grid {
+        text-align: center;
+      }
+      .footer-main {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+
+    .footer-brand {
+      max-width: 200px;
+    }
+
+    @media (max-width: 640px) {
+      .footer-brand {
+        max-width: 100%;
+        margin: 0 auto;
+      }
+    }
+
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      margin-bottom: 6px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 640px) {
+      .footer-logo {
+        justify-content: center;
+      }
+    }
+
+    .footer-logo img {
+      height: 28px;
+      width: auto;
+    }
+
+    .footer-logo-text {
+      font-size: 0.9rem;
+      font-weight: 700;
+      background: var(--gradient-blue-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .footer-brand > p {
+      display: none;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 6px;
+    }
+
+    @media (max-width: 640px) {
+      .footer-social {
+        justify-content: center;
+      }
+    }
+
+    .footer-social a {
+      width: 34px;
+      height: 34px;
+      background: var(--bg-primary);
+      border: 1px solid var(--border-primary);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-secondary);
+      font-size: 14px;
+      text-decoration: none;
+      transition: all var(--duration-normal) var(--ease-spring);
+    }
+
+    .footer-social a:hover {
+      background: var(--gradient-primary);
+      border-color: var(--primary);
+      color: var(--white);
+      transform: translateY(-3px);
+    }
+
+    .footer-column h4 {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+      position: relative;
+      padding-bottom: 3px;
+    }
+
+    .footer-column h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 16px;
+      height: 1.5px;
+      background: var(--gradient-blue-gold);
+      border-radius: 2px;
+    }
+
+    @media (max-width: 640px) {
+      .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .footer-links {
+      list-style: none;
+    }
+
+    .footer-links li {
+      margin-bottom: 5px;
+    }
+
+    .footer-links a {
+      font-size: 0.72rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all var(--duration-fast) var(--ease-out);
+    }
+
+    .footer-links a i {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      transition: transform var(--duration-fast);
+      display: inline;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+      transform: translateX(3px);
+    }
+
+    .footer-links a:hover i {
+      color: var(--primary);
+    }
+
+    .footer-links span {
+      font-size: 0.7rem;
+      color: var(--text-secondary);
+    }
+
+    @media (max-width: 640px) {
+      .footer-links a:hover {
+        transform: none;
+      }
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border-primary);
+      padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    @media (max-width: 640px) {
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    .footer-copyright {
+      font-size: 0.6rem;
+      color: var(--text-tertiary);
+    }
+
+    .footer-copyright a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 10px;
+    }
+
+    .footer-legal a {
+      font-size: 0.6rem;
+      color: var(--text-tertiary);
+      text-decoration: none;
+      transition: color var(--duration-fast);
+    }
+
+    .footer-legal a:hover {
+      color: var(--primary);
+    }
+
+    .footer-newsletter {
+      background: var(--bg-primary);
+      border: 1px solid var(--border-primary);
+      border-radius: 10px;
+      padding: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .footer-newsletter .newsletter-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+      color: var(--text-primary);
+    }
+
+    .footer-newsletter .newsletter-description {
+      font-size: 0.65rem;
+      color: var(--text-secondary);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 4px;
+      margin-bottom: 6px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      font-size: 0.65rem;
+      padding: 5px 8px;
+      border: 1px solid var(--border-primary);
+      border-radius: 6px;
+      background: var(--bg-tertiary);
+      color: var(--text-primary);
+    }
+
+    .newsletter-form input::placeholder {
+      color: var(--text-tertiary);
+      font-size: 0.6rem;
+    }
+
+    .newsletter-form button {
+      font-size: 0.65rem;
+      padding: 5px 10px;
+      white-space: nowrap;
+    }
+
+    .newsletter-privacy {
+      font-size: 0.6rem;
+      color: var(--text-tertiary);
+      line-height: 1.2;
+    }
+
+    .footer-newsletter .newsletter-title {
+      font-size: var(--text-base);
+      font-weight: 600;
+      margin-bottom: var(--space-2);
+      color: var(--text-primary);
+    }
+
+    .footer-newsletter .newsletter-description {
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin-bottom: var(--space-4);
+    }
+
+    .footer-newsletter .newsletter-form {
+      display: flex;
+      gap: var(--space-2);
+      margin-bottom: var(--space-3);
+    }
+
+    .footer-newsletter .newsletter-form input {
+      flex: 1;
+      border: 1px solid var(--border-primary);
+      background: var(--bg-secondary);
+      border-radius: var(--radius-md);
+      padding: var(--space-2) var(--space-3);
+      font-size: var(--text-xs);
+      color: var(--text-primary);
+      outline: none;
+    }
+
+    .footer-newsletter .newsletter-form .btn {
+      padding: var(--space-2) var(--space-3);
+      font-size: var(--text-xs);
+    }
+
+    .footer-newsletter .newsletter-privacy {
+      font-size: 10px;
+      color: var(--text-tertiary);
+      margin-bottom: var(--space-3);
+    }
+
+    .footer-newsletter .newsletter-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+    }
+
+    .footer-newsletter .newsletter-tags .tag {
+      font-size: 10px;
+    }
+
+    @media (max-width: 968px) {
+      .footer-main {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+      }
+      .footer-newsletter {
+        grid-column: auto;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .footer {
+        padding: 14px 0 8px;
+      }
+      .footer-main {
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+        margin-bottom: 10px;
+      }
+      .footer-brand {
+        text-align: center;
+      }
+      .footer-brand > p {
+        display: none;
+      }
+      .footer-social {
+        justify-content: center;
+      }
+      .footer-logo {
+        justify-content: center;
+      }
+      .footer-main-bottom {
+        grid-column: auto;
+      }
+      .footer-newsletter {
+        width: 100%;
+      }
+      .newsletter-form {
+        flex-direction: column;
+      }
+      .footer-newsletter input {
+        width: 100%;
+      }
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 0;
+        gap: 6px;
+      }
+      .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+        /* ========== MODAL ========== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 24px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--bg-primary);
+            border-radius: var(--radius-xl);
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            padding: 48px;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 32px;
+        }
+
+        .modal-header h3 {
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .modal-close {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            color: var(--text-secondary);
+        }
+
+        .modal-close:hover {
+            color: var(--text-primary);
+        }
+
+        .modal-note {
+            margin: -18px 0 24px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 18px;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-size: 15px;
+            transition: border-color var(--transition-fast);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-hint {
+            display: block;
+            margin-top: 6px;
+            color: var(--text-tertiary);
+            font-size: 12px;
+        }
+
+        .form-status {
+            display: none;
+            margin-top: 16px;
+            padding: 14px 16px;
+            border-radius: var(--radius-md);
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .form-status.show {
+            display: block;
+        }
+
+        .form-status.success {
+            color: #075e3a;
+            background: rgba(52, 199, 89, 0.12);
+            border: 1px solid rgba(52, 199, 89, 0.28);
+        }
+
+        .form-status.error {
+            color: #8a1f11;
+            background: rgba(255, 59, 48, 0.12);
+            border: 1px solid rgba(255, 59, 48, 0.28);
+        }
+
+        [data-theme="dark"] .form-status.success {
+            color: #8ff0bb;
+        }
+
+        [data-theme="dark"] .form-status.error {
+            color: #ffb3ad;
+        }
+
+        .empty-jobs {
+            display: none;
+            padding: 36px;
+            text-align: center;
+            color: var(--text-secondary);
+            border: 1px dashed var(--border-primary);
+            border-radius: var(--radius-xl);
+            background: var(--bg-secondary);
+        }
+
+        .empty-jobs.show {
+            display: block;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 1024px) {
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-desktop {
+                display: none;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .values-grid,
+            .benefits-grid,
+            .spotlight-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .job-card {
+                flex-direction: column;
+                gap: 24px;
+                text-align: center;
+            }
+            
+            .job-meta {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .process-steps {
+                flex-direction: column;
+                gap: 32px;
+            }
+            
+            .process-steps::before {
+                display: none;
+            }
+            
+            .internship-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 32px;
+                padding: 40px;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* ========================================
+           SECTION TAGS
+           ======================================== */
+        .section-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .tag i {
+            font-size: 14px;
+        }
+
+        .tag--primary {
+            background: var(--gradient-primary);
+            color: var(--white);
+        }
+
+        .tag--primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tag--accent {
+            background: var(--gradient-accent);
+            color: var(--white);
+        }
+
+        .tag--accent:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tag--outline {
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-primary);
+        }
+
+        .tag--outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--primary-50);
+        }
+
+        .tag--sm {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+
+        .tag--sm i {
+            font-size: 12px;
+        }
+    </style>
+  <link rel="stylesheet" href="../css/tbp-splash.css">
+  <script src="../js/tbp-splash.js" defer></script>
+</head>
+<body>
+    <!-- SPLASH SCREEN -->
+    <div class="splash" id="splash">
+        <div class="splash-logo-wrapper">
+            <svg class="splash-ring" viewBox="0 0 120 120">
+                <defs>
+                    <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#00ACC1"/>
+                        <stop offset="100%" stop-color="#7C4DFF"/>
+                    </linearGradient>
+                </defs>
+                <circle class="splash-ring-circle" cx="60" cy="60" r="54" stroke="url(#ringGrad)" stroke-width="3" fill="none" stroke-dasharray="12 8" stroke-linecap="round"/>
+            </svg>
+            <img src="../images/bp.png" alt="" class="splash-logo">
+        </div>
+        <h1 class="splash-title">The Building Practice Ltd.</h1>
+        <p class="splash-tagline">...Building Spaces that Feel</p>
+        <div class="splash-loader">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <button class="splash-skip" id="splashSkip">Tap to skip</button>
+    </div>
+    <script>
+      // Emergency splash killer (runs independent of main page scripts)
+      (function () {
+        function forceHideSplash() {
+          var splash = document.getElementById('splash');
+          if (!splash) return;
+          splash.classList.add('hide');
+          splash.style.opacity = '0';
+          splash.style.visibility = 'hidden';
+          splash.style.pointerEvents = 'none';
+          splash.style.display = 'none';
+          document.body.classList.remove('no-scroll');
+          document.documentElement.style.overflow = '';
+          document.body.style.overflow = '';
+        }
+
+        // Run at multiple lifecycle points to guarantee hide
+        setTimeout(forceHideSplash, 1200);
+        setTimeout(forceHideSplash, 2500);
+        window.addEventListener('load', forceHideSplash);
+        document.addEventListener('readystatechange', function () {
+          if (document.readyState === 'interactive' || document.readyState === 'complete') {
+            forceHideSplash();
+          }
+        });
+      })();
+    </script>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <img src="../images/bp.png" alt="TBP">
+                <span>The Building Practice</span>
+            </a>
+            
+            <nav class="nav-desktop">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="services.html" class="nav-link">Services</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="reviews.html" class="nav-link">Reviews</a>
+                <a href="blog.html" class="nav-link">Blog</a>
+                <a href="careers.html" class="nav-link active">Careers</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <span id="themeIcon"></span>
+                </button>
+                <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span></span>
+                    We're Hiring!
+                </div>
+                <h1>Build the Future With Us</h1>
+                <p>Join a team of visionary architects and designers passionate about creating sustainable, inspiring spaces that shape how people live, work, and connect.</p>
+                <div class="hero-buttons">
+                    <a href="#jobs" class="btn btn-primary">
+                        <span>View Open Positions</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12H19M19 12L12 5M19 12L12 19"/></svg>
+                    </a>
+                    <a href="#about" class="btn btn-secondary">Learn About Our Culture</a>
+                </div>
+
+                <div class="section-tags">
+                    <a href="team.html" class="tag tag--primary tag--sm">
+                        <i class='bx bx-group'></i> Meet Our Team
+                    </a>
+                    <a href="about.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-info-circle'></i> About TBP
+                    </a>
+                    <a href="services.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-building-house'></i> Architecture Services
+                    </a>
+                    <a href="projects.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-images'></i> Our Projects
+                    </a>
+                    <a href="contact.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-envelope'></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT WORK -->
+    <section class="section about-work" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="../images/careers/careers 3.jpg" alt="TBP team collaboration and studio culture" loading="lazy">
+                </div>
+                <div class="about-content">
+                    <h2>Shape Tomorrow's Skylines</h2>
+                    <p>At The Building Practice, we believe architecture is more than design—it's about creating experiences that enhance human life. Every project is an opportunity to push boundaries, challenge conventions, and build sustainably.</p>
+                    <p>Our collaborative studio culture fosters innovation, creativity, and professional growth. We work on diverse projects across residential, commercial, hospitality, and institutional sectors, giving you exposure to varied challenges and learning opportunities.</p>
+                    <div class="about-features">
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7L12 12L22 7L12 2Z"/><path d="M2 17L12 22L22 17"/><path d="M2 12L12 17L22 12"/></svg>
+                            </div>
+                            <span>Innovation</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21V19C17 16.7909 15.2091 15 13 15H5C2.79086 15 1 16.7909 1 19V21"/><circle cx="9" cy="7" r="4"/><path d="M23 21V19C22.9986 17.1771 22.3005 15.4279 21.0278 14.0351C19.7551 12.6423 18.0119 11.6987 16.1 11.4"/><path d="M16 11.4C17.9119 11.6987 19.6551 12.6423 20.9278 14.0351C22.2005 15.4279 22.9986 17.1771 23 19"/></svg>
+                            </div>
+                            <span>Collaboration</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/><path d="M7 13L10 16L17 9"/></svg>
+                            </div>
+                            <span>Sustainability</span>
+                        </div>
+                        <div class="about-feature">
+                            <div class="about-feature-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10V6C22 4.89543 21.1046 4 20 4H4C2.89543 4 2 4.89543 2 6V18C2 19.1046 2.89543 20 4 20H8"/><path d="M22 10H18C16.8954 10 16 10.8954 16 12C16 13.1046 16.8954 14 18 14H22"/><path d="M2 18H8"/></svg>
+                            </div>
+                            <span>Growth</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Values</span>
+                <h2 class="section-title">What Drives Us</h2>
+                <p class="section-desc">Our core values shape every project we undertake and define how we work together as a team.</p>
+                <div class="section-tags">
+                    <a href="about.html#philosophy" class="tag tag--primary tag--sm">
+                        <i class='bx bx-book-open'></i> Our Philosophy
+                    </a>
+                    <a href="team.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-group'></i> Meet The Team
+                    </a>
+                    <a href="about.html#expertise" class="tag tag--outline tag--sm">
+                        <i class='bx bx-bulb'></i> Expertise
+                    </a>
+                    <a href="about.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-info-circle'></i> About TBP
+                    </a>
+                </div>
+            </div>
+            <div class="values-grid">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7L12 12L22 7L12 2Z"/><path d="M2 17L12 22L22 17"/><path d="M2 12L12 17L22 12"/></svg>
+                    </div>
+                    <h3>Design Excellence</h3>
+                    <p>We pursue perfection in every detail, from concept to completion, delivering spaces that inspire.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21V19C17 16.7909 15.2091 15 13 15H5C2.79086 15 1 16.7909 1 19V21"/><circle cx="9" cy="7" r="4"/><path d="M23 21V19C22.9986 17.1771 22.3005 15.4279 21.0278 14.0351"/></svg>
+                    </div>
+                    <h3>Collaboration</h3>
+                    <p>Great architecture emerges from diverse perspectives working together toward a shared vision.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"/><path d="M12 6V12L16 14"/></svg>
+                    </div>
+                    <h3>Sustainability</h3>
+                    <p>We're committed to responsible design that protects our environment for future generations.</p>
+                </div>
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3H8C9.06087 3 10.0783 3.42143 10.8284 4.17157C11.5786 4.92172 12 5.93913 12 7V21C12 20.2044 11.6839 19.4413 11.1213 18.8787C10.5587 18.3161 9.79565 18 9 18H2V3Z"/><path d="M22 3H16C14.9391 3 13.9217 3.42143 13.1716 4.17157C12.4214 4.92172 12 5.93913 12 7V21C12 20.2044 12.3161 19.4413 12.8787 18.8787C13.4413 18.3161 14.2044 18 15 18H22V3Z"/></svg>
+                    </div>
+                    <h3>Continuous Learning</h3>
+                    <p>We invest in your growth through mentorship, training, and exposure to cutting-edge techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFITS -->
+    <section class="section benefits">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Benefits</span>
+                <h2 class="section-title">Growth & Rewards</h2>
+                <p class="section-desc">We invest in our team's wellbeing, professional development, and work-life balance.</p>
+                <div class="section-tags">
+                    <a href="about.html#certifications" class="tag tag--primary tag--sm">
+                        <i class='bx bx-award'></i> Certifications
+                    </a>
+                    <a href="team.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-group'></i> Team Culture
+                    </a>
+                    <a href="services.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-building-house'></i> Services
+                    </a>
+                    <a href="contact.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-phone'></i> Contact HR
+                    </a>
+                </div>
+            </div>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2V22M17 5H9.5C8.57174 5 7.6815 5.36875 7.02513 6.02513C6.36875 6.6815 6 7.57174 6 8.5C6 9.42826 6.36875 10.3185 7.02513 10.9749C7.6815 11.6313 8.57174 12 9.5 12H14.5C15.4283 12 16.3185 12.3687 16.9749 13.0251C17.6313 13.6815 18 14.5717 18 15.5C18 16.4283 17.6313 17.3185 16.9749 17.9749C16.3185 18.6313 15.4283 19 14.5 19H6"/></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Competitive Salary</h4>
+                        <p>Industry-leading compensation packages with annual reviews.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3H8C9.06087 3 10.0783 3.42143 10.8284 4.17157C11.5786 4.92172 12 5.93913 12 7V21C12 20.2044 11.6839 19.4413 11.1213 18.8787C10.5587 18.3161 9.79565 18 9 18H2V3Z"/><path d="M22 3H16C14.9391 3 13.9217 3.42143 13.1716 4.17157C12.4214 4.92172 12 5.93913 12 7V21C12 20.2044 12.3161 19.4413 12.8787 18.8787C13.4413 18.3161 14.2044 18 15 18H22V3Z"/></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Professional Development</h4>
+                        <p>Conference attendance, certifications, and training programs.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21H16M12 17V21"/></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Software Training</h4>
+                        <p>Access to latest architecture software including Revit, Rhino, and more.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6V12L16 14"/></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Flexible Work</h4>
+                        <p>Hybrid and flexible arrangements to suit your lifestyle.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8C21 7.46957 20.7893 6.96086 20.4142 6.58579C20.0391 6.21071 19.5304 6 19 6H5C4.46957 6 3.96086 6.21071 3.58579 6.58579C3.21071 6.96086 3 7.46957 3 8V16"/><path d="M3 12H21M7 20H17"/></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Diverse Projects</h4>
+                        <p>Work on residential, commercial, hospitality, and more.</p>
+                    </div>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2V6M8 2V6M3 10H21"/></svg>
+                    </div>
+                    <div class="benefit-content">
+                        <h4>Paid Time Off</h4>
+                        <p>Generous PTO policy plus public holidays.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OPEN POSITIONS -->
+    <section class="section" id="jobs">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Join Our Team</span>
+                <h2 class="section-title">Open Positions</h2>
+                <p class="section-desc">Find your next role and help us shape the future of architecture.</p>
+                <div class="section-tags">
+                    <a href="team.html" class="tag tag--primary tag--sm">
+                        <i class='bx bx-group'></i> Meet The Team
+                    </a>
+                    <a href="services.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-building-house'></i> Services
+                    </a>
+                    <a href="about.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-info-circle'></i> About TBP
+                    </a>
+                    <a href="projects.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-images'></i> Projects
+                    </a>
+                    <a href="contact.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-envelope'></i> Apply Now
+                    </a>
+                </div>
+            </div>
+            
+            <div class="jobs-filters">
+                <select class="filter-select" id="deptFilter">
+                    <option value="">All Departments</option>
+                    <option value="architecture">Architecture</option>
+                    <option value="design">Design</option>
+                    <option value="project">Project Management</option>
+                    <option value="technical">Technical</option>
+                </select>
+                <select class="filter-select" id="levelFilter">
+                    <option value="">All Levels</option>
+                    <option value="junior">Junior</option>
+                    <option value="mid">Mid-Level</option>
+                    <option value="senior">Senior</option>
+                    <option value="lead">Lead</option>
+                </select>
+                <select class="filter-select" id="locationFilter">
+                    <option value="">All Locations</option>
+                    <option value="lagos">Lagos</option>
+                    <option value="remote">Remote</option>
+                </select>
+            </div>
+            
+            <div class="jobs-grid" id="jobsGrid">
+                <div class="job-card" data-dept="architecture" data-level="senior" data-location="lagos">
+                    <div class="job-info">
+                        <h3>Senior Architect</h3>
+                        <div class="job-meta">
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/></svg>
+                                Lagos, Nigeria
+                            </span>
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21V19C20 16.7909 18.2091 15 16 15H8C5.79086 15 4 16.7909 4 19V21"/><circle cx="12" cy="7" r="4"/></svg>
+                                Architecture
+                            </span>
+                        </div>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-apply">
+                        <button class="btn btn-primary" onclick="openJobModal('senior-architect')">Apply Now</button>
+                    </div>
+                </div>
+                
+                <div class="job-card" data-dept="architecture" data-level="junior" data-location="lagos">
+                    <div class="job-info">
+                        <h3>Junior Architect</h3>
+                        <div class="job-meta">
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/></svg>
+                                Lagos, Nigeria
+                            </span>
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21V19C20 16.7909 18.2091 15 16 15H8C5.79086 15 4 16.7909 4 19V21"/><circle cx="12" cy="7" r="4"/></svg>
+                                Architecture
+                            </span>
+                        </div>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-apply">
+                        <button class="btn btn-primary" onclick="openJobModal('junior-architect')">Apply Now</button>
+                    </div>
+                </div>
+                
+                <div class="job-card" data-dept="technical" data-level="mid" data-location="remote">
+                    <div class="job-info">
+                        <h3>BIM Specialist</h3>
+                        <div class="job-meta">
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/></svg>
+                                Remote / Lagos
+                            </span>
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21V19C20 16.7909 18.2091 15 16 15H8C5.79086 15 4 16.7909 4 19V21"/><circle cx="12" cy="7" r="4"/></svg>
+                                Technical
+                            </span>
+                        </div>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-apply">
+                        <button class="btn btn-primary" onclick="openJobModal('bim-specialist')">Apply Now</button>
+                    </div>
+                </div>
+                
+                <div class="job-card" data-dept="design" data-level="mid" data-location="lagos">
+                    <div class="job-info">
+                        <h3>Interior Designer</h3>
+                        <div class="job-meta">
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/></svg>
+                                Lagos, Nigeria
+                            </span>
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21V19C20 16.7909 18.2091 15 16 15H8C5.79086 15 4 16.7909 4 19V21"/><circle cx="12" cy="7" r="4"/></svg>
+                                Design
+                            </span>
+                        </div>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-apply">
+                        <button class="btn btn-primary" onclick="openJobModal('interior-designer')">Apply Now</button>
+                    </div>
+                </div>
+                
+                <div class="job-card" data-dept="project" data-level="lead" data-location="lagos">
+                    <div class="job-info">
+                        <h3>Project Architect</h3>
+                        <div class="job-meta">
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z"/></svg>
+                                Lagos, Nigeria
+                            </span>
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21V19C20 16.7909 18.2091 15 16 15H8C5.79086 15 4 16.7909 4 19V21"/><circle cx="12" cy="7" r="4"/></svg>
+                                Project Management
+                            </span>
+                        </div>
+                        <span class="job-type">Full-time</span>
+                    </div>
+                    <div class="job-apply">
+                        <button class="btn btn-primary" onclick="openJobModal('project-architect')">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="empty-jobs" id="emptyJobs">No open roles match those filters. Try another department, level, or location.</div>
+        </div>
+    </section>
+
+    <!-- TEAM SPOTLIGHT -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Team</span>
+                <h2 class="section-title">Meet Our People</h2>
+                <p class="section-desc">Join a team that values innovation, collaboration, and design excellence.</p>
+                <div class="section-tags">
+                    <a href="team.html" class="tag tag--primary tag--sm">
+                        <i class='bx bx-group'></i> Full Team
+                    </a>
+                    <a href="about.html#expertise" class="tag tag--outline tag--sm">
+                        <i class='bx bx-bulb'></i> Expertise
+                    </a>
+                    <a href="projects.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-images'></i> Projects
+                    </a>
+                    <a href="about.html#philosophy" class="tag tag--outline tag--sm">
+                        <i class='bx bx-book-open'></i> Philosophy
+                    </a>
+                </div>
+            </div>
+            <div class="spotlight-grid">
+                <div class="spotlight-card">
+                    <div class="spotlight-image">
+                        <img src="../images/team/micheal.jpg" alt="Michael Alley" loading="lazy">
+                    </div>
+                    <div class="spotlight-content">
+                        <h4>Michael Alley</h4>
+                        <span>Senior Architect</span>
+                        <p class="spotlight-quote">Working at TBP has allowed me to work on landmark projects that shape Nigeria's architectural landscape. The collaborative culture here is unmatched.</p>
+                    </div>
+                </div>
+                <div class="spotlight-card">
+                    <div class="spotlight-image">
+                        <img src="../images/team/gbemi.jpg" alt="Sarah Ahmed" loading="lazy">
+                    </div>
+                    <div class="spotlight-content">
+                        <h4>Sarah Ahmed</h4>
+                        <span>Design Lead</span>
+                        <p class="spotlight-quote">The emphasis on sustainability and innovation keeps me inspired every day. We don't just design buildings; we create legacies.</p>
+                    </div>
+                </div>
+                <div class="spotlight-card">
+                    <div class="spotlight-image">
+                        <img src="../images/team/james.jpg" alt="James Smith" loading="lazy">
+                    </div>
+                    <div class="spotlight-content">
+                        <h4>James Smith</h4>
+                        <span>BIM Manager</span>
+                        <p class="spotlight-quote">The continuous learning opportunities here helped me specialize in BIM. Now I'm leading the digital transformation of our projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- HIRING PROCESS -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Our Process</span>
+                <h2 class="section-title">How We Hire</h2>
+                <p class="section-desc">Our hiring process is designed to get to know you better while giving you insight into life at TBP.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h4>Apply</h4>
+                    <p>Submit your resume and portfolio through our online form.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h4>Portfolio Review</h4>
+                    <p>Our team reviews your work and projects you've contributed to.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h4>Design Interview</h4>
+                    <p>Meet with our design leadership to discuss your approach.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h4>Final Interview</h4>
+                    <p>Connect with leadership and learn about the role in detail.</p>
+                </div>
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <h4>Welcome!</h4>
+                    <p>Receive your offer and join our team!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- INTERNSHIPS -->
+    <section class="section internships">
+        <div class="container">
+            <div class="internship-card">
+                <div class="internship-content">
+                    <h3>Internship & Graduate Programs</h3>
+                    <p>Starting your career? Join our internship program to gain hands-on experience, mentorship, and exposure to real projects.</p>
+                    <div class="purpose-card-tags">
+                        <a href="team.html" class="tag tag--primary tag--sm">
+                            <i class='bx bx-group'></i> Team Culture
+                        </a>
+                        <a href="about.html#philosophy" class="tag tag--outline tag--sm">
+                            <i class='bx bx-book-open'></i> Philosophy
+                        </a>
+                        <a href="services.html" class="tag tag--outline tag--sm">
+                            <i class='bx bx-building-house'></i> Services
+                        </a>
+                    </div>
+                </div>
+                <button class="btn" type="button" onclick="openJobModal('internship')">Apply for Internship</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-label">Questions</span>
+                <h2 class="section-title">Frequently Asked</h2>
+                <div class="section-tags">
+                    <a href="contact.html" class="tag tag--primary tag--sm">
+                        <i class='bx bx-envelope'></i> Contact HR
+                    </a>
+                    <a href="team.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-group'></i> Team
+                    </a>
+                    <a href="about.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-info-circle'></i> About TBP
+                    </a>
+                    <a href="services.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-building-house'></i> Services
+                    </a>
+                </div>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do I need a portfolio to apply?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9L12 15L18 9"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, a portfolio is essential for all design roles. It should showcase your best work, including academic projects, personal work, or professional work you're permitted to share. We're looking for demonstration of design thinking, technical skills, and creativity.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>What software skills are required?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9L12 15L18 9"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Proficiency in AutoCAD is essential. Knowledge of Revit, Rhino, SketchUp, or other BIM/3D software is a plus. We're also happy to train promising candidates in tools they haven't yet mastered.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Do you offer internships?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9L12 15L18 9"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! We offer internship programs for architecture students and recent graduates throughout the year. Our internships provide real project experience, mentorship, and potential full-time opportunities for top performers.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span>Can international applicants apply?</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9L12 15L18 9"/></svg>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, we welcome international applications. However, candidates must have or be eligible to obtain the appropriate work permit. We can provide sponsorship for exceptional candidates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>Join Us in Shaping Inspiring Spaces</h2>
+            <p>Ready to take the next step in your architecture career? We can't wait to meet you.</p>
+            <div class="section-tags">
+                <a href="#jobs" class="tag tag--primary tag--sm">
+                    <i class='bx bx-briefcase'></i> View Jobs
+                </a>
+                <a href="team.html" class="tag tag--outline tag--sm">
+                    <i class='bx bx-group'></i> Meet Team
+                </a>
+                <a href="contact.html" class="tag tag--outline tag--sm">
+                    <i class='bx bx-envelope'></i> Contact HR
+                </a>
+                <a href="about.html" class="tag tag--outline tag--sm">
+                    <i class='bx bx-info-circle'></i> About TBP
+                </a>
+            </div>
+            <a href="#jobs" class="btn">Explore Opportunities</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <!-- Canonical footer markup (same structure as other pages) -->
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-main">
+            <div class="footer-brand">
+              <a href="index.html" class="footer-logo">
+                <img src="../images/bp.png" alt="TBP Logo">
+                <span class="footer-logo-text">The Building Practice</span>
+              </a>
+              <p>An architectural firm dedicated to shaping spaces that inspire, endure, and connect. Creating thoughtful, sustainable, and contextually relevant designs since 2013.</p>
+              <div class="footer-social">
+                <a href="https://www.facebook.com/thebuildingpractice" target="_blank" rel="noopener" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                <a href="https://x.com/thebplimited" target="_blank" rel="noopener" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.instagram.com/thebuildingpractice" target="_blank" rel="noopener" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.linkedin.com/company/the-building-practice-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+              </div>
+            </div>
+
+            <div class="footer-column">
+              <h4>Quick Links</h4>
+              <ul class="footer-links">
+                <li><a href="index.html"><i class='bx bx-chevron-right'></i><span>Home</span></a></li>
+                <li><a href="about.html"><i class='bx bx-chevron-right'></i><span>About</span></a></li>
+                <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Services</span></a></li>
+                <li><a href="projects.html"><i class='bx bx-chevron-right'></i><span>Projects</span></a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h4>Our Services</h4>
+              <ul class="footer-links">
+                <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Architecture</span></a></li>
+                <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Interior Design</span></a></li>
+                <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Construction</span></a></li>
+                <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Consultancy</span></a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column footer-main-bottom">
+              <h4>Contact Info</h4>
+              <ul class="footer-links">
+                <li><i class='bx bx-map'></i><span>Plot 6, Remi Olowude, Lekki Phase 1</span></li>
+                <li><a href="tel:+2349049721840"><i class='bx bx-phone'></i><span>+234 904 972 1840</span></a></li>
+                <li><a href="mailto:info@buildingpractice.biz"><i class='bx bx-envelope'></i><span>info@buildingpractice.biz</span></a></li>
+                <li><i class='bx bx-time'></i><span>Mon - Fri: 9AM - 5PM</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-newsletter">
+            <h4 class="newsletter-title">Subscribe</h4>
+            <p class="newsletter-description">Get the latest updates and insights</p>
+            <form class="newsletter-form" id="footerNewsletterForm" novalidate>
+              <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
+              <button type="submit" class="btn btn--primary btn--sm">Subscribe</button>
+            </form>
+            <div class="form-status" id="footerNewsletterStatus" role="status" aria-live="polite"></div>
+            <p class="newsletter-privacy">We respect your privacy.</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copyright">© <span id="currentYear">2024</span> The Building Practice Ltd. All Rights Reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+  <script src="../js/testweb.js" defer></script>
+
+    <!-- APPLICATION MODAL -->
+    <div class="modal-overlay" id="applicationModal">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 id="modalTitle">Senior Architect</h3>
+                <button class="modal-close" onclick="closeModal()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6L18 18"/></svg>
+                </button>
+            </div>
+            <p class="modal-note">Share your details, portfolio and CV. If the careers API is online, your application will be saved automatically; otherwise we will prepare a direct email submission for you.</p>
+            <form id="applicationForm" onsubmit="submitApplication(event)">
+                <input type="hidden" name="role" id="applicationRole" value="Senior Architect">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name *</label>
+                        <input type="text" name="fullName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Phone *</label>
+                        <input type="tel" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>LinkedIn Profile</label>
+                        <input type="url" name="linkedin" placeholder="https://linkedin.com/in/...">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Portfolio Link *</label>
+                    <input type="url" name="portfolio" placeholder="https://behance.net/..." required>
+                    <span class="form-hint">Portfolio, website, Behance, Google Drive, or LinkedIn project link.</span>
+                </div>
+                <div class="form-group">
+                    <label>Resume/CV *</label>
+                    <input type="file" name="resume" accept=".pdf,.doc,.docx" required>
+                    <span class="form-hint">Accepted formats: PDF, DOC, DOCX. Maximum 10MB when API upload is available.</span>
+                </div>
+                <div class="form-group">
+                    <label>Cover Letter</label>
+                    <textarea name="coverLetter" rows="4" placeholder="Tell us why you'd be a great fit..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" id="applicationSubmit" style="width: 100%;">Submit Application</button>
+                <div class="form-status" id="applicationStatus" role="status" aria-live="polite"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = document.getElementById('themeIcon');
+        
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            if (themeIcon) {
+                themeIcon.innerHTML = theme === 'dark' ? icons8.sun() : icons8.moon();
+            }
+        }
+        
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        applyTheme(savedTheme);
+        
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                const current = document.documentElement.getAttribute('data-theme');
+                applyTheme(current === 'dark' ? 'light' : 'dark');
+            });
+        }
+
+        // FAQ Toggle
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            item.classList.toggle('open');
+        }
+
+        // Job Modal
+        function openJobModal(jobId) {
+            const modal = document.getElementById('applicationModal');
+            const titles = {
+                'senior-architect': 'Senior Architect',
+                'junior-architect': 'Junior Architect',
+                'bim-specialist': 'BIM Specialist',
+                'interior-designer': 'Interior Designer',
+                'project-architect': 'Project Architect',
+                'internship': 'Internship / Graduate Program'
+            };
+            const role = titles[jobId] || 'Application';
+            document.getElementById('modalTitle').textContent = role;
+            document.getElementById('applicationRole').value = role;
+            setApplicationStatus('', '');
+            modal.classList.add('active');
+            document.body.classList.add('no-scroll');
+        }
+
+        function closeModal() {
+            document.getElementById('applicationModal').classList.remove('active');
+            document.body.classList.remove('no-scroll');
+        }
+
+        // Close modal on overlay click
+        document.getElementById('applicationModal').addEventListener('click', function(e) {
+            if (e.target === this) closeModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        function setApplicationStatus(message, type) {
+            const status = document.getElementById('applicationStatus');
+            if (!status) return;
+            status.textContent = message || '';
+            status.className = message ? `form-status show ${type}` : 'form-status';
+        }
+
+        // Submit Application
+        async function submitApplication(e) {
+            e.preventDefault();
+            const form = document.getElementById('applicationForm');
+            const submitBtn = document.getElementById('applicationSubmit');
+            const formData = new FormData(form);
+            const resume = formData.get('resume');
+            const role = formData.get('role') || 'Careers Application';
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                return;
+            }
+
+            if (resume && resume.size > 10 * 1024 * 1024) {
+                setApplicationStatus('Please upload a CV smaller than 10MB.', 'error');
+                return;
+            }
+
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Submitting...';
+            setApplicationStatus('Submitting your application...', 'success');
+            formData.set('coverLetter', `Role: ${role}\n\n${formData.get('coverLetter') || ''}`);
+
+            try {
+                const response = await fetch('http://localhost:3002/api/careers/apply', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) throw new Error('Careers API unavailable');
+                const result = await response.json();
+                if (!result.ok) throw new Error(result.error || 'Application was not saved');
+
+                setApplicationStatus('Application received. Thank you - our team will review your materials and contact you within 2 weeks.', 'success');
+                form.reset();
+                setTimeout(closeModal, 1800);
+            } catch (err) {
+                const fullName = formData.get('fullName') || '';
+                const email = formData.get('email') || '';
+                const phone = formData.get('phone') || '';
+                const linkedin = formData.get('linkedin') || '';
+                const portfolio = formData.get('portfolio') || '';
+                const coverLetter = formData.get('coverLetter') || '';
+                const backup = {
+                    role,
+                    fullName,
+                    email,
+                    phone,
+                    linkedin,
+                    portfolio,
+                    coverLetter,
+                    resumeName: resume && resume.name ? resume.name : '',
+                    savedAt: new Date().toISOString()
+                };
+                localStorage.setItem('tbpCareerApplicationBackup', JSON.stringify(backup));
+                const subject = encodeURIComponent(`Career Application - ${role}`);
+                const body = encodeURIComponent(
+                    `Hello TBP Careers Team,\n\nI would like to apply for: ${role}\n\nFull Name: ${fullName}\nEmail: ${email}\nPhone: ${phone}\nLinkedIn: ${linkedin}\nPortfolio: ${portfolio}\n\nCover Letter:\n${coverLetter}\n\nPlease find my CV attached when I send this email.`
+                );
+                setApplicationStatus('The online careers API is not available right now. A local backup was saved in this browser and your email app will open so you can send the application directly with your CV attached.', 'error');
+                window.location.href = `mailto:info@buildingpractice.biz?subject=${subject}&body=${body}`;
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit Application';
+            }
+        }
+
+        // Job Filters
+        document.getElementById('deptFilter')?.addEventListener('change', filterJobs);
+        document.getElementById('levelFilter')?.addEventListener('change', filterJobs);
+        document.getElementById('locationFilter')?.addEventListener('change', filterJobs);
+
+        function filterJobs() {
+            const dept = document.getElementById('deptFilter')?.value || '';
+            const level = document.getElementById('levelFilter')?.value || '';
+            const location = document.getElementById('locationFilter')?.value || '';
+            const cards = Array.from(document.querySelectorAll('.job-card'));
+            let visible = 0;
+
+            cards.forEach(card => {
+                const show = (!dept || card.dataset.dept === dept) &&
+                    (!level || card.dataset.level === level) &&
+                    (!location || card.dataset.location === location);
+                card.classList.toggle('is-hidden', !show);
+                if (show) visible++;
+            });
+
+            document.getElementById('emptyJobs')?.classList.toggle('show', visible === 0);
+        }
+
+        // Footer newsletter
+        document.getElementById('footerNewsletterForm')?.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const input = this.querySelector('input[type="email"]');
+            const status = document.getElementById('footerNewsletterStatus');
+            const email = input?.value.trim() || '';
+            const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+            if (!valid) {
+                if (status) {
+                    status.textContent = 'Please enter a valid email address.';
+                    status.className = 'form-status show error';
+                }
+                input?.focus();
+                return;
+            }
+
+            if (status) {
+                status.textContent = 'Thank you. You have been added to the TBP updates list.';
+                status.className = 'form-status show success';
+            }
+            this.reset();
+        });
+
+        // Splash Screen
+        const splash = {
+            element: document.getElementById('splash'),
+            skipBtn: document.getElementById('splashSkip'),
+            hidden: false,
+
+            hide() {
+                if (!this.element || this.hidden) return;
+                this.hidden = true;
+                this.element.classList.add('hide');
+                document.body.classList.remove('no-scroll');
+
+                // Remove from flow after transition to avoid any blocking layer
+                setTimeout(() => {
+                    if (this.element) this.element.style.display = 'none';
+                }, 600);
+            },
+
+            init() {
+                if (!this.element) return;
+                document.body.classList.add('no-scroll');
+                setTimeout(() => this.hide(), 3000);
+                this.skipBtn?.addEventListener('click', () => this.hide());
+                window.addEventListener('load', () => this.hide());
+            }
+        };
+
+        // Initialize splash
+        splash.init();
+
+        // Splash fail-safe: never allow indefinite blocking overlay
+        setTimeout(() => {
+            try { splash.hide(); } catch (e) {}
+        }, 3000);
+    </script>
+  <script src="../js/theme-sync.js" defer></script>
+</body>
+</html>
+
+

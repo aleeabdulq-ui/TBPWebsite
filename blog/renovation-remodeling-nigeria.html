@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <script src="../js/theme-head.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Renovation & Remodeling in Nigeria | Home & Office Upgrade Experts – Building Practice Ltd</title>
+    <meta name="description" content="Looking for renovation and remodeling in Nigeria? Building Practice Ltd transforms homes, offices, and commercial spaces with modern designs and quality finishes. Contact us today.">
+    <meta name="keywords" content="renovation Nigeria, remodeling services Nigeria, home renovation Lagos, office remodeling, interior renovation, commercial renovation, kitchen remodeling, bathroom renovation Nigeria">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Renovation & Remodeling Services Nigeria – Building Practice Ltd">
+    <meta property="og:description" content="Professional renovation and remodeling services for residential, office, and commercial spaces in Nigeria.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://thebuildingpractice.com/blog/renovation-remodeling-nigeria.html">
+    <meta property="og:image" content="../images/services/renovation.jpg">
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="vendor/boxicons.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-50: #E8F4F8;
+            --primary-100: #C5E4EC;
+            --primary-500: #1A5F7A;
+            --primary-700: #134B61;
+            --accent-50: #FDF8E8;
+            --accent-500: #C9A227;
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-900: #111827;
+            --bg-primary: var(--white);
+            --text-primary: #1a1a2e;
+            --text-secondary: #4a4a68;
+            --border-primary: var(--gray-200);
+            --gradient-primary: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-700) 100%);
+        }
+
+        [data-theme="dark"] {
+            --bg-primary: #0a0a0f;
+            --text-primary: #f4f4f6;
+            --text-secondary: #b4b4bc;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-primary);
+            z-index: 1000;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+            padding: 0 20px;
+        }
+
+        .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+        .nav-brand img { height: 40px; width: auto; }
+        .nav-brand-name { font-weight: 700; color: var(--primary-500); }
+
+        /* Blog Header */
+        .blog-header {
+            padding: 100px 0 60px;
+            background: linear-gradient(135deg, var(--primary-50) 0%, var(--gray-100) 100%);
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .blog-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary-500);
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        .blog-meta {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 5px;
+        }
+
+        /* Blog Content */
+        .blog-content {
+            padding: 60px 0;
+        }
+
+        .blog-section {
+            margin-bottom: 50px;
+        }
+
+        .blog-section h2 {
+            font-size: 1.8rem;
+            color: var(--primary-500);
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--accent-500);
+        }
+
+        .blog-section h3 {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        .blog-section p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+        }
+
+        .blog-section ul {
+            list-style: none;
+            margin-bottom: 20px;
+            padding-left: 0;
+        }
+
+        .blog-section ul li {
+            margin-bottom: 12px;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .blog-section ul li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--accent-500);
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .blog-highlight {
+            background: var(--primary-50);
+            border-left: 4px solid var(--primary-500);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+        }
+
+        .schema-script {
+            display: none;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--accent-500);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #b8911f;
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--gray-100);
+            padding: 40px 0 20px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .blog-title { font-size: 1.8rem; }
+            .blog-header { padding: 80px 0 40px; }
+        }
+    </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="nav">
+      <a href="../pages/index.html" class="nav-brand">
+        <img src="../images/bp.png" alt="TBP" style="display:none;">
+        <span class="nav-brand-name">The Building Practice Ltd</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- Blog Header -->
+  <section class="blog-header">
+    <div class="container">
+      <p class="blog-meta">Published on March 27, 2026 | Renovation & Remodeling</p>
+      <h1 class="blog-title">Renovation & Remodeling in Nigeria</h1>
+      <p class="blog-meta">Professional Renovation Services by Building Practice Ltd</p>
+    </div>
+  </section>
+
+  <!-- Blog Content -->
+  <section class="blog-content">
+    <div class="container">
+      <!-- Introduction -->
+      <div class="blog-section">
+        <p><strong>At Building Practice Ltd, we deliver high-quality, results-driven renovation and remodeling in Nigeria for residential, commercial, and corporate spaces.</strong></p>
+        <p>Outdated spaces reduce comfort, functionality, and property value. Poorly executed renovations waste money and create long-term problems. We take a structured approach to transform existing spaces into modern, functional, and visually appealing environments without unnecessary delays or cost overruns.</p>
+        <p>Whether you are upgrading your home, modernizing an office, or repositioning a commercial property, we handle every detail from concept to completion.</p>
+      </div>
+
+      <!-- Services Section -->
+      <div class="blog-section">
+        <h2>Our Renovation & Remodeling Services in Nigeria</h2>
+        
+        <h3>Residential Renovation</h3>
+        <p><strong>Your home should evolve with your lifestyle.</strong></p>
+        <p>We transform:</p>
+        <ul>
+          <li>Living rooms and bedrooms</li>
+          <li>Kitchens and cabinetry</li>
+          <li>Bathrooms and wet areas</li>
+          <li>Apartments and full home renovations</li>
+        </ul>
+        <p>We improve comfort, functionality, and aesthetic value while maximizing your space.</p>
+
+        <h3>Office and Commercial Remodeling</h3>
+        <p><strong>A modern business space improves productivity and brand perception.</strong></p>
+        <p>We remodel:</p>
+        <ul>
+          <li>Corporate offices</li>
+          <li>Retail stores</li>
+          <li>Restaurants and hospitality spaces</li>
+          <li>Banks and commercial facilities</li>
+        </ul>
+        <p>Our solutions align your space with your business goals and customer experience.</p>
+
+        <h3>Interior Upgrades and Finishing</h3>
+        <p><strong>Small upgrades can create a major impact when done right.</strong></p>
+        <p>Our services include:</p>
+        <ul>
+          <li>Ceiling redesign and lighting upgrades</li>
+          <li>Flooring replacement</li>
+          <li>Wall finishing and decorative treatments</li>
+          <li>Fixture and fitting upgrades</li>
+        </ul>
+        <p>We elevate your space with high-quality finishes and attention to detail.</p>
+
+        <h3>Structural Alterations and Space Reconfiguration</h3>
+        <p><strong>Sometimes, real transformation requires structural changes.</strong></p>
+        <p>We handle:</p>
+        <ul>
+          <li>Space reconfiguration and layout changes</li>
+          <li>Wall removal and additions</li>
+          <li>Structural adjustments (where applicable)</li>
+          <li>Functional space optimization</li>
+        </ul>
+        <p>We ensure all changes are safe, compliant, and properly executed.</p>
+
+        <h3>Kitchen and Bathroom Remodeling</h3>
+        <p><strong>These are the most used and most valuable spaces in any property.</strong></p>
+        <p>We deliver:</p>
+        <ul>
+          <li>Modern kitchen layouts and cabinetry</li>
+          <li>Bathroom redesign and upgrades</li>
+          <li>Plumbing and fixture improvements</li>
+          <li>Durable and water-resistant finishes</li>
+        </ul>
+        <p>We combine practicality, durability, and design for long-term use.</p>
+      </div>
+
+      <!-- Process Section -->
+      <div class="blog-section">
+        <h2>Our Renovation Process</h2>
+        <p>We follow a structured system to ensure smooth execution and high-quality results.</p>
+
+        <h3>1. Consultation and Assessment</h3>
+        <p>We evaluate your existing space, needs, and budget.</p>
+
+        <h3>2. Design and Planning</h3>
+        <p>We develop renovation concepts, layouts, and material specifications.</p>
+
+        <h3>3. Costing and Project Strategy</h3>
+        <p>We define budget, timelines, and execution approach.</p>
+
+        <h3>4. Execution and Supervision</h3>
+        <p>We manage contractors, materials, and on-site work.</p>
+
+        <h3>5. Final Finishing and Delivery</h3>
+        <p>We complete the project with quality detailing and finishing.</p>
+      </div>
+
+      <!-- Why Choose Us Section -->
+      <div class="blog-section">
+        <h2>Why Choose Building Practice Ltd for Renovation in Nigeria</h2>
+
+        <h3>Structured Project Execution</h3>
+        <p>We eliminate guesswork and deliver renovations with clear planning and control.</p>
+
+        <h3>Quality Workmanship</h3>
+        <p>We ensure every detail meets high construction and finishing standards.</p>
+
+        <h3>Cost Control</h3>
+        <p>We help you achieve maximum value without unnecessary spending.</p>
+
+        <h3>Minimal Disruption</h3>
+        <p>We manage the process efficiently to reduce inconvenience during renovation.</p>
+
+        <h3>Modern, Functional Designs</h3>
+        <p>We upgrade your space to meet current design and usability standards.</p>
+
+        <h3>Renovation for All Property Types</h3>
+        <p>We provide renovation and remodeling services for:</p>
+        <ul>
+          <li>Residential homes and apartments</li>
+          <li>Office spaces and corporate buildings</li>
+          <li>Retail and commercial properties</li>
+          <li>Hospitality and leisure spaces</li>
+          <li>Institutional buildings</li>
+        </ul>
+        <p>Every project is tailored to improve functionality, aesthetics, and value.</p>
+      </div>
+
+      <!-- CTA Section -->
+      <div class="blog-section">
+        <h2>Hire Renovation & Remodeling Experts in Nigeria</h2>
+        <p>If your space is outdated, inefficient, or no longer meets your needs, renovation is the smartest investment.</p>
+        <p><strong>Building Practice Ltd delivers professional renovation and remodeling in Nigeria that transforms your property into a modern, functional, and valuable asset.</strong></p>
+
+        <h3>Start Your Renovation Project Today</h3>
+        <p><strong>Upgrade Your Space Without Costly Mistakes</strong></p>
+        <p>Contact Building Practice Ltd today for expert renovation and remodeling services.</p>
+        
+        <div class="blog-highlight">
+          <p><strong>📍 Address:</strong> 6 Remi Olowude Street, Lekki, Lagos, Nigeria</p>
+          <p><strong>📞 Phone:</strong> +2342349049721</p>
+        </div>
+
+        <p><strong>Let's transform your space into something better – efficient, modern, and built to last.</strong></p>
+
+        <a href="../pages/contact.html" class="cta-button">Contact Us for Renovation Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "ProfessionalService"],
+    "name": "Building Practice Ltd",
+    "url": "https://www.thebuildingpractice.com/blog/renovation-remodeling-nigeria.html",
+    "telephone": "+2342349049721",
+    "priceRange": "$$",
+    "description": "Building Practice Ltd provides professional renovation and remodeling services in Nigeria, transforming residential, commercial, and office spaces into modern, functional, and high-value environments through quality construction and design execution.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "6 Remi Olowude Street",
+      "addressLocality": "Lekki",
+      "addressRegion": "Lagos",
+      "postalCode": "100231",
+      "addressCountry": "NG"
+    },
+    "areaServed": [
+      { "@type": "Country", "name": "Nigeria" },
+      { "@type": "City", "name": "Lagos" },
+      { "@type": "City", "name": "Abuja" },
+      { "@type": "City", "name": "Port Harcourt" }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Renovation and Remodeling Services",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Residential Renovation",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Residential Renovation",
+            "description": "Complete home renovation services including living spaces, kitchens, bathrooms, and full property upgrades."
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Office and Commercial Remodeling",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Office and Commercial Remodeling",
+            "description": "Modernization of office and commercial spaces to improve functionality, branding, and user experience."
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Interior Finishing and Upgrades",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Interior Finishing and Upgrades",
+            "description": "High-quality upgrades including flooring, ceilings, lighting, and wall finishes."
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Structural Alterations and Space Reconfiguration",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Structural Alterations and Space Reconfiguration",
+            "description": "Space restructuring, layout changes, and structural modifications to improve usability and flow."
+          }
+        },
+        {
+          "@type": "Offer",
+          "name": "Kitchen and Bathroom Remodeling",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Kitchen and Bathroom Remodeling",
+            "description": "Modern kitchen and bathroom upgrades with durable materials, improved layouts, and efficient fixtures."
+          }
+        }
+      ]
+    },
+    "knowsAbout": [
+      "Renovation and Remodeling Nigeria",
+      "Home Renovation Services Lagos",
+      "Office Remodeling Nigeria",
+      "Interior Upgrades and Finishing",
+      "Kitchen Remodeling Nigeria",
+      "Bathroom Renovation Services",
+      "Building Renovation Contractors Nigeria"
+    ],
+    "serviceType": "Renovation and Remodeling",
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceLocation": {
+        "@type": "Place",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Lekki",
+          "addressRegion": "Lagos",
+          "addressCountry": "NG"
+        }
+      },
+      "availableLanguage": ["English"]
+    }
+  }
+  </script>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Building Practice Ltd. All rights reserved. | <a href="../pages/privacy.html">Privacy Policy</a></p>
+    </div>
+  </footer>
+  <script src="../js/theme-sync.js" defer></script>
+</body>
+</html>

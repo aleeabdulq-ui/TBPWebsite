@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="../js/theme-head.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - TBP Blog</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="vendor/boxicons.min.css" rel="stylesheet">
+    <style>
+:root {
+            --primary: #00ACC1; --gradient-start: #00ACC1; --gradient-mid: #7C4DFF;
+            --gray-900: #111827; --gray-800: #1F2937; --gray-700: #374151; --gray-500: #6B7280;
+            --gray-100: #F3F4F6; --gray-50: #F9FAFB; --bg-primary: var(--white); --bg-secondary: var(--gray-50);
+            --bg-tertiary: var(--gray-100); --text-primary: var(--gray-900); --text-secondary: var(--gray-600);
+            --text-tertiary: var(--gray-400); --border-primary: var(--gray-200);
+            --shadow-xl: 0 20px 25px -5px rgba(0,0,0,0.1); --radius-lg: 12px; --radius-2xl: 24px;
+        }
+        [data-theme="dark"] {
+            --bg-primary: var(--gray-900); --bg-secondary: var(--gray-800); --bg-tertiary: var(--gray-700);
+            --text-primary: var(--white); --text-secondary: var(--gray-300); --text-tertiary: var(--gray-500);
+            --border-primary: var(--gray-700);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background: var(--bg-primary); min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+        .login-container { background: var(--bg-primary); padding: 48px; border-radius: var(--radius-2xl); box-shadow: var(--shadow-xl); max-width: 400px; width: 90%; border: 1px solid var(--border-primary); }
+        .login-header { text-align: center; margin-bottom: 32px; }
+        .login-logo { height: 50px; margin-bottom: 12px; }
+        .login-title { font-size: 28px; font-weight: 700; color: var(--text-primary); margin-bottom: 4px; }
+        .login-subtitle { color: var(--text-secondary); font-size: 16px; }
+        .form-group { margin-bottom: 24px; }
+        .form-label { display: block; font-weight: 500; margin-bottom: 8px; color: var(--text-primary); }
+        .form-input { width: 100%; padding: 16px; border: 2px solid var(--border-primary); border-radius: var(--radius-lg); font-size: 16px; transition: border-color 0.2s; background: var(--bg-secondary); color: var(--text-primary); }
+        .form-input:focus { outline: none; border-color: var(--primary); box-shadow: 0 0 0 3px rgba(0,172,193,0.1); }
+        .login-btn { width: 100%; padding: 16px; background: linear-gradient(135deg, var(--gradient-start), var(--gradient-mid)); color: white; border: none; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer; transition: transform 0.2s; }
+        .login-btn:hover { transform: translateY(-2px); }
+        .login-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+        .error { color: #ef4444; font-size: 14px; margin-top: 8px; display: none; }
+        @media (max-width: 480px) { .login-container { padding: 32px 24px; } }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-header">
+            <img src="../images/bp.png" alt="TBP Logo" class="login-logo" onerror="this.style.display='none'">
+            <h1 class="login-title">Blog Admin</h1>
+            <p class="login-subtitle">Sign in to manage posts & analytics</p>
+        </div>
+        <form id="loginForm">
+            <div class="form-group">
+                <label class="form-label">Password</label>
+                <input type="password" id="password" class="form-input" placeholder="Enter admin password" required>
+                <div class="error" id="errorMsg">Invalid password</div>
+            </div>
+            <button type="submit" class="login-btn">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', e => {
+            e.preventDefault();
+            const pwd = document.getElementById('password').value;
+            if (pwd === 'admin123') {
+                localStorage.setItem('adminLoggedIn', 'true');
+                localStorage.setItem('blog-auth', JSON.stringify({
+                    email: 'legacy-admin',
+                    loginTime: new Date().toISOString(),
+                    sessionId: Math.random().toString(36).substring(7)
+                }));
+                window.location.href = 'admin-blog.html';
+            } else {
+                document.getElementById('errorMsg').style.display = 'block';
+            }
+        });
+    </script>
+  <script src="../js/theme-sync.js" defer></script>
+</body>
+</html>

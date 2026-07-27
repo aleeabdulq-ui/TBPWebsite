@@ -1,0 +1,3111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="system">
+<head>
+  <script src="../js/theme-head.js"></script>
+  <script>
+    // Check authentication BEFORE page renders
+    if (!localStorage.getItem('blog-auth')) {
+      window.location.replace('blog-login.html');
+    }
+  </script>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Blog Admin | The Building Practice Ltd.</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="vendor/boxicons.min.css" rel="stylesheet" />
+
+  <style>
+    :root {
+      color-scheme: light;
+
+      --primary: #00ACC1;
+      --primary-light: #26C6DA;
+      --primary-dark: #00838F;
+
+      --white: #FFFFFF;
+      --gray-50: #F8FAFC;
+      --gray-100: #F1F5F9;
+      --gray-200: #E2E8F0;
+      --gray-300: #CBD5E1;
+      --gray-400: #94A3B8;
+      --gray-500: #64748B;
+      --gray-600: #475569;
+      --gray-700: #334155;
+      --gray-800: #1E293B;
+      --gray-900: #0F172A;
+
+      --success: #10B981;
+      --warning: #F59E0B;
+      --danger: #EF4444;
+      --info: #6366F1;
+      --purple: #8B5CF6;
+
+      --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+      --bg: var(--white);
+      --bg-secondary: var(--gray-50);
+      --surface: var(--white);
+      --surface-hover: var(--gray-50);
+
+      --text-primary: var(--gray-900);
+      --text-secondary: var(--gray-600);
+      --text-tertiary: var(--gray-500);
+
+      --border: var(--gray-200);
+      --border-strong: var(--gray-300);
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+
+      --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.08), 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -1px rgba(15, 23, 42, 0.04);
+      --shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.08), 0 4px 6px -2px rgba(15, 23, 42, 0.04);
+
+      --space-1: 4px;
+      --space-2: 8px;
+      --space-3: 12px;
+      --space-4: 16px;
+      --space-5: 20px;
+      --space-6: 24px;
+      --space-7: 28px;
+      --space-8: 32px;
+      --space-10: 40px;
+      --space-12: 48px;
+
+      --sidebar-width: 260px;
+      --header-height: 72px;
+
+      --safe-top: env(safe-area-inset-top, 0px);
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
+
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    html[data-theme="dark"],
+    body[data-theme="dark"] {
+      color-scheme: dark;
+
+      --bg: #0C0F14;
+      --bg-secondary: #0F141C;
+      --surface: #111826;
+      --surface-hover: #151E33;
+
+      --text-primary: #F8FAFC;
+      --text-secondary: #CBD5E1;
+      --text-tertiary: #64748B;
+
+      --border: rgba(148, 163, 184, 0.14);
+      --border-strong: rgba(148, 163, 184, 0.24);
+
+      --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.16);
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.24), 0 1px 2px rgba(0, 0, 0, 0.16);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.24), 0 2px 4px -1px rgba(0, 0, 0, 0.16);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.28), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html[data-theme="system"] {
+        color-scheme: dark;
+
+        --bg: #0C0F14;
+        --bg-secondary: #0F141C;
+        --surface: #111826;
+        --surface-hover: #151E33;
+
+        --text-primary: #F8FAFC;
+        --text-secondary: #CBD5E1;
+        --text-tertiary: #64748B;
+
+        --border: rgba(148, 163, 184, 0.14);
+        --border-strong: rgba(148, 163, 184, 0.24);
+
+        --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.16);
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.24), 0 1px 2px rgba(0, 0, 0, 0.16);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.24), 0 2px 4px -1px rgba(0, 0, 0, 0.16);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.28), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      min-height: 100vh;
+      font-family: var(--font-family);
+      color: var(--text-primary);
+      background: var(--bg);
+      line-height: 1.6;
+      overflow-x: hidden;
+      font-size: 14px;
+    }
+
+    body.no-scroll { overflow: hidden; }
+    button, input, select, textarea { font: inherit; }
+    button { -webkit-tap-highlight-color: transparent; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    ::selection {
+      background: color-mix(in srgb, var(--primary) 16%, transparent);
+      color: var(--text-primary);
+    }
+
+    kbd {
+      padding: 1px 5px;
+      border-radius: 4px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      font-family: monospace;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .admin-shell {
+      display: grid;
+      grid-template-columns: var(--sidebar-width) minmax(0, 1fr);
+      min-height: 100vh;
+    }
+
+    /* ============ SIDEBAR ============ */
+    .sidebar {
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      padding: calc(var(--space-6) + var(--safe-top)) var(--space-4) calc(var(--space-6) + var(--safe-bottom));
+      border-right: 1px solid var(--border);
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+      z-index: 900;
+      overflow-y: auto;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: var(--space-1) var(--space-2);
+      cursor: pointer;
+      border-radius: var(--radius-md);
+      transition: all 0.16s var(--ease-out);
+    }
+
+    .brand:hover {
+      background: var(--surface-hover);
+    }
+
+    .brand-mark {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, var(--primary), var(--primary-light));
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+
+    .brand-mark img {
+      width: 26px;
+      height: 26px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+    }
+
+    .brand-fallback {
+      color: var(--white);
+      font-weight: 800;
+      font-size: 14px;
+    }
+
+    .brand-title {
+      display: block;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .brand-subtitle {
+      display: block;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      font-weight: 500;
+      margin-top: 2px;
+    }
+
+    .sidebar-section {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .sidebar-label {
+      padding: 0 var(--space-3);
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-tertiary);
+      margin-bottom: var(--space-1);
+    }
+
+    .side-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .side-link {
+      width: 100%;
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      padding: 0 var(--space-3);
+      border-radius: var(--radius-md);
+      color: var(--text-secondary);
+      background: transparent;
+      border: none;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.16s var(--ease-out);
+      text-align: left;
+      position: relative;
+    }
+
+    .side-link:hover {
+      background: var(--surface-hover);
+      color: var(--text-primary);
+    }
+
+    .side-link.active {
+      background: color-mix(in srgb, var(--primary) 12%, transparent);
+      color: var(--primary-dark);
+    }
+
+    html[data-theme="dark"] .side-link.active,
+    body[data-theme="dark"] .side-link.active {
+      background: color-mix(in srgb, var(--primary) 18%, transparent);
+      color: var(--primary-light);
+    }
+
+    .side-link.active::before {
+      content: '';
+      position: absolute;
+      left: -16px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 3px;
+      height: 20px;
+      background: var(--primary);
+      border-radius: 0 2px 2px 0;
+    }
+
+    .side-link i {
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+
+    .side-link-badge {
+      margin-left: auto;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--primary) 14%, transparent);
+      color: var(--primary-dark);
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    html[data-theme="dark"] .side-link-badge,
+    body[data-theme="dark"] .side-link-badge {
+      color: var(--primary-light);
+    }
+
+    .theme-segment {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-1);
+      padding: var(--space-1);
+      border-radius: var(--radius-md);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+    }
+
+    .theme-option {
+      min-height: 32px;
+      border: none;
+      border-radius: calc(var(--radius-md) - 2px);
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.16s var(--ease-out);
+    }
+
+    .theme-option.active {
+      background: var(--surface);
+      color: var(--text-primary);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .sidebar-tip {
+      padding: var(--space-4);
+      border-radius: var(--radius-md);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+    }
+
+    .sidebar-tip strong {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--space-1);
+    }
+
+    .sidebar-tip p {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      line-height: 1.5;
+    }
+
+    /* ============ CONTENT ============ */
+    .content-shell {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      background: var(--bg-secondary);
+    }
+
+    .header {
+      position: sticky;
+      top: 0;
+      z-index: 800;
+      height: calc(var(--header-height) + var(--safe-top));
+      padding-top: var(--safe-top);
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px) saturate(140%);
+      -webkit-backdrop-filter: blur(12px) saturate(140%);
+    }
+
+    .header-inner {
+      height: var(--header-height);
+      max-width: 1600px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 clamp(var(--space-5), 3vw, var(--space-8));
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr) auto;
+      align-items: center;
+      gap: var(--space-5);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 40px;
+      height: 40px;
+      place-items: center;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-primary);
+      cursor: pointer;
+      transition: all 0.16s var(--ease-out);
+    }
+
+    .page-heading {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .page-kicker {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .page-title-small {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+
+    .search-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 540px;
+      margin: 0 auto;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: var(--space-4);
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-tertiary);
+      font-size: 18px;
+      pointer-events: none;
+    }
+
+    .search-shortcut {
+      position: absolute;
+      right: var(--space-3);
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      gap: 4px;
+      pointer-events: none;
+    }
+
+    .search-shortcut kbd {
+      padding: 2px 6px;
+      font-size: 11px;
+    }
+
+    #searchInput {
+      width: 100%;
+      height: 44px;
+      padding: 0 80px 0 calc(var(--space-4) + 22px);
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      font-size: 14px;
+      font-weight: 500;
+      transition: all 0.16s var(--ease-out);
+    }
+
+    #searchInput::placeholder { color: var(--text-tertiary); }
+    #searchInput:hover { border-color: var(--border-strong); }
+    #searchInput:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: var(--surface);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 12%, transparent);
+    }
+
+    #searchInput:focus ~ .search-shortcut {
+      display: none;
+    }
+
+    .clear-search {
+      position: absolute;
+      right: var(--space-2);
+      top: 50%;
+      transform: translateY(-50%);
+      width: 32px;
+      height: 32px;
+      display: none;
+      place-items: center;
+      border: none;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--text-tertiary);
+      cursor: pointer;
+      font-size: 20px;
+    }
+
+    .clear-search:hover { background: var(--surface-hover); color: var(--text-primary); }
+    .clear-search.is-visible { display: grid; }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .btn {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      padding: 0 var(--space-4);
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.16s var(--ease-out);
+      white-space: nowrap;
+      border: 1px solid transparent;
+    }
+
+    .btn i { font-size: 18px; }
+
+    .btn-ghost { background: transparent; color: var(--text-secondary); }
+    .btn-ghost:hover { background: var(--surface-hover); color: var(--text-primary); }
+
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      border-color: var(--primary);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); }
+
+    .btn-outline {
+      background: var(--surface);
+      color: var(--text-primary);
+      border-color: var(--border);
+    }
+    .btn-outline:hover { background: var(--surface-hover); border-color: var(--border-strong); }
+
+    .btn-danger {
+      background: color-mix(in srgb, var(--danger) 10%, transparent);
+      color: var(--danger);
+      border-color: color-mix(in srgb, var(--danger) 18%, transparent);
+    }
+    .btn-danger:hover { background: color-mix(in srgb, var(--danger) 14%, transparent); }
+
+    .main {
+      flex: 1;
+      width: 100%;
+      max-width: 1600px;
+      margin: 0 auto;
+      padding: clamp(var(--space-5), 3vw, var(--space-8));
+      display: flex;
+      flex-direction: column;
+      gap: clamp(var(--space-6), 3vw, var(--space-8));
+    }
+
+    .view-section { display: none; }
+    .view-section.active {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-6);
+      animation: fadeIn 0.3s var(--ease-out);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--space-5);
+      flex-wrap: wrap;
+    }
+
+    .section-title-group h2 {
+      font-size: clamp(20px, 2.5vw, 24px);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    .section-subtitle {
+      margin-top: var(--space-1);
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .section-actions {
+      display: flex;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    /* ============ STAT CARDS ============ */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .stat-card {
+      padding: var(--space-5);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-xs);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-4);
+      transition: all 0.16s var(--ease-out);
+    }
+
+    .stat-card:hover {
+      box-shadow: var(--shadow-sm);
+      transform: translateY(-1px);
+    }
+
+    .stat-card-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: var(--space-3);
+    }
+
+    .stat-icon {
+      width: 40px;
+      height: 40px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-md);
+      background: var(--icon-bg);
+      color: var(--icon-color);
+      font-size: 20px;
+    }
+
+    .stat-trend {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-1);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .stat-trend.up {
+      background: color-mix(in srgb, var(--success) 12%, transparent);
+      color: var(--success);
+    }
+
+    .stat-trend.down {
+      background: color-mix(in srgb, var(--danger) 12%, transparent);
+      color: var(--danger);
+    }
+
+    .stat-trend.neutral {
+      background: var(--bg-secondary);
+      color: var(--text-tertiary);
+    }
+
+    .stat-value {
+      font-size: clamp(28px, 4vw, 32px);
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-1);
+    }
+
+    .stat-detail {
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    /* ============ ACTIVITY ============ */
+    .activity-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .activity-card {
+      padding: var(--space-5);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-xs);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+
+    .activity-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+    }
+
+    .activity-card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .activity-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .activity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-3);
+      padding: var(--space-3);
+      border-radius: var(--radius-md);
+      transition: all 0.16s var(--ease-out);
+      cursor: pointer;
+    }
+
+    .activity-item:hover {
+      background: var(--surface-hover);
+    }
+
+    .activity-item-icon {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-md);
+      background: var(--activity-bg);
+      color: var(--activity-color);
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .activity-item-content {
+      flex: 1;
+      min-width: 0;
+      padding-top: 2px;
+    }
+
+    .activity-item-text {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+    }
+
+    .activity-item-time {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-top: 2px;
+    }
+
+    /* ============ TOOLBAR ============ */
+    .toolbar {
+      padding: var(--space-3);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-xs);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .toolbar-main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+    }
+
+    .filter-tabs {
+      display: flex;
+      align-items: center;
+      gap: var(--space-1);
+      overflow-x: auto;
+      scrollbar-width: none;
+      padding: 2px;
+      flex: 1;
+      min-width: 0;
+    }
+    .filter-tabs::-webkit-scrollbar { display: none; }
+
+    .filter-tab {
+      min-height: 36px;
+      padding: 0 var(--space-3);
+      border-radius: var(--radius-md);
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.16s var(--ease-out);
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      flex-shrink: 0;
+    }
+
+    .filter-tab:hover { background: var(--surface-hover); color: var(--text-primary); }
+
+    .filter-tab.active {
+      background: color-mix(in srgb, var(--primary) 12%, transparent);
+      color: var(--primary-dark);
+    }
+
+    html[data-theme="dark"] .filter-tab.active,
+    body[data-theme="dark"] .filter-tab.active {
+      background: color-mix(in srgb, var(--primary) 18%, transparent);
+      color: var(--primary-light);
+    }
+
+    .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+    }
+
+    .sort-select {
+      height: 36px;
+      padding: 0 var(--space-3);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-primary);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .view-toggle {
+      display: inline-flex;
+      gap: var(--space-1);
+      padding: var(--space-1);
+      border-radius: var(--radius-md);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+    }
+
+    .view-btn {
+      min-height: 30px;
+      padding: 0 var(--space-3);
+      border: none;
+      border-radius: calc(var(--radius-md) - 2px);
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      transition: all 0.16s var(--ease-out);
+    }
+
+    .view-btn.active {
+      background: var(--surface);
+      color: var(--text-primary);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .results-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      flex-wrap: wrap;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .active-filter-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .posts-board {
+      padding: var(--space-4);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-xs);
+      min-height: 400px;
+    }
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .blog-grid.list-view {
+      grid-template-columns: 1fr;
+    }
+
+    .blog-grid.list-view .blog-card {
+      display: grid;
+      grid-template-columns: minmax(220px, 280px) minmax(0, 1fr);
+    }
+
+    .blog-grid.list-view .blog-card-image {
+      height: 100%;
+      min-height: 200px;
+    }
+
+    .blog-card {
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      transition: all 0.2s var(--ease-out);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--border-strong);
+    }
+
+    .blog-card-image {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: var(--bg-secondary);
+    }
+
+    .blog-card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s var(--ease-out);
+    }
+
+    .blog-card:hover .blog-card-image img {
+      transform: scale(1.04);
+    }
+
+    .blog-card-category {
+      position: absolute;
+      top: var(--space-3);
+      left: var(--space-3);
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.82);
+      backdrop-filter: blur(8px);
+      color: var(--white);
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+
+    .blog-card-status {
+      position: absolute;
+      top: var(--space-3);
+      right: var(--space-3);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .blog-card-status.published {
+      background: color-mix(in srgb, var(--success) 90%, transparent);
+      color: white;
+    }
+
+    .blog-card-status.draft {
+      background: color-mix(in srgb, var(--warning) 90%, transparent);
+      color: white;
+    }
+
+    .blog-card-content {
+      padding: var(--space-4);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+      flex: 1;
+    }
+
+    .blog-card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.3;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .blog-card-excerpt {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .blog-card-meta {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-3);
+      flex-wrap: wrap;
+      font-size: 12px;
+      color: var(--text-tertiary);
+    }
+
+    .blog-card-stats {
+      display: flex;
+      gap: var(--space-3);
+    }
+
+    .stat-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .stat-pill i { font-size: 14px; }
+
+    .blog-card-actions {
+      display: flex;
+      gap: var(--space-2);
+      margin-top: auto;
+      padding-top: var(--space-3);
+      border-top: 1px solid var(--border);
+    }
+
+    .card-btn {
+      min-height: 34px;
+      padding: 0 var(--space-3);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-primary);
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: var(--space-2);
+      transition: all 0.16s var(--ease-out);
+      flex: 1;
+      justify-content: center;
+    }
+
+    .card-btn:hover { background: var(--surface-hover); border-color: var(--border-strong); }
+
+    .card-btn.danger {
+      color: var(--danger);
+      border-color: color-mix(in srgb, var(--danger) 18%, transparent);
+      background: color-mix(in srgb, var(--danger) 8%, transparent);
+    }
+
+    .card-btn.danger:hover { background: color-mix(in srgb, var(--danger) 14%, transparent); }
+
+    .card-btn.primary {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .card-btn.primary:hover { background: var(--primary-dark); border-color: var(--primary-dark); }
+
+    .empty-state {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: var(--space-12) var(--space-6);
+      gap: var(--space-4);
+      min-height: 400px;
+    }
+
+    .empty-state.is-visible { display: flex; }
+
+    .empty-icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-lg);
+      background: color-mix(in srgb, var(--primary) 12%, transparent);
+      color: var(--primary);
+      font-size: 28px;
+    }
+
+    .empty-state strong {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .empty-state p {
+      color: var(--text-secondary);
+      max-width: 480px;
+    }
+
+    /* ============ ANALYTICS ============ */
+    .analytics-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--space-4);
+    }
+
+    .chart-card {
+      padding: var(--space-5);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .chart-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: var(--space-3);
+      height: 240px;
+      padding: var(--space-4) 0;
+    }
+
+    .chart-bar {
+      flex: 1;
+      background: linear-gradient(180deg, var(--primary), var(--primary-light));
+      border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.2s var(--ease-out);
+      min-height: 20px;
+    }
+
+    .chart-bar:hover {
+      background: linear-gradient(180deg, var(--primary-dark), var(--primary));
+      transform: translateY(-2px);
+    }
+
+    .chart-bar-label {
+      position: absolute;
+      bottom: -28px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-tertiary);
+      white-space: nowrap;
+    }
+
+    .chart-bar-value {
+      position: absolute;
+      top: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-primary);
+      white-space: nowrap;
+    }
+
+    .category-list {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3);
+    }
+
+    .category-item {
+      padding: var(--space-3);
+      border-radius: var(--radius-md);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+    }
+
+    .category-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .category-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-transform: capitalize;
+    }
+
+    .category-count {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      font-weight: 600;
+    }
+
+    .category-bar {
+      height: 6px;
+      background: var(--border);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+
+    .category-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--primary), var(--primary-light));
+      border-radius: 999px;
+      transition: width 0.4s var(--ease-out);
+    }
+
+    /* ============ SETTINGS ============ */
+    .settings-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: var(--space-4);
+    }
+
+    .settings-card {
+      padding: var(--space-5);
+      border-radius: var(--radius-lg);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-xs);
+    }
+
+    .settings-card h3 {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--space-3);
+    }
+
+    .settings-card p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: var(--space-4);
+      line-height: 1.5;
+    }
+
+    .setting-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-3) 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .setting-row:last-child {
+      border-bottom: none;
+    }
+
+    .setting-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .setting-description {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      margin-top: 2px;
+    }
+
+    .toggle {
+      width: 44px;
+      height: 24px;
+      background: var(--border);
+      border-radius: 999px;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.2s var(--ease-out);
+    }
+
+    .toggle.active {
+      background: var(--primary);
+    }
+
+    .toggle::after {
+      content: '';
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s var(--ease-out);
+    }
+
+    .toggle.active::after {
+      transform: translateX(20px);
+    }
+
+    /* ============ MODAL ============ */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-4);
+    }
+
+    .modal-backdrop.active { display: flex; }
+
+    .modal {
+      background: var(--surface);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      width: 100%;
+      max-width: 600px;
+      max-height: 90vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      animation: modalSlide 0.2s var(--ease-out);
+    }
+
+    @keyframes modalSlide {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .modal-header {
+      padding: var(--space-5);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .modal-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .modal-close {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-md);
+      border: none;
+      background: transparent;
+      color: var(--text-secondary);
+      cursor: pointer;
+    }
+
+    .modal-close:hover { background: var(--surface-hover); color: var(--text-primary); }
+
+    .modal-body {
+      padding: var(--space-5);
+      overflow-y: auto;
+      flex: 1;
+    }
+
+    .modal-footer {
+      padding: var(--space-4) var(--space-5);
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+      gap: var(--space-2);
+    }
+
+    .form-group { margin-bottom: var(--space-4); }
+
+    .form-label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: var(--space-2);
+    }
+
+    .form-input,
+    .form-textarea,
+    .form-select {
+      width: 100%;
+      padding: var(--space-3);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      font-size: 14px;
+      transition: all 0.16s var(--ease-out);
+    }
+
+    .form-input:focus,
+    .form-textarea:focus,
+    .form-select:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px color-mix(in srgb, var(--primary) 12%, transparent);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .stats-grid-modal {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--space-3);
+      margin-bottom: var(--space-4);
+    }
+
+    .stat-box {
+      padding: var(--space-4);
+      border-radius: var(--radius-md);
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .stat-box-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: var(--space-1);
+    }
+
+    .stat-box-label {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      font-weight: 600;
+    }
+
+    /* ============ TOAST ============ */
+    .toast-container {
+      position: fixed;
+      top: calc(var(--header-height) + var(--safe-top) + var(--space-4));
+      right: var(--space-4);
+      z-index: 1200;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-2);
+      pointer-events: none;
+    }
+
+    .toast {
+      min-width: 280px;
+      max-width: 400px;
+      padding: var(--space-3) var(--space-4);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+      pointer-events: auto;
+      animation: toastSlide 0.3s var(--ease-out);
+    }
+
+    @keyframes toastSlide {
+      from { opacity: 0; transform: translateX(20px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    .toast-icon {
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: var(--radius-md);
+      flex-shrink: 0;
+      font-size: 16px;
+    }
+
+    .toast-icon.success { background: color-mix(in srgb, var(--success) 14%, transparent); color: var(--success); }
+    .toast-icon.error { background: color-mix(in srgb, var(--danger) 14%, transparent); color: var(--danger); }
+    .toast-icon.info { background: color-mix(in srgb, var(--info) 14%, transparent); color: var(--info); }
+
+    .toast-content {
+      flex: 1;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* ============ PAGINATION ============ */
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-2);
+      flex-wrap: wrap;
+    }
+
+    .page-btn {
+      min-width: 40px;
+      height: 40px;
+      padding: 0 var(--space-3);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-primary);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.16s var(--ease-out);
+    }
+
+    .page-btn:hover:not([disabled]) {
+      background: var(--surface-hover);
+      border-color: var(--border-strong);
+    }
+
+    .page-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--white);
+    }
+
+    .page-btn[disabled] {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+
+    /* ============ MOBILE ============ */
+    .mobile-bottom-bar {
+      position: fixed;
+      left: 50%;
+      bottom: calc(var(--space-4) + var(--safe-bottom));
+      transform: translateX(-50%);
+      z-index: 1100;
+      display: none;
+      gap: var(--space-2);
+      padding: var(--space-2);
+      border-radius: 999px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .sidebar-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.5);
+      backdrop-filter: blur(4px);
+      z-index: 850;
+      display: none;
+    }
+
+    .sidebar-backdrop.is-open { display: block; }
+
+    @media (max-width: 1180px) {
+      .admin-shell { grid-template-columns: 1fr; }
+      .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: min(88vw, 280px);
+        transform: translateX(-100%);
+        transition: transform 0.24s var(--ease-out);
+        box-shadow: var(--shadow-lg);
+      }
+      .sidebar.is-open { transform: translateX(0); }
+      .mobile-menu-btn { display: grid; }
+      .page-heading { display: none; }
+      .analytics-grid { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 880px) {
+      .stats-grid { grid-template-columns: repeat(2, 1fr); }
+      .activity-row { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+      .blog-grid.list-view .blog-card { grid-template-columns: 1fr; }
+      .blog-grid.list-view .blog-card-image { aspect-ratio: 16/9; min-height: auto; }
+    }
+
+    @media (max-width: 640px) {
+      :root { --header-height: 64px; }
+      .header-inner { padding: 0 var(--space-4); gap: var(--space-3); }
+      .main { padding: var(--space-5) var(--space-4) calc(var(--space-12) + var(--safe-bottom)); }
+      .stats-grid { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: 1fr; }
+      .toolbar-main { flex-direction: column; align-items: stretch; }
+      .toolbar-actions { width: 100%; justify-content: space-between; }
+      .view-toggle { flex: 1; }
+      .view-btn { flex: 1; justify-content: center; }
+      .header-actions { display: none; }
+      .mobile-bottom-bar { display: flex; }
+      .search-shortcut { display: none; }
+      .toast-container { left: var(--space-4); right: var(--space-4); }
+      .toast { min-width: 0; max-width: none; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar-backdrop" id="sidebarBackdrop"></div>
+
+  <div class="admin-shell">
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand" onclick="app.navigate('dashboard')">
+        <span class="brand-mark">
+          <img src="../images/bp.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" />
+          <span class="brand-fallback" style="display:none">BP</span>
+        </span>
+        <span>
+          <span class="brand-title">Blog Admin</span>
+          <span class="brand-subtitle">The Building Practice</span>
+        </span>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Main</div>
+        <nav class="side-nav">
+          <button class="side-link active" data-view="dashboard" onclick="app.navigate('dashboard')">
+            <i class="bx bx-grid-alt"></i>
+            <span>Dashboard</span>
+          </button>
+          <button class="side-link" data-view="posts" onclick="app.navigate('posts')">
+            <i class="bx bx-news"></i>
+            <span>All Posts</span>
+            <span class="side-link-badge" id="postsBadge">0</span>
+          </button>
+          <button class="side-link" data-view="analytics" onclick="app.navigate('analytics')">
+            <i class="bx bx-line-chart"></i>
+            <span>Analytics</span>
+          </button>
+          <button class="side-link" data-view="categories" onclick="app.navigate('categories')">
+            <i class="bx bx-category"></i>
+            <span>Categories</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Tools</div>
+        <nav class="side-nav">
+          <button class="side-link" onclick="app.openNewPostModal()">
+            <i class="bx bx-plus-circle"></i>
+            <span>New Post</span>
+          </button>
+          <button class="side-link" data-view="drafts" onclick="app.navigate('drafts')">
+            <i class="bx bx-edit-alt"></i>
+            <span>Drafts</span>
+            <span class="side-link-badge" id="draftsBadge">0</span>
+          </button>
+          <button class="side-link" data-view="settings" onclick="app.navigate('settings')">
+            <i class="bx bx-cog"></i>
+            <span>Settings</span>
+          </button>
+        </nav>
+      </div>
+
+      <div class="sidebar-section">
+        <div class="sidebar-label">Appearance</div>
+        <div class="theme-segment">
+          <button class="theme-option" data-theme-choice="light" onclick="app.setTheme('light')">Light</button>
+          <button class="theme-option" data-theme-choice="system" onclick="app.setTheme('system')">Auto</button>
+          <button class="theme-option" data-theme-choice="dark" onclick="app.setTheme('dark')">Dark</button>
+        </div>
+      </div>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-tip">
+          <strong>💡 Pro tip</strong>
+          <p>Press <kbd>Ctrl</kbd> + <kbd>K</kbd> to search instantly.</p>
+        </div>
+
+        <button class="side-link" onclick="app.logout()">
+          <i class="bx bx-log-out"></i>
+          <span>Logout</span>
+        </button>
+      </div>
+    </aside>
+
+    <div class="content-shell">
+      <header class="header">
+        <div class="header-inner">
+          <button class="mobile-menu-btn" id="mobileMenuBtn" onclick="app.toggleSidebar()">
+            <i class="bx bx-menu"></i>
+          </button>
+
+          <div class="page-heading">
+            <div class="page-kicker" id="pageKicker">Admin Panel</div>
+            <div class="page-title-small" id="pageTitle">Dashboard</div>
+          </div>
+
+          <div class="search-wrapper">
+            <i class="bx bx-search search-icon"></i>
+            <input type="text" id="searchInput" placeholder="Search posts, categories..." autocomplete="off" oninput="app.handleSearch(this.value)" />
+            <div class="search-shortcut">
+              <kbd>Ctrl</kbd>
+              <kbd>K</kbd>
+            </div>
+            <button class="clear-search" id="clearSearchBtn" onclick="app.clearSearch()">
+              <i class="bx bx-x"></i>
+            </button>
+          </div>
+
+          <div class="header-actions">
+            <button class="btn btn-ghost" onclick="app.cycleTheme()" title="Cycle theme">
+              <i class="bx bx-moon"></i>
+              <span id="themeCycleLabel">Auto</span>
+            </button>
+            <button class="btn btn-primary" onclick="app.openNewPostModal()">
+              <i class="bx bx-plus"></i>
+              <span>New Post</span>
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main class="main">
+
+        <!-- ============ DASHBOARD VIEW ============ -->
+        <section class="view-section active" id="dashboardView">
+          <div class="section-header">
+            <div class="section-title-group">
+              <h2>Dashboard Overview</h2>
+              <p class="section-subtitle">Welcome back! Here's what's happening with your blog today.</p>
+            </div>
+            <div class="section-actions">
+              <button class="btn btn-outline" onclick="app.refreshData()">
+                <i class="bx bx-refresh"></i>
+                <span>Refresh</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <div class="stat-card-header">
+                <div class="stat-icon" style="--icon-bg: color-mix(in srgb, var(--primary) 12%, transparent); --icon-color: var(--primary);">
+                  <i class="bx bx-news"></i>
+                </div>
+                <div class="stat-trend up"><i class="bx bx-trending-up"></i><span>12%</span></div>
+              </div>
+              <div>
+                <div class="stat-label">Total Posts</div>
+                <div class="stat-value" id="totalPostsCount">0</div>
+                <div class="stat-detail">All time published</div>
+              </div>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-card-header">
+                <div class="stat-icon" style="--icon-bg: color-mix(in srgb, var(--success) 12%, transparent); --icon-color: var(--success);">
+                  <i class="bx bx-show"></i>
+                </div>
+                <div class="stat-trend up"><i class="bx bx-trending-up"></i><span>8%</span></div>
+              </div>
+              <div>
+                <div class="stat-label">Total Views</div>
+                <div class="stat-value" id="totalViewsCount">0</div>
+                <div class="stat-detail">Across all posts</div>
+              </div>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-card-header">
+                <div class="stat-icon" style="--icon-bg: color-mix(in srgb, var(--danger) 12%, transparent); --icon-color: var(--danger);">
+                  <i class="bx bx-heart"></i>
+                </div>
+                <div class="stat-trend up"><i class="bx bx-trending-up"></i><span>15%</span></div>
+              </div>
+              <div>
+                <div class="stat-label">Total Likes</div>
+                <div class="stat-value" id="totalLikesCount">0</div>
+                <div class="stat-detail">User engagement</div>
+              </div>
+            </article>
+
+            <article class="stat-card">
+              <div class="stat-card-header">
+                <div class="stat-icon" style="--icon-bg: color-mix(in srgb, var(--info) 12%, transparent); --icon-color: var(--info);">
+                  <i class="bx bx-message-square"></i>
+                </div>
+                <div class="stat-trend up"><i class="bx bx-trending-up"></i><span>5%</span></div>
+              </div>
+              <div>
+                <div class="stat-label">Comments</div>
+                <div class="stat-value" id="totalCommentsCount">0</div>
+                <div class="stat-detail">Active discussions</div>
+              </div>
+            </article>
+          </div>
+
+          <div class="activity-row">
+            <div class="activity-card">
+              <div class="activity-card-header">
+                <h3 class="activity-card-title">Recent Posts</h3>
+                <button class="btn btn-ghost" onclick="app.navigate('posts')">
+                  <span>View all</span>
+                  <i class="bx bx-right-arrow-alt"></i>
+                </button>
+              </div>
+              <div class="activity-list" id="recentPostsList"></div>
+            </div>
+
+            <div class="activity-card">
+              <div class="activity-card-header">
+                <h3 class="activity-card-title">Top Performing</h3>
+                <button class="btn btn-ghost" onclick="app.navigate('analytics')">
+                  <span>Analytics</span>
+                  <i class="bx bx-right-arrow-alt"></i>
+                </button>
+              </div>
+              <div class="activity-list" id="topPostsList"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ POSTS VIEW ============ -->
+        <section class="view-section" id="postsView">
+          <div class="section-header">
+            <div class="section-title-group">
+              <h2>All Posts</h2>
+              <p class="section-subtitle">Manage and organize all your blog content</p>
+            </div>
+            <div class="section-actions">
+              <button class="btn btn-primary" onclick="app.openNewPostModal()">
+                <i class="bx bx-plus"></i>
+                <span>Create New</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="toolbar">
+            <div class="toolbar-main">
+              <div class="filter-tabs">
+                <button class="filter-tab active" data-filter="all" onclick="app.setFilter('all')">
+                  <i class="bx bx-layer"></i> All
+                </button>
+                <button class="filter-tab" data-filter="engineering" onclick="app.setFilter('engineering')">Engineering</button>
+                <button class="filter-tab" data-filter="construction" onclick="app.setFilter('construction')">Construction</button>
+                <button class="filter-tab" data-filter="design" onclick="app.setFilter('design')">Design</button>
+                <button class="filter-tab" data-filter="sustainability" onclick="app.setFilter('sustainability')">Sustainability</button>
+                <button class="filter-tab" data-filter="technology" onclick="app.setFilter('technology')">Technology</button>
+                <button class="filter-tab" data-filter="projects" onclick="app.setFilter('projects')">Projects</button>
+              </div>
+              <div class="toolbar-actions">
+                <select class="sort-select" onchange="app.setSort(this.value)">
+                  <option value="newest">Newest first</option>
+                  <option value="oldest">Oldest first</option>
+                  <option value="views">Most viewed</option>
+                  <option value="likes">Most liked</option>
+                </select>
+                <div class="view-toggle">
+                  <button class="view-btn active" data-view="grid" onclick="app.setView('grid')">
+                    <i class="bx bx-grid-alt"></i><span>Grid</span>
+                  </button>
+                  <button class="view-btn" data-view="list" onclick="app.setView('list')">
+                    <i class="bx bx-list-ul"></i><span>List</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="results-bar">
+            <div class="active-filter-pill">
+              <i class="bx bx-filter-alt"></i>
+              <span id="activeFilterLabel">All posts</span>
+            </div>
+            <div id="resultSummary">Loading posts...</div>
+          </div>
+
+          <div class="posts-board">
+            <div class="blog-grid" id="blogGrid"></div>
+            <div class="empty-state" id="emptyState">
+              <div class="empty-icon"><i class="bx bx-search-alt-2"></i></div>
+              <strong>No posts found</strong>
+              <p>Try adjusting your search or filter to find what you're looking for.</p>
+            </div>
+          </div>
+
+          <nav class="pagination" id="adminBlogPagination" aria-label="Admin blog pagination"></nav>
+        </section>
+
+        <!-- ============ ANALYTICS VIEW ============ -->
+        <section class="view-section" id="analyticsView">
+          <div class="section-header">
+            <div class="section-title-group">
+              <h2>Analytics</h2>
+              <p class="section-subtitle">Deep insights into your blog's performance</p>
+            </div>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <div class="stat-card-header">
+                <div class="stat-icon" style="--icon-bg: color-mix(in srgb, var(--primary) 12%, transparent); --icon-color: var(--primary);">
+                  <i class="bx bx-show"></i>
+                </div>
+              </div>
+              <div>
+                <div class="stat-label">Total Impressions</div>
+                <div class="stat-value" id="analyticsViews">0</div>
+                <div class="stat-detail">Across all posts</div>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-card-header">
+                <div class="stat-icon" style="--icon-bg: color-mix(in srgb, var(--success) 12%, transparent); --icon-color: var(--success);">
+                  <i class="bx bx-trending-up"></i>
+                </div>
+              </div>
+              <div>
+                <div class="stat-label">Engagement Rate</div>
+                <div class="stat-value" id="analyticsEngagement">0%</div>
+                <div class="stat-detail">Avg interactions</div>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-card-header">
+                <div class="stat-icon" style="--icon-bg: color-mix(in srgb, var(--warning) 12%, transparent); --icon-color: var(--warning);">
+                  <i class="bx bx-time"></i>
+                </div>
+              </div>
+              <div>
+                <div class="stat-label">Avg. Read Time</div>
+                <div class="stat-value">4.2m</div>
+                <div class="stat-detail">Per article</div>
+              </div>
+            </article>
+            <article class="stat-card">
+              <div class="stat-card-header">
+                <div class="stat-icon" style="--icon-bg: color-mix(in srgb, var(--info) 12%, transparent); --icon-color: var(--info);">
+                  <i class="bx bx-share-alt"></i>
+                </div>
+              </div>
+              <div>
+                <div class="stat-label">Total Shares</div>
+                <div class="stat-value" id="analyticsShares">0</div>
+                <div class="stat-detail">Social sharing</div>
+              </div>
+            </article>
+          </div>
+
+          <div class="analytics-grid">
+            <div class="chart-card">
+              <div class="activity-card-header" style="margin-bottom: var(--space-4);">
+                <h3 class="activity-card-title">Views by Top Posts</h3>
+              </div>
+              <div class="chart-bars" id="chartBars"></div>
+            </div>
+
+            <div class="chart-card">
+              <div class="activity-card-header" style="margin-bottom: var(--space-4);">
+                <h3 class="activity-card-title">Category Breakdown</h3>
+              </div>
+              <div class="category-list" id="categoryBreakdown"></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ CATEGORIES VIEW ============ -->
+        <section class="view-section" id="categoriesView">
+          <div class="section-header">
+            <div class="section-title-group">
+              <h2>Categories</h2>
+              <p class="section-subtitle">Organize your content with categories</p>
+            </div>
+          </div>
+
+          <div class="stats-grid" id="categoriesGrid"></div>
+        </section>
+
+        <!-- ============ DRAFTS VIEW ============ -->
+        <section class="view-section" id="draftsView">
+          <div class="section-header">
+            <div class="section-title-group">
+              <h2>Drafts</h2>
+              <p class="section-subtitle">Posts in progress that haven't been published yet</p>
+            </div>
+            <div class="section-actions">
+              <button class="btn btn-primary" onclick="app.openNewPostModal()">
+                <i class="bx bx-plus"></i>
+                <span>New Draft</span>
+              </button>
+            </div>
+          </div>
+
+          <div class="posts-board">
+            <div class="blog-grid" id="draftsGrid"></div>
+            <div class="empty-state is-visible" id="draftsEmpty">
+              <div class="empty-icon"><i class="bx bx-edit-alt"></i></div>
+              <strong>No drafts yet</strong>
+              <p>Create a new post to start drafting. All unpublished posts will appear here.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ SETTINGS VIEW ============ -->
+        <section class="view-section" id="settingsView">
+          <div class="section-header">
+            <div class="section-title-group">
+              <h2>Settings</h2>
+              <p class="section-subtitle">Manage your admin preferences and blog configuration</p>
+            </div>
+          </div>
+
+          <div class="settings-grid">
+            <div class="settings-card">
+              <h3>General</h3>
+              <p>Basic configuration for your blog admin panel.</p>
+              <div class="setting-row">
+                <div>
+                  <div class="setting-label">Auto-save drafts</div>
+                  <div class="setting-description">Automatically save changes</div>
+                </div>
+                <div class="toggle active" onclick="app.toggleSetting(this)"></div>
+              </div>
+              <div class="setting-row">
+                <div>
+                  <div class="setting-label">Email notifications</div>
+                  <div class="setting-description">Get notified of new comments</div>
+                </div>
+                <div class="toggle" onclick="app.toggleSetting(this)"></div>
+              </div>
+              <div class="setting-row">
+                <div>
+                  <div class="setting-label">Compact view</div>
+                  <div class="setting-description">Show more content per page</div>
+                </div>
+                <div class="toggle" onclick="app.toggleSetting(this)"></div>
+              </div>
+            </div>
+
+            <div class="settings-card">
+              <h3>Appearance</h3>
+              <p>Customize how the admin panel looks.</p>
+              <div class="setting-row">
+                <div>
+                  <div class="setting-label">Theme</div>
+                  <div class="setting-description">Light, dark, or system</div>
+                </div>
+                <select class="sort-select" onchange="app.setTheme(this.value)">
+                  <option value="light">Light</option>
+                  <option value="system" selected>Auto</option>
+                  <option value="dark">Dark</option>
+                </select>
+              </div>
+              <div class="setting-row">
+                <div>
+                  <div class="setting-label">Animations</div>
+                  <div class="setting-description">Enable UI transitions</div>
+                </div>
+                <div class="toggle active" onclick="app.toggleSetting(this)"></div>
+              </div>
+            </div>
+
+            <div class="settings-card">
+              <h3>Data Management</h3>
+              <p>Export or reset your blog data.</p>
+              <div class="setting-row">
+                <div>
+                  <div class="setting-label">Export all posts</div>
+                  <div class="setting-description">Download as JSON file</div>
+                </div>
+                <button class="btn btn-outline" onclick="app.exportData()">
+                  <i class="bx bx-download"></i>
+                  <span>Export</span>
+                </button>
+              </div>
+              <div class="setting-row">
+                <div>
+                  <div class="setting-label">Reset data</div>
+                  <div class="setting-description">Restore original demo posts</div>
+                </div>
+                <button class="btn btn-danger" onclick="app.resetData()">
+                  <i class="bx bx-reset"></i>
+                  <span>Reset</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="settings-card">
+              <h3>Account</h3>
+              <p>Admin session and security.</p>
+              <div class="setting-row">
+                <div>
+                  <div class="setting-label">Logged in as</div>
+                  <div class="setting-description">admin@buildingpractice.com</div>
+                </div>
+                <span class="active-filter-pill" style="color: var(--success);">
+                  <i class="bx bx-check-circle"></i>
+                  Active
+                </span>
+              </div>
+              <div class="setting-row">
+                <div>
+                  <div class="setting-label">Sign out</div>
+                  <div class="setting-description">End your admin session</div>
+                </div>
+                <button class="btn btn-danger" onclick="app.logout()">
+                  <i class="bx bx-log-out"></i>
+                  <span>Logout</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ============ MODALS ============ -->
+  <div class="modal-backdrop" id="editModal" onclick="if(event.target===this)app.closeModal()">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Edit Post</h3>
+        <button class="modal-close" onclick="app.closeModal()"><i class="bx bx-x"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="editForm">
+          <input type="hidden" id="editPostId">
+          <div class="form-group">
+            <label class="form-label">Title</label>
+            <input type="text" class="form-input" id="editTitle" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Category</label>
+            <select class="form-select" id="editCategory">
+              <option value="construction">Construction</option>
+              <option value="engineering">Engineering</option>
+              <option value="design">Design</option>
+              <option value="sustainability">Sustainability</option>
+              <option value="technology">Technology</option>
+              <option value="projects">Projects</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Status</label>
+            <select class="form-select" id="editStatus">
+              <option value="published">Published</option>
+              <option value="draft">Draft</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Excerpt</label>
+            <textarea class="form-textarea" id="editExcerpt" rows="3" required></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Content</label>
+            <textarea class="form-textarea" id="editContent" rows="6"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Image URL</label>
+            <input type="text" class="form-input" id="editImage">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" onclick="app.closeModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="app.savePost()">Save Changes</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="statsModal" onclick="if(event.target===this)app.closeModal()">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title" id="statsModalTitle">Post Statistics</h3>
+        <button class="modal-close" onclick="app.closeModal()"><i class="bx bx-x"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="stats-grid-modal">
+          <div class="stat-box">
+            <div class="stat-box-value" id="statViews">0</div>
+            <div class="stat-box-label">Total Views</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-value" id="statLikes">0</div>
+            <div class="stat-box-label">Likes</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-value" id="statComments">0</div>
+            <div class="stat-box-label">Comments</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-box-value" id="statShares">0</div>
+            <div class="stat-box-label">Shares</div>
+          </div>
+        </div>
+        <div style="padding: var(--space-4); background: var(--bg-secondary); border-radius: var(--radius-md); border: 1px solid var(--border);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: var(--space-2); font-weight: 600;">
+            <span>Engagement Rate</span>
+            <span id="statEngagement">0%</span>
+          </div>
+          <div style="height: 8px; background: var(--border); border-radius: 999px; overflow: hidden;">
+            <div id="engagementBar" style="height: 100%; background: linear-gradient(90deg, var(--primary), var(--primary-light)); width: 0%; transition: width 0.4s var(--ease-out);"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" onclick="app.closeModal()">Close</button>
+        <button class="btn btn-primary" onclick="app.editFromStats()">Edit Post</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="newPostModal" onclick="if(event.target===this)app.closeModal()">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 class="modal-title">Create New Post</h3>
+        <button class="modal-close" onclick="app.closeModal()"><i class="bx bx-x"></i></button>
+      </div>
+      <div class="modal-body">
+        <form id="newPostForm">
+          <div class="form-group">
+            <label class="form-label">Title *</label>
+            <input type="text" class="form-input" id="newTitle" required placeholder="Enter post title">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Category</label>
+            <select class="form-select" id="newCategory">
+              <option value="construction">Construction</option>
+              <option value="engineering">Engineering</option>
+              <option value="design">Design</option>
+              <option value="sustainability">Sustainability</option>
+              <option value="technology">Technology</option>
+              <option value="projects">Projects</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Status</label>
+            <select class="form-select" id="newStatus">
+              <option value="published">Publish immediately</option>
+              <option value="draft">Save as draft</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Excerpt *</label>
+            <textarea class="form-textarea" id="newExcerpt" rows="3" required placeholder="Brief description..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Content</label>
+            <textarea class="form-textarea" id="newContent" rows="6" placeholder="Write your content..."></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Image URL</label>
+            <input type="text" class="form-input" id="newImage" placeholder="https://example.com/image.jpg">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" onclick="app.closeModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="app.createPost()">Create Post</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-backdrop" id="confirmModal" onclick="if(event.target===this)app.closeModal()">
+    <div class="modal" style="max-width: 420px;">
+      <div class="modal-header">
+        <h3 class="modal-title" id="confirmTitle">Confirm</h3>
+        <button class="modal-close" onclick="app.closeModal()"><i class="bx bx-x"></i></button>
+      </div>
+      <div class="modal-body">
+        <p id="confirmMessage" style="color: var(--text-secondary);">Are you sure?</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-ghost" onclick="app.closeModal()">Cancel</button>
+        <button class="btn btn-danger" id="confirmAction">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-bottom-bar">
+    <button class="btn btn-ghost" onclick="app.toggleSidebar()">
+      <i class="bx bx-menu"></i>
+    </button>
+    <button class="btn btn-outline" onclick="app.navigate('posts')">
+      <i class="bx bx-news"></i>
+      <span>Posts</span>
+    </button>
+    <button class="btn btn-primary" onclick="app.openNewPostModal()">
+      <i class="bx bx-plus"></i>
+      <span>New</span>
+    </button>
+  </div>
+
+  <div class="toast-container" id="toastContainer"></div>
+
+  <script>
+    // ============ INITIAL DATA ============
+    const initialPosts = [
+      { id: 1, title: "Sustainable Building Materials for Modern Construction", category: "sustainability", status: "published", excerpt: "Exploring eco-friendly alternatives that are reshaping the construction industry.", content: "Full article content...", image: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=450&fit=crop", date: "2024-01-15", views: 1245, likes: 89, comments: 23, shares: 12 },
+      { id: 2, title: "Modern Construction Techniques in Urban Planning", category: "construction", status: "published", excerpt: "How innovative methods are solving complex urban development challenges.", content: "Full article content...", image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=450&fit=crop", date: "2024-01-14", views: 892, likes: 67, comments: 15, shares: 8 },
+      { id: 3, title: "Smart Building Technologies: The Future is Now", category: "technology", status: "published", excerpt: "IoT and AI integration in building management systems.", content: "Full article content...", image: "https://images.unsplash.com/photo-1558002038-1091a166111c?w=800&h=450&fit=crop", date: "2024-01-13", views: 2103, likes: 156, comments: 42, shares: 34 },
+      { id: 4, title: "Minimalist Design Principles for Commercial Spaces", category: "design", status: "published", excerpt: "Less is more: Creating functional and beautiful work environments.", content: "Full article content...", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=450&fit=crop", date: "2024-01-12", views: 756, likes: 54, comments: 12, shares: 6 },
+      { id: 5, title: "Project Spotlight: The Green Tower Initiative", category: "projects", status: "published", excerpt: "A deep dive into our latest sustainable high-rise development.", content: "Full article content...", image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&h=450&fit=crop", date: "2024-01-11", views: 1567, likes: 112, comments: 28, shares: 19 },
+      { id: 6, title: "Concrete Innovations: Stronger and Greener", category: "construction", status: "published", excerpt: "New formulations reducing carbon footprint while increasing durability.", content: "Full article content...", image: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?w=800&h=450&fit=crop", date: "2024-01-10", views: 934, likes: 71, comments: 18, shares: 9 },
+      { id: 7, title: "Biophilic Design: Bringing Nature Indoors", category: "design", status: "published", excerpt: "Incorporating natural elements to improve wellbeing and productivity.", content: "Full article content...", image: "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=800&h=450&fit=crop", date: "2024-01-09", views: 1123, likes: 98, comments: 31, shares: 15 },
+      { id: 8, title: "Renewable Energy Integration in Buildings", category: "sustainability", status: "published", excerpt: "Solar, wind, and geothermal solutions for modern architecture.", content: "Full article content...", image: "https://images.unsplash.com/photo-1509391366360-2e959784a276?w=800&h=450&fit=crop", date: "2024-01-08", views: 1876, likes: 134, comments: 45, shares: 28 },
+      { id: 9, title: "3D Printing in Construction: A Revolution", category: "technology", status: "published", excerpt: "How additive manufacturing is changing how we build homes.", content: "Full article content...", image: "https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=800&h=450&fit=crop", date: "2024-01-07", views: 2234, likes: 187, comments: 56, shares: 41 },
+      { id: 10, title: "Adaptive Reuse: Transforming Old Structures", category: "projects", status: "published", excerpt: "Converting heritage buildings for contemporary use.", content: "Full article content...", image: "https://images.unsplash.com/photo-1513828583688-c52646db42da?w=800&h=450&fit=crop", date: "2024-01-06", views: 1432, likes: 103, comments: 27, shares: 14 },
+      { id: 11, title: "Steel vs. Timber: Modern Structural Choices", category: "construction", status: "published", excerpt: "Comparing materials for strength, sustainability, and cost.", content: "Full article content...", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=450&fit=crop", date: "2024-01-05", views: 867, likes: 62, comments: 19, shares: 7 },
+      { id: 12, title: "Color Theory in Interior Architecture", category: "design", status: "published", excerpt: "Using psychology and light to create impactful spaces.", content: "Full article content...", image: "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?w=800&h=450&fit=crop", date: "2024-01-04", views: 1098, likes: 87, comments: 24, shares: 11 },
+      { id: 13, title: "Zero Waste Construction Sites", category: "sustainability", status: "published", excerpt: "Strategies for eliminating waste in building projects.", content: "Full article content...", image: "https://images.unsplash.com/photo-1531834685032-c34bf0d84c7c?w=800&h=450&fit=crop", date: "2024-01-03", views: 1543, likes: 121, comments: 38, shares: 22 },
+      { id: 14, title: "Augmented Reality in Building Design", category: "technology", status: "published", excerpt: "Visualizing projects before breaking ground.", content: "Full article content...", image: "https://images.unsplash.com/photo-1622979135225-d2ba269fb1bd?w=800&h=450&fit=crop", date: "2024-01-02", views: 1987, likes: 145, comments: 33, shares: 26 },
+      { id: 15, title: "Case Study: The Eco-District Project", category: "projects", status: "published", excerpt: "Building a self-sustaining community from scratch.", content: "Full article content...", image: "https://images.unsplash.com/photo-1449844908441-8829872d2607?w=800&h=450&fit=crop", date: "2024-01-01", views: 2156, likes: 167, comments: 51, shares: 35 },
+      { id: 16, title: "Foundation Engineering for Soft Soils", category: "construction", status: "draft", excerpt: "Techniques for building on challenging terrain.", content: "Draft content...", image: "https://images.unsplash.com/photo-1590486803833-1c5dc8ddd4c8?w=800&h=450&fit=crop", date: "2023-12-30", views: 0, likes: 0, comments: 0, shares: 0 },
+      { id: 17, title: "Scandinavian Design Influence on Modern Offices", category: "design", status: "published", excerpt: "Hygge and functionality in workplace architecture.", content: "Full article content...", image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&h=450&fit=crop", date: "2023-12-29", views: 1321, likes: 94, comments: 22, shares: 13 },
+      { id: 18, title: "Carbon Negative Buildings: The Next Goal", category: "sustainability", status: "published", excerpt: "Beyond net zero: Creating structures that clean the air.", content: "Full article content...", image: "https://images.unsplash.com/photo-1518091043644-c1d4457512c6?w=800&h=450&fit=crop", date: "2023-12-28", views: 1654, likes: 128, comments: 41, shares: 24 },
+      { id: 19, title: "Blockchain in Property Management", category: "technology", status: "draft", excerpt: "Smart contracts and transparent building operations.", content: "Draft content...", image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=800&h=450&fit=crop", date: "2023-12-27", views: 0, likes: 0, comments: 0, shares: 0 },
+      { id: 20, title: "Waterfront Development: Balancing Nature and Progress", category: "projects", status: "published", excerpt: "Sustainable approaches to coastal construction.", content: "Full article content...", image: "https://images.unsplash.com/photo-1565008447742-97f6f38c985c?w=800&h=450&fit=crop", date: "2023-12-26", views: 1876, likes: 143, comments: 37, shares: 21 },
+      { id: 21, title: "Prefabrication: Speed Meets Quality", category: "construction", status: "published", excerpt: "Off-site manufacturing advantages for tight schedules.", content: "Full article content...", image: "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=800&h=450&fit=crop", date: "2023-12-25", views: 956, likes: 72, comments: 16, shares: 8 },
+      { id: 22, title: "Lighting Design for Health and Productivity", category: "design", status: "published", excerpt: "Circadian rhythms and architectural illumination.", content: "Full article content...", image: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=800&h=450&fit=crop", date: "2023-12-24", views: 1234, likes: 91, comments: 21, shares: 12 }
+    ];
+
+    // ============ APP STATE & METHODS ============
+    const app = {
+      posts: [],
+      currentView: 'dashboard',
+      currentFilter: 'all',
+      currentSort: 'newest',
+      viewMode: 'grid',
+      editingId: null,
+      postsPerPage: 9,
+      currentPage: 1,
+
+      async init() {
+        this.posts = await this.loadPosts();
+        
+        const savedTheme = localStorage.getItem('theme') || localStorage.getItem('adminThemePreference') || 'system';
+        this.setTheme(savedTheme);
+        
+        this.viewMode = localStorage.getItem('adminBlogView') || 'grid';
+        
+        this.updateBadges();
+        this.navigate('dashboard');
+        this.setupKeyboard();
+      },
+
+      normalizePost(post, index = 0) {
+        const slug = post.slug || String(post.title || `post-${Date.now()}-${index}`)
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/^-|-$/g, '');
+
+        return {
+          id: post.id || this.hashSlug(slug),
+          slug,
+          title: post.title || 'Untitled post',
+          category: post.category || 'construction',
+          status: post.status || 'published',
+          excerpt: post.excerpt || '',
+          content: post.content || '',
+          image: post.image || '../images/blog/sustainability.jpg',
+          date: post.date || new Date().toISOString().split('T')[0],
+          views: Number(post.views) || 0,
+          likes: Number(post.likes) || 0,
+          comments: Number(post.comments) || 0,
+          shares: Number(post.shares) || 0,
+          readTime: post.readTime || '5',
+          author: post.author || 'Building Practice Team'
+        };
+      },
+
+      hashSlug(slug) {
+        let hash = 0;
+        for (let i = 0; i < slug.length; i++) {
+          hash = ((hash << 5) - hash) + slug.charCodeAt(i);
+          hash |= 0;
+        }
+        return Math.abs(hash) || Date.now();
+      },
+
+      mergePosts(...postLists) {
+        const merged = new Map();
+        postLists.flat().filter(Boolean).forEach((post, index) => {
+          const normalized = this.normalizePost(post, index);
+          const existing = merged.get(normalized.slug);
+          if (existing) {
+            merged.set(normalized.slug, { ...existing, ...normalized, image: existing.image });
+          } else {
+            merged.set(normalized.slug, normalized);
+          }
+        });
+        return Array.from(merged.values());
+      },
+
+      async loadPosts() {
+        const saved = JSON.parse(localStorage.getItem('blogPosts') || '[]');
+        let sourcePosts = [];
+
+        try {
+          const response = await fetch('../data/tbp-blog.json', { cache: 'no-store' });
+          if (!response.ok) throw new Error('Blog JSON unavailable');
+          sourcePosts = await response.json();
+        } catch (error) {
+          console.warn('Using admin fallback posts:', error.message);
+          sourcePosts = initialPosts;
+        }
+
+        const savedEdits = sourcePosts.length ? saved.filter(post => post && post.slug) : saved;
+        const posts = this.mergePosts(sourcePosts, savedEdits);
+        localStorage.setItem('blogPosts', JSON.stringify(posts));
+        return posts;
+      },
+
+      savePosts() {
+        localStorage.setItem('blogPosts', JSON.stringify(this.posts));
+        this.updateBadges();
+      },
+
+      updateBadges() {
+        const total = this.posts.length;
+        const drafts = this.posts.filter(p => p.status === 'draft').length;
+        document.getElementById('postsBadge').textContent = total;
+        document.getElementById('draftsBadge').textContent = drafts;
+      },
+
+      navigate(view) {
+        this.currentView = view;
+        
+        document.querySelectorAll('.side-link').forEach(link => {
+          link.classList.toggle('active', link.dataset.view === view);
+        });
+        
+        document.querySelectorAll('.view-section').forEach(s => s.classList.remove('active'));
+        const target = document.getElementById(view + 'View');
+        if (target) target.classList.add('active');
+        
+        const titles = {
+          dashboard: { kicker: 'Overview', title: 'Dashboard' },
+          posts: { kicker: 'Content', title: 'All Posts' },
+          analytics: { kicker: 'Insights', title: 'Analytics' },
+          categories: { kicker: 'Organize', title: 'Categories' },
+          drafts: { kicker: 'In Progress', title: 'Drafts' },
+          settings: { kicker: 'Configure', title: 'Settings' }
+        };
+        
+        if (titles[view]) {
+          document.getElementById('pageKicker').textContent = titles[view].kicker;
+          document.getElementById('pageTitle').textContent = titles[view].title;
+        }
+        
+        if (window.innerWidth <= 1180) this.toggleSidebar(false);
+        
+        // Render view-specific content
+        switch(view) {
+          case 'dashboard': this.renderDashboard(); break;
+          case 'posts': this.renderPosts(); break;
+          case 'analytics': this.renderAnalytics(); break;
+          case 'categories': this.renderCategories(); break;
+          case 'drafts': this.renderDrafts(); break;
+        }
+        
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      },
+
+      setTheme(theme) {
+        const resolved = theme === 'system' 
+          ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+          : theme;
+        document.documentElement.dataset.theme = theme === 'system' ? 'system' : resolved;
+        document.documentElement.dataset.themeChoice = theme;
+        document.body.dataset.theme = resolved;
+        localStorage.setItem('theme', theme);
+        localStorage.setItem('adminThemePreference', theme);
+        document.querySelectorAll('.theme-option').forEach(btn => {
+          btn.classList.toggle('active', btn.dataset.themeChoice === theme);
+        });
+        const label = document.getElementById('themeCycleLabel');
+        if (label) label.textContent = theme === 'system' ? 'Auto' : theme.charAt(0).toUpperCase() + theme.slice(1);
+      },
+
+      cycleTheme() {
+        const current = document.documentElement.dataset.themeChoice || 'system';
+        const next = current === 'light' ? 'dark' : current === 'dark' ? 'system' : 'light';
+        this.setTheme(next);
+        this.toast('Theme: ' + next, 'info');
+      },
+
+      toggleSidebar(force) {
+        const sidebar = document.getElementById('sidebar');
+        const backdrop = document.getElementById('sidebarBackdrop');
+        const isOpen = force !== undefined ? force : !sidebar.classList.contains('is-open');
+        sidebar.classList.toggle('is-open', isOpen);
+        backdrop.classList.toggle('is-open', isOpen);
+        document.body.classList.toggle('no-scroll', isOpen);
+      },
+
+      setFilter(filter) {
+        this.currentFilter = filter;
+        this.currentPage = 1;
+        document.querySelectorAll('.filter-tab').forEach(t => {
+          t.classList.toggle('active', t.dataset.filter === filter);
+        });
+        document.getElementById('activeFilterLabel').textContent = 
+          filter === 'all' ? 'All posts' : filter.charAt(0).toUpperCase() + filter.slice(1);
+        this.renderPosts();
+      },
+
+      setSort(sort) {
+        this.currentSort = sort;
+        this.currentPage = 1;
+        this.renderPosts();
+      },
+
+      setView(mode) {
+        this.viewMode = mode;
+        localStorage.setItem('adminBlogView', mode);
+        document.getElementById('blogGrid').classList.toggle('list-view', mode === 'list');
+        document.querySelectorAll('.view-btn').forEach(b => {
+          b.classList.toggle('active', b.dataset.view === mode);
+        });
+      },
+
+      handleSearch(query) {
+        this.currentPage = 1;
+        document.getElementById('clearSearchBtn').classList.toggle('is-visible', query.length > 0);
+        if (this.currentView === 'posts') this.renderPosts();
+        else if (this.currentView === 'drafts') this.renderDrafts();
+      },
+
+      clearSearch() {
+        this.currentPage = 1;
+        document.getElementById('searchInput').value = '';
+        document.getElementById('clearSearchBtn').classList.remove('is-visible');
+        if (this.currentView === 'posts') this.renderPosts();
+        else if (this.currentView === 'drafts') this.renderDrafts();
+      },
+
+      getFilteredPosts(includeAll = false) {
+        let filtered = includeAll ? [...this.posts] : this.posts.filter(p => p.status === 'published');
+        
+        if (this.currentFilter !== 'all') {
+          filtered = filtered.filter(p => p.category === this.currentFilter);
+        }
+        
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        if (query) {
+          filtered = filtered.filter(p => 
+            p.title.toLowerCase().includes(query) || 
+            p.excerpt.toLowerCase().includes(query) ||
+            p.category.toLowerCase().includes(query)
+          );
+        }
+        
+        switch(this.currentSort) {
+          case 'oldest': filtered.sort((a, b) => new Date(a.date) - new Date(b.date)); break;
+          case 'views': filtered.sort((a, b) => b.views - a.views); break;
+          case 'likes': filtered.sort((a, b) => b.likes - a.likes); break;
+          default: filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+        }
+        
+        return filtered;
+      },
+
+      renderDashboard() {
+        const total = this.posts.length;
+        const totalViews = this.posts.reduce((s, p) => s + p.views, 0);
+        const totalLikes = this.posts.reduce((s, p) => s + p.likes, 0);
+        const totalComments = this.posts.reduce((s, p) => s + p.comments, 0);
+        
+        document.getElementById('totalPostsCount').textContent = total;
+        document.getElementById('totalViewsCount').textContent = this.formatNumber(totalViews);
+        document.getElementById('totalLikesCount').textContent = this.formatNumber(totalLikes);
+        document.getElementById('totalCommentsCount').textContent = this.formatNumber(totalComments);
+        
+        // Recent posts
+        const recent = [...this.posts].sort((a, b) => new Date(b.date) - new Date(a.date)).slice(0, 4);
+        document.getElementById('recentPostsList').innerHTML = recent.map(p => `
+          <div class="activity-item" onclick="app.editPost(${p.id})">
+            <div class="activity-item-icon" style="--activity-bg: color-mix(in srgb, var(--primary) 12%, transparent); --activity-color: var(--primary);">
+              <i class="bx bx-news"></i>
+            </div>
+            <div class="activity-item-content">
+              <div class="activity-item-text">${p.title}</div>
+              <div class="activity-item-time">${this.formatDate(p.date)} · ${this.formatNumber(p.views)} views</div>
+            </div>
+          </div>
+        `).join('');
+        
+        // Top performing
+        const top = [...this.posts].sort((a, b) => b.views - a.views).slice(0, 4);
+        document.getElementById('topPostsList').innerHTML = top.map(p => `
+          <div class="activity-item" onclick="app.viewStats(${p.id})">
+            <div class="activity-item-icon" style="--activity-bg: color-mix(in srgb, var(--success) 12%, transparent); --activity-color: var(--success);">
+              <i class="bx bx-trending-up"></i>
+            </div>
+            <div class="activity-item-content">
+              <div class="activity-item-text">${p.title}</div>
+              <div class="activity-item-time">${this.formatNumber(p.views)} views · ${this.formatNumber(p.likes)} likes</div>
+            </div>
+          </div>
+        `).join('');
+      },
+
+      renderPosts() {
+        const filtered = this.getFilteredPosts();
+        const grid = document.getElementById('blogGrid');
+        const empty = document.getElementById('emptyState');
+        const summary = document.getElementById('resultSummary');
+        const totalPages = Math.max(1, Math.ceil(filtered.length / this.postsPerPage));
+        this.currentPage = Math.min(this.currentPage, totalPages);
+        const start = (this.currentPage - 1) * this.postsPerPage;
+        const pagePosts = filtered.slice(start, start + this.postsPerPage);
+        
+        const query = document.getElementById('searchInput').value;
+        summary.textContent = query 
+          ? `${filtered.length} result${filtered.length !== 1 ? 's' : ''} for "${query}"`
+          : `Showing ${filtered.length} post${filtered.length !== 1 ? 's' : ''} · page ${this.currentPage} of ${totalPages}`;
+        
+        empty.classList.toggle('is-visible', filtered.length === 0);
+        grid.innerHTML = pagePosts.map(p => this.renderCard(p)).join('');
+        
+        this.setView(this.viewMode);
+        this.renderPagination(filtered.length);
+      },
+
+      renderPagination(totalPosts) {
+        const pagination = document.getElementById('adminBlogPagination');
+        if (!pagination) return;
+
+        const totalPages = Math.ceil(totalPosts / this.postsPerPage);
+        if (totalPages <= 1) {
+          pagination.innerHTML = '';
+          pagination.style.display = 'none';
+          return;
+        }
+
+        pagination.style.display = 'flex';
+        const visibleCount = Math.min(5, totalPages);
+        let startPage = Math.max(1, this.currentPage - Math.floor(visibleCount / 2));
+        let endPage = startPage + visibleCount - 1;
+        if (endPage > totalPages) {
+          endPage = totalPages;
+          startPage = Math.max(1, endPage - visibleCount + 1);
+        }
+        const pages = Array.from({ length: endPage - startPage + 1 }, (_, index) => startPage + index);
+        pagination.innerHTML = `
+          <button class="page-btn" ${this.currentPage === 1 ? 'disabled' : ''} onclick="app.goToPostsPage(${this.currentPage - 1})" aria-label="Previous page">
+            Previous
+          </button>
+          ${pages.map(page => `
+            <button class="page-btn ${this.currentPage === page ? 'active' : ''}" onclick="app.goToPostsPage(${page})" ${this.currentPage === page ? 'aria-current="page"' : ''}>
+              ${page}
+            </button>
+          `).join('')}
+          <button class="page-btn" ${this.currentPage === totalPages ? 'disabled' : ''} onclick="app.goToPostsPage(${this.currentPage + 1})" aria-label="Next page">
+            Next
+          </button>
+        `;
+      },
+
+      goToPostsPage(page) {
+        const totalPages = Math.max(1, Math.ceil(this.getFilteredPosts().length / this.postsPerPage));
+        this.currentPage = Math.min(Math.max(1, page), totalPages);
+        this.renderPosts();
+        document.getElementById('postsView')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      },
+
+      renderDrafts() {
+        const drafts = this.posts.filter(p => p.status === 'draft');
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const filtered = query 
+          ? drafts.filter(p => p.title.toLowerCase().includes(query) || p.excerpt.toLowerCase().includes(query))
+          : drafts;
+        
+        const grid = document.getElementById('draftsGrid');
+        const empty = document.getElementById('draftsEmpty');
+        
+        if (filtered.length === 0) {
+          empty.classList.add('is-visible');
+          grid.innerHTML = '';
+        } else {
+          empty.classList.remove('is-visible');
+          grid.innerHTML = filtered.map(p => this.renderCard(p)).join('');
+        }
+      },
+
+      renderCard(p) {
+        return `
+          <article class="blog-card">
+            <div class="blog-card-image">
+              <img src="${p.image}" alt="${p.title}" onerror="this.src='https://via.placeholder.com/800x450/00ACC1/ffffff?text=No+Image'">
+              <span class="blog-card-category">${p.category}</span>
+              <span class="blog-card-status ${p.status}">${p.status}</span>
+            </div>
+            <div class="blog-card-content">
+              <h3 class="blog-card-title">${p.title}</h3>
+              <p class="blog-card-excerpt">${p.excerpt}</p>
+              <div class="blog-card-meta">
+                <div class="blog-card-stats">
+                  <span class="stat-pill" title="Views"><i class="bx bx-show"></i>${this.formatNumber(p.views)}</span>
+                  <span class="stat-pill" title="Likes"><i class="bx bx-heart"></i>${this.formatNumber(p.likes)}</span>
+                  <span class="stat-pill" title="Comments"><i class="bx bx-message"></i>${this.formatNumber(p.comments)}</span>
+                </div>
+                <span>${this.formatDate(p.date)}</span>
+              </div>
+              <div class="blog-card-actions">
+                <button class="card-btn primary" onclick="app.viewStats(${p.id})">
+                  <i class="bx bx-bar-chart-alt-2"></i> Stats
+                </button>
+                <button class="card-btn" onclick="app.editPost(${p.id})">
+                  <i class="bx bx-edit"></i> Edit
+                </button>
+                <button class="card-btn danger" onclick="app.deletePost(${p.id})">
+                  <i class="bx bx-trash"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+        `;
+      },
+
+      renderAnalytics() {
+        const totalViews = this.posts.reduce((s, p) => s + p.views, 0);
+        const totalEngagements = this.posts.reduce((s, p) => s + p.likes + p.comments + p.shares, 0);
+        const totalShares = this.posts.reduce((s, p) => s + p.shares, 0);
+        const engagement = totalViews > 0 ? ((totalEngagements / totalViews) * 100).toFixed(1) : 0;
+        
+        document.getElementById('analyticsViews').textContent = this.formatNumber(totalViews);
+        document.getElementById('analyticsEngagement').textContent = engagement + '%';
+        document.getElementById('analyticsShares').textContent = this.formatNumber(totalShares);
+        
+        // Top 7 posts bar chart
+        const top = [...this.posts].sort((a, b) => b.views - a.views).slice(0, 7);
+        const max = Math.max(...top.map(p => p.views));
+        document.getElementById('chartBars').innerHTML = top.map((p, i) => {
+          const height = (p.views / max) * 100;
+          const label = p.title.split(' ').slice(0, 2).join(' ');
+          return `
+            <div class="chart-bar" style="height: ${height}%;" title="${p.title}: ${p.views} views">
+              <span class="chart-bar-value">${this.formatNumber(p.views)}</span>
+              <span class="chart-bar-label">${label}</span>
+            </div>
+          `;
+        }).join('');
+        
+        // Category breakdown
+        const categories = {};
+        this.posts.forEach(p => {
+          if (!categories[p.category]) categories[p.category] = { count: 0, views: 0 };
+          categories[p.category].count++;
+          categories[p.category].views += p.views;
+        });
+        
+        const maxCount = Math.max(...Object.values(categories).map(c => c.count));
+        document.getElementById('categoryBreakdown').innerHTML = Object.entries(categories).map(([name, data]) => `
+          <div class="category-item">
+            <div class="category-item-header">
+              <span class="category-name">${name}</span>
+              <span class="category-count">${data.count} posts · ${this.formatNumber(data.views)} views</span>
+            </div>
+            <div class="category-bar">
+              <div class="category-bar-fill" style="width: ${(data.count / maxCount) * 100}%;"></div>
+            </div>
+          </div>
+        `).join('');
+      },
+
+      renderCategories() {
+        const categories = {};
+        this.posts.forEach(p => {
+          if (!categories[p.category]) categories[p.category] = { count: 0, views: 0, likes: 0 };
+          categories[p.category].count++;
+          categories[p.category].views += p.views;
+          categories[p.category].likes += p.likes;
+        });
+        
+        const colors = ['primary', 'success', 'warning', 'info', 'danger'];
+        const icons = { construction: 'bx-buildings', design: 'bx-palette', sustainability: 'bx-leaf', technology: 'bx-chip', projects: 'bx-briefcase' };
+        
+        document.getElementById('categoriesGrid').innerHTML = Object.entries(categories).map(([name, data], i) => {
+          const color = colors[i % colors.length];
+          const icon = icons[name] || 'bx-folder';
+          return `
+            <article class="stat-card" onclick="app.setFilter('${name}'); app.navigate('posts')" style="cursor: pointer;">
+              <div class="stat-card-header">
+                <div class="stat-icon" style="--icon-bg: color-mix(in srgb, var(--${color}) 12%, transparent); --icon-color: var(--${color});">
+                  <i class="bx ${icon}"></i>
+                </div>
+                <i class="bx bx-right-arrow-alt" style="color: var(--text-tertiary); font-size: 20px;"></i>
+              </div>
+              <div>
+                <div class="stat-label" style="text-transform: capitalize;">${name}</div>
+                <div class="stat-value">${data.count}</div>
+                <div class="stat-detail">${this.formatNumber(data.views)} views · ${this.formatNumber(data.likes)} likes</div>
+              </div>
+            </article>
+          `;
+        }).join('');
+      },
+
+      viewStats(id) {
+        const p = this.posts.find(x => x.id === id);
+        if (!p) return;
+        this.editingId = id;
+        document.getElementById('statsModalTitle').textContent = p.title;
+        document.getElementById('statViews').textContent = this.formatNumber(p.views);
+        document.getElementById('statLikes').textContent = this.formatNumber(p.likes);
+        document.getElementById('statComments').textContent = this.formatNumber(p.comments);
+        document.getElementById('statShares').textContent = this.formatNumber(p.shares);
+        const eng = p.views > 0 ? (((p.likes + p.comments + p.shares) / p.views) * 100).toFixed(1) : 0;
+        document.getElementById('statEngagement').textContent = eng + '%';
+        document.getElementById('engagementBar').style.width = Math.min(eng * 2, 100) + '%';
+        document.getElementById('statsModal').classList.add('active');
+      },
+
+      editFromStats() {
+        if (this.editingId) {
+          this.closeModal();
+          setTimeout(() => this.editPost(this.editingId), 200);
+        }
+      },
+
+      editPost(id) {
+        const p = this.posts.find(x => x.id === id);
+        if (!p) return;
+        document.getElementById('editPostId').value = p.id;
+        document.getElementById('editTitle').value = p.title;
+        document.getElementById('editCategory').value = p.category;
+        document.getElementById('editStatus').value = p.status;
+        document.getElementById('editExcerpt').value = p.excerpt;
+        document.getElementById('editContent').value = p.content;
+        document.getElementById('editImage').value = p.image;
+        document.getElementById('editModal').classList.add('active');
+      },
+
+      savePost() {
+        const id = parseInt(document.getElementById('editPostId').value);
+        const p = this.posts.find(x => x.id === id);
+        if (!p) return;
+        p.title = document.getElementById('editTitle').value;
+        p.category = document.getElementById('editCategory').value;
+        p.status = document.getElementById('editStatus').value;
+        p.excerpt = document.getElementById('editExcerpt').value;
+        p.content = document.getElementById('editContent').value;
+        p.image = document.getElementById('editImage').value;
+        this.savePosts();
+        this.closeModal();
+        this.toast('Post updated successfully', 'success');
+        this.navigate(this.currentView);
+      },
+
+      deletePost(id) {
+        const p = this.posts.find(x => x.id === id);
+        if (!p) return;
+        this.confirm(
+          'Delete Post',
+          `Are you sure you want to delete "${p.title}"? This action cannot be undone.`,
+          () => {
+            this.posts = this.posts.filter(x => x.id !== id);
+            this.savePosts();
+            this.toast('Post deleted', 'success');
+            this.navigate(this.currentView);
+          }
+        );
+      },
+
+      openNewPostModal() {
+        document.getElementById('newPostForm').reset();
+        document.getElementById('newPostModal').classList.add('active');
+      },
+
+      createPost() {
+        const title = document.getElementById('newTitle').value.trim();
+        const excerpt = document.getElementById('newExcerpt').value.trim();
+        
+        if (!title || !excerpt) {
+          this.toast('Please fill in title and excerpt', 'error');
+          return;
+        }
+        
+        const newPost = {
+          id: Date.now(),
+          title,
+          category: document.getElementById('newCategory').value,
+          status: document.getElementById('newStatus').value,
+          excerpt,
+          content: document.getElementById('newContent').value,
+          image: document.getElementById('newImage').value || `https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&h=450&fit=crop`,
+          date: new Date().toISOString().split('T')[0],
+          views: 0, likes: 0, comments: 0, shares: 0
+        };
+        
+        this.posts.unshift(newPost);
+        this.savePosts();
+        this.closeModal();
+        this.toast(`${newPost.status === 'draft' ? 'Draft' : 'Post'} created successfully`, 'success');
+        this.navigate(newPost.status === 'draft' ? 'drafts' : 'posts');
+      },
+
+      confirm(title, message, action) {
+        document.getElementById('confirmTitle').textContent = title;
+        document.getElementById('confirmMessage').textContent = message;
+        const btn = document.getElementById('confirmAction');
+        const newBtn = btn.cloneNode(true);
+        btn.parentNode.replaceChild(newBtn, btn);
+        newBtn.onclick = () => {
+          action();
+          this.closeModal();
+        };
+        document.getElementById('confirmModal').classList.add('active');
+      },
+
+      closeModal() {
+        document.querySelectorAll('.modal-backdrop').forEach(m => m.classList.remove('active'));
+      },
+
+      refreshData() {
+        this.toast('Data refreshed', 'success');
+        this.navigate(this.currentView);
+      },
+
+      exportData() {
+        const blob = new Blob([JSON.stringify(this.posts, null, 2)], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `blog-posts-${new Date().toISOString().split('T')[0]}.json`;
+        a.click();
+        URL.revokeObjectURL(url);
+        this.toast('Data exported', 'success');
+      },
+
+      resetData() {
+        this.confirm(
+          'Reset Data',
+          'This will restore posts from the main blog data source and delete local admin-only changes. Continue?',
+          async () => {
+            localStorage.removeItem('blogPosts');
+            this.posts = await this.loadPosts();
+            this.savePosts();
+            this.toast('Blog posts restored from source data', 'success');
+            this.navigate('dashboard');
+          }
+        );
+      },
+
+      toggleSetting(el) {
+        el.classList.toggle('active');
+        this.toast('Setting updated', 'info');
+      },
+
+      logout() {
+        this.confirm(
+          'Sign Out',
+          'Are you sure you want to log out?',
+          () => {
+            localStorage.removeItem('blog-auth');
+            localStorage.removeItem('blog-email');
+            window.location.href = 'blog-login.html';
+          }
+        );
+      },
+
+      toast(message, type = 'info') {
+        const icons = { success: 'bx-check-circle', error: 'bx-error-circle', info: 'bx-info-circle' };
+        const container = document.getElementById('toastContainer');
+        const toast = document.createElement('div');
+        toast.className = 'toast';
+        toast.innerHTML = `
+          <div class="toast-icon ${type}"><i class="bx ${icons[type]}"></i></div>
+          <div class="toast-content">${message}</div>
+        `;
+        container.appendChild(toast);
+        setTimeout(() => {
+          toast.style.animation = 'toastSlide 0.3s var(--ease-out) reverse';
+          setTimeout(() => toast.remove(), 300);
+        }, 3000);
+      },
+
+      formatNumber(num) {
+        if (num >= 1000000) return (num / 1000000).toFixed(1) + 'M';
+        if (num >= 1000) return (num / 1000).toFixed(1) + 'k';
+        return num.toString();
+      },
+
+      formatDate(dateStr) {
+        const date = new Date(dateStr);
+        const now = new Date();
+        const diff = Math.floor((now - date) / (1000 * 60 * 60 * 24));
+        if (diff === 0) return 'Today';
+        if (diff === 1) return 'Yesterday';
+        if (diff < 7) return `${diff} days ago`;
+        return date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+      },
+
+      setupKeyboard() {
+        document.addEventListener('keydown', (e) => {
+          const isMac = navigator.platform.toUpperCase().includes('MAC');
+          const cmd = isMac ? e.metaKey : e.ctrlKey;
+          
+          if (cmd && e.key.toLowerCase() === 'k') {
+            e.preventDefault();
+            document.getElementById('searchInput').focus();
+          }
+          if (cmd && e.key.toLowerCase() === 'n') {
+            e.preventDefault();
+            this.openNewPostModal();
+          }
+          if (e.key === 'Escape') {
+            this.closeModal();
+            if (document.getElementById('sidebar').classList.contains('is-open')) {
+              this.toggleSidebar(false);
+            }
+          }
+        });
+
+        document.getElementById('sidebarBackdrop').addEventListener('click', () => this.toggleSidebar(false));
+      }
+    };
+
+    // Auth check
+    if (localStorage.getItem('adminLoggedIn') !== 'true') {
+      // Legacy compatibility for older admin helpers.
+      localStorage.setItem('adminLoggedIn', 'true');
+    }
+
+    document.addEventListener('DOMContentLoaded', () => app.init());
+  </script>
+  <script src="../js/theme-sync.js" defer></script>
+</body>
+</html>

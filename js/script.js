@@ -205,7 +205,7 @@ if (filterButtons.length > 0 && projectItems.length > 0) {
 ===================================*/
 function animateCounter(element) {
   const target = parseInt(element.getAttribute('data-count'));
-  const duration = 2000; // 2 seconds
+  const duration = 3000;
   const increment = target / (duration / 16); // 60fps
   let current = 0;
   
@@ -494,6 +494,202 @@ window.addEventListener('load', function() {
   document.body.classList.add('loaded');
 });
 
+// Video Player Enhancements (Local + Sticky)
+let currentLocalVideo = null;
+let philosophyVideos = [
+  {id: '01-innovation', path: '../videos/philosophy/01-innovation.mp4', youtube: 'YEFR-Ay9BX8'},
+  {id: '02-sustainability', path: '../videos/philosophy/02-sustainability.mp4', youtube: 'beUzEqtOAUc'},
+  {id: '03-human-centric', path: '../videos/philosophy/03-human-centric.mp4', youtube: 'jV1v2NNEdVw'},
+  {id: '04-craftsmanship', path: '../videos/philosophy/04-craftsmanship.mp4', youtube: '8bKffrD0Q0k'},
+  {id: '05-legacy', path: '../videos/philosophy/05-legacy.mp4', youtube: '7KMM5gD6eG4'}
+];
+
+async function checkVideoExists(videoPath) {
+  try {
+    const response = await fetch(videoPath, { method: 'HEAD' });
+    return response.ok;
+  } catch {
+    return false;
+  }
+}
+
+async function initLocalVideos() {
+  const videoEmbeds = document.querySelectorAll('.video-embed');
+  
+  for (let video of philosophyVideos) {
+    const embed = document.querySelector(`[data-video-id="${video.youtube}"]`);
+    if (!embed) continue;
+    
+    const hasLocal = await checkVideoExists(video.path);
+    
+    if (hasLocal) {
+      embed.classList.add('local-video-ready');
+      
+      // Create video element
+      const videoEl = document.createElement('video');
+      videoEl.src = video.path;
+      videoEl.preload = 'metadata';
+      videoEl.muted = true;
+      videoEl.playsInline = true;
+      videoEl.className = 'video-player-local';
+      embed.appendChild(videoEl);
+      
+      // Update play button
+      const playBtn = embed.querySelector('.video-play');
+      playBtn.textContent = '🎥';
+      playBtn.title = 'Play Local Video';
+    }
+  }
+  
+  // Local toggle button
+  const toggleBtn = document.createElement('button');
+  toggleBtn.className = 'local-video-toggle';
+  toggleBtn.innerHTML = '🎬';
+  toggleBtn.title = 'Toggle Local Videos';
+  document.body.appendChild(toggleBtn);
+  
+  toggleBtn.addEventListener('click', toggleLocalMode);
+}
+
+// Toggle local vs YouTube mode
+function toggleLocalMode() {
+  const isLocal = document.body.classList.toggle('local-video-mode');
+  toggleBtn.classList.toggle('active', isLocal);
+  toggleBtn.title = isLocal ? 'Switch to YouTube' : 'Play Local Videos';
+  
+  if (isLocal) {
+    document.querySelectorAll('.video-embed.playing iframe').forEach(iframe => {
+      iframe.pause();
+    });
+  }
+}
+
+// Sticky video player
+function initStickyPlayer() {
+  const stickyPlayer = document.createElement('div');
+  stickyPlayer.className = 'video-sticky-player';
+  stickyPlayer.innerHTML = `
+    <button class="video-sticky-close" aria-label="Close video player">
+      <i class='bx bx-x'></i>
+    </button>
+    <div class="video-player-local" id="stickyVideoPlayer"></div>
+    <div class="video-controls-overlay">
+      <div class="video-title-sticky" id="stickyVideoTitle"></div>
+      <button id="stickyNextVideo" style="background:none;border:none;color:white;font-size:1.2rem;margin-top:0.25rem;cursor:pointer;">⏭️ Next</button>
+    </div>
+  `;
+  
+  document.body.appendChild(stickyPlayer);
+  
+  const closeBtn = stickyPlayer.querySelector('.video-sticky-close');
+  const nextBtn = stickyPlayer.querySelector('#stickyNextVideo');
+  const playerContainer = stickyPlayer.querySelector('#stickyVideoPlayer');
+  const titleEl = stickyPlayer.querySelector('#stickyVideoTitle');
+  
+  closeBtn.addEventListener('click', () => {
+    stickyPlayer.classList.remove('active');
+    if (currentLocalVideo) {
+      currentLocalVideo.pause();
+      currentLocalVideo.currentTime = 0;
+    }
+  });
+  
+  nextBtn.addEventListener('click', playNextVideo);
+}
+
+// Play video with sticky support
+function playPhilosophyVideo(index) {
+  const videoData = philosophyVideos[index];
+  const embed = document.querySelector(`[data-video-id="${videoData.youtube}"]`);
+  
+  if (!embed) return;
+  
+  // Pause current video
+  if (currentLocalVideo) {
+    currentLocalVideo.pause();
+    currentLocalVideo.currentTime = 0;
+  }
+  
+  // Get or create video element
+  let videoEl = embed.querySelector('video');
+  const hasLocal = videoEl && videoEl.src.includes(videoData.path);
+  
+  if (hasLocal && videoEl) {
+    currentLocalVideo = videoEl;
+    videoEl.play();
+    
+    // Sticky mode
+    const stickyPlayer = document.querySelector('.video-sticky-player');
+    const playerContainer = stickyPlayer?.querySelector('#stickyVideoPlayer');
+    
+    if (playerContainer && stickyPlayer) {
+      playerContainer.innerHTML = '';
+      playerContainer.appendChild(videoEl.cloneNode(true));
+      
+      const clonedVideo = playerContainer.querySelector('video');
+      clonedVideo.play();
+      
+      document.querySelector('#stickyVideoTitle').textContent = videoData.youtube.replace(/-/g, ' ').toUpperCase();
+      stickyPlayer.classList.add('active');
+    }
+    
+    // Auto-advance setup
+    videoEl.onended = () => {
+      setTimeout(() => {
+        const nextIndex = (index + 1) % philosophyVideos.length;
+        playPhilosophyVideo(nextIndex);
+      }, 500);
+    };
+  } else {
+    // Fallback to YouTube (existing logic)
+    const iframe = embed.querySelector('iframe');
+    const params = '?autoplay=1&rel=0&modestbranding=1&playsinline=1&iv_load_policy=3';
+    iframe.src = `https://www.youtube.com/embed/${videoData.youtube}${params}`;
+    embed.classList.add('playing');
+  }
+}
+
+// Enhanced video play handler
+document.addEventListener('click', async (e) => {
+  const playBtn = e.target.closest('.video-play');
+  if (!playBtn) return;
+  
+  e.preventDefault();
+  
+  const embed = playBtn.closest('.video-embed');
+  const videoId = embed.dataset.videoId;
+  const index = philosophyVideos.findIndex(v => v.youtube === videoId);
+  
+  if (index !== -1) {
+    playPhilosophyVideo(index);
+  }
+});
+
+function playNextVideo() {
+  if (!currentLocalVideo) return;
+  
+  const currentSrc = currentLocalVideo.src;
+  const currentIndex = philosophyVideos.findIndex(v => v.path === currentSrc);
+  
+  if (currentIndex !== -1) {
+    const nextIndex = (currentIndex + 1) % philosophyVideos.length;
+    playPhilosophyVideo(nextIndex);
+  }
+}
+
+// Initialize videos on load
+document.addEventListener('DOMContentLoaded', () => {
+  initLocalVideos();
+  initStickyPlayer();
+});
+
+// Update video mode on toggle
+document.addEventListener('click', (e) => {
+  if (e.target.closest('.local-video-toggle')) {
+    toggleLocalMode();
+  }
+});
+
 // Console message
 console.log('%c🏗️ Arcadia Architecture Studio', 'font-size: 20px; font-weight: bold; color: #e74c3c;');
 console.log('%cWebsite designed with ❤️', 'font-size: 14px; color: #2c3e50;');
@@ -504,3 +700,4 @@ if (window.location.hostname !== 'localhost' && window.location.hostname !== '12
   console.warn = function() {};
   console.error = function() {};
 }
+

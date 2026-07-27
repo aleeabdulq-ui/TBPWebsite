@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
+  <script src="../js/theme-head.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Our Projects - The Building Practice Ltd.</title>
-    <meta name="description" content="Explore our diverse portfolio of architectural projects spanning residential, commercial, hospitality, and institutional designs across Nigeria.">
+<title>Architecture Projects Nigeria | Lagos Architects Portfolio ARCON | TBP</title>
+  <meta name="description" content="ARCON registered architects Nigeria portfolio - Lagos architecture projects, Abuja building design, Port Harcourt residential commercial developments. 320+ projects completed.">
+  <meta name="keywords" content="architecture projects Nigeria, Lagos architects portfolio, ARCON architects projects, Abuja architecture portfolio, Port Harcourt architects, Nigerian building projects, residential architecture Nigeria, commercial buildings Lagos, mixed-use developments Abuja, sustainable architecture projects Nigeria">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://thebuildingpractice.com/pages/projects.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Architecture Projects Nigeria | Lagos Architects Portfolio | TBP">
+  <meta property="og:description" content="View ARCON registered Nigerian architects portfolio - Lagos Abuja Port Harcourt projects portfolio. 320+ residential commercial developments.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://thebuildingpractice.com/pages/projects.html">
+  <meta property="og:image" content="https://thebuildingpractice.com/images/og/projects-nigeria.jpg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Architecture Projects Nigeria | TBP Architects">
+  <meta name="twitter:description" content="Lagos Abuja Port Harcourt architecture projects by ARCON registered Nigerian architects - residential commercial portfolio.">
+  <meta name="twitter:image" content="https://thebuildingpractice.com/images/og/projects-nigeria.jpg">
     
     <!-- Preload Critical Resources -->
     <link rel="preload" href="../images/bp.png" as="image">
@@ -18,7 +33,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Icons -->
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href="vendor/boxicons.min.css" rel="stylesheet">
+    <script src="../js/icons8.js"></script>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="../images/bp.png">
@@ -474,6 +490,11 @@
             background: var(--bg-tertiary);
             transform: rotate(15deg);
         }
+        
+        .theme-toggle svg {
+            width: 20px;
+            height: 20px;
+        }
 
         .nav-toggle {
             display: none;
@@ -677,6 +698,104 @@
             background: var(--bg-primary);
         }
 
+        .portfolio-chronology {
+            padding: var(--space-10) 0;
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-primary);
+        }
+
+        .portfolio-intro {
+            max-width: 760px;
+            margin-bottom: var(--space-6);
+        }
+
+        .portfolio-intro .page-hero-badge {
+            margin-bottom: var(--space-3);
+        }
+
+        .portfolio-intro h2 {
+            font-size: clamp(1.45rem, 2.4vw, 2.1rem);
+            margin-bottom: var(--space-3);
+            color: var(--text-primary);
+            letter-spacing: 0;
+        }
+
+        .portfolio-intro p {
+            max-width: 680px;
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+            line-height: 1.65;
+            margin-bottom: var(--space-2);
+        }
+
+        .portfolio-year-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: var(--space-3);
+        }
+
+        .portfolio-year {
+            background: var(--bg-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: none;
+        }
+
+        .portfolio-year h3 {
+            padding: var(--space-3) var(--space-4);
+            background: var(--bg-primary);
+            border-bottom: 1px solid var(--border-primary);
+            color: var(--primary);
+            font-size: var(--text-base);
+            font-weight: 800;
+        }
+
+        .portfolio-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .portfolio-table th,
+        .portfolio-table td {
+            padding: 9px 12px;
+            border-bottom: 1px solid var(--border-primary);
+            text-align: left;
+            vertical-align: top;
+            font-size: 0.76rem;
+            line-height: 1.35;
+        }
+
+        .portfolio-table th {
+            color: var(--text-primary);
+            background: transparent;
+            font-weight: 700;
+            font-size: 0.66rem;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .portfolio-table td {
+            color: var(--text-secondary);
+        }
+
+        .portfolio-table tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .portfolio-status {
+            display: inline-flex;
+            align-items: center;
+            min-height: 20px;
+            padding: 0 8px;
+            border-radius: var(--radius-sm);
+            background: rgba(26, 95, 122, 0.1);
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 0.65rem;
+            white-space: nowrap;
+        }
+
         .projects-header {
             display: flex;
             align-items: center;
@@ -763,6 +882,53 @@
 
         .projects-grid.list-view .project-description {
             -webkit-line-clamp: 4;
+        }
+
+        .projects-pagination {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            margin-top: var(--space-10);
+            flex-wrap: wrap;
+        }
+
+        .pagination-btn {
+            min-width: 44px;
+            height: 44px;
+            padding: 0 var(--space-4);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-2);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-md);
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            font-size: var(--text-sm);
+            font-weight: 700;
+            transition: all var(--duration-normal) var(--ease-out);
+        }
+
+        .pagination-btn:hover:not(:disabled),
+        .pagination-btn.active {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: var(--white);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .pagination-btn:disabled {
+            cursor: not-allowed;
+            opacity: 0.45;
+        }
+
+        .pagination-ellipsis {
+            min-width: 32px;
+            text-align: center;
+            color: var(--text-tertiary);
+            font-weight: 700;
         }
 
         /* Project Card */
@@ -1517,36 +1683,92 @@
         /* ========================================
            FOOTER
            ======================================== */
+        /* ========================================
+           FOOTER
+           ======================================== */
         .footer {
             background: var(--bg-tertiary);
-            padding: var(--space-16) 0 var(--space-8);
+            padding: var(--space-10) 0 var(--space-5);
         }
 
         [data-theme="dark"] .footer {
             background: #050508;
         }
 
+        /* ========================================
+           FOOTER (CONTINUED)
+           ======================================== */
         .footer-grid {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 1.5fr;
-            gap: var(--space-10);
-            margin-bottom: var(--space-12);
+            grid-template-columns: minmax(0, 1fr) 280px;
+            gap: 16px;
+            margin-bottom: 10px;
+            align-items: start;
         }
 
-        .footer-brand-logo {
+        .footer-main {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr 1.2fr 1fr;
+            gap: 18px;
+            align-items: start;
+        }
+
+        .footer-main-bottom {
+            grid-column: auto;
+            margin-top: 0;
+        }
+
+        @media (max-width: 968px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-main {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 640px) {
+            .footer-grid {
+                text-align: center;
+            }
+            .footer-main {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        .footer-brand {
+            max-width: 200px;
+        }
+
+        @media (max-width: 640px) {
+            .footer-brand {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+        }
+
+        .footer-logo {
             display: flex;
             align-items: center;
-            gap: var(--space-3);
-            margin-bottom: var(--space-4);
+            gap: 5px;
+            margin-bottom: 6px;
+            text-decoration: none;
         }
 
-        .footer-brand-logo img {
-            height: 48px;
+        @media (max-width: 640px) {
+            .footer-logo {
+                justify-content: center;
+            }
+        }
+
+        .footer-logo img {
+            height: 28px;
             width: auto;
         }
 
-        .footer-brand-logo span {
-            font-size: var(--text-lg);
+        .footer-logo-text {
+            font-size: 0.9rem;
             font-weight: 700;
             background: var(--gradient-blue-gold);
             -webkit-background-clip: text;
@@ -1554,126 +1776,275 @@
             background-clip: text;
         }
 
-        .footer-brand p {
-            font-size: var(--text-sm);
-            color: var(--text-secondary);
-            line-height: 1.8;
-            margin-bottom: var(--space-5);
+        .footer-brand > p {
+            display: none;
         }
 
         .footer-social {
             display: flex;
-            gap: var(--space-3);
+            gap: 6px;
+        }
+
+        @media (max-width: 640px) {
+            .footer-social {
+                justify-content: center;
+            }
         }
 
         .footer-social a {
-            width: 44px;
-            height: 44px;
+            width: 34px;
+            height: 34px;
             background: var(--bg-primary);
             border: 1px solid var(--border-primary);
-            border-radius: var(--radius-lg);
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: var(--text-secondary);
-            font-size: 20px;
-            transition: all var(--duration-normal) var(--ease-out);
+            font-size: 14px;
+            text-decoration: none;
+            transition: all var(--duration-normal) var(--ease-spring);
         }
 
         .footer-social a:hover {
-            background: var(--primary);
+            background: var(--gradient-primary);
             border-color: var(--primary);
             color: var(--white);
             transform: translateY(-3px);
         }
 
-        .footer-links h5 {
-            font-size: var(--text-base);
+        .footer-column h4 {
+            font-size: 0.8rem;
             font-weight: 700;
             color: var(--text-primary);
-            margin-bottom: var(--space-5);
+            margin-bottom: 6px;
             position: relative;
-            padding-bottom: var(--space-3);
+            padding-bottom: 3px;
         }
 
-        .footer-links h5::after {
+        .footer-column h4::after {
             content: '';
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 30px;
-            height: 3px;
+            width: 16px;
+            height: 1.5px;
             background: var(--gradient-blue-gold);
-            border-radius: 3px;
+            border-radius: 2px;
+        }
+
+        @media (max-width: 640px) {
+            .footer-column h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+
+        .footer-links {
+            list-style: none;
         }
 
         .footer-links li {
-            margin-bottom: var(--space-3);
+            margin-bottom: 5px;
         }
 
         .footer-links a {
+            font-size: 0.72rem;
+            color: var(--text-secondary);
+            text-decoration: none;
             display: inline-flex;
             align-items: center;
-            gap: var(--space-2);
-            font-size: var(--text-sm);
-            color: var(--text-secondary);
-            transition: all 0.2s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-            transform: translateX(4px);
+            gap: 5px;
+            transition: all var(--duration-fast) var(--ease-out);
         }
 
         .footer-links a i {
             font-size: 12px;
             color: var(--text-tertiary);
+            transition: transform var(--duration-fast);
+            display: inline;
         }
 
-        .footer-contact p {
-            display: flex;
-            align-items: flex-start;
-            gap: var(--space-3);
-            font-size: var(--text-sm);
-            color: var(--text-secondary);
-            margin-bottom: var(--space-4);
-        }
-
-        .footer-contact i {
-            font-size: 20px;
+        .footer-links a:hover {
             color: var(--primary);
-            flex-shrink: 0;
-            margin-top: 2px;
+            transform: translateX(3px);
+        }
+
+        .footer-links a:hover i {
+            color: var(--primary);
+        }
+
+        .footer-links span {
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 640px) {
+            .footer-links a:hover {
+                transform: none;
+            }
         }
 
         .footer-bottom {
             border-top: 1px solid var(--border-primary);
-            padding-top: var(--space-8);
+            padding: 10px 0;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: var(--space-4);
+            gap: 8px;
         }
 
-        .footer-bottom p {
-            font-size: var(--text-sm);
+        @media (max-width: 640px) {
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        .footer-copyright {
+            font-size: 0.6rem;
             color: var(--text-tertiary);
         }
 
-        .footer-bottom-links {
-            display: flex;
-            gap: var(--space-6);
-        }
-
-        .footer-bottom-links a {
-            font-size: var(--text-sm);
-            color: var(--text-tertiary);
-            transition: color 0.2s ease;
-        }
-
-        .footer-bottom-links a:hover {
+        .footer-copyright a {
             color: var(--primary);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .footer-legal {
+            display: flex;
+            gap: 10px;
+        }
+
+        .footer-legal a {
+            font-size: 0.6rem;
+            color: var(--text-tertiary);
+            text-decoration: none;
+            transition: color var(--duration-fast);
+        }
+
+        .footer-legal a:hover {
+            color: var(--primary);
+        }
+
+        .footer-newsletter {
+            background: transparent;
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-md);
+            padding: 10px;
+            box-shadow: none;
+        }
+
+        .footer-newsletter .newsletter-title {
+            font-size: 0.72rem;
+            font-weight: 700;
+            margin-bottom: 2px;
+            color: var(--text-primary);
+        }
+
+        .footer-newsletter .newsletter-description {
+            font-size: 0.62rem;
+            color: var(--text-secondary);
+            line-height: 1.3;
+            margin-bottom: 5px;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 5px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            min-width: 0;
+            font-size: 0.62rem;
+            padding: 5px 7px;
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-sm);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+        }
+
+        .newsletter-form input::placeholder {
+            color: var(--text-tertiary);
+            font-size: 0.6rem;
+        }
+
+        .newsletter-form button {
+            font-size: 0.62rem;
+            padding: 5px 8px;
+            white-space: nowrap;
+        }
+
+        .newsletter-privacy {
+            font-size: 0.6rem;
+            color: var(--text-tertiary);
+            line-height: 1.2;
+        }
+
+        @media (max-width: 968px) {
+            .footer-main {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+            }
+            .footer-newsletter {
+                grid-column: auto;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .footer {
+                padding: 14px 0 8px;
+            }
+            .footer-main {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+                margin-bottom: 10px;
+            }
+            .footer-brand {
+                text-align: center;
+            }
+            .footer-brand > p {
+                display: none;
+            }
+            .footer-social {
+                justify-content: center;
+            }
+            .footer-logo {
+                justify-content: center;
+            }
+            .footer-main-bottom {
+                grid-column: auto;
+            }
+            .footer-newsletter {
+                width: 100%;
+            }
+            .newsletter-form {
+                flex-direction: column;
+            }
+            .footer-newsletter input {
+                width: 100%;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                padding: 10px 0;
+                gap: 6px;
+            }
+            .footer-column h4::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
         }
 
         /* ========================================
@@ -1723,7 +2094,10 @@
                 grid-template-columns: repeat(3, 1fr);
             }
             .footer-grid {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: minmax(0, 1fr) 260px;
+            }
+            .portfolio-year-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
             }
             .modal-grid {
                 grid-template-columns: 1fr;
@@ -1740,6 +2114,12 @@
         }
 
         @media (max-width: 968px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-main {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
             .nav-menu {
                 position: fixed;
                 top: var(--header-height);
@@ -1790,6 +2170,23 @@
         @media (max-width: 768px) {
             .container {
                 padding: 0 var(--space-4);
+            }
+            .portfolio-chronology {
+                padding: var(--space-8) 0;
+            }
+            .portfolio-intro {
+                margin-bottom: var(--space-5);
+            }
+            .portfolio-year-grid {
+                grid-template-columns: 1fr;
+            }
+            .portfolio-table th,
+            .portfolio-table td {
+                padding: 8px 10px;
+                font-size: 0.72rem;
+            }
+            .portfolio-table th {
+                font-size: 0.62rem;
             }
             .projects-grid {
                 grid-template-columns: 1fr;
@@ -1931,7 +2328,77 @@
                 grid-template-columns: repeat(2, 1fr);
             }
         }
+
+        /* ========================================
+           SECTION TAGS
+           ======================================== */
+        .section-tags {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 24px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            border-radius: 9999px;
+            text-decoration: none;
+            transition: all 0.25s ease;
+        }
+
+        .tag i {
+            font-size: 14px;
+        }
+
+        .tag--primary {
+            background: var(--gradient-primary);
+            color: var(--white);
+        }
+
+        .tag--primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tag--accent {
+            background: var(--gradient-accent);
+            color: var(--white);
+        }
+
+        .tag--accent:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .tag--outline {
+            background: var(--bg-primary);
+            color: var(--text-secondary);
+            border: 1px solid var(--border-primary);
+        }
+
+        .tag--outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            background: var(--primary-50);
+        }
+
+        .tag--sm {
+            padding: 6px 12px;
+            font-size: 12px;
+        }
+
+        .tag--sm i {
+            font-size: 12px;
+        }
     </style>
+  <link rel="stylesheet" href="../css/tbp-splash.css">
+  <script src="../js/tbp-splash.js" defer></script>
 </head>
 <body>
     <!-- SPLASH SCREEN -->
@@ -1979,12 +2446,13 @@
                     <li><a href="team.html" class="nav-link">Team</a></li>
                     <li><a href="reviews.html" class="nav-link">Reviews</a></li>
                     <li><a href="blog.html" class="nav-link">Blog</a></li>
+                    <li><a href="careers.html" class="nav-link">Careers</a></li>
                     <li><a href="contact.html" class="nav-link">Contact</a></li>
                 </ul>
 
                 <div class="nav-actions">
                     <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                        <i class='bx bx-sun' id="themeIcon"></i>
+                        <span id="themeIcon"></span>
                     </button>
                     <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
                         <span></span>
@@ -2009,9 +2477,70 @@
                     <span>/</span>
                     <span class="breadcrumb-current" aria-current="page">Projects</span>
                 </nav>
+                </div>
+
+                <div class="section-tags">
+                    <a href="services.html#residential" class="tag tag--primary tag--sm">
+                        <i class='bx bx-home'></i> Residential
+                    </a>
+                    <a href="services.html#commercial" class="tag tag--outline tag--sm">
+                        <i class='bx bx-building'></i> Commercial
+                    </a>
+                    <a href="services.html#hospitality" class="tag tag--outline tag--sm">
+                        <i class='bx bx-hotel'></i> Hospitality
+                    </a>
+                    <a href="services.html#interior" class="tag tag--outline tag--sm">
+                        <i class='bx bx-palette'></i> Interior
+                    </a>
+                    <a href="services.html#landscape" class="tag tag--outline tag--sm">
+                        <i class='bx bx-tree'></i> Landscape
+                    </a>
+                    <a href="services.html#urban" class="tag tag--outline tag--sm">
+                        <i class='bx bx-city'></i> Urban
+                    </a>
+                    <a href="services.html#green" class="tag tag--outline tag--sm">
+                        <i class='bx bx-leaf'></i> Green
+                    </a>
+                    <a href="services.html#renovation" class="tag tag--outline tag--sm">
+                        <i class='bx bx-refresh'></i> Renovation
+                    </a>
+                    <a href="services.html#construction" class="tag tag--outline tag--sm">
+                        <i class='bx bx-hard-hat'></i> Construction
+                    </a>
+                    <a href="services.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-building-house'></i> Services
+                    </a>
+                    <a href="about.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-info-circle'></i> About
+                    </a>
+                    <a href="team.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-group'></i> Team
+                    </a>
+                    <a href="contact.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-envelope'></i> Contact
+                    </a>
+                    <a href="reviews.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-star'></i> Reviews
+                    </a>
+                    <a href="blog.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-book'></i> Blog
+                    </a>
+                    <a href="careers.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-briefcase'></i> Careers
+                    </a>
+                    <a href="about.html#expertise" class="tag tag--outline tag--sm">
+                        <i class='bx bx-bulb'></i> Expertise
+                    </a>
+                    <a href="about.html#philosophy" class="tag tag--outline tag--sm">
+                        <i class='bx bx-book-open'></i> Philosophy
+                    </a>
+                    <a href="about.html#certifications" class="tag tag--outline tag--sm">
+                        <i class='bx bx-award'></i> Awards
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- PAGE HERO -->
     <section class="page-hero">
@@ -2023,8 +2552,8 @@
                 </div>
                 <h1>Discover Our <span class="gradient-text">Building Icons</span></h1>
                 <p class="page-hero-description">
-                    Architectural excellence and innovation showcased through our most prestigious 
-                    projects across Nigeria and beyond.
+                    Architectural excellence and innovation showcased through our revised company profile
+                    portfolio, including residential, commercial, hospitality and institutional work across Nigeria.
                 </p>
 
                 <!-- Filter Section -->
@@ -2032,33 +2561,81 @@
                     <button class="filter-btn active" data-category="all" role="tab" aria-selected="true">
                         <i class="bx bx-grid-alt"></i>
                         <span>All</span>
-                        <span class="filter-count" data-count="all">20</span>
+                        <span class="filter-count" data-count="all">63</span>
                     </button>
                     <button class="filter-btn" data-category="residential" role="tab" aria-selected="false">
                         <i class="bx bx-home-heart"></i>
                         <span>Residential</span>
-                        <span class="filter-count" data-count="residential">10</span>
+                        <span class="filter-count" data-count="residential">29</span>
                     </button>
                     <button class="filter-btn" data-category="commercial" role="tab" aria-selected="false">
                         <i class="bx bx-building"></i>
                         <span>Commercial</span>
-                        <span class="filter-count" data-count="commercial">6</span>
+                        <span class="filter-count" data-count="commercial">17</span>
                     </button>
                     <button class="filter-btn" data-category="mixed-use" role="tab" aria-selected="false">
                         <i class="bx bx-layer"></i>
                         <span>Mixed-Use</span>
-                        <span class="filter-count" data-count="mixed-use">2</span>
+                        <span class="filter-count" data-count="mixed-use">3</span>
                     </button>
                     <button class="filter-btn" data-category="hospitality" role="tab" aria-selected="false">
                         <i class="bx bx-hotel"></i>
                         <span>Hospitality</span>
-                        <span class="filter-count" data-count="hospitality">1</span>
+                        <span class="filter-count" data-count="hospitality">3</span>
                     </button>
                     <button class="filter-btn" data-category="institutional" role="tab" aria-selected="false">
                         <i class="bx bx-school"></i>
                         <span>Institutional</span>
-                        <span class="filter-count" data-count="institutional">1</span>
+                        <span class="filter-count" data-count="institutional">11</span>
                     </button>
+                </div>
+
+                <div class="section-tags">
+                    <a href="services.html" class="tag tag--primary tag--sm">
+                        <i class='bx bx-building-house'></i> Services
+                    </a>
+                    <a href="about.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-info-circle'></i> About
+                    </a>
+                    <a href="team.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-group'></i> Team
+                    </a>
+                    <a href="services.html#residential" class="tag tag--outline tag--sm">
+                        <i class='bx bx-home'></i> Residential
+                    </a>
+                    <a href="services.html#commercial" class="tag tag--outline tag--sm">
+                        <i class='bx bx-building'></i> Commercial
+                    </a>
+                    <a href="services.html#hospitality" class="tag tag--outline tag--sm">
+                        <i class='bx bx-hotel'></i> Hospitality
+                    </a>
+                    <a href="services.html#interior" class="tag tag--outline tag--sm">
+                        <i class='bx bx-palette'></i> Interior
+                    </a>
+                    <a href="services.html#landscape" class="tag tag--outline tag--sm">
+                        <i class='bx bx-tree'></i> Landscape
+                    </a>
+                    <a href="services.html#urban" class="tag tag--outline tag--sm">
+                        <i class='bx bx-city'></i> Urban
+                    </a>
+                    <a href="services.html#green" class="tag tag--outline tag--sm">
+                        <i class='bx bx-leaf'></i> Green
+                    </a>
+                    <a href="services.html#renovation" class="tag tag--outline tag--sm">
+                        <i class='bx bx-refresh'></i> Renovation
+                    </a>
+                    <a href="contact.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-envelope'></i> Contact
+                    </a>
+                    <a href="reviews.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-star'></i> Reviews
+                    </a>
+                    <a href="blog.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-book'></i> Blog
+                    </a>
+                    <a href="careers.html" class="tag tag--outline tag--sm">
+                        <i class='bx bx-briefcase'></i> Careers
+                    </a>
                 </div>
             </div>
         </div>
@@ -2068,7 +2645,7 @@
     <section class="projects-section">
         <div class="container">
             <div class="projects-header">
-                <p class="projects-count">Showing <strong id="visibleCount">20</strong> of <strong>20</strong> projects</p>
+                <p class="projects-count">Showing <strong id="visibleCount">63</strong> of <strong id="totalCount">63</strong> projects</p>
                 <div class="view-toggle" role="group" aria-label="View options">
                     <button class="view-toggle-btn active" data-view="grid" title="Grid View" aria-pressed="true">
                         <i class="bx bx-grid-alt"></i>
@@ -2082,117 +2659,205 @@
             <div class="projects-grid" id="projectsGrid" role="list">
                 <!-- Projects will be dynamically generated -->
             </div>
+
+            <nav class="projects-pagination" id="projectsPagination" aria-label="Project pages">
+                <!-- Pagination will be dynamically generated -->
+            </nav>
         </div>
     </section>
 
-    <!-- STATS SECTION -->
-    <section class="stats-section" aria-label="Company statistics">
+    <!-- PORTFOLIO CHRONOLOGY -->
+    <section class="portfolio-chronology" aria-labelledby="portfolioChronologyTitle">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="bx bx-building-house"></i></div>
-                    <h3 class="stat-number" data-count="150">0</h3>
-                    <p class="stat-label">Completed Projects</p>
+            <div class="portfolio-intro">
+                <div class="page-hero-badge">
+                    <i class="bx bx-calendar"></i>
+                    <span>Project Portfolio</span>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="bx bx-calendar-check"></i></div>
-                    <h3 class="stat-number" data-count="15">0</h3>
-                    <p class="stat-label">Years Experience</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="bx bx-trophy"></i></div>
-                    <h3 class="stat-number" data-count="25">0</h3>
-                    <p class="stat-label">Awards Won</p>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon"><i class="bx bx-happy-heart-eyes"></i></div>
-                    <h3 class="stat-number" data-count="98">0</h3>
-                    <p class="stat-label">Client Satisfaction %</p>
-                </div>
+                <h2 id="portfolioChronologyTitle">Our Project Portfolio</h2>
+                <p>Since 2014, The Building Practice Ltd has delivered architectural, engineering, construction, project management, design-build, master planning, and advisory work across Nigeria.</p>
+                <p>Our portfolio spans commercial, residential, institutional, educational, hospitality, industrial, and mixed-use developments in Lagos, Abuja, Kaduna, Edo, Delta, Ogun, Kwara, and other major cities.</p>
+            </div>
+
+            <div class="portfolio-year-grid">
+                <article class="portfolio-year">
+                    <h3>2014</h3>
+                    <table class="portfolio-table">
+                        <thead><tr><th>Project</th><th>Scope</th><th>Status</th></tr></thead>
+                        <tbody>
+                            <tr><td>Intercellular Office, Victoria Island, Lagos</td><td>Design &amp; Build</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>Karcher Showroom, Victoria Island, Lagos</td><td>Design &amp; Build</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>New Comex Office, Victoria Island, Lagos</td><td>Design &amp; Build</td><td><span class="portfolio-status">Completed</span></td></tr>
+                        </tbody>
+                    </table>
+                </article>
+
+                <article class="portfolio-year">
+                    <h3>2015-2019</h3>
+                    <table class="portfolio-table">
+                        <thead><tr><th>Project</th><th>Scope</th><th>Status</th></tr></thead>
+                        <tbody>
+                            <tr><td>Scarlet Lodge Hotel, Victoria Island, Lagos</td><td>Design &amp; Build</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>Alegeh House, 24 Ilabere Avenue, Ikoyi, Lagos</td><td>Architectural Design</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>Screening Room for TLS Contact Centre, Ikeja, Lagos</td><td>Design &amp; Build</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>Nigerian Bar Association National Secretariat, Abuja</td><td>Project Management</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>NSPRI Library Remodelling</td><td>Design &amp; Build</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>NSPRI Main Entrance, Ilorin, Kwara State</td><td>Construction</td><td><span class="portfolio-status">Completed</span></td></tr>
+                        </tbody>
+                    </table>
+                </article>
+
+                <article class="portfolio-year">
+                    <h3>2020-2021</h3>
+                    <table class="portfolio-table">
+                        <thead><tr><th>Project</th><th>Scope</th><th>Status</th></tr></thead>
+                        <tbody>
+                            <tr><td>Sapphire Tower, Bluewater</td><td>Architectural Design</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>Promasidor Nigeria Head Office</td><td>Architectural Design</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>Odunayo's House, Iju, Lagos</td><td>Design &amp; Build</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>Cornerstone Tower</td><td>Fire Safety Audit</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>FUPRE School of Postgraduate Studies</td><td>Architectural Design</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>FUPRE College of Petroleum Management</td><td>Architectural Design</td><td><span class="portfolio-status">Completed</span></td></tr>
+                        </tbody>
+                    </table>
+                </article>
+
+                <article class="portfolio-year">
+                    <h3>2022</h3>
+                    <table class="portfolio-table">
+                        <thead><tr><th>Project</th><th>Scope</th><th>Status</th></tr></thead>
+                        <tbody>
+                            <tr><td>KLM Terraces, Ilupeju, Lagos</td><td>Project Management</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>Sellyfak Office Building, Victoria Island, Lagos</td><td>Design &amp; Build</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>NOUN Model Study Centre Master Plan, Abuja</td><td>Architectural Design</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>The Pantheon, 27 Glover Road, Ikoyi, Lagos</td><td>Architectural Design</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>NOUN Laboratory Building, Abeokuta Study Centre</td><td>Construction</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>Mandilas Tower, Ikoyi, Lagos</td><td>Architectural Design</td><td><span class="portfolio-status">Ongoing</span></td></tr>
+                        </tbody>
+                    </table>
+                </article>
+
+                <article class="portfolio-year">
+                    <h3>2023-2024</h3>
+                    <table class="portfolio-table">
+                        <thead><tr><th>Project</th><th>Scope</th><th>Status</th></tr></thead>
+                        <tbody>
+                            <tr><td>NOUN Ikorodu Study Centre</td><td>Architectural Design</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>LFZ Welcome Centre &amp; Entrance Arch</td><td>Architectural Design</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>LFZ CPC Building</td><td>Architectural Design</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>LFZ Irele Tower Reception</td><td>Design &amp; Build</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>Williams House, Iju, Lagos</td><td>Design &amp; Build</td><td><span class="portfolio-status">Ongoing</span></td></tr>
+                            <tr><td>Barnawa Hotel, Kaduna State</td><td>Architectural Design</td><td><span class="portfolio-status">Ongoing</span></td></tr>
+                            <tr><td>Residential Development, Ojora Close, Victoria Island, Lagos</td><td>Architectural Design</td><td><span class="portfolio-status">Ongoing</span></td></tr>
+                            <tr><td>JT Tower Residential Development, Ikoyi, Lagos</td><td>Architectural Design</td><td><span class="portfolio-status">Ongoing</span></td></tr>
+                        </tbody>
+                    </table>
+                </article>
+
+                <article class="portfolio-year">
+                    <h3>2025-2026</h3>
+                    <table class="portfolio-table">
+                        <thead><tr><th>Project</th><th>Scope</th><th>Status</th></tr></thead>
+                        <tbody>
+                            <tr><td>NOUN Zonal Offices</td><td>Architectural Design</td><td><span class="portfolio-status">Completed</span></td></tr>
+                            <tr><td>Wellington College International School, Alaro City, Lagos</td><td>Architectural Design</td><td><span class="portfolio-status">Ongoing</span></td></tr>
+                            <tr><td>Shamballa Park Commercial Development, Alaro City, Lagos</td><td>Architectural Design</td><td><span class="portfolio-status">Ongoing</span></td></tr>
+                            <tr><td>Ritz-Carlton Mixed-Use Development, Victoria Island, Lagos</td><td>Architectural Design</td><td><span class="portfolio-status">Ongoing</span></td></tr>
+                            <tr><td>48 Bourdillon Road, Ikoyi, Lagos</td><td>Architectural Design</td><td><span class="portfolio-status">Ongoing</span></td></tr>
+                            <tr><td>Faculty of Arts, NOUN, Abuja</td><td>Design &amp; Build</td><td><span class="portfolio-status">Ongoing</span></td></tr>
+                            <tr><td>Beken Towers, Banana Island, Lagos</td><td>Architectural Design</td><td><span class="portfolio-status">Ongoing</span></td></tr>
+                            <tr><td>Metrocrest Tower, Lekki, Lagos</td><td>Architectural Design</td><td><span class="portfolio-status">Ongoing</span></td></tr>
+                            <tr><td>Residential Development, Cameron Road, Ikoyi, Lagos</td><td>Architectural Design</td><td><span class="portfolio-status">Ongoing</span></td></tr>
+                        </tbody>
+                    </table>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- CTA SECTION -->
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-content">
-                <div class="cta-icon">
-                    <i class="bx bx-bulb"></i>
-                </div>
-                <h2 class="cta-title">Have a Project in Mind?</h2>
-                <p class="cta-description">
-                    Let's collaborate and bring your architectural vision to life. Our team of experts 
-                    is ready to transform your ideas into extraordinary spaces that inspire and endure.
-                </p>
-                <a href="contact.html" class="cta-btn">
-                    <span>Start Your Project</span>
-                    <i class="bx bx-right-arrow-alt"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="footer">
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" id="footer">
         <div class="container">
             <div class="footer-grid">
-                <div class="footer-brand">
-                    <div class="footer-brand-logo">
-                        <img src="../images/bp.png" alt="TBP Logo" loading="lazy">
-                        <span>The Building Practice</span>
+                <div class="footer-main">
+                    <div class="footer-brand">
+                        <a href="index.html" class="footer-logo">
+                            <img src="../images/bp.png" alt="TBP Logo">
+                            <span class="footer-logo-text">The Building Practice</span>
+                        </a>
+                        <p>An architectural firm dedicated to shaping spaces that inspire, endure, and connect. Creating thoughtful, sustainable, and contextually relevant designs since 2013.</p>
+                        <div class="footer-social">
+                            <a href="https://www.facebook.com/thebuildingpractice" target="_blank" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                            <a href="https://x.com/thebplimited" target="_blank" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                            <a href="https://www.instagram.com/thebuildingpractice" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                            <a href="https://www.linkedin.com/company/the-building-practice-ltd/" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+                        </div>
                     </div>
-                    <p>Building Spaces that Feel. We transform architectural visions into extraordinary realities with innovation, sustainability, and excellence across Nigeria and beyond.</p>
-                    <div class="footer-social">
-                        <a href="https://www.facebook.com/thebuildingpractice" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="bx bxl-facebook"></i></a>
-                        <a href="https://www.instagram.com/thebuildingpractice" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bx bxl-instagram"></i></a>
-                        <a href="https://x.com/thebplimited" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i class="bx bxl-twitter"></i></a>
-                        <a href="https://www.linkedin.com/company/the-building-practice-ltd/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="bx bxl-linkedin"></i></a>
+
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul class="footer-links">
+                            <li><a href="index.html"><i class='bx bx-chevron-right'></i><span>Home</span></a></li>
+                            <li><a href="about.html"><i class='bx bx-chevron-right'></i><span>About</span></a></li>
+                            <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Services</span></a></li>
+                            <li><a href="projects.html"><i class='bx bx-chevron-right'></i><span>Projects</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Our Services</h4>
+                        <ul class="footer-links">
+                            <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Architecture</span></a></li>
+                            <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Interior Design</span></a></li>
+                            <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Construction</span></a></li>
+                            <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Consultancy</span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column footer-main-bottom">
+                        <h4>Contact Info</h4>
+                        <ul class="footer-links">
+                            <li><i class='bx bx-map'></i><span>Plot 6, Remi Olowude, Lekki Phase 1</span></li>
+                            <li><a href="tel:+2349049721840"><i class='bx bx-phone'></i><span>+234 904 972 1840</span></a></li>
+                            <li><a href="mailto:info@buildingpractice.biz"><i class='bx bx-envelope'></i><span>info@buildingpractice.biz</span></a></li>
+                            <li><i class='bx bx-time'></i><span>Mon - Fri: 9AM - 5PM</span></li>
+                        </ul>
                     </div>
                 </div>
 
-                <div class="footer-links">
-                    <h5>Quick Links</h5>
-                    <ul>
-                        <li><a href="index.html"><i class="bx bx-chevron-right"></i> Home</a></li>
-                        <li><a href="about.html"><i class="bx bx-chevron-right"></i> About</a></li>
-                        <li><a href="services.html"><i class="bx bx-chevron-right"></i> Services</a></li>
-                        <li><a href="projects.html"><i class="bx bx-chevron-right"></i> Projects</a></li>
-                        <li><a href="team.html"><i class="bx bx-chevron-right"></i> Team</a></li>
-                        <li><a href="contact.html"><i class="bx bx-chevron-right"></i> Contact</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links">
-                    <h5>Project Types</h5>
-                    <ul>
-                        <li><a href="#" data-filter="residential"><i class="bx bx-chevron-right"></i> Residential</a></li>
-                        <li><a href="#" data-filter="commercial"><i class="bx bx-chevron-right"></i> Commercial</a></li>
-                        <li><a href="#" data-filter="mixed-use"><i class="bx bx-chevron-right"></i> Mixed-Use</a></li>
-                        <li><a href="#" data-filter="hospitality"><i class="bx bx-chevron-right"></i> Hospitality</a></li>
-                        <li><a href="#" data-filter="institutional"><i class="bx bx-chevron-right"></i> Institutional</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-links footer-contact">
-                    <h5>Contact Us</h5>
-                    <p><i class="bx bx-map"></i><span>Plot 6, Remi Olowude Street, Lekki Phase 1, Lagos</span></p>
-                    <p><i class="bx-phone"></i><span>+234 904 972 1840</span></p>
-                    <p><i class="bx bx-envelope"></i><span>info@buildingpractice.biz</span></p>
-                    <p><i class="bx bx-time"></i><span>Mon - Fri: 9:00 AM - 5:00 PM</span></p>
+                <div class="footer-newsletter">
+                    <h4 class="newsletter-title">Subscribe</h4>
+                    <p class="newsletter-description">Get the latest updates and insights</p>
+                    <form class="newsletter-form" id="footerNewsletterForm" novalidate>
+                        <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
+                        <button type="submit" class="btn btn--primary btn--sm">
+                            Subscribe
+                        </button>
+                    </form>
+                    <p class="newsletter-privacy">
+                        We respect your privacy.
+                    </p>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; <span id="currentYear">2025</span> The Building Practice Ltd. All Rights Reserved.</p>
-                <div class="footer-bottom-links">
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Service</a>
-                    <a href="sitemap.html">Sitemap</a>
+                <p class="footer-copyright">
+                    © <span id="currentYear">2024</span> The Building Practice Ltd. All Rights Reserved.
+                </p>
+                <div class="footer-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Sitemap</a>
                 </div>
             </div>
         </div>
     </footer>
+  <script src="../js/testweb.js" defer></script>
+
+    <!-- ==================== BACK TO TOP BUTTON ==================== -->
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
+        <i class='bx bx-up-arrow-alt'></i>
+    </button>
 
     <!-- PROJECT MODAL -->
     <div class="modal-overlay" id="projectModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
@@ -2277,11 +2942,6 @@
         <div class="lightbox-counter" id="lightboxCounter" aria-live="polite">1 / 8</div>
     </div>
 
-    <!-- BACK TO TOP -->
-    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
-        <i class="bx bx-up-arrow-alt"></i>
-    </button>
-
     <!-- JAVASCRIPT -->
     <script>
     (function() {
@@ -2289,7 +2949,7 @@
 
         // ========== CONFIGURATION ==========
         const CONFIG = {
-            splashDuration: 1500,
+            splashDuration: 3000,
             splashMaxWait: 2500,
             scrollThreshold: 50,
             animationThreshold: 0.1,
@@ -2360,17 +3020,15 @@
                     { icon: "bx-calendar", text: "2018-2020" },
                     { icon: "bx-home", text: "124 Units" }
                 ],
-                images: {
-                    main: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
+                                images: {
+                    main: "SAPPHIRE TOWER BLUEWATER LAGOS/20230510_144251.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-                        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
-                        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
-                        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
-                        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",
-                        "https://images.unsplash.com/photo-1560185127-6a8c6c6d0b76?w=800&q=80",
-                        "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?w=800&q=80",
-                        "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=800&q=80"
+                        "SAPPHIRE TOWER BLUEWATER LAGOS/20230510_144251.jpg",
+                        "SAPPHIRE TOWER BLUEWATER LAGOS/20220505_104643.jpg",
+                        "SAPPHIRE TOWER BLUEWATER LAGOS/20220505_104640.jpg",
+                        "SAPPHIRE TOWER BLUEWATER LAGOS/20220505_104639.jpg",
+                        "SAPPHIRE TOWER BLUEWATER LAGOS/20210807_123620.jpg",
+                        "SAPPHIRE TOWER BLUEWATER LAGOS/20200722_150920.jpg"
                     ]
                 }
             },
@@ -2398,16 +3056,18 @@
                     { icon: "bx-ruler", text: "8,000 sqm" }
                 ],
                 images: {
-                    main: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+                    main: "27 GLOVER/PANTHEON.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-                        "https://images.unsplash.com/photo-1554435493-93422e8220c8?w=800&q=80",
-                        "https://images.unsplash.com/photo-1577495508048-b635879837f1?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80",
-                        "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&q=80",
-                        "https://images.unsplash.com/photo-1462826303086-329426d1aef5?w=800&q=80"
+                        "27 GLOVER/PANTHEON.jpg",
+                        "27 GLOVER/PANTHEON2.jpg",
+                        "27 GLOVER/PANTHEON3.jpg",
+                        "27 GLOVER/PANTHEON4.jpg",
+                        "27 GLOVER/PANTHEON5.jpg",
+                        "27 GLOVER/PANTHEON6.jpg",
+                        "27 GLOVER/PANTHON7.jpg",
+                        "27 GLOVER/PANTHEON8.jpg",
+                        "27 GLOVER/PANTHEON9.jpg",
+                        "27 GLOVER/PANTHEON10.jpg"
                     ]
                 }
             },
@@ -2434,17 +3094,13 @@
                     { icon: "bx-calendar", text: "2024-Present" },
                     { icon: "bx-building-house", text: "11 Floors" }
                 ],
-                images: {
-                    main: "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=800&q=80",
+                                images: {
+                    main: "OJU OLOBUN RESIDENCES/NIGHT.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=800&q=80",
-                        "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80",
-                        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",
-                        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80"
+                        "OJU OLOBUN RESIDENCES/NIGHT.jpg",
+                        "OJU OLOBUN RESIDENCES/RENDER 1.5.jpg",
+                        "OJU OLOBUN RESIDENCES/RENDER 2.5.jpg",
+                        "OJU OLOBUN RESIDENCES/RENDER 3.jpg"
                     ]
                 }
             },
@@ -2472,16 +3128,10 @@
                     { icon: "bx-bed", text: "3 Bedrooms" }
                 ],
                 images: {
-                    main: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
+                    main: "WILLIAMS HOUSE/WILLIAMSHOUSE.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
-                        "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
-                        "https://images.unsplash.com/photo-1598228723793-52759bba239c?w=800&q=80"
+                        "WILLIAMS HOUSE/WILLIAMSHOUSE.jpg",
+                        "WILLIAMS HOUSE/WILLIAMSHOUSE2.jpg"
                     ]
                 }
             },
@@ -2508,17 +3158,15 @@
                     { icon: "bx-calendar", text: "2023-Present" },
                     { icon: "bx-ruler", text: "1.2 Hectares" }
                 ],
-                images: {
-                    main: "https://images.unsplash.com/photo-1577495508048-b635879837f1?w=800&q=80",
+                                images: {
+                    main: "BLOOM TOWERS/BLOOM 1A copy.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1577495508048-b635879837f1?w=800&q=80",
-                        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-                        "https://images.unsplash.com/photo-1554435493-93422e8220c8?w=800&q=80",
-                        "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-                        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80",
-                        "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80"
+                        "BLOOM TOWERS/BLOOM 1A copy.jpg",
+                        "BLOOM TOWERS/BLOOM 2A copy.jpg",
+                        "BLOOM TOWERS/BLOOM 3A copy.jpg",
+                        "BLOOM TOWERS/BLOOM 4A copy.jpg",
+                        "BLOOM TOWERS/BLOOM 4A NIGHT 3 copy.jpg",
+                        "BLOOM TOWERS/Noite.png"
                     ]
                 }
             },
@@ -2546,16 +3194,10 @@
                     { icon: "bx-bed", text: "7 Bedrooms" }
                 ],
                 images: {
-                    main: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+                    main: "OWERRI VILLA/OWERI1.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
-                        "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800&q=80"
+                        "OWERRI VILLA/OWERI1.jpg",
+                        "OWERRI VILLA/OWERI2.jpg"
                     ]
                 }
             },
@@ -2583,16 +3225,11 @@
                     { icon: "bx-home", text: "18 Units" }
                 ],
                 images: {
-                    main: "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80",
+                    main: "OJORA CLOSE/OJORA.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=800&q=80",
-                        "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=800&q=80",
-                        "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=800&q=80",
-                        "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80",
-                        "https://images.unsplash.com/photo-1560185127-6a8c6c6d0b76?w=800&q=80",
-                        "https://images.unsplash.com/photo-1567496898669-ee935f5f647a?w=800&q=80",
-                        "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=800&q=80",
-                        "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=800&q=80"
+                        "OJORA CLOSE/OJORA.jpg",
+                        "OJORA CLOSE/OJORA2.jpg",
+                        "OJORA CLOSE/OJORA3.jpg"
                     ]
                 }
             },
@@ -2619,17 +3256,13 @@
                     { icon: "bx-calendar", text: "2025" },
                     { icon: "bx-water", text: "Waterfront" }
                 ],
-                images: {
-                    main: "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80",
+                                images: {
+                    main: "24 AWOLOWO ROAD/24 AWOLOWO RD 1A copy.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80",
-                        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
-                        "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&q=80",
-                        "https://images.unsplash.com/photo-1460317442991-0ec209397118?w=800&q=80"
+                        "24 AWOLOWO ROAD/24 AWOLOWO RD 1A copy.jpg",
+                        "24 AWOLOWO ROAD/24 AWOLOWO RD 2A copy.jpg",
+                        "24 AWOLOWO ROAD/24 AWOLOWO RD 3A_Interactive LightMix copy.jpg",
+                        "24 AWOLOWO ROAD/24 AWOLOWO RD 4A copy.jpg"
                     ]
                 }
             },
@@ -2657,16 +3290,11 @@
                     { icon: "bx-crown", text: "Luxury Villa" }
                 ],
                 images: {
-                    main: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
+                    main: "EKWERAZU VILLA/ekwere.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
-                        "https://images.unsplash.com/photo-1598228723793-52759bba239c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
-                        "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=800&q=80"
+                        "EKWERAZU VILLA/ekwere.jpg",
+                        "EKWERAZU VILLA/ekwere2.jpg",
+                        "EKWERAZU VILLA/ekwere3.jpg"
                     ]
                 }
             },
@@ -2694,16 +3322,13 @@
                     { icon: "bx-leaf", text: "LEED Platinum" }
                 ],
                 images: {
-                    main: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+                    main: "SHAMBALLA FZE/SHAMBALLA.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80",
-                        "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&q=80",
-                        "https://images.unsplash.com/photo-1462826303086-329426d1aef5?w=800&q=80",
-                        "https://images.unsplash.com/photo-1554435493-93422e8220c8?w=800&q=80",
-                        "https://images.unsplash.com/photo-1577495508048-b635879837f1?w=800&q=80"
+                        "SHAMBALLA FZE/SHAMBALLA.jpg",
+                        "SHAMBALLA FZE/SHAMBALLA01.jpg",
+                        "SHAMBALLA FZE/SHAMBALLA2.jpg",
+                        "SHAMBALLA FZE/SHAMBALLA3.jpg",
+                        "SHAMBALLA FZE/SHAMBALLA4.jpg"
                     ]
                 }
             },
@@ -2730,17 +3355,12 @@
                     { icon: "bx-calendar", text: "2024" },
                     { icon: "bx-bed", text: "100 Rooms" }
                 ],
-                images: {
-                    main: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
+                                images: {
+                    main: "BARNAWA HOTEL/NIGHT VIEW.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&q=80",
-                        "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=800&q=80",
-                        "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=800&q=80",
-                        "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&q=80",
-                        "https://images.unsplash.com/photo-1445019980597-93fa8acb246c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?w=800&q=80",
-                        "https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&q=80",
-                        "https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&q=80"
+                        "BARNAWA HOTEL/NIGHT VIEW.jpg",
+                        "BARNAWA HOTEL/1A copy.jpg",
+                        "BARNAWA HOTEL/2A copy.jpg"
                     ]
                 }
             },
@@ -2804,17 +3424,11 @@
                     { icon: "bx-calendar", text: "2024-Present" },
                     { icon: "bx-building-house", text: "30 Floors" }
                 ],
-                images: {
-                    main: "https://images.unsplash.com/photo-1478860409698-8707f313ee8b?w=800&q=80",
+                                images: {
+                    main: "JT TOWER/DAY REV 3.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1478860409698-8707f313ee8b?w=800&q=80",
-                        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-                        "https://images.unsplash.com/photo-1554435493-93422e8220c8?w=800&q=80",
-                        "https://images.unsplash.com/photo-1577495508048-b635879837f1?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80",
-                        "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&q=80"
+                        "JT TOWER/DAY REV 3.jpg",
+                        "JT TOWER/NIGHT REV 10.jpg"
                     ]
                 }
             },
@@ -2841,17 +3455,14 @@
                     { icon: "bx-calendar", text: "2022-Present" },
                     { icon: "bx-building-house", text: "16 Floors" }
                 ],
-                images: {
-                    main: "https://images.unsplash.com/photo-1464938050520-ef2571e0d6e5?w=800&q=80",
+                                images: {
+                    main: "MANDILAS TOWER/MANDILAS.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1464938050520-ef2571e0d6e5?w=800&q=80",
-                        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-                        "https://images.unsplash.com/photo-1554435493-93422e8220c8?w=800&q=80",
-                        "https://images.unsplash.com/photo-1577495508048-b635879837f1?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80",
-                        "https://images.unsplash.com/photo-1462826303086-329426d1aef5?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&q=80"
+                        "MANDILAS TOWER/MANDILAS.jpg",
+                        "MANDILAS TOWER/MANDILAS 2.jpg",
+                        "MANDILAS TOWER/MANDILAS 3.jpg",
+                        "MANDILAS TOWER/MANDILAS b.jpg",
+                        "MANDILAS TOWER/NIGHT RENDER A.jpg"
                     ]
                 }
             },
@@ -2879,16 +3490,9 @@
                     { icon: "bx-bed", text: "4 Bedrooms" }
                 ],
                 images: {
-                    main: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
+                    main: "PETER HOUSE/petersHouse.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=800&q=80",
-                        "https://images.unsplash.com/photo-1598228723793-52759bba239c?w=800&q=80"
+                        "PETER HOUSE/petersHouse.jpg"
                     ]
                 }
             },
@@ -2952,17 +3556,11 @@
                     { icon: "bx-calendar", text: "2025-Present" },
                     { icon: "bx-crown", text: "Premium" }
                 ],
-                images: {
-                    main: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
+                                images: {
+                    main: "BOURDILLON 48/1.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=800&q=80",
-                        "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=800&q=80",
-                        "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&q=80",
-                        "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=800&q=80"
+                        "BOURDILLON 48/1.jpg",
+                        "BOURDILLON 48/2.jpg"
                     ]
                 }
             },
@@ -2990,16 +3588,11 @@
                     { icon: "bx-briefcase", text: "Corporate HQ" }
                 ],
                 images: {
-                    main: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
+                    main: "SEPLAT HQ/SEPLAST.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=800&q=80",
-                        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=800&q=80",
-                        "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&q=80",
-                        "https://images.unsplash.com/photo-1462826303086-329426d1aef5?w=800&q=80",
-                        "https://images.unsplash.com/photo-1554435493-93422e8220c8?w=800&q=80"
+                        "SEPLAT HQ/SEPLAST.jpg",
+                        "SEPLAT HQ/SEPLAST 2.jpg",
+                        "SEPLAT HQ/SEPLAST3.jpg"
                     ]
                 }
             },
@@ -3027,20 +3620,252 @@
                     { icon: "bx-book-open", text: "6 Departments" }
                 ],
                 images: {
-                    main: "https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80",
+                    main: "NOUN FACULTY OF ARTS/NOUNFOA.jpg",
                     gallery: [
-                        "https://images.unsplash.com/photo-1562774053-701939374585?w=800&q=80",
-                        "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80",
-                        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80",
-                        "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=800&q=80",
-                        "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&q=80",
-                        "https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?w=800&q=80",
-                        "https://images.unsplash.com/photo-1498243691581-b145c3f54a5a?w=800&q=80",
-                        "https://images.unsplash.com/photo-1568792923760-d70635a89fdc?w=800&q=80"
+                        "NOUN FACULTY OF ARTS/NOUNFOA.jpg",
+                        "NOUN FACULTY OF ARTS/NOUNFOA2.jpg",
+                        "NOUN FACULTY OF ARTS/NOUNFOA2 (2).jpg",
+                        "NOUN FACULTY OF ARTS/NOUNFOA3.jpg",
+                        "NOUN FACULTY OF ARTS/NOUNFOA4.jpg"
+                    ]
+                }
+            },
+            21: {
+                id: 21,
+                title: "Odunayo's House Iju",
+                category: "residential",
+                categoryLabel: "Residential",
+                categoryIcon: "bx-home-heart",
+                location: "Iju, Ogun State",
+                shortDescription: "Private residential design-and-build project highlighted in the revised TBP profile",
+                description: "Odunayo's House Iju is a residential design-and-build project that reflects TBP's attention to practical living, careful construction oversight, and context-aware residential delivery.",
+                description2: "The project brings together architectural planning, site coordination, and construction management to create a grounded family residence.",
+                features: ["Design and Build", "Private Residence", "Site Coordination", "Residential Planning", "Construction Oversight", "Contextual Design"],
+                details: [
+                    { icon: "bx-calendar", label: "Timeline", value: "Completed" },
+                    { icon: "bx-home", label: "Type", value: "Private Residence" },
+                    { icon: "bx-hard-hat", label: "Scope", value: "Design and Build" },
+                    { icon: "bx-map-pin", label: "Location", value: "Iju, Ogun State" },
+                    { icon: "bx-check-circle", label: "Status", value: "Completed" },
+                    { icon: "bx-category", label: "Category", value: "Residential" }
+                ],
+                meta: [
+                    { icon: "bx-check-circle", text: "Completed" },
+                    { icon: "bx-hard-hat", text: "Design and Build" }
+                ],
+                images: {
+                    main: "ODUNAYO'S HOUSE IJU, OGUN STATE/20200731_145802.jpg",
+                    gallery: [
+                        "ODUNAYO'S HOUSE IJU, OGUN STATE/20200731_145802.jpg",
+                        "ODUNAYO'S HOUSE IJU, OGUN STATE/20200731_145723.jpg",
+                        "ODUNAYO'S HOUSE IJU, OGUN STATE/20200731_144115.jpg",
+                        "ODUNAYO'S HOUSE IJU, OGUN STATE/20200621_195137.jpg"
+                    ]
+                }
+            },
+            22: {
+                id: 22,
+                title: "FUPRE Library",
+                category: "institutional",
+                categoryLabel: "Institutional",
+                categoryIcon: "bx-school",
+                location: "Federal University of Petroleum Resources, Effurun",
+                shortDescription: "Academic library project from TBP's institutional portfolio",
+                description: "The FUPRE Library project forms part of TBP's education and institutional portfolio, supporting academic research, student collaboration, and campus identity.",
+                description2: "The work demonstrates TBP's ability to deliver institutional architecture with clear circulation, durable planning, and a strong civic presence.",
+                features: ["Academic Library", "Campus Planning", "Institutional Design", "Research Spaces", "Student Collaboration", "Durable Materials"],
+                details: [
+                    { icon: "bx-calendar", label: "Timeline", value: "Profile Project" },
+                    { icon: "bx-book-open", label: "Type", value: "Library" },
+                    { icon: "bx-user", label: "Client", value: "FUPRE" },
+                    { icon: "bx-school", label: "Sector", value: "Education" },
+                    { icon: "bx-check-circle", label: "Status", value: "Portfolio" },
+                    { icon: "bx-map-pin", label: "Location", value: "Effurun" }
+                ],
+                meta: [
+                    { icon: "bx-school", text: "Institutional" },
+                    { icon: "bx-book-open", text: "Library" }
+                ],
+                images: {
+                    main: "FUPRE LIBRARY/FUPRE LIBRARY 1.jpg",
+                    gallery: [
+                        "FUPRE LIBRARY/FUPRE LIBRARY 1.jpg",
+                        "FUPRE LIBRARY/FUPRE LIBRARY 2.jpg",
+                        "FUPRE LIBRARY/FUPRE LIBRARY 3.jpg",
+                        "FUPRE LIBRARY/FUPRE LIBRARY 4.jpg"
+                    ]
+                }
+            },
+            23: {
+                id: 23,
+                title: "FUPRE Laboratory",
+                category: "institutional",
+                categoryLabel: "Institutional",
+                categoryIcon: "bx-school",
+                location: "Federal University of Petroleum Resources, Effurun",
+                shortDescription: "Specialized academic laboratory project within TBP's higher-education portfolio",
+                description: "The FUPRE Laboratory project highlights TBP's experience with specialized academic facilities, where planning, safety, services coordination, and long-term usability are central to the design.",
+                description2: "The project sits alongside TBP's wider institutional work for FUPRE, including campus learning and administrative facilities.",
+                features: ["Laboratory Planning", "Higher Education", "Services Coordination", "Specialized Facility", "Campus Architecture", "Institutional Delivery"],
+                details: [
+                    { icon: "bx-calendar", label: "Timeline", value: "Profile Project" },
+                    { icon: "bx-flask", label: "Type", value: "Laboratory" },
+                    { icon: "bx-user", label: "Client", value: "FUPRE" },
+                    { icon: "bx-school", label: "Sector", value: "Education" },
+                    { icon: "bx-check-circle", label: "Status", value: "Portfolio" },
+                    { icon: "bx-map-pin", label: "Location", value: "Effurun" }
+                ],
+                meta: [
+                    { icon: "bx-school", text: "Institutional" },
+                    { icon: "bx-flask", text: "Laboratory" }
+                ],
+                images: {
+                    main: "FUPRE LABORATORY/LAB OPTION 2A.jpg",
+                    gallery: [
+                        "FUPRE LABORATORY/LAB OPTION 2A.jpg",
+                        "FUPRE SENATE BUILDING/1-1.jpg",
+                        "FUPRE SENATE BUILDING/2-1.jpg",
+                        "FUPRE SENATE BUILDING/3-1.jpg"
                     ]
                 }
             }
         };
+
+        const portfolioRows = [
+            { year: "2014", title: "Intercellular Office, Victoria Island, Lagos", scope: "Design & Build", status: "Completed" },
+            { year: "2014", title: "Karcher Showroom, Victoria Island, Lagos", scope: "Design & Build", status: "Completed" },
+            { year: "2014", title: "New Comex Office, Victoria Island, Lagos", scope: "Design & Build", status: "Completed" },
+            { year: "2015-2019", title: "Scarlet Lodge Hotel, Victoria Island, Lagos", scope: "Design & Build", status: "Completed" },
+            { year: "2015-2019", title: "Alegeh House, 24 Ilabere Avenue, Ikoyi, Lagos", scope: "Architectural Design", status: "Completed" },
+            { year: "2015-2019", title: "Screening Room for TLS Contact Centre, Ikeja, Lagos", scope: "Design & Build", status: "Completed" },
+            { year: "2015-2019", title: "Nigerian Bar Association National Secretariat, Abuja", scope: "Project Management", status: "Completed" },
+            { year: "2015-2019", title: "NSPRI Library Remodelling", scope: "Design & Build", status: "Completed" },
+            { year: "2015-2019", title: "NSPRI Main Entrance, Ilorin, Kwara State", scope: "Construction", status: "Completed" },
+            { year: "2020-2021", title: "Sapphire Tower, Bluewater", scope: "Architectural Design", status: "Completed", sourceTitle: "Sapphire Tower, Bluewater Lekki" },
+            { year: "2020-2021", title: "Promasidor Nigeria Head Office", scope: "Architectural Design", status: "Completed" },
+            { year: "2020-2021", title: "Odunayo's House, Iju, Lagos", scope: "Design & Build", status: "Completed", sourceTitle: "Odunayo's House Iju" },
+            { year: "2020-2021", title: "Cornerstone Tower", scope: "Fire Safety Audit", status: "Completed" },
+            { year: "2020-2021", title: "FUPRE School of Postgraduate Studies", scope: "Architectural Design", status: "Completed" },
+            { year: "2020-2021", title: "FUPRE College of Petroleum Management", scope: "Architectural Design", status: "Completed" },
+            { year: "2022", title: "KLM Terraces, Ilupeju, Lagos", scope: "Project Management", status: "Completed" },
+            { year: "2022", title: "Sellyfak Office Building, Victoria Island, Lagos", scope: "Design & Build", status: "Completed" },
+            { year: "2022", title: "NOUN Model Study Centre Master Plan, Abuja", scope: "Architectural Design", status: "Completed" },
+            { year: "2022", title: "The Pantheon, 27 Glover Road, Ikoyi, Lagos", scope: "Architectural Design", status: "Completed", sourceTitle: "The Pantheon, Ikoyi" },
+            { year: "2022", title: "NOUN Laboratory Building, Abeokuta Study Centre", scope: "Construction", status: "Completed" },
+            { year: "2022", title: "Akpata House, Benin City, Edo State", scope: "Consortium Project", status: "Ongoing" },
+            { year: "2022", title: "IHS Office, Lagos", scope: "Consortium Project", status: "On Hold" },
+            { year: "2022", title: "IHS Warehouse, Kaduna", scope: "Consortium Project", status: "On Hold" },
+            { year: "2022", title: "Mandilas Tower, Ikoyi, Lagos", scope: "Architectural Design", status: "Ongoing", sourceTitle: "Mandilas Tower" },
+            { year: "2022", title: "Redevelopment of Asaba Airport Terminal Building", scope: "Architectural Design", status: "Ongoing" },
+            { year: "2022", title: "LSDPC Urban Shelter, Lekki", scope: "Project Management", status: "Ongoing" },
+            { year: "2022", title: "LSDPC Exclusive Homes", scope: "Project Management", status: "Ongoing" },
+            { year: "2022", title: "LSDPC Treasure Homes", scope: "Project Management", status: "Ongoing" },
+            { year: "2023", title: "NOUN Ikorodu Study Centre", scope: "Architectural Design", status: "Completed" },
+            { year: "2023", title: "Ocean Epiphany", scope: "Advisory Services", status: "Ongoing" },
+            { year: "2023", title: "Peace Tower", scope: "Architectural Design", status: "Ongoing" },
+            { year: "2023", title: "The Oculus Grande", scope: "Architectural Design", status: "On Hold" },
+            { year: "2023", title: "Bloom Towers", scope: "Architectural Design", status: "Ongoing", sourceTitle: "Bloom Towers, Bluewater Lekki" },
+            { year: "2023", title: "Lekki Free Zone Welcome Centre & Entrance Arch", scope: "Architectural Design", status: "Completed" },
+            { year: "2024", title: "Lekki Free Zone CPC Building", scope: "Architectural Design", status: "Completed" },
+            { year: "2024", title: "Lekki Free Zone Irele Tower Reception", scope: "Design & Build", status: "Completed" },
+            { year: "2024", title: "Williams House, Iju, Lagos", scope: "Design & Build", status: "Ongoing", sourceTitle: "Williams House" },
+            { year: "2024", title: "Ariyibi Residence, Banana Island, Ikoyi, Lagos", scope: "Design & Build", status: "Completed" },
+            { year: "2024", title: "Eleven by SV, Oju-Olobun Close, Victoria Island, Lagos", scope: "Architectural Design", status: "Ongoing", sourceTitle: "Oju Olobun Residences" },
+            { year: "2024", title: "Parkview Residences, Ikoyi, Lagos", scope: "Architectural Design", status: "Ongoing" },
+            { year: "2024", title: "NOUN Laboratory Building, Ikorodu Study Centre", scope: "Architectural Design", status: "Completed" },
+            { year: "2024", title: "NOUN Badagry Study Centre", scope: "Architectural Design", status: "Ongoing" },
+            { year: "2024", title: "120-Bed Hotel Development, Barnawa, Kaduna State", scope: "Architectural Design", status: "Ongoing", sourceTitle: "Barnawa Hotel" },
+            { year: "2024", title: "Residential Development, Ojora Close, Victoria Island, Lagos", scope: "Architectural Design", status: "Ongoing", sourceTitle: "Ojora Apartments" },
+            { year: "2024", title: "JT Tower Residential Development, Ikoyi, Lagos", scope: "Architectural Design", status: "Ongoing", sourceTitle: "JT Tower" },
+            { year: "2025", title: "NOUN Zonal Offices (Abuja, Ibadan, Uyo, Kaduna, Bauchi & Enugu)", scope: "Architectural Design", status: "Completed" },
+            { year: "2025", title: "Residential Development, Lekki Foreshore, Lagos", scope: "Architectural Design", status: "Ongoing" },
+            { year: "2025", title: "Wellington College International School, Alaro City, Lagos", scope: "Architectural Design", status: "Ongoing" },
+            { year: "2025", title: "Shamballa Park Commercial Development, Alaro City, Lagos", scope: "Architectural Design", status: "Ongoing", sourceTitle: "Shamballa FZE" },
+            { year: "2025", title: "Ritz-Carlton Mixed-Use Development, Victoria Island, Lagos", scope: "Architectural Design", status: "Ongoing" },
+            { year: "2025", title: "Residential High-Rise Development, 11 Alexander Road, Ikoyi, Lagos", scope: "Architectural Design", status: "Ongoing" },
+            { year: "2025", title: "Residential High-Rise Development, 24 Awolowo Road, Ikoyi, Lagos", scope: "Architectural Design", status: "Ongoing", sourceTitle: "No. 24 Awolowo Road" },
+            { year: "2025", title: "Bella Belucci Residential High-Rise Development, Eko Atlantic, Lagos", scope: "Architectural Design", status: "Ongoing" },
+            { year: "2025", title: "The Spine Mixed-Use Development, Oniru, Lagos", scope: "Architectural Design", status: "Ongoing" },
+            { year: "2025", title: "Residential High-Rise Development, 23 Cameron Road, Ikoyi, Lagos", scope: "Architectural Design", status: "Ongoing" },
+            { year: "2025", title: "Katampe Residences, Abuja", scope: "Architectural Design", status: "Ongoing" },
+            { year: "2026", title: "Residential High-Rise Development, 48 Bourdillon Road, Ikoyi, Lagos", scope: "Architectural Design", status: "Ongoing", sourceTitle: "Bourdillon 48" },
+            { year: "2026", title: "Faculty of Arts, National Open University of Nigeria (NOUN), Abuja", scope: "Design & Build", status: "Ongoing", sourceTitle: "NOUN Faculty of Arts" },
+            { year: "2026", title: "Beken Towers, Banana Island, Lagos", scope: "Architectural Design", status: "Ongoing" },
+            { year: "2026", title: "Metrocrest Tower, Lekki, Lagos", scope: "Architectural Design", status: "Ongoing" },
+            { year: "2026", title: "Ndali High-Rise Development, Ikoyi, Lagos", scope: "Architectural Design", status: "Ongoing" },
+            { year: "2026", title: "Beken Towers - Phase II, Banana Island, Lagos", scope: "Architectural Design", status: "Ongoing" },
+            { year: "2026", title: "Residential Development, Cameron Road, Ikoyi, Lagos", scope: "Architectural Design", status: "Ongoing" }
+        ];
+
+        const normalizeProjectTitle = (title) => title
+            .toLowerCase()
+            .replace(/&/g, 'and')
+            .replace(/[^a-z0-9]+/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+
+        const existingProjectsByTitle = Object.values(projectsData).reduce((acc, project) => {
+            acc[normalizeProjectTitle(project.title)] = project;
+            return acc;
+        }, {});
+
+        const inferPortfolioCategory = (row) => {
+            const text = `${row.title} ${row.scope}`.toLowerCase();
+            if (text.includes('hotel') || text.includes('lodge') || text.includes('ritz')) return ["hospitality", "Hospitality", "bx-hotel"];
+            if (text.includes('noun') || text.includes('fupre') || text.includes('school') || text.includes('faculty') || text.includes('library') || text.includes('laboratory') || text.includes('college')) return ["institutional", "Institutional", "bx-school"];
+            if (text.includes('mixed-use') || text.includes('urban shelter') || text.includes('welcome centre') || text.includes('entrance arch')) return ["mixed-use", "Mixed-Use", "bx-layer"];
+            if (text.includes('house') || text.includes('residence') || text.includes('residential') || text.includes('terrace') || text.includes('tower') || text.includes('homes') || text.includes('apartment') || text.includes('beken') || text.includes('katampe') || text.includes('bourdillon') || text.includes('awolowo') || text.includes('cameron')) return ["residential", "Residential", "bx-home-heart"];
+            return ["commercial", "Commercial", "bx-building"];
+        };
+
+        const fallbackImagesByCategory = {
+            residential: "24 AWOLOWO ROAD/24 AWOLOWO RD 1A copy.jpg",
+            commercial: "PROMASIDOR/promasidor1.jpg",
+            "mixed-use": "27 GLOVER/PANTHEON.jpg",
+            hospitality: "BARNAWA HOTEL/NIGHT VIEW.jpg",
+            institutional: "FUPRE LIBRARY/FUPRE LIBRARY 1.jpg"
+        };
+
+        const makePortfolioProject = (row, index) => {
+            const matchKey = normalizeProjectTitle(row.sourceTitle || row.title);
+            const existing = existingProjectsByTitle[matchKey];
+            const [category, categoryLabel, categoryIcon] = inferPortfolioCategory(row);
+            const fallbackImage = fallbackImagesByCategory[category] || fallbackImagesByCategory.commercial;
+            const base = existing ? { ...existing } : {};
+
+            return {
+                ...base,
+                id: index + 1,
+                title: row.title,
+                category,
+                categoryLabel,
+                categoryIcon,
+                location: base.location || row.title.split(',').slice(1).join(',').trim() || "Nigeria",
+                shortDescription: base.shortDescription || `${row.scope} project listed in TBP's ${row.year} portfolio.`,
+                description: base.description || `${row.title} is part of The Building Practice Ltd's documented project portfolio, delivered through ${row.scope.toLowerCase()} services.`,
+                description2: base.description2 || `The project reflects TBP's decade-plus experience across architectural design, construction, project management, design-build delivery, and advisory services in Nigeria.`,
+                features: base.features || [row.scope, row.status, row.year, categoryLabel, "Portfolio Project", "Nigeria"],
+                details: [
+                    { icon: "bx-calendar", label: "Portfolio Year", value: row.year },
+                    { icon: "bx-hard-hat", label: "Scope", value: row.scope },
+                    { icon: "bx-check-circle", label: "Status", value: row.status },
+                    { icon: "bx-category", label: "Category", value: categoryLabel }
+                ],
+                meta: [
+                    { icon: "bx-calendar", text: row.year },
+                    { icon: row.status === "Completed" ? "bx-check-circle" : row.status === "On Hold" ? "bx-pause-circle" : "bx-time-five", text: row.status }
+                ],
+                images: base.images || {
+                    main: fallbackImage,
+                    gallery: [fallbackImage]
+                }
+            };
+        };
+
+        Object.keys(projectsData).forEach((key) => delete projectsData[key]);
+        portfolioRows.forEach((row, index) => {
+            projectsData[index + 1] = makePortfolioProject(row, index);
+        });
 
         // ========== LIGHTBOX STATE ==========
         let currentLightboxImages = [];
@@ -3097,7 +3922,9 @@
                 themeIcon: $('#themeIcon'),
                 backToTop: $('#backToTop'),
                 projectsGrid: $('#projectsGrid'),
+                projectsPagination: $('#projectsPagination'),
                 visibleCount: $('#visibleCount'),
+                totalCount: $('#totalCount'),
                 currentYear: $('#currentYear'),
                 projectModal: $('#projectModal'),
                 modalClose: $('#modalClose'),
@@ -3113,71 +3940,196 @@
             const filterBtns = $$('.filter-btn');
             const viewToggleBtns = $$('.view-toggle-btn');
             const statNumbers = $$('.stat-number');
+            const projectState = {
+                filter: 'all',
+                page: 1,
+                pageSize: 12
+            };
 
             // ========== SET CURRENT YEAR ==========
             if (elements.currentYear) {
                 elements.currentYear.textContent = new Date().getFullYear();
             }
 
-            // ========== GENERATE PROJECT CARDS ==========
-            const generateProjectCards = () => {
+            // ========== PAGINATED PROJECT CARDS ==========
+            const getFilteredProjects = () => Object.values(projectsData).filter((project) => {
+                return projectState.filter === 'all' || project.category === projectState.filter;
+            });
+
+            const createProjectCard = (project) => {
+                const card = document.createElement('article');
+                card.className = 'project-card';
+                card.dataset.category = project.category;
+                card.dataset.project = project.id;
+                card.setAttribute('role', 'listitem');
+
+                const imageSrc = getImagePath(project.images.main);
+
+                card.innerHTML = `
+                    <div class="project-image-wrapper">
+                        <img 
+                            src="${imageSrc}" 
+                            alt="${project.title}" 
+                            class="project-image" 
+                            loading="lazy"
+                            onerror="this.onerror=null; this.src='${CONFIG.placeholderImage}';"
+                        >
+                        <div class="project-overlay">
+                            <h4>${project.title}</h4>
+                            <p>${project.shortDescription}</p>
+                            <button class="project-view-btn" type="button">
+                                <i class="bx bx-right-arrow-alt"></i> View Project
+                            </button>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <span class="project-category"><i class="bx ${project.categoryIcon}"></i> ${project.categoryLabel}</span>
+                        <h3>${project.title}</h3>
+                        <p class="project-location"><i class="bx bx-map"></i> ${project.location}</p>
+                        <p class="project-description">${project.description.substring(0, 150)}...</p>
+                        <div class="project-meta">
+                            ${project.meta.map(m => `
+                                <span class="project-meta-item"><i class="bx ${m.icon}"></i> ${m.text}</span>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+
+                card.addEventListener('click', () => openProjectModal(project.id));
+
+                const img = card.querySelector('.project-image');
+                img.addEventListener('load', () => img.classList.add('loaded'));
+
+                return card;
+            };
+
+            const getPaginationItems = (currentPage, totalPages) => {
+                if (totalPages <= 7) {
+                    return Array.from({ length: totalPages }, (_, i) => i + 1);
+                }
+
+                const pages = new Set([1, totalPages, currentPage, currentPage - 1, currentPage + 1]);
+                const sorted = [...pages].filter(page => page >= 1 && page <= totalPages).sort((a, b) => a - b);
+                const items = [];
+
+                sorted.forEach((page, index) => {
+                    if (index > 0 && page - sorted[index - 1] > 1) {
+                        items.push('ellipsis');
+                    }
+                    items.push(page);
+                });
+
+                return items;
+            };
+
+            const renderPagination = (totalPages) => {
+                if (!elements.projectsPagination) return;
+
+                elements.projectsPagination.innerHTML = '';
+                elements.projectsPagination.hidden = totalPages <= 1;
+                if (totalPages <= 1) return;
+
+                const createButton = ({ label, page, icon, active = false, disabled = false, ariaLabel }) => {
+                    const button = document.createElement('button');
+                    button.type = 'button';
+                    button.className = `pagination-btn${active ? ' active' : ''}`;
+                    button.disabled = disabled;
+                    button.setAttribute('aria-label', ariaLabel || `Go to page ${page}`);
+                    if (active) button.setAttribute('aria-current', 'page');
+                    button.innerHTML = `${icon ? `<i class="bx ${icon}"></i>` : ''}${label ? `<span>${label}</span>` : ''}`;
+                    button.addEventListener('click', () => {
+                        if (disabled || active) return;
+                        projectState.page = page;
+                        renderProjectPage(true);
+                    });
+                    return button;
+                };
+
+                elements.projectsPagination.appendChild(createButton({
+                    label: 'Prev',
+                    icon: 'bx-chevron-left',
+                    page: Math.max(1, projectState.page - 1),
+                    disabled: projectState.page === 1,
+                    ariaLabel: 'Go to previous project page'
+                }));
+
+                getPaginationItems(projectState.page, totalPages).forEach((item) => {
+                    if (item === 'ellipsis') {
+                        const ellipsis = document.createElement('span');
+                        ellipsis.className = 'pagination-ellipsis';
+                        ellipsis.textContent = '...';
+                        elements.projectsPagination.appendChild(ellipsis);
+                        return;
+                    }
+
+                    elements.projectsPagination.appendChild(createButton({
+                        label: String(item),
+                        page: item,
+                        active: item === projectState.page
+                    }));
+                });
+
+                elements.projectsPagination.appendChild(createButton({
+                    label: 'Next',
+                    icon: 'bx-chevron-right',
+                    page: Math.min(totalPages, projectState.page + 1),
+                    disabled: projectState.page === totalPages,
+                    ariaLabel: 'Go to next project page'
+                }));
+            };
+
+            const renderProjectPage = (shouldScroll = false) => {
                 if (!elements.projectsGrid) {
                     console.error('Projects grid not found!');
                     return;
                 }
 
-                console.log('Generating project cards...');
+                const filteredProjects = getFilteredProjects();
+                const totalProjects = filteredProjects.length;
+                const totalPages = Math.max(1, Math.ceil(totalProjects / projectState.pageSize));
+                projectState.page = Math.min(projectState.page, totalPages);
 
-                Object.values(projectsData).forEach((project) => {
-                    const card = document.createElement('article');
-                    card.className = 'project-card';
-                    card.dataset.category = project.category;
-                    card.dataset.project = project.id;
-                    card.setAttribute('role', 'listitem');
+                const startIndex = (projectState.page - 1) * projectState.pageSize;
+                const pageProjects = filteredProjects.slice(startIndex, startIndex + projectState.pageSize);
+                const rangeStart = totalProjects === 0 ? 0 : startIndex + 1;
+                const rangeEnd = Math.min(startIndex + pageProjects.length, totalProjects);
 
-                    const imageSrc = getImagePath(project.images.main);
-
-                    card.innerHTML = `
-                        <div class="project-image-wrapper">
-                            <img 
-                                src="${imageSrc}" 
-                                alt="${project.title}" 
-                                class="project-image" 
-                                loading="lazy"
-                                onerror="this.onerror=null; this.src='${CONFIG.placeholderImage}';"
-                            >
-                            <div class="project-overlay">
-                                <h4>${project.title}</h4>
-                                <p>${project.shortDescription}</p>
-                                <button class="project-view-btn" type="button">
-                                    <i class="bx bx-right-arrow-alt"></i> View Project
-                                </button>
-                            </div>
-                        </div>
-                        <div class="project-info">
-                            <span class="project-category"><i class="bx ${project.categoryIcon}"></i> ${project.categoryLabel}</span>
-                            <h3>${project.title}</h3>
-                            <p class="project-location"><i class="bx bx-map"></i> ${project.location}</p>
-                            <p class="project-description">${project.description.substring(0, 150)}...</p>
-                            <div class="project-meta">
-                                ${project.meta.map(m => `
-                                    <span class="project-meta-item"><i class="bx ${m.icon}"></i> ${m.text}</span>
-                                `).join('')}
-                            </div>
-                        </div>
-                    `;
-
-                    // Click handler for card
-                    card.addEventListener('click', () => openProjectModal(project.id));
-
-                    // Image load handler
-                    const img = card.querySelector('.project-image');
-                    img.addEventListener('load', () => img.classList.add('loaded'));
-
-                    elements.projectsGrid.appendChild(card);
+                elements.projectsGrid.innerHTML = '';
+                pageProjects.forEach((project) => {
+                    elements.projectsGrid.appendChild(createProjectCard(project));
                 });
 
+                updateProjectCounts();
+                if (elements.visibleCount) {
+                    elements.visibleCount.textContent = totalProjects <= projectState.pageSize ? totalProjects : `${rangeStart}-${rangeEnd}`;
+                }
+                if (elements.totalCount) elements.totalCount.textContent = totalProjects;
+
+                renderPagination(totalPages);
+                initProjectCardAnimations();
+
+                if (shouldScroll) {
+                    $('.projects-section')?.scrollIntoView({ behavior: prefersReducedMotion() ? 'auto' : 'smooth' });
+                }
+            };
+
+            const generateProjectCards = () => {
+                renderProjectPage(false);
                 console.log('Project cards generated:', Object.keys(projectsData).length);
+            };
+
+            const updateProjectCounts = () => {
+                const projects = Object.values(projectsData);
+                const counts = projects.reduce((acc, project) => {
+                    acc.all += 1;
+                    acc[project.category] = (acc[project.category] || 0) + 1;
+                    return acc;
+                }, { all: 0 });
+
+                $$('.filter-count').forEach((counter) => {
+                    const category = counter.dataset.count;
+                    counter.textContent = counts[category] || 0;
+                });
             };
 
             // ========== SPLASH SCREEN ==========
@@ -3233,25 +4185,42 @@
 
             // ========== THEME ==========
             const initTheme = () => {
-                const savedTheme = localStorage.getItem('theme') || 
-                    (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                const savedTheme = localStorage.getItem('theme') || 'system';
                 
                 applyTheme(savedTheme);
+                
+                // Initialize theme icon
+                const themeIconEl = document.getElementById('themeIcon');
+                if (themeIconEl) {
+                    const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+                    themeIconEl.innerHTML = isDark ? icons8.sun() : icons8.moon();
+                }
 
                 elements.themeToggle?.addEventListener('click', () => {
+                    if (window.TBPTheme) {
+                        window.TBPTheme.toggle();
+                        return;
+                    }
                     const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
                     applyTheme(newTheme);
                 });
             };
 
             const applyTheme = (theme) => {
+                if (window.TBPTheme) {
+                    window.TBPTheme.apply(theme);
+                    return;
+                }
                 localStorage.setItem('theme', theme);
-                if (theme === 'dark') {
+                const isDark = theme === 'dark' || (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+                if (isDark) {
                     document.documentElement.setAttribute('data-theme', 'dark');
-                    if (elements.themeIcon) elements.themeIcon.className = 'bx bx-moon';
+                    const iconEl = document.getElementById('themeIcon');
+                    if (iconEl) iconEl.innerHTML = icons8.sun();
                 } else {
-                    document.documentElement.removeAttribute('data-theme');
-                    if (elements.themeIcon) elements.themeIcon.className = 'bx bx-sun';
+                    document.documentElement.setAttribute('data-theme', 'light');
+                    const iconEl = document.getElementById('themeIcon');
+                    if (iconEl) iconEl.innerHTML = icons8.moon();
                 }
             };
 
@@ -3294,27 +4263,9 @@
                     btn.classList.add('active');
                     btn.setAttribute('aria-selected', 'true');
 
-                    const filter = btn.dataset.category;
-                    const projectCards = $$('.project-card');
-                    let count = 0;
-
-                    projectCards.forEach((card, i) => {
-                        const shouldShow = filter === 'all' || card.dataset.category === filter;
-                        
-                        if (shouldShow) {
-                            count++;
-                            card.style.display = '';
-                            card.classList.remove('visible');
-                            card.style.transitionDelay = `${Math.min(i * 0.03, 0.3)}s`;
-                            requestAnimationFrame(() => {
-                                requestAnimationFrame(() => card.classList.add('visible'));
-                            });
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-
-                    if (elements.visibleCount) elements.visibleCount.textContent = count;
+                    projectState.filter = btn.dataset.category;
+                    projectState.page = 1;
+                    renderProjectPage(false);
                 });
             });
 
@@ -3557,5 +4508,9 @@
 
     })();
     </script>
+  <script src="../js/theme-sync.js" defer></script>
 </body>
 </html>
+
+
+
