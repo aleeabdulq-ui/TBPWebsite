@@ -1,6 +1,7 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
+  <script src="../js/theme-head.js"></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>The Building Practice | Architecture in Nigeria</title>
@@ -8,7 +9,7 @@
   <meta name="theme-color" content="#17314b">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../css/landing-editorial.css">
 </head>
 <body>
@@ -16,8 +17,11 @@
 
   <header class="site-header" data-header>
     <a class="brand" href="index.html" aria-label="The Building Practice home">
-      <span class="brand-mark">TBP</span>
-      <span class="brand-name">The Building<br>Practice</span>
+      <img class="brand-logo" src="../images/bp.png" alt="">
+      <span class="brand-copy">
+        <strong>The Building Practice Ltd.</strong>
+        <small>...Building Spaces that Feel</small>
+      </span>
     </a>
 
     <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
@@ -25,9 +29,14 @@
     </button>
 
     <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-      <a href="#projects">Projects</a>
-      <a href="#practice">Practice</a>
-      <a href="team.html">People</a>
+      <a class="is-active" href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="projects.html">Projects</a>
+      <a href="team.html">Team</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="blog.html">Blog</a>
+      <a href="careers.html">Careers</a>
       <a href="contact.html">Contact</a>
     </nav>
   </header>
@@ -151,5 +160,6 @@
   </footer>
 
   <script src="../js/landing-editorial.js" defer></script>
+  <script src="../js/theme-sync.js" defer></script>
 </body>
 </html>

@@ -1,4 +1,13 @@
-# Design QA — TBP Homepage Option 1
+# Design QA — TBP Homepage
+
+## Theme alignment update
+
+- The homepage now uses the same Inter typography, TBP blue/gold color system, branded logo header, full navigation set, and persistent light/dark theme behavior as the other primary pages.
+- Hero, filmstrip, and selected-project images use `object-fit: contain` so the full architectural composition remains visible instead of being cropped.
+- Hero media is inset and rendered below 100% scale to create the requested zoomed-out presentation on desktop and mobile.
+- Project cards now use a consistent landscape stage with restrained hover scaling that does not crop the source image.
+- Static verification passed: HTTP 200, clean Git diff, valid JavaScript syntax, and both shared theme scripts present.
+- Rendered Browser-plugin validation could not be rerun in this session because the browser runtime did not receive its required sandbox context; manual visual review remains required for the updated desktop and mobile styling.
 
 ## Comparison target
 
