@@ -253,39 +253,6 @@ svg { width: 1.25rem; fill: none; stroke: currentColor; stroke-linecap: round; s
   to { opacity: 1; filter: blur(0); transform: scale(1); }
 }
 
-.hero-copy {
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: clamp(1.5rem, 5vw, 5rem);
-  width: min(31rem, 42vw);
-  padding: clamp(1.5rem, 2.5vw, 2.5rem);
-  border: 1px solid rgba(255, 255, 255, .72);
-  border-radius: var(--radius);
-  background: rgba(255, 255, 255, .72);
-  box-shadow: var(--shadow-md);
-  backdrop-filter: blur(24px) saturate(150%);
-  -webkit-backdrop-filter: blur(24px) saturate(150%);
-  transform: translateY(-50%);
-}
-
-[data-theme="dark"] .hero-copy {
-  border-color: rgba(255,255,255,.12);
-  background: rgba(8, 13, 18, .74);
-}
-
-.hero-copy h1 {
-  margin: 0;
-  color: var(--ink);
-  font-size: clamp(3rem, 5.1vw, 5.6rem);
-  font-weight: 600;
-  line-height: .98;
-  letter-spacing: -.065em;
-  text-wrap: balance;
-}
-
-.hero-copy p { max-width: 22rem; margin: 1.5rem 0 1.8rem; color: var(--muted); font-size: clamp(1rem, 1.35vw, 1.3rem); font-weight: 300; }
-
 .primary-action,
 .text-action {
   display: inline-flex;
@@ -401,6 +368,35 @@ svg { width: 1.25rem; fill: none; stroke: currentColor; stroke-linecap: round; s
 @keyframes galleryDriftRight {
   from { transform: translateX(-50%); }
   to { transform: translateX(0); }
+}
+
+.editorial-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(17rem, .65fr);
+  gap: clamp(2rem, 8vw, 9rem);
+  align-items: end;
+  width: min(calc(100% - (2 * var(--gutter))), var(--max));
+  margin: 0 auto;
+  padding: clamp(5rem, 8vw, 9rem) 0 0;
+}
+
+.editorial-intro h1 {
+  margin: 0;
+  color: var(--ink);
+  font-size: clamp(3.8rem, 7.5vw, 8.5rem);
+  font-weight: 600;
+  line-height: .88;
+  letter-spacing: -.07em;
+  text-wrap: balance;
+}
+
+.editorial-intro p {
+  max-width: 25rem;
+  margin: 0 0 1.7rem;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.35vw, 1.3rem);
+  font-weight: 300;
+  line-height: 1.65;
 }
 
 .projects {
@@ -552,11 +548,10 @@ svg { width: 1.25rem; fill: none; stroke: currentColor; stroke-linecap: round; s
   .menu-toggle { width: 2.45rem; height: 2.45rem; }
   .hero { min-height: auto; padding-top: 6.4rem; }
   .hero-stage { display: flex; flex-direction: column; min-height: 0; overflow: visible; background: transparent; box-shadow: none; }
-  .hero-copy { position: relative; top: auto; left: auto; order: 1; width: auto; padding: clamp(2rem, 9vw, 4rem) 1.2rem 2rem; border: 0; background: transparent; box-shadow: none; backdrop-filter: none; transform: none; }
-  .hero-copy h1 { font-size: clamp(3rem, 13vw, 5.5rem); }
-  .hero-copy p { margin: 1.2rem 0 1.5rem; }
-  .hero-slides { position: relative; order: 2; height: auto; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--canvas); }
-  .hero-status { position: relative; right: auto; bottom: auto; order: 3; grid-template-columns: minmax(0, 1fr) auto auto auto; margin-top: .75rem; border-color: var(--line); background: var(--mica); }
+  .hero-slides { position: relative; order: 1; height: auto; aspect-ratio: 16 / 9; overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--canvas); }
+  .hero-status { position: relative; right: auto; bottom: auto; order: 2; grid-template-columns: minmax(0, 1fr) auto auto auto; margin-top: .75rem; border-color: var(--line); background: var(--mica); }
+  .editorial-intro { grid-template-columns: 1fr; gap: 2rem; padding-top: 5rem; }
+  .editorial-intro h1 { font-size: clamp(3.5rem, 14vw, 6rem); }
   .projects { grid-template-columns: 1fr; gap: 3.5rem; padding-top: 6rem; }
   .section-heading { position: static; display: grid; grid-template-columns: 1fr; }
   .section-heading h2 { font-size: clamp(3rem, 13vw, 5rem); }
@@ -575,7 +570,6 @@ svg { width: 1.25rem; fill: none; stroke: currentColor; stroke-linecap: round; s
 @media (max-width: 520px) {
   .brand-name { display: none; }
   .brand-rule { display: none; }
-  .hero-copy { padding-right: .75rem; padding-left: .75rem; }
   .hero-status { grid-template-columns: minmax(0, 1fr) auto auto; }
   .hero-count { display: none; }
   .project-piece figcaption,
