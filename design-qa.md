@@ -1,89 +1,54 @@
-# Design QA — TBP Homepage
+# Design QA — TBP Windows 11 Homepage
 
-## Theme alignment update
+## Design direction
 
-- The homepage now uses the same Inter typography, TBP blue/gold color system, branded logo header, full navigation set, and persistent light/dark theme behavior as the other primary pages.
-- Hero, filmstrip, and selected-project images use `object-fit: contain` so the full architectural composition remains visible instead of being cropped.
-- Hero media is inset and rendered below 100% scale to create the requested zoomed-out presentation on desktop and mobile.
-- Project cards now use a consistent landscape stage with restrained hover scaling that does not crop the source image.
-- Static verification passed: HTTP 200, clean Git diff, valid JavaScript syntax, and both shared theme scripts present.
-- Rendered Browser-plugin validation could not be rerun in this session because the browser runtime did not receive its required sandbox context; manual visual review remains required for the updated desktop and mobile styling.
+- Windows 11-inspired Mica navigation, cool white surfaces, restrained teal and gold brand accents, soft elevation, and rounded media frames.
+- Architectural project imagery is the primary content and visual focus.
+- Source imagery: `C:\Users\aliab\Pictures\webpix`.
 
-## Comparison target
+## Image behavior
 
-- Source visual truth: `tmp/design-reference-option-1.png`
-- Final desktop implementation: `tmp/implementation-desktop-full.png`
-- Desktop first screen: `tmp/implementation-desktop-top.png`
-- Final mobile implementation: `tmp/implementation-mobile-full.png`
-- Mobile navigation state: `tmp/implementation-mobile-menu.png`
-- Route/state: `http://localhost:8080/pages/index.html`, logged-out public homepage
+- Hero: five wide project images use `object-fit: cover` and fill the entire hero media stage.
+- Slideshow timing: 3.5 seconds between changes.
+- Slideshow transitions: fade, wipe, zoom, slide, and focus/blur rotate across slides.
+- Project marquee: all 22 supplied project images appear in a continuous right-moving gallery immediately below the hero.
+- Marquee media uses `object-fit: contain` so the full project image remains visible.
+- Marquee duration is 150 seconds for slow motion; hover or keyboard focus pauses it.
+- Selected-project and cinematic media frames continue to use `object-fit: contain`.
 
-## Capture normalization
+## Navigation and responsive behavior
 
-- Source pixels: 864 × 1821, density 1x.
-- Desktop viewport: 1440 × 1024 CSS px, device scale factor 1.
-- Desktop full-page capture: 1425 × 3308 px; the 15 px width difference is the native vertical scrollbar gutter.
-- Mobile viewport and capture width: 390 × 844 CSS px, device scale factor 1; full-page capture is 390 × 3772 px.
-- The source and desktop implementation were opened together in one visual comparison input, top-aligned and evaluated proportionally. The implementation is intentionally not resampled because the reference is a concept board rather than a pixel-spec screenshot.
+- Header and footer include Home, About, Services, Projects, Team, Reviews, Blog, Careers, and Contact.
+- Desktop uses the full Mica navigation shell.
+- Mobile uses the same links in a full-screen menu with Escape-to-close support.
+- No horizontal overflow at 390 × 844.
 
-## Full-view comparison evidence
+## Fidelity ledger
 
-- Composition: full-bleed dusk hero, small white brand and navigation, lower-right pale project caption, centered studio name, three equal project columns, text-only practice section, and charcoal footer all match the selected concept's hierarchy.
-- Fonts and typography: Manrope's light optical weight closely matches the reference's thin neo-grotesk. Navigation, metadata, letter spacing, and mixed micro/regular text hierarchy are consistent and remain legible.
-- Spacing and layout rhythm: the desktop uses a 3-column grid, generous warm-white space, square imagery, hairline metadata dividers, and a compact text-led lower section. The implementation is slightly longer than the concept because it includes an explicit project index CTA and real footer links; this is acceptable P3 product detail.
-- Colors and visual tokens: deep blue photography, warm-white paper, charcoal ink, fine gray rules, and the dark footer align with the source. No decorative gradients, card radii, or shadows were introduced.
-- Image quality and asset fidelity: the hero uses a purpose-made wide Peace Tower asset grounded in the supplied TBP render. Project cards use TBP's real Peace Tower, Shamballa, and Welcome Centre imagery with sharp, deliberate crops. No placeholder, CSS-drawn, or third-party project imagery remains.
-- Copy and content: labels are concise and TBP-specific. Navigation is limited to Projects, Practice, People, and Contact. The practice statement is intentionally short.
+| Area | Concept target | Rendered result | Status |
+| --- | --- | --- | --- |
+| Navigation | Floating Windows 11 Mica shell | Matching translucent shell, elevation, teal/gold active state | Pass |
+| Hero | Dominant architectural image | Full-stage project image with restrained Mica copy surface | Pass |
+| Gallery | Image-led project presentation | All 22 supplied projects in a slow continuous rail | Pass |
+| Typography | Segoe/Inter-like clear hierarchy | Inter with Windows-compatible fallbacks and matched scale | Pass |
+| Palette | True white, cool gray, deep teal, small gold accents | Matching code-native design tokens | Pass |
+| Practice/footer | Open split statement and deep-teal footer | Matching split surface and compact footer using real TBP contact details | Pass |
+| Mobile | Clear collapse with image priority | Compact header, readable hero, full-width imagery, no overflow | Pass |
 
-## Focused-region evidence
+## Intentional deviations
 
-- Hero/header: `tmp/implementation-desktop-top.png` confirms the full building, negative sky, legible white navigation, and lower-right caption at 1440 × 1024.
-- Mobile hero and flow: `tmp/implementation-mobile-full.png` confirms a complete first screen, stacked project cards, text-led practice section, and readable footer with no horizontal overflow.
-- Mobile menu: `tmp/implementation-mobile-menu.png` confirms a clear open state with an accessible close control and four primary routes.
+- A compact Mica copy surface was added over the hero because the original project image has trees and a streetlight behind the text area; this preserves legibility without tinting the full image.
+- The footer uses TBP’s real Lagos address and email instead of the placeholder contact details shown in the generated concept.
+- The requested all-project moving gallery was added after concept generation and treated as a user-approved extension.
 
-## Comparison history
+## Validation
 
-### Iteration 1
+- HTTP 200 for the homepage and all referenced local assets.
+- `git diff --check` passed.
+- `node --check js/landing-editorial.js` passed.
+- Playwright Chromium desktop screenshot: 1536 × 1024.
+- Playwright Chromium mobile screenshot: 390 × 844.
+- Playwright interaction test passed: slideshow timing/class change, 44 marquee cards after seamless duplication, 22 loaded source gallery images, hero `cover`, gallery `contain`, mobile menu, Escape close, console health, and overflow.
+- Browser/IAB was attempted first but unavailable because its runtime did not receive the required sandbox context; Playwright Chromium was used as the fallback.
 
-- Earlier finding [P1]: the portrait Peace Tower source was forced into a landscape viewport, cropping the roof and base and making the building excessively large.
-- Fix: created `images/generated/peace-tower-hero-wide.png` from the supplied TBP Peace Tower render, preserving the building while extending the surrounding Lagos dusk context.
-- Post-fix evidence: `tmp/implementation-desktop-top.png` shows the complete building centered with appropriate negative space and the intended project caption.
-
-### Iteration 2
-
-- Earlier finding [P1]: the lower practice section contained a large split image and oversized statement that were not present in the selected visual target.
-- Fix: removed the image, reduced the heading scale, and converted the section to a compact text-only block before the footer.
-- Post-fix evidence: `tmp/implementation-desktop-full.png` now follows the source's quiet transition from project grid to practice note to footer.
-
-### Iteration 3
-
-- Earlier finding [P2]: the desktop page was materially taller than the source because the project CTA and footer used excessive vertical spacing.
-- Fix: tightened the project-section bottom padding, CTA margin, footer padding, and footer-bottom margin.
-- Post-fix evidence: final desktop height is 3308 px at 1425 px content width, with hierarchy and whitespace preserved.
-
-## Functional verification
-
-- Mobile menu opened by button and closed with Escape; `aria-expanded` changed from `true` to `false`.
-- Sticky header entered its scrolled state after page movement.
-- Projects, About/Practice, People, and Contact destination pages all returned HTTP 200.
-- All four homepage images loaded with non-zero natural dimensions.
-- Horizontal overflow: none at 1440 px or 390 px.
-- Browser console errors: none.
-
-## Findings
-
-- No actionable P0, P1, or P2 issues remain.
-
-## Follow-up polish
-
-- [P3] The implementation includes “Selected Projects” and “All projects” labels that add useful navigation but make the page slightly more explicit than the concept.
-
-## Implementation checklist
-
-- [x] Match the selected project-first visual hierarchy.
-- [x] Use TBP-owned project imagery.
-- [x] Verify desktop and mobile layouts.
-- [x] Test the mobile menu and primary destinations.
-- [x] Check console errors and image loading.
-
-final result: passed
+Final result: passed.

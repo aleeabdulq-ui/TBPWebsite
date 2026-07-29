@@ -5,8 +5,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>The Building Practice | Architecture in Nigeria</title>
-  <meta name="description" content="The Building Practice is a Lagos architecture studio shaping enduring places through clarity, context and craft.">
-  <meta name="theme-color" content="#17314b">
+  <meta name="description" content="The Building Practice is a Nigerian architecture studio creating enduring residential, commercial and civic projects.">
+  <meta name="theme-color" content="#f7f9fc">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,20 +16,175 @@
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="site-header" data-header>
-    <a class="brand" href="index.html" aria-label="The Building Practice home">
-      <img class="brand-logo" src="../images/bp.png" alt="">
-      <span class="brand-copy">
-        <strong>The Building Practice Ltd.</strong>
-        <small>...Building Spaces that Feel</small>
-      </span>
-    </a>
+    <div class="nav-shell">
+      <a class="brand" href="index.html" aria-label="The Building Practice home">
+        <span class="brand-monogram">TBP</span>
+        <span class="brand-rule" aria-hidden="true"></span>
+        <span class="brand-name">The Building<br>Practice</span>
+      </a>
 
-    <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
-      <span></span><span></span>
-    </button>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a class="is-active" href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="projects.html">Projects</a>
+        <a href="team.html">Team</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="blog.html">Blog</a>
+        <a href="careers.html">Careers</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
-    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-      <a class="is-active" href="index.html">Home</a>
+      <div class="nav-actions">
+        <button class="window-theme-toggle" type="button" aria-label="Switch color theme" aria-pressed="false" data-home-theme>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.5"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.65 17.65l1.42 1.42M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.65 6.35l1.42-1.42"></path></svg>
+        </button>
+        <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="site-nav">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title" data-hero-slider>
+      <div class="hero-stage">
+        <div class="hero-slides" aria-live="polite">
+          <img class="hero-image is-active" src="../images/webpix/awolowo-24.png" alt="24 Awolowo residential tower in a landscaped urban setting" data-title="24 Awolowo" data-detail="Residential · Lagos">
+          <img class="hero-image" src="../images/webpix/bloom-towers-2.png" alt="Bloom Towers residential development" data-title="Bloom Towers" data-detail="Residential · Lagos">
+          <img class="hero-image" src="../images/webpix/barnawa-hotel.png" alt="Barnawa Hotel architectural proposal" data-title="Barnawa Hotel" data-detail="Hospitality · Kaduna">
+          <img class="hero-image" src="../images/webpix/boudilon-54.png" alt="54 Bourdillon residential development" data-title="54 Bourdillon" data-detail="Residential · Lagos">
+          <img class="hero-image" src="../images/webpix/lawrence-road.png" alt="Lawrence Road residential development" data-title="Lawrence Road" data-detail="Residential · Lagos">
+        </div>
+
+        <div class="hero-copy">
+          <h1 id="hero-title">Building spaces<br>that feel.</h1>
+          <p>Architecture shaped by context, clarity and craft.</p>
+          <a class="primary-action" href="#projects">
+            Explore projects
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+          </a>
+        </div>
+
+        <div class="hero-status" aria-label="Featured project controls">
+          <div>
+            <strong data-hero-title>24 Awolowo</strong>
+            <span data-hero-detail>Residential · Lagos</span>
+          </div>
+          <span class="hero-count"><b data-hero-current>01</b> / <span>05</span></span>
+          <button type="button" data-hero-prev aria-label="Previous project">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"></path></svg>
+          </button>
+          <button type="button" data-hero-next aria-label="Next project">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 18l6-6-6-6"></path></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-marquee" id="project-gallery" aria-label="Project gallery">
+      <div class="marquee-track" data-project-marquee>
+        <div class="marquee-set">
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/awolowo-24.png" alt="24 Awolowo residential tower"></span><span>24 Awolowo</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/alexander-11.png" alt="Alexander 11 development"></span><span>Alexander 11</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/aruba-court-katampe.png" alt="Aruba Court Katampe residence"></span><span>Aruba Court Katampe</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/awolowo-2.png" alt="Awolowo development view two"></span><span>Awolowo II</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/awolowo-3.png" alt="Awolowo development view three"></span><span>Awolowo III</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/barnawa-hotel.png" alt="Barnawa Hotel"></span><span>Barnawa Hotel</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/beachwood-estate.png" alt="Beachwood Estate"></span><span>Beachwood Estate</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/bella-belluci.png" alt="Bella Belluci development"></span><span>Bella Belluci</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/bloom-towers.png" alt="Bloom Towers"></span><span>Bloom Towers</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/bloom-towers-2.png" alt="Bloom Towers second view"></span><span>Bloom Towers II</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/boudilon-54.png" alt="54 Bourdillon"></span><span>54 Bourdillon</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/cameron-road.png" alt="Cameron Road development"></span><span>Cameron Road</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/cameron-road-2.png" alt="Cameron Road second view"></span><span>Cameron Road II</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/fupre.png" alt="FUPRE project"></span><span>FUPRE</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/jt-tower.png" alt="JT Tower"></span><span>JT Tower</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/lawrence-road.png" alt="Lawrence Road development"></span><span>Lawrence Road</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/lfz.png" alt="Lagos Free Zone project"></span><span>Lagos Free Zone</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/lfz-gate.png" alt="Lagos Free Zone gate"></span><span>LFZ Gate</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/lfz-night.png" alt="Lagos Free Zone gateway at night"></span><span>LFZ Night</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/mandilas.png" alt="Mandilas development"></span><span>Mandilas</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/mandilas-day.jpg" alt="Mandilas development in daylight"></span><span>Mandilas Day</span></a>
+          <a class="marquee-card" href="projects.html"><span class="marquee-media"><img src="../images/webpix/melrose-residence.png" alt="Melrose Residence"></span><span>Melrose Residence</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects" id="projects" aria-labelledby="projects-title">
+      <div class="section-heading reveal">
+        <div>
+          <span class="gold-rule" aria-hidden="true"></span>
+          <h2 id="projects-title">Selected<br>projects</h2>
+        </div>
+        <p>Built work across residential, commercial and civic contexts.</p>
+        <a class="text-action" href="projects.html">
+          View all projects
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+      </div>
+
+      <div class="project-gallery">
+        <figure class="project-piece project-piece--lead reveal">
+          <a class="project-media" href="projects.html"><img src="../images/webpix/aruba-court-katampe.png" alt="Aruba Court Katampe residence at dusk"></a>
+          <figcaption><strong>Aruba Court Katampe</strong><span>Residential · Abuja</span></figcaption>
+        </figure>
+
+        <figure class="project-piece project-piece--portrait reveal">
+          <a class="project-media" href="projects.html"><img src="../images/webpix/melrose-residence.png" alt="Melrose Residence tower"></a>
+          <figcaption><strong>Melrose Residence</strong><span>Residential · Lagos</span></figcaption>
+        </figure>
+
+        <figure class="project-piece project-piece--night reveal">
+          <a class="project-media" href="projects.html"><img src="../images/webpix/lfz-night.png" alt="Lagos Free Zone gateway illuminated at night"></a>
+          <figcaption><strong>LFZ Gateway</strong><span>Civic · Lagos</span></figcaption>
+        </figure>
+
+        <figure class="project-piece project-piece--wide reveal">
+          <a class="project-media" href="projects.html"><img src="../images/webpix/beachwood-estate.png" alt="Beachwood Estate modern residence"></a>
+          <figcaption><strong>Beachwood Estate</strong><span>Residential · Lagos</span></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="project-reel" aria-label="More featured work">
+      <figure class="reel-piece reveal">
+        <div class="reel-media"><img src="../images/webpix/mandilas-day.jpg" alt="Mandilas high-rise development"></div>
+        <figcaption><span>Mandilas</span><span>Mixed Use · Lagos</span></figcaption>
+      </figure>
+      <figure class="reel-piece reveal">
+        <div class="reel-media"><img src="../images/webpix/jt-tower.png" alt="JT Tower viewed from the city street"></div>
+        <figcaption><span>JT Tower</span><span>Commercial · Lagos</span></figcaption>
+      </figure>
+      <figure class="reel-piece reveal">
+        <div class="reel-media"><img src="../images/webpix/cameron-road.png" alt="Cameron Road residential towers"></div>
+        <figcaption><span>Cameron Road</span><span>Residential · Lagos</span></figcaption>
+      </figure>
+    </section>
+
+    <section class="practice" id="practice" aria-labelledby="practice-title">
+      <div class="practice-title reveal">
+        <h2 id="practice-title">Architecture shaped<br>by context.</h2>
+        <span class="gold-rule" aria-hidden="true"></span>
+      </div>
+      <div class="practice-copy reveal">
+        <p>We design enduring places through clarity, discipline and a deep respect for people and place.</p>
+        <a class="text-action" href="about.html">
+          About the practice
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"></path></svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-identity">
+      <div class="footer-brand"><strong>TBP</strong><span>The Building<br>Practice</span></div>
+      <address>Plot 6, Remi Olowude Street<br>Lekki Phase 1, Lagos</address>
+      <a href="mailto:info@buildingpractice.biz">info@buildingpractice.biz</a>
+    </div>
+    <nav aria-label="Footer navigation">
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="projects.html">Projects</a>
@@ -39,127 +194,12 @@
       <a href="careers.html">Careers</a>
       <a href="contact.html">Contact</a>
     </nav>
-  </header>
-
-  <main id="main">
-    <section class="hero" aria-label="Featured projects" data-hero-slider>
-      <div class="hero-slides" aria-live="polite">
-        <img class="hero-image is-active" src="../images/generated/peace-tower-hero-wide.png" alt="Peace Tower rising above the Lagos skyline at dusk" data-title="Peace Tower" data-detail="Lagos · Residential">
-        <img class="hero-image" src="../images/team/SHAMBALLA4.jpg" alt="Shamballa mixed-use development at sunset" data-title="Shamballa" data-detail="Lagos · Mixed Use">
-        <img class="hero-image" src="../images/team/LFZ9.jpg" alt="Lekki Free Zone Welcome Centre" data-title="Welcome Centre" data-detail="Lekki · Civic &amp; Commercial">
-        <img class="hero-image" src="../images/team/Bloom2.jpg" alt="Bloom Towers residential development" data-title="Bloom Towers" data-detail="Lagos · Residential">
-        <img class="hero-image" src="../images/team/PANTHEON9.jpg" alt="Pantheon residential tower at dusk" data-title="Pantheon" data-detail="Lagos · Residential">
-      </div>
-      <a class="hero-caption" href="projects.html">
-        <span>Featured project</span>
-        <strong data-hero-title>Peace Tower</strong>
-        <small data-hero-detail>Lagos · Residential</small>
-      </a>
-      <a class="scroll-cue" href="#projects">Discover <span aria-hidden="true">↓</span></a>
-    </section>
-
-    <section class="project-filmstrip" id="project-filmstrip" aria-label="More featured projects">
-      <div class="filmstrip-track">
-        <div class="filmstrip-set">
-          <a href="projects.html"><img src="../images/tbpix/AkpataHouse.jpg" alt="Akpata House"></a>
-          <a href="projects.html"><img src="../images/tbpix/BloomTowers.png" alt="Bloom Towers"></a>
-          <a href="projects.html"><img src="../images/tbpix/CameronRd.jpg" alt="Cameron Road residence"></a>
-          <a href="projects.html"><img src="../images/tbpix/JTtower.jpg" alt="JT Tower"></a>
-          <a href="projects.html"><img src="../images/tbpix/LFZ.png" alt="Lekki Free Zone development"></a>
-          <a href="projects.html"><img src="../images/tbpix/Mandilas.jpg" alt="Mandilas Tower"></a>
-          <a href="projects.html"><img src="../images/tbpix/Oculus.JPG" alt="Oculus Grande"></a>
-          <a href="projects.html"><img src="../images/tbpix/Saphire.jpg" alt="Sapphire Tower"></a>
-        </div>
-        <div class="filmstrip-set" aria-hidden="true">
-          <a href="projects.html" tabindex="-1"><img src="../images/tbpix/AkpataHouse.jpg" alt=""></a>
-          <a href="projects.html" tabindex="-1"><img src="../images/tbpix/BloomTowers.png" alt=""></a>
-          <a href="projects.html" tabindex="-1"><img src="../images/tbpix/CameronRd.jpg" alt=""></a>
-          <a href="projects.html" tabindex="-1"><img src="../images/tbpix/JTtower.jpg" alt=""></a>
-          <a href="projects.html" tabindex="-1"><img src="../images/tbpix/LFZ.png" alt=""></a>
-          <a href="projects.html" tabindex="-1"><img src="../images/tbpix/Mandilas.jpg" alt=""></a>
-          <a href="projects.html" tabindex="-1"><img src="../images/tbpix/Oculus.JPG" alt=""></a>
-          <a href="projects.html" tabindex="-1"><img src="../images/tbpix/Saphire.jpg" alt=""></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="projects" id="projects" aria-labelledby="projects-title">
-      <header class="projects-intro reveal">
-        <p>The Building Practice</p>
-        <h1 id="projects-title">Selected Projects</h1>
-      </header>
-
-      <div class="project-grid">
-        <article class="project-card reveal">
-          <a class="project-image" href="projects.html" aria-label="View Peace Tower project">
-            <img src="../images/team/PEACETOWER1.jpg" alt="Peace Tower at dusk">
-          </a>
-          <div class="project-meta">
-            <span>Lagos</span><span>2025</span>
-          </div>
-          <h2><a href="projects.html">Peace Tower</a></h2>
-          <p>Residential</p>
-        </article>
-
-        <article class="project-card reveal">
-          <a class="project-image" href="projects.html" aria-label="View Shamballa project">
-            <img src="../images/team/SHAMBALLA4.jpg" alt="Shamballa mixed-use development at sunset">
-          </a>
-          <div class="project-meta">
-            <span>Lagos</span><span>2024</span>
-          </div>
-          <h2><a href="projects.html">Shamballa</a></h2>
-          <p>Mixed Use</p>
-        </article>
-
-        <article class="project-card reveal">
-          <a class="project-image" href="projects.html" aria-label="View Lekki Free Zone Welcome Centre project">
-            <img src="../images/team/LFZ9.jpg" alt="Lekki Free Zone Welcome Centre">
-          </a>
-          <div class="project-meta">
-            <span>Lekki</span><span>2024</span>
-          </div>
-          <h2><a href="projects.html">Welcome Centre</a></h2>
-          <p>Civic · Commercial</p>
-        </article>
-      </div>
-
-      <a class="all-projects reveal" href="projects.html">All projects <span aria-hidden="true">↗</span></a>
-    </section>
-
-    <section class="practice" id="practice" aria-labelledby="practice-title">
-      <div class="practice-copy reveal">
-        <p class="eyebrow">Practice</p>
-        <h2 id="practice-title">Architecture shaped by context.</h2>
-        <p class="practice-text">We are an architecture studio based in Lagos. Our work begins with place and purpose, and is shaped through clarity, discipline and a deep respect for context.</p>
-        <a href="about.html">About the studio <span aria-hidden="true">↗</span></a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="footer-brand">
-      <span class="brand-mark">TBP</span>
-      <span>The Building Practice</span>
-    </div>
-    <nav aria-label="Footer navigation">
-      <a href="projects.html">Projects</a>
-      <a href="about.html">Practice</a>
-      <a href="team.html">People</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <address>
-      Plot 6, Remi Olowude Street<br>
-      Lekki Phase 1, Lagos<br>
-      <a href="mailto:info@buildingpractice.biz">info@buildingpractice.biz</a>
-    </address>
-    <div class="footer-bottom">
+    <div class="footer-meta">
       <span>© <span data-year>2026</span> The Building Practice Ltd.</span>
       <div><a href="https://www.instagram.com/thebuildingpractice" target="_blank" rel="noreferrer">Instagram</a><a href="https://www.linkedin.com/company/the-building-practice-ltd/" target="_blank" rel="noreferrer">LinkedIn</a></div>
     </div>
   </footer>
 
   <script src="../js/landing-editorial.js" defer></script>
-  <script src="../js/theme-sync.js" defer></script>
 </body>
 </html>
