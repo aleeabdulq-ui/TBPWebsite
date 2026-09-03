@@ -546,10 +546,10 @@
     }
 
     img.image-fallback {
-      min-height: 160px;
-      background: linear-gradient(135deg, var(--primary-800), var(--primary-500));
+      min-height: 0;
+      background: transparent;
       object-fit: contain;
-      padding: var(--space-8);
+      padding: 0;
     }
 
     .hero {
@@ -1326,7 +1326,7 @@
     }
 
     .hero--mecanoo {
-      min-height: 100vh;
+      min-height: min(860px, 88vh);
       background: #0d0f12;
     }
 
@@ -1334,6 +1334,7 @@
       position: absolute;
       inset: 0;
       z-index: 0;
+      background: linear-gradient(120deg, #07131b 0%, #163c4b 52%, #8b722d 140%);
     }
 
     .hero-media img {
@@ -1343,6 +1344,11 @@
       transform: scale(1);
       animation: heroSlowPan 30s ease-in-out infinite alternate;
       filter: saturate(0.92) contrast(0.98) brightness(0.96);
+    }
+
+    .hero-media img.image-fallback,
+    .mecanoo-showcase__media img.image-fallback {
+      display: none;
     }
 
     @keyframes heroSlowPan {
@@ -1455,22 +1461,27 @@
 
     .mecanoo-showcase {
       position: relative;
-      min-height: 100vh;
+      min-height: min(680px, 72vh);
+      margin-top: clamp(48px, 8vw, 112px);
       padding: 0;
       background: var(--bg-primary);
       overflow: hidden;
+      border-top: 1px solid var(--border-primary);
+      border-bottom: 1px solid var(--border-primary);
     }
 
     .mecanoo-showcase__media {
       position: absolute;
       inset: 0;
       z-index: 0;
+      background: linear-gradient(120deg, #d2c4ad 0%, #8a8172 45%, #273b3d 100%);
     }
 
     .mecanoo-showcase__media img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center 62%;
       filter: saturate(0.96) contrast(0.98) brightness(0.94);
     }
 
@@ -1644,6 +1655,15 @@
     }
 
     @media (max-width: 640px) {
+      .hero--mecanoo {
+        min-height: 760px;
+      }
+
+      .mecanoo-showcase {
+        min-height: 560px;
+        margin-top: 40px;
+      }
+
       .hero-content--mecanoo {
         padding-top: var(--space-12);
       }
@@ -5394,7 +5414,7 @@
   
   <section class="hero hero--mecanoo" id="home">
     <div class="hero-media">
-      <img src="../images/projects/SAPPHIRE TOWER BLUEWATER LAGOS/20230510_144251.jpg" alt="The Building Practice architectural project" loading="eager">
+      <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=2200&q=85" alt="Warm contemporary interior designed by The Building Practice" loading="eager">
     </div>
     <div class="hero-overlay"></div>
 
@@ -5419,7 +5439,7 @@
 
   <section class="mecanoo-showcase" id="featured-portfolio">
     <div class="mecanoo-showcase__media">
-      <img src="../images/projects/24 AWOLOWO ROAD/24 AWOLOWO RD 1A copy.jpg" alt="Selected work showcase" loading="eager">
+      <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=2200&q=85" alt="Contemporary residential architecture in Lagos" loading="eager">
     </div>
     <div class="mecanoo-showcase__overlay"></div>
 
@@ -7544,7 +7564,7 @@
         },
 
         startAutoPlay() {
-          if (this.isPlaying || utils.prefersReducedMotion()) return;
+          if (this.isPlaying || !this.slides?.length || utils.prefersReducedMotion()) return;
 
           this.isPlaying = true;
           this.intervalId = setInterval(() => {
