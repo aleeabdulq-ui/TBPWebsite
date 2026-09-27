@@ -1,0 +1,16 @@
+# Apache. Rename to .htaccess and place in the directory holding the
+# admin pages (pages/), or merge into an existing .htaccess.
+#
+# Create the password file outside the web root (do not commit it):
+#   htpasswd -c /home/tbp/.htpasswd-admin admin
+
+<FilesMatch "^(admin-.*|blog-login)\.html$">
+    AuthType Basic
+    AuthName "TBP Admin"
+    AuthUserFile /home/tbp/.htpasswd-admin
+    Require valid-user
+
+    Header always set X-Robots-Tag "noindex, nofollow, noarchive"
+    Header always set Cache-Control "no-store"
+    Header always set X-Frame-Options "DENY"
+</FilesMatch>
