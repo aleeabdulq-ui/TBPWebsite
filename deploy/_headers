@@ -1,0 +1,18 @@
+# Copy to the repository root (Netlify/Cloudflare Pages).
+# Keeps admin pages out of search results and adds baseline hardening.
+
+/pages/admin-*
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: no-store
+  X-Frame-Options: DENY
+  Referrer-Policy: no-referrer
+
+/pages/blog-login.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: no-store
+  X-Frame-Options: DENY
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  X-Frame-Options: SAMEORIGIN
