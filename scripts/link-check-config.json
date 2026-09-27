@@ -1,12 +1,10 @@
 {
   "_comment": "Configuration for scripts/check-links.mjs. Entries here are known, deliberate exceptions. Shrink this file over time - every entry is a real to-do.",
   "ignoreFiles": [
-    "assets/footer.html",
-    "test.html"
+    "assets/footer.html"
   ],
   "_ignoreFilesWhy": {
-    "assets/footer.html": "HTML partial injected into pages/* by assets/footer-loader.js. Its relative links resolve against the including page, not against assets/, so static resolution reports false positives.",
-    "test.html": "Orphaned scratch/prototype file at the repo root, not linked from anywhere and not served by server.js. Its links assume it lives in pages/. Candidate for deletion."
+    "assets/footer.html": "HTML partial injected into pages/* by assets/footer-loader.js. Its relative links resolve against the including page, not against assets/, so static resolution reports false positives."
   },
   "allowMissing": [
     "blog/vendor/boxicons.min.css",
