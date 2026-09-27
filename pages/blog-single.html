@@ -853,7 +853,7 @@
                 const initials = p.author.split(' ').map(n => n[0]).join('').toUpperCase();
                 return `
                     <a href="blog-single.html?post=${p.slug}" class="related-item">
-                        <img src="${p.image || 'https://via.placeholder.com/80'}" alt="${p.title}" class="related-item-image">
+                        <img src="${p.image || 'https://via.placeholder.com/80'}" alt="${p.title}" class="related-item-image" loading="lazy" decoding="async">
                         <div class="related-item-content">
                             <div class="related-item-title">${p.title}</div>
                             <div class="related-item-category">${p.category}</div>

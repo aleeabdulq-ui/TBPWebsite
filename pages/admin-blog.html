@@ -1693,7 +1693,7 @@
     <aside class="sidebar" id="sidebar">
       <div class="brand" onclick="app.navigate('dashboard')">
         <span class="brand-mark">
-          <img src="../images/bp.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" />
+          <img src="../images/bp.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';" / width="600" height="562">
           <span class="brand-fallback" style="display:none">BP</span>
         </span>
         <span>
@@ -2772,7 +2772,7 @@
         return `
           <article class="blog-card">
             <div class="blog-card-image">
-              <img src="${p.image}" alt="${p.title}" onerror="this.src='https://via.placeholder.com/800x450/00ACC1/ffffff?text=No+Image'">
+              <img src="${p.image}" alt="${p.title}" onerror="this.src='https://via.placeholder.com/800x450/00ACC1/ffffff?text=No+Image'" loading="lazy" decoding="async">
               <span class="blog-card-category">${p.category}</span>
               <span class="blog-card-status ${p.status}">${p.status}</span>
             </div>
