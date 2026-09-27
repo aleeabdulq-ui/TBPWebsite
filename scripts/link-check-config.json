@@ -4,7 +4,7 @@
     "assets/footer.html"
   ],
   "_ignoreFilesWhy": {
-    "assets/footer.html": "HTML partial injected into pages/* by assets/footer-loader.js. Its relative links resolve against the including page, not against assets/, so static resolution reports false positives."
+    "assets/footer.html": "Template fragment containing {{PAGES}}/{{ROOT}} tokens, injected into pages by scripts/build-footer.mjs. Not a standalone document."
   },
   "allowMissing": [
     "blog/vendor/boxicons.min.css",
