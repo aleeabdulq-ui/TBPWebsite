@@ -33,18 +33,12 @@ const CHECK = process.argv.includes('--check');
 const TARGETS = [
   { dir: 'pages', pages: '', root: '../' },
   { dir: 'blog', pages: '../pages/', root: '../' },
+  { dir: 'team', pages: '../pages/', root: '../' },
 ];
 
-// Pages that deliberately have no footer (admin tools, bare utility pages).
-const EXCLUDE = new Set([
-  'admin-blog.html',
-  'admin-dashboard.html',
-  'admin-login.html',
-  'blog-login.html',
-  'blog-single.html',
-  'green-video.html',
-  'privacy.html',
-]);
+// Pages that deliberately have no footer. Empty: every page in the site now
+// shares the single generated footer, including the admin/login screens.
+const EXCLUDE = new Set([]);
 
 function renderFooter(tokens) {
   let html = readFileSync(PARTIAL, 'utf8');
@@ -73,6 +67,20 @@ function applyTo(source, footerHtml) {
   return source + '\n' + block;
 }
 
+/** Pages that do not style .footer themselves need the shared stylesheet,
+ *  otherwise the injected markup renders unstyled. Pages that already have
+ *  their own footer CSS are left alone so nothing shifts visually. */
+function ensureFooterCss(source, rootPrefix) {
+  if (/footer\.css/.test(source)) return source;
+  if (/\.footer\s*\{/.test(source)) return source; // already styled inline
+
+  const link = `  <link rel="stylesheet" href="${rootPrefix}assets/footer.css">`;
+  if (source.includes('</head>')) {
+    return source.replace('</head>', `${link}\n</head>`);
+  }
+  return `${link}\n${source}`;
+}
+
 /** Remove the now-redundant runtime loader script tag. */
 function stripLoader(source) {
   return source.replace(/[ \t]*<script[^>]*footer-loader\.js[^>]*>\s*<\/script>\r?\n?/gi, '');
@@ -98,7 +106,7 @@ for (const target of TARGETS) {
 
     const file = join(ROOT, target.dir, entry.name);
     const before = readFileSync(file, 'utf8');
-    const after = applyTo(stripLoader(before), footerHtml);
+    const after = ensureFooterCss(applyTo(stripLoader(before), footerHtml), target.root);
     total++;
 
     if (before === after) continue;
