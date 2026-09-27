@@ -282,6 +282,40 @@
                         </div>
                     </div>
                     <div class="card-body">
-                        <h3>${project.name}</h3>
+                        <div class="card-info">
+                            <h3 class="card-name">${project.name}</h3>
+                            <p class="card-role">${project.desc}</p>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(div);
+            });
+        }
+
+        if (search) {
+            search.addEventListener('input', (event) => render(event.target.value));
+        }
+
+        if (gridBtn && listBtn) {
+            gridBtn.addEventListener('click', () => {
+                grid.classList.remove('list-view');
+                gridBtn.classList.add('active');
+                listBtn.classList.remove('active');
+            });
+
+            listBtn.addEventListener('click', () => {
+                grid.classList.add('list-view');
+                listBtn.classList.add('active');
+                gridBtn.classList.remove('active');
+            });
+        }
+
+        render();
+    }
+
+    document.addEventListener('DOMContentLoaded', initProjects);
+  </script>
 
   <script src="../js/theme-sync.js" defer></script>
+</body>
+</html>
