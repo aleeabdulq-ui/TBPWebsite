@@ -1,0 +1,34 @@
+# Copy to the repository root to activate.
+# Password-protects the admin pages at the edge, so the HTML is never
+# served to an unauthenticated request.
+#
+# Set a strong password and keep it out of version control: define it in
+# Netlify UI -> Site settings -> Environment variables and reference it,
+# or use Site settings -> Access control for site-wide Basic Auth.
+
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/admin-*"
+  to = "/admin-:splat"
+  status = 200
+  force = true
+  [redirects.headers]
+    Basic-Auth = "admin:CHANGE_ME_STRONG_PASSWORD"
+
+[[redirects]]
+  from = "/pages/admin-*"
+  to = "/pages/admin-:splat"
+  status = 200
+  force = true
+  [redirects.headers]
+    Basic-Auth = "admin:CHANGE_ME_STRONG_PASSWORD"
+
+[[redirects]]
+  from = "/pages/blog-login.html"
+  to = "/pages/blog-login.html"
+  status = 200
+  force = true
+  [redirects.headers]
+    Basic-Auth = "admin:CHANGE_ME_STRONG_PASSWORD"
