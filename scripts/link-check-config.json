@@ -1,0 +1,22 @@
+{
+  "_comment": "Configuration for scripts/check-links.mjs. Entries here are known, deliberate exceptions. Shrink this file over time - every entry is a real to-do.",
+  "ignoreFiles": [
+    "assets/footer.html"
+  ],
+  "_ignoreFilesWhy": {
+    "assets/footer.html": "HTML partial injected into pages/* by assets/footer-loader.js. Its relative links resolve against the including page, not against assets/, so static resolution reports false positives."
+  },
+  "allowMissing": [
+    "blog/vendor/boxicons.min.css",
+    "images/team/gbolahan.jpg",
+    "images/team/onyedikachi.jpg",
+    "images/team/toluwalase.jpg",
+    "images/team/uche.jpg",
+    "pages/vendor/boxicons.min.css",
+    "vendor/boxicons.min.css"
+  ],
+  "_allowMissingWhy": {
+    "images/team/*": "Team member headshots that were never added to the repo. The profile pages fall back to initials, so the page still renders. Supply the photos to close these out.",
+    "*/vendor/boxicons.min.css": "Optional self-hosted fallback for the Boxicons font, which is also loaded from a CDN in the same pages. The vendor copy was never committed."
+  }
+}
