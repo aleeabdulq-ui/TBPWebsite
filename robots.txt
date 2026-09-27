@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+
+# Admin tooling - no server-side auth yet, keep it out of the index.
+Disallow: /pages/admin-blog.html
+Disallow: /pages/admin-dashboard.html
+Disallow: /pages/admin-login.html
+Disallow: /pages/blog-login.html
+
+Sitemap: https://thebuildingpractice.com/sitemap.xml
