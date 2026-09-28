@@ -1,0 +1,8 @@
+#2 fix-ci          ec6000d  ── in #9
+#3 optimise-images 9756eb4  ── in #9
+#4 cleanup         9b37e51  ── in #9
+#5 unify-footer    c95c10f  ── in #9
+#6 admin-auth      5a9b9a9  ── in #9
+#7 perf-seo        d2ebd42  ── in #9
+#8 ci-workflow     14cd5fb  ── in #9   <-- also redundant
+#9 single-footer   37f33eb  ── KEEP (all 9 commits, 810 files)
