@@ -1393,6 +1393,8 @@
         }
     </style>
   <link rel="stylesheet" href="../assets/footer.css">
+  <link rel="stylesheet" href="../css/team-directory.css">
+  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
 </head>
 <body>
 
@@ -1433,116 +1435,92 @@
     </header>
 
     <!-- MAIN CONTENT -->
-    <main class="main-content" id="mainContent">
-        
-        <!-- PAGE HERO -->
-        <section class="page-hero">
-            <div class="page-hero-content fade-in">
-                <div class="page-hero-badge">
-                    <i class='bx bx-group'></i>
-                    <span>Our Team</span>
+    <main class="main-content tbp-team" id="mainContent">
+
+        <!-- HERO -->
+        <section class="tbp-hero">
+            <img class="tbp-hero__img" src="../images/tbpix/Team.jpg"
+                 alt="The Building Practice team at the Lagos studio"
+                 width="2000" height="625" fetchpriority="high" decoding="async">
+            <div class="tbp-hero__scrim"></div>
+            <div class="tbp-hero__inner">
+                <div class="tbp-team__wrap">
+                    <p class="tbp-hero__eyebrow">Our Team</p>
+                    <h1 class="tbp-hero__title">The people behind the practice</h1>
+                    <p class="tbp-hero__lede">
+                        Architecture is a collective discipline. From concept to construction,
+                        our work is shaped by architects, designers, engineers, project managers
+                        and specialists who each bring a different perspective to every project.
+                    </p>
                 </div>
-                <h1 class="page-hero-title">
-                    Meet Our <span>Expert Team</span>
-                </h1>
-                <p class="page-hero-description">
-                    Talented architects, designers, and professionals dedicated to transforming visions into extraordinary spaces.
+            </div>
+        </section>
+
+        <!-- STATEMENT -->
+        <section class="tbp-statement">
+            <div class="tbp-team__wrap">
+                <p class="tbp-statement__text">
+                    Forty-seven people. One practice. Many disciplines.
                 </p>
-
-                <div class="section-tags">
-                    <a href="about.html#expertise" class="tag tag--primary tag--sm">
-                        <i class='bx bx-bulb'></i> Expertise
-                    </a>
-                    <a href="about.html#philosophy" class="tag tag--outline tag--sm">
-                        <i class='bx bx-book-open'></i> Philosophy
-                    </a>
-                    <a href="about.html#certifications" class="tag tag--outline tag--sm">
-                        <i class='bx bx-award'></i> Awards
-                    </a>
-                    <a href="about.html#vision" class="tag tag--outline tag--sm">
-                        <i class='bx bx-bullseye'></i> Vision
-                    </a>
-                    <a href="about.html#mission" class="tag tag--outline tag--sm">
-                        <i class='bx bx-rocket'></i> Mission
-                    </a>
-                    <a href="about.html" class="tag tag--outline tag--sm">
-                        <i class='bx bx-info-circle'></i> About
-                    </a>
-                    <a href="services.html" class="tag tag--outline tag--sm">
-                        <i class='bx bx-building-house'></i> Services
-                    </a>
-                    <a href="projects.html" class="tag tag--outline tag--sm">
-                        <i class='bx bx-images'></i> Projects
-                    </a>
-                    <a href="contact.html" class="tag tag--outline tag--sm">
-                        <i class='bx bx-envelope'></i> Contact
-                    </a>
-                    <a href="reviews.html" class="tag tag--outline tag--sm">
-                        <i class='bx bx-star'></i> Reviews
-                    </a>
-                    <a href="blog.html" class="tag tag--outline tag--sm">
-                        <i class='bx bx-book'></i> Blog
-                    </a>
-                    <a href="careers.html" class="tag tag--outline tag--sm">
-                        <i class='bx bx-briefcase'></i> Careers
-                    </a>
-                    <a href="about.html#ethos" class="tag tag--outline tag--sm">
-                        <i class='bx bx-heart'></i> Ethos
-                    </a>
-                    <a href="about.html#clients" class="tag tag--outline tag--sm">
-                        <i class='bx bx-handshake'></i> Clients
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTROLS SECTION -->
-        <section class="controls-section">
-            <div class="controls-container">
-                <div class="search-wrapper">
-                    <i class='bx bx-search search-icon'></i>
-                    <input 
-                        type="text" 
-                        class="search-input" 
-                        id="searchInput" 
-                        placeholder="Search by name or role..."
-                        autocomplete="off"
-                    >
-                </div>
-                <div class="controls-right">
-                    <div class="result-count">
-                        Showing <strong id="resultCount">0</strong> members
+                <div class="tbp-figures">
+                    <div class="tbp-figure">
+                        <span class="tbp-figure__num">47</span>
+                        <span class="tbp-figure__label">People</span>
                     </div>
-                    <div class="view-toggle">
-                        <button class="view-btn active" id="gridViewBtn" data-view="grid" aria-label="Grid view">
-                            <i class='bx bx-grid-alt'></i>
-                            <span>Grid</span>
-                        </button>
-                        <button class="view-btn" id="listViewBtn" data-view="list" aria-label="List view">
-                            <i class='bx bx-list-ul'></i>
-                            <span>List</span>
-                        </button>
+                    <div class="tbp-figure">
+                        <span class="tbp-figure__num">4</span>
+                        <span class="tbp-figure__label">Disciplines</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TEAM SECTION -->
-        <section class="team-section">
-            <div class="team-grid" id="teamGrid">
-                <!-- Cards will be dynamically inserted here -->
-            </div>
-
-            <div class="no-results" id="noResults">
-                <div class="no-results-icon">
-                    <i class='bx bx-search-alt'></i>
+        <!-- LEADERSHIP -->
+        <section class="tbp-section">
+            <div class="tbp-team__wrap">
+                <div class="tbp-section__head">
+                    <h2 class="tbp-section__title">Leadership</h2>
                 </div>
-                <h3 class="no-results-title">No team members found</h3>
-                <p class="no-results-text">Try adjusting your search to find what you're looking for.</p>
-                <button class="no-results-btn" id="clearSearchBtn">
-                    <i class='bx bx-refresh'></i>
-                    <span>Clear Search</span>
-                </button>
+                <div class="tbp-grid tbp-grid--lead" id="leadershipGrid"></div>
+            </div>
+        </section>
+
+        <!-- DIRECTORY -->
+        <section class="tbp-section" id="directory">
+            <div class="tbp-team__wrap">
+                <div class="tbp-section__head">
+                    <h2 class="tbp-section__title">The Practice</h2>
+                    <p class="tbp-section__note">
+                        Showing <strong id="resultCount">0</strong> of 47
+                    </p>
+                </div>
+
+                <div class="tbp-controls">
+                    <div class="tbp-filters" id="disciplineFilters" role="group" aria-label="Filter by discipline"></div>
+                    <div class="tbp-search">
+                        <label class="sr-only" for="searchInput">Search the team</label>
+                        <input type="search" id="searchInput" placeholder="Search by name or role" autocomplete="off">
+                    </div>
+                </div>
+
+                <div class="tbp-grid" id="teamGrid"></div>
+
+                <div class="tbp-empty" id="noResults" hidden>
+                    <h3>No one matches that search</h3>
+                    <p>Try a different name, role or discipline.</p>
+                    <button type="button" id="clearSearchBtn">Clear filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAREERS -->
+        <section class="tbp-team__wrap">
+            <div class="tbp-cta">
+                <h2 class="tbp-cta__title">Think. Design. Build.</h2>
+                <p class="tbp-cta__text">
+                    We are always looking for people who care about the built environment.
+                </p>
+                <a class="tbp-cta__link" href="careers.html">Explore careers</a>
             </div>
         </section>
     </main>
@@ -1645,53 +1623,6 @@
                 scrollOffset: 100,
                 searchDebounce: 300
             };
-
-            // ========== TEAM DATA ==========
-            const teamMembers = [
-                { name: "Michael Oluwafemi Alley", designation: "Principal Partner", hierarchy: 1, image: "../images/team/micheal.jpg", profilePage: "../team/micheal.html" },
-                { name: "Oluwagbemisola Idowu", designation: "Associate Partner", hierarchy: 2, image: "../images/team/gbemi.jpg", profilePage: "../team/gbemi.html" },
-                { name: "Gboyega Adekanbi", designation: "Associate Partner", hierarchy: 2, image: "../images/team/gboyega.jpg", profilePage: "../team/gboyega.html" },
-                { name: "Nduka Akanu", designation: "Senior Associate", hierarchy: 3, image: "../images/team/nduka.jpg", profilePage: "../team/nduka.html" },
-                { name: "Chyzoba Onwubiko", designation: "Senior Associate", hierarchy: 3, image: "../images/team/chyzoba.jpg", profilePage: "../team/chyzoba.html" },
-                { name: "Ismail Opadokun", designation: "Senior Associate", hierarchy: 3, image: "../images/team/ismail.jpg", profilePage: "../team/ismail.html" },
-                { name: "Quadri Bakare", designation: "Senior Associate", hierarchy: 3, image: "../images/team/quadri.jpg", profilePage: "../team/quadri.html" },
-                { name: "Bode Ariyo", designation: "Senior Associate", hierarchy: 3, image: "../images/team/bode.jpg", profilePage: "../team/bode.html" },
-                { name: "Kingsley Anyanwu", designation: "Senior Associate", hierarchy: 3, image: "../images/team/kingsley.jpg", profilePage: "../team/kingsley.html" },
-                { name: "Adewunmi Adegoke James", designation: "Construction Project Manager", hierarchy: 3, image: "../images/team/james.jpg", profilePage: "../team/james.html" },
-                { name: "Tienador Ghomorai", designation: "Finance Manager", hierarchy: 3, image: "../images/team/tienedor.jpg", profilePage: "../team/tienador.html" },
-                { name: "John T. Alley", designation: "Business Development Consultant", hierarchy: 3, image: "../images/team/john.jpg", profilePage: "../team/john.html" },
-                { name: "Nicole Duke", designation: "Mid-Level Associate", hierarchy: 4, image: "../images/team/nicole.jpg", profilePage: "../team/nicole.html" },
-                { name: "Fawaz Adelaja", designation: "Mid-Level Associate", hierarchy: 4, image: "../images/team/fawaz.jpg", profilePage: "../team/fawaz.html" },
-                { name: "Raphael Opeloyemi", designation: "Mid-Level Associate", hierarchy: 4, image: "../images/team/rapheal.jpg", profilePage: "../team/raphael.html" },
-                { name: "Azeez Alakufo", designation: "Mid-Level Associate", hierarchy: 4, image: "../images/team/azeez.jpg", profilePage: "../team/azeez.html" },
-                { name: "Ifeoluwa Nwajei", designation: "Mid-Level Associate", hierarchy: 4, image: "../images/team/ife.jpg", profilePage: "../team/ife.html" },
-                { name: "Mayowa Osifowora", designation: "Mid-Level Associate", hierarchy: 4, image: "../images/team/mayowa.jpg", profilePage: "../team/mayowa.html" },
-                { name: "Olumayowa Adegboye", designation: "Mid-Level Associate", hierarchy: 4, image: "../images/team/olumayowa.jpg", profilePage: "../team/olumayowa.html" },
-                { name: "Ayelo Elukpo", designation: "Construction Site Manager", hierarchy: 4, image: "../images/team/Ayelo.jpg", profilePage: "../team/ayelo.html" },
-                { name: "Nnaemeka Amadi", designation: "Projects Coordinator", hierarchy: 4, image: "../images/team/nnemeka.jpg", profilePage: "../team/amadi.html" },
-                { name: "Yewande Adeyemi", designation: "Human Resources Officer", hierarchy: 4, image: "../images/team/yewande.jpg", profilePage: "../team/yewande.html" },
-                { name: "Tahir Mohammed", designation: "Quantity Surveyor", hierarchy: 4, image: "../images/team/tahir.jpg", profilePage: "../team/tahir.html" },
-                { name: "Olaosebikan Ajidagba", designation: "Arts Director", hierarchy: 4, image: "../images/team/olaosebikan.jpg", profilePage: "../team/olaosebikan.html" },
-                { name: "Ali AbdulQuadir", designation: "IT Manager", hierarchy: 4, image: "../images/team/ali.jpg", profilePage: "../team/ali.html" },
-                { name: "Adewunmi Adegoke", designation: "Site Engineer", hierarchy: 4, image: "../images/team/adewunmi.jpg", profilePage: "../team/adewunmi.html" },
-                { name: "Oluwafemi Ayanniyi", designation: "Architect", hierarchy: 4, image: "../images/team/femi.jpg", profilePage: "../team/oluwafemi.html" },
-                { name: "Olushola Adeyemi", designation: "Junior Associate", hierarchy: 5, image: "../images/team/shola.jpg", profilePage: "../team/shola.html" },
-                { name: "OreOluwa Orimogunje", designation: "Junior Associate", hierarchy: 5, image: "../images/team/ore.jpg", profilePage: "../team/ore.html" },
-                { name: "Victor Oyebode", designation: "Junior Associate", hierarchy: 5, image: "../images/team/victor.jpg", profilePage: "../team/victor.html" },
-                { name: "Ayanfeoluwa Vese", designation: "Junior Associate", hierarchy: 5, image: "../images/team/ayanfe.jpg", profilePage: "../team/ayanfe.html" },
-                { name: "Joshua Adepoju", designation: "Junior Associate", hierarchy: 5, image: "../images/team/joshua.jpg", profilePage: "../team/joshua.html" },
-                { name: "Uchechukwu Oleribe", designation: "Junior Associate", hierarchy: 5, image: "../images/team/uche.jpg", profilePage: "../team/uche.html" },
-                { name: "Ogba Chigozie", designation: "Assistant Site Engineer", hierarchy: 5, image: "../images/team/OGBA.jpg", profilePage: "../team/ogba.html" },
-                { name: "Brenda Mekwunye", designation: "Social Media Manager", hierarchy: 5, image: "../images/team/brenda.jpg", profilePage: "../team/brenda.html" },
-                { name: "Eweh Abang", designation: "Procurement Officer", hierarchy: 5, image: "../images/team/eweh.jpg", profilePage: "../team/eweh.html" },
-                { name: "Chukwunonso Isichei", designation: "Graduate Architect", hierarchy: 6, image: "../images/team/teams.jpg", profilePage: "../team/chukwunonso.html" },
-                { name: "Olabisi Jubril", designation: "Graduate Architect", hierarchy: 6, image: "../images/team/jubril.jpeg", profilePage: "../team/olabisi.html" },
-                { name: "Vanessa", designation: "Graduate Architect", hierarchy: 6, image: "../images/team/vanessa.jpg", profilePage: "../team/vanessa.html" },
-                { name: "Ayoola", designation: "Graduate Architect", hierarchy: 6, image: "../images/team/Ayoola.jpg", profilePage: "../team/ayoola.html" },
-                { name: "Esther Taiwo", designation: "Junior Accounts Officer", hierarchy: 6, image: "../images/team/esther.jpg", profilePage: "../team/esther.html" },
-                { name: "Sarah Dennis", designation: "Administrative Officer", hierarchy: 6, image: "../images/team/teams.jpg", profilePage: "../team/sarah.html" },
-                { name: "Peter Ibiang", designation: "Office Assistant", hierarchy: 7, image: "../images/team/peter.jpg", profilePage: "../team/peter.html" }
-            ].sort((a, b) => a.hierarchy - b.hierarchy);
 
             // ========== DOM HELPERS ==========
             const $ = (selector) => document.querySelector(selector);
@@ -1951,137 +1882,6 @@
                     $$('.fade-in').forEach(el => this.observer.observe(el));
                 }
             };
-
-            // ========== TEAM CARDS ==========
-            const teamCards = {
-                getProfileButton(member) {
-                    return `
-                        <a href="${member.profilePage}" class="card-btn">
-                            <span>View Profile</span>
-                            <i class='bx bx-right-arrow-alt'></i>
-                        </a>
-                    `;
-                },
-
-                createCard(member, index) {
-                    const initials = utils.getInitials(member.name);
-                    const badge = utils.getBadge(member.hierarchy);
-                    const roleIcon = utils.getRoleIcon(member.designation);
-
-                    const card = document.createElement('div');
-                    card.className = utils.getCardClass(member, index);
-                    card.style.transitionDelay = `${index * 50}ms`;
-                    card.dataset.name = member.name.toLowerCase();
-                    card.dataset.role = member.designation.toLowerCase();
-
-                    const badgeHtml = badge ? 
-                        `<div class="card-badge">
-                            <i class='bx ${badge.icon}'></i>
-                            <span>${badge.text}</span>
-                        </div>` : '';
-
-                    card.innerHTML = `
-                        <div class="card-image-wrapper">
-                            <img src="${member.image}" alt="${member.name}" loading="lazy" 
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.team-card')?.classList.add('team-card--missing-image');">
-                            <div class="card-placeholder" style="display:none;">${initials}</div>
-                            <div class="card-role-icon">
-                                <i class='bx ${roleIcon}'></i>
-                            </div>
-                            ${badgeHtml}
-                        </div>
-                        <div class="card-body">
-                            <div class="card-info">
-                                <h3 class="card-name">${member.name}</h3>
-                                <p class="card-role">${member.designation}</p>
-                            </div>
-                            ${teamCards.getProfileButton(member)}
-
-                        </div>
-                    `;
-
-                    return card;
-                },
-
-                render(searchQuery = '') {
-                    const query = searchQuery.toLowerCase().trim();
-
-                    let filtered = teamMembers;
-                    if (query) {
-                        filtered = teamMembers.filter(member =>
-                            member.name.toLowerCase().includes(query) ||
-                            member.designation.toLowerCase().includes(query)
-                        );
-                    }
-
-                    elements.teamGrid.innerHTML = '';
-                    elements.resultCount.textContent = filtered.length;
-
-                    if (filtered.length === 0) {
-                        elements.noResults.classList.add('visible');
-                        return;
-                    }
-
-                    elements.noResults.classList.remove('visible');
-
-                    filtered.forEach((member, index) => {
-                        const card = this.createCard(member, index);
-                        elements.teamGrid.appendChild(card);
-                    });
-
-                    // Animate cards
-                    requestAnimationFrame(() => {
-                        $$('.team-card').forEach((card, i) => {
-                            setTimeout(() => {
-                                card.classList.add('visible');
-                            }, i * 50);
-                        });
-                    });
-                },
-
-                init() {
-                    // Initial render
-                    this.render();
-
-                    // Search functionality
-                    let searchTimeout;
-                    elements.searchInput?.addEventListener('input', (e) => {
-                        clearTimeout(searchTimeout);
-                        searchTimeout = setTimeout(() => {
-                            this.render(e.target.value);
-                        }, CONFIG.searchDebounce);
-                                    });
-
-                    // Clear search
-                    elements.clearSearchBtn?.addEventListener('click', () => {
-                        elements.searchInput.value = '';
-                        this.render();
-                        elements.searchInput.focus();
-                    });
-
-                    // View toggle
-                    elements.gridViewBtn?.addEventListener('click', () => {
-                        elements.gridViewBtn.classList.add('active');
-                        elements.listViewBtn.classList.remove('active');
-                        elements.teamGrid.classList.remove('list-view');
-                        localStorage.setItem('teamView', 'grid');
-                    });
-
-                    elements.listViewBtn?.addEventListener('click', () => {
-                        elements.listViewBtn.classList.add('active');
-                        elements.gridViewBtn.classList.remove('active');
-                        elements.teamGrid.classList.add('list-view');
-                        localStorage.setItem('teamView', 'list');
-                    });
-
-                    // Restore saved view preference
-                    const savedView = localStorage.getItem('teamView');
-                    if (savedView === 'list') {
-                        elements.listViewBtn?.click();
-                    }
-                }
-            };
-
             // ========== DYNAMIC YEAR ==========
             const setCurrentYear = () => {
                 if (elements.currentYear) {
@@ -2095,7 +1895,6 @@
                 theme.init();
                 navigation.init();
                 backToTop.init();
-                teamCards.init();
                 setCurrentYear();
             };
 
@@ -2108,6 +1907,7 @@
 
         })();
     </script>
+  <script src="../js/team.js" defer></script>
   <script src="../js/theme-sync.js" defer></script>
 </body>
 </html>
