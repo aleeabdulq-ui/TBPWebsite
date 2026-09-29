@@ -1,0 +1,95 @@
+# Netlify configuration for thebuildingpractice.com
+#
+# The site is published from the repository root: the sitemap lists URLs of
+# the form https://thebuildingpractice.com/pages/index.html, and robots.txt
+# and sitemap.xml sit here at the root.
+#
+# No [build] section is defined on purpose. Publish directory and build
+# command stay under the site's UI settings, so this file cannot silently
+# change how the site is deployed.
+
+# ---------------------------------------------------------------------------
+# Admin area: blocked at the edge.
+#
+# These pages have no server-side authentication. The login form only ever
+# compared a password in client-side JavaScript, which any visitor can read
+# and bypass, and admin-dashboard.html had no check at all.
+#
+# The admin area is not in use, so the safest configuration is to make it
+# unreachable rather than to guard it. force = true means these rules win
+# even though the HTML files exist in the deploy, so the pages are never
+# served to anyone.
+#
+# To bring the admin area back, delete the rules below and put a real gate
+# in front of it first. See deploy/README.md for the options.
+# ---------------------------------------------------------------------------
+
+[[redirects]]
+  from = "/pages/admin-*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/admin-*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/pages/blog-login*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/blog-login*"
+  to = "/404.html"
+  status = 404
+  force = true
+
+# ---------------------------------------------------------------------------
+# Headers
+# ---------------------------------------------------------------------------
+
+# Keep the admin URLs out of search results even though they 404, in case a
+# rule is ever removed. robots.txt already disallows them.
+[[headers]]
+  for = "/pages/admin-*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    Cache-Control = "no-store"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "no-referrer"
+
+[[headers]]
+  for = "/pages/blog-login*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow, noarchive"
+    Cache-Control = "no-store"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "no-referrer"
+
+# Baseline hardening for the public site.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+
+# Fingerprinted static assets can be cached hard; HTML should not be.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/css/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+[[headers]]
+  for = "/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"

@@ -62,20 +62,27 @@
     </div>
 
     <script>
+        // This form is intentionally inert.
+        //
+        // It used to compare the password against a string literal held in
+        // this file, then set localStorage.adminLoggedIn to grant access.
+        // That protected nothing: the password was readable with View Source
+        // by every visitor, and the flag it set could be written by hand from
+        // the browser console. admin-dashboard.html had no check at all.
+        //
+        // A static site cannot authenticate anyone. The browser is under the
+        // visitor's control, so any check written here is advisory at best.
+        // The gate has to sit in front of the file being served, which is now
+        // handled at the edge: netlify.toml returns 404 for every /admin-*
+        // URL, so these pages are not reachable in production.
+        //
+        // To restore the admin area, add a real gate first and then remove
+        // the redirect rules. deploy/README.md documents the options.
         document.getElementById('loginForm').addEventListener('submit', e => {
             e.preventDefault();
-            const pwd = document.getElementById('password').value;
-            if (pwd === 'admin123') {
-                localStorage.setItem('adminLoggedIn', 'true');
-                localStorage.setItem('blog-auth', JSON.stringify({
-                    email: 'legacy-admin',
-                    loginTime: new Date().toISOString(),
-                    sessionId: Math.random().toString(36).substring(7)
-                }));
-                window.location.href = 'admin-blog.html';
-            } else {
-                document.getElementById('errorMsg').style.display = 'block';
-            }
+            const msg = document.getElementById('errorMsg');
+            msg.textContent = 'The admin area is disabled. It had no server-side authentication, so it is blocked in production. See deploy/README.md to enable it securely.';
+            msg.style.display = 'block';
         });
     </script>
   <script src="../js/theme-sync.js" defer></script>

@@ -1,5 +1,31 @@
 # Protecting the admin area
 
+## Current status: blocked at the edge
+
+The admin area is **not in use**, so rather than guarding it, it is now
+unreachable in production.
+
+`netlify.toml` in the repository root returns **404 for every `/admin-*` and
+`/blog-login*` URL**, with `force = true` so the rule wins even though the HTML
+files are still part of the deploy. The login form in
+`pages/admin-login.html` has been made inert and the `admin123` literal
+removed from it.
+
+This is the strongest option available to a static site: there is no gate to
+misconfigure and no attack surface, and the pages remain in the repository for
+whenever they are needed again.
+
+**To bring the admin area back**, put one of the real gates below in front of
+it *first*, then delete the redirect rules from `netlify.toml`. Do not simply
+remove the rules: without them the pages are public again, because nothing in
+the page JavaScript can authenticate anyone.
+
+**Still outstanding:** `admin123` must be changed anywhere it has been reused —
+on the server, in any database, or for any other service. It sat in a public
+repository, so treat it as known to everyone.
+
+---
+
 ## The problem
 
 The admin pages are currently public. Three separate issues:
