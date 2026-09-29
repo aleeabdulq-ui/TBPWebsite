@@ -1,24 +1,35 @@
 # Protecting the admin area
 
-## Current status: blocked at the edge
+## Current status: not deployed
 
-The admin area is **not in use**, so rather than guarding it, it is now
-unreachable in production.
+The site is hosted on **Vercel**, and the admin area is **not in use**, so
+rather than guarding it, it is kept out of production entirely.
 
-`netlify.toml` in the repository root returns **404 for every `/admin-*` and
-`/blog-login*` URL**, with `force = true` so the rule wins even though the HTML
-files are still part of the deploy. The login form in
-`pages/admin-login.html` has been made inert and the `admin123` literal
-removed from it.
+`.vercelignore` in the repository root excludes these files from the
+deployment, so they are never uploaded and cannot be requested at any URL:
 
-This is the strongest option available to a static site: there is no gate to
-misconfigure and no attack surface, and the pages remain in the repository for
-whenever they are needed again.
+    pages/admin-blog.html
+    pages/admin-dashboard.html
+    pages/admin-login.html
+    pages/blog-login.html
+
+This is the strongest control available to a static site: there is no gate to
+misconfigure, because the file does not exist on the CDN.
+
+Alongside that:
+
+- The `admin123` literal has been deleted from `pages/admin-login.html` and
+  the login form made inert, so the file is harmless even if it is ever
+  deployed by accident.
+- The public **Admin Panel** button has been removed from `pages/blog.html`.
+  It linked to `blog-login.html` and was the only visible entry point.
+- `vercel.json` adds `noindex` and `no-store` headers for those paths as a
+  second layer, plus baseline security headers site-wide.
+- `robots.txt` already disallows the admin URLs.
 
 **To bring the admin area back**, put one of the real gates below in front of
-it *first*, then delete the redirect rules from `netlify.toml`. Do not simply
-remove the rules: without them the pages are public again, because nothing in
-the page JavaScript can authenticate anyone.
+it *first*, then remove the entries from `.vercelignore`. Do not simply remove
+them: nothing in the page JavaScript can authenticate anyone.
 
 **Still outstanding:** `admin123` must be changed anywhere it has been reused —
 on the server, in any database, or for any other service. It sat in a public
@@ -74,7 +85,16 @@ Repeat for `www.thebuildingpractice.com` if both hostnames serve the site.
 
 ---
 
-## Option B — Netlify
+## Option B — Vercel, Netlify and similar static hosts
+
+On **Vercel**, protect a path with Vercel Authentication
+(Project Settings -> Deployment Protection), which gates access behind
+your Vercel team login, or put the admin behind a serverless function
+that verifies a session cookie. Vercel has no built-in Basic Auth for
+individual paths on a static deploy.
+
+On **Netlify**, `deploy/netlify.toml` and `deploy/_headers` in this
+directory are ready to copy to the repository root.
 
 `deploy/netlify.toml` and `deploy/_headers` in this directory are ready to
 copy to the repo root.
