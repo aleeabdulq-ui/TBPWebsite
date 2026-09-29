@@ -829,7 +829,7 @@
                 return;
             }
 
-            document.getElementById('postHeroImg').src = post.image || 'https://via.placeholder.com/1200x600';
+            document.getElementById('postHeroImg').src = post.image || 'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%221200%22%20height%3D%22600%22%20viewBox%3D%220%200%201200%20600%22%3E%3Crect%20width%3D%221200%22%20height%3D%22600%22%20fill%3D%22%23e8e6e1%22%2F%3E%3Cpath%20d%3D%22M540.0%20330.0l45-45%2032%2032%2026-26%2026%2039z%22%20fill%3D%22%23b9b4aa%22%2F%3E%3Ccircle%20cx%3D%22618.0%22%20cy%3D%22278.0%22%20r%3D%2210%22%20fill%3D%22%23b9b4aa%22%2F%3E%3C%2Fsvg%3E';
             document.getElementById('postTitle').textContent = post.title;
             document.getElementById('postCategory').textContent = post.category;
             document.getElementById('postCategory').className = `post-category-badge ${post.category.toLowerCase()}`;
@@ -854,7 +854,7 @@
                 const initials = p.author.split(' ').map(n => n[0]).join('').toUpperCase();
                 return `
                     <a href="blog-single.html?post=${p.slug}" class="related-item">
-                        <img src="${p.image || 'https://via.placeholder.com/80'}" alt="${p.title}" class="related-item-image" loading="lazy" decoding="async">
+                        <img src="${p.image || 'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2280%22%20height%3D%2280%22%20viewBox%3D%220%200%2080%2080%22%3E%3Crect%20width%3D%2280%22%20height%3D%2280%22%20fill%3D%22%23e8e6e1%22%2F%3E%3Cpath%20d%3D%22M-20.0%2070.0l45-45%2032%2032%2026-26%2026%2039z%22%20fill%3D%22%23b9b4aa%22%2F%3E%3Ccircle%20cx%3D%2258.0%22%20cy%3D%2218.0%22%20r%3D%2210%22%20fill%3D%22%23b9b4aa%22%2F%3E%3C%2Fsvg%3E'}" alt="${p.title}" class="related-item-image" loading="lazy" decoding="async">
                         <div class="related-item-content">
                             <div class="related-item-title">${p.title}</div>
                             <div class="related-item-category">${p.category}</div>
