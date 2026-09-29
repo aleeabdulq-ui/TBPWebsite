@@ -1681,373 +1681,6 @@
         }
 
         /* ========================================
-           FOOTER
-           ======================================== */
-        /* ========================================
-           FOOTER
-           ======================================== */
-        .footer {
-            background: var(--bg-tertiary);
-            padding: var(--space-10) 0 var(--space-5);
-        }
-
-        [data-theme="dark"] .footer {
-            background: #050508;
-        }
-
-        /* ========================================
-           FOOTER (CONTINUED)
-           ======================================== */
-        .footer-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) 280px;
-            gap: 16px;
-            margin-bottom: 10px;
-            align-items: start;
-        }
-
-        .footer-main {
-            display: grid;
-            grid-template-columns: 1.2fr 1fr 1.2fr 1fr;
-            gap: 18px;
-            align-items: start;
-        }
-
-        .footer-main-bottom {
-            grid-column: auto;
-            margin-top: 0;
-        }
-
-        @media (max-width: 968px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-main {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 640px) {
-            .footer-grid {
-                text-align: center;
-            }
-            .footer-main {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        }
-
-        .footer-brand {
-            max-width: 200px;
-        }
-
-        @media (max-width: 640px) {
-            .footer-brand {
-                max-width: 100%;
-                margin: 0 auto;
-            }
-        }
-
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            margin-bottom: 6px;
-            text-decoration: none;
-        }
-
-        @media (max-width: 640px) {
-            .footer-logo {
-                justify-content: center;
-            }
-        }
-
-        .footer-logo img {
-            height: 28px;
-            width: auto;
-        }
-
-        .footer-logo-text {
-            font-size: 0.9rem;
-            font-weight: 700;
-            background: var(--gradient-blue-gold);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .footer-brand > p {
-            display: none;
-        }
-
-        .footer-social {
-            display: flex;
-            gap: 6px;
-        }
-
-        @media (max-width: 640px) {
-            .footer-social {
-                justify-content: center;
-            }
-        }
-
-        .footer-social a {
-            width: 34px;
-            height: 34px;
-            background: var(--bg-primary);
-            border: 1px solid var(--border-primary);
-            border-radius: 6px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 14px;
-            text-decoration: none;
-            transition: all var(--duration-normal) var(--ease-spring);
-        }
-
-        .footer-social a:hover {
-            background: var(--gradient-primary);
-            border-color: var(--primary);
-            color: var(--white);
-            transform: translateY(-3px);
-        }
-
-        .footer-column h4 {
-            font-size: 0.8rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            margin-bottom: 6px;
-            position: relative;
-            padding-bottom: 3px;
-        }
-
-        .footer-column h4::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 16px;
-            height: 1.5px;
-            background: var(--gradient-blue-gold);
-            border-radius: 2px;
-        }
-
-        @media (max-width: 640px) {
-            .footer-column h4::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 5px;
-        }
-
-        .footer-links a {
-            font-size: 0.72rem;
-            color: var(--text-secondary);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            transition: all var(--duration-fast) var(--ease-out);
-        }
-
-        .footer-links a i {
-            font-size: 12px;
-            color: var(--text-tertiary);
-            transition: transform var(--duration-fast);
-            display: inline;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-            transform: translateX(3px);
-        }
-
-        .footer-links a:hover i {
-            color: var(--primary);
-        }
-
-        .footer-links span {
-            font-size: 0.7rem;
-            color: var(--text-secondary);
-        }
-
-        @media (max-width: 640px) {
-            .footer-links a:hover {
-                transform: none;
-            }
-        }
-
-        .footer-bottom {
-            border-top: 1px solid var(--border-primary);
-            padding: 10px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-
-        @media (max-width: 640px) {
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-        .footer-copyright {
-            font-size: 0.6rem;
-            color: var(--text-tertiary);
-        }
-
-        .footer-copyright a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 700;
-        }
-
-        .footer-legal {
-            display: flex;
-            gap: 10px;
-        }
-
-        .footer-legal a {
-            font-size: 0.6rem;
-            color: var(--text-tertiary);
-            text-decoration: none;
-            transition: color var(--duration-fast);
-        }
-
-        .footer-legal a:hover {
-            color: var(--primary);
-        }
-
-        .footer-newsletter {
-            background: transparent;
-            border: 1px solid var(--border-primary);
-            border-radius: var(--radius-md);
-            padding: 10px;
-            box-shadow: none;
-        }
-
-        .footer-newsletter .newsletter-title {
-            font-size: 0.72rem;
-            font-weight: 700;
-            margin-bottom: 2px;
-            color: var(--text-primary);
-        }
-
-        .footer-newsletter .newsletter-description {
-            font-size: 0.62rem;
-            color: var(--text-secondary);
-            line-height: 1.3;
-            margin-bottom: 5px;
-        }
-
-        .newsletter-form {
-            display: flex;
-            gap: 4px;
-            margin-bottom: 5px;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            min-width: 0;
-            font-size: 0.62rem;
-            padding: 5px 7px;
-            border: 1px solid var(--border-primary);
-            border-radius: var(--radius-sm);
-            background: var(--bg-primary);
-            color: var(--text-primary);
-        }
-
-        .newsletter-form input::placeholder {
-            color: var(--text-tertiary);
-            font-size: 0.6rem;
-        }
-
-        .newsletter-form button {
-            font-size: 0.62rem;
-            padding: 5px 8px;
-            white-space: nowrap;
-        }
-
-        .newsletter-privacy {
-            font-size: 0.6rem;
-            color: var(--text-tertiary);
-            line-height: 1.2;
-        }
-
-        @media (max-width: 968px) {
-            .footer-main {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 16px;
-            }
-            .footer-newsletter {
-                grid-column: auto;
-            }
-        }
-
-        @media (max-width: 640px) {
-            .footer {
-                padding: 14px 0 8px;
-            }
-            .footer-main {
-                grid-template-columns: 1fr;
-                gap: 14px;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 14px;
-                margin-bottom: 10px;
-            }
-            .footer-brand {
-                text-align: center;
-            }
-            .footer-brand > p {
-                display: none;
-            }
-            .footer-social {
-                justify-content: center;
-            }
-            .footer-logo {
-                justify-content: center;
-            }
-            .footer-main-bottom {
-                grid-column: auto;
-            }
-            .footer-newsletter {
-                width: 100%;
-            }
-            .newsletter-form {
-                flex-direction: column;
-            }
-            .footer-newsletter input {
-                width: 100%;
-            }
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
-                padding: 10px 0;
-                gap: 6px;
-            }
-            .footer-column h4::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-        }
-
-        /* ========================================
            BACK TO TOP
            ======================================== */
         .back-to-top {
@@ -2093,9 +1726,6 @@
             .gallery-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
-            .footer-grid {
-                grid-template-columns: minmax(0, 1fr) 260px;
-            }
             .portfolio-year-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
@@ -2114,12 +1744,6 @@
         }
 
         @media (max-width: 968px) {
-            .footer-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-main {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
             .nav-menu {
                 position: fixed;
                 top: var(--header-height);
@@ -2224,24 +1848,6 @@
             }
             .stat-number {
                 font-size: var(--text-3xl);
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-            .footer-links h5::after {
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            .footer-social {
-                justify-content: center;
-            }
-            .footer-contact p {
-                justify-content: center;
-            }
-            .footer-bottom {
-                flex-direction: column;
-                text-align: center;
             }
             .back-nav-container {
                 flex-direction: column;
@@ -2399,6 +2005,7 @@
     </style>
   <link rel="stylesheet" href="../css/tbp-splash.css">
   <script src="../js/tbp-splash.js" defer></script>
+  <link rel="stylesheet" href="../assets/footer.css">
 </head>
 <body>
     <!-- SPLASH SCREEN -->
@@ -2414,7 +2021,7 @@
                 </defs>
                 <circle cx="60" cy="60" r="54" stroke="url(#ringGrad)" stroke-width="3" fill="none" stroke-dasharray="12 8" stroke-linecap="round"/>
             </svg>
-            <img src="../images/bp.png" alt="TBP Logo" class="splash-logo">
+            <img src="../images/bp.png" alt="TBP Logo" class="splash-logo" width="600" height="562">
         </div>
         <h1 class="splash-title">The Building Practice Ltd.</h1>
         <p class="splash-tagline">...Building Spaces that Feel</p>
@@ -2431,7 +2038,7 @@
         <div class="container">
             <nav class="nav">
                 <a href="index.html" class="nav-brand">
-                    <img src="../images/bp.png" alt="The Building Practice Ltd.">
+                    <img src="../images/bp.png" alt="The Building Practice Ltd." width="600" height="562" loading="lazy" decoding="async">
                     <div class="nav-brand-text">
                         <span class="nav-brand-name">The Building Practice Ltd.</span>
                         <span class="nav-brand-tagline">...Building Spaces that Feel</span>
@@ -2540,7 +2147,6 @@
                 </div>
             </div>
         </div>
-    </section>
 
     <!-- PAGE HERO -->
     <section class="page-hero">
@@ -2776,82 +2382,86 @@
     </section>
 
     <!-- ==================== FOOTER ==================== -->
-    <footer class="footer" id="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-main">
-                    <div class="footer-brand">
-                        <a href="index.html" class="footer-logo">
-                            <img src="../images/bp.png" alt="TBP Logo">
-                            <span class="footer-logo-text">The Building Practice</span>
-                        </a>
-                        <p>An architectural firm dedicated to shaping spaces that inspire, endure, and connect. Creating thoughtful, sustainable, and contextually relevant designs since 2013.</p>
-                        <div class="footer-social">
-                            <a href="https://www.facebook.com/thebuildingpractice" target="_blank" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
-                            <a href="https://x.com/thebplimited" target="_blank" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
-                            <a href="https://www.instagram.com/thebuildingpractice" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
-                            <a href="https://www.linkedin.com/company/the-building-practice-ltd/" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
-                        </div>
-                    </div>
-
-                    <div class="footer-column">
-                        <h4>Quick Links</h4>
-                        <ul class="footer-links">
-                            <li><a href="index.html"><i class='bx bx-chevron-right'></i><span>Home</span></a></li>
-                            <li><a href="about.html"><i class='bx bx-chevron-right'></i><span>About</span></a></li>
-                            <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Services</span></a></li>
-                            <li><a href="projects.html"><i class='bx bx-chevron-right'></i><span>Projects</span></a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-column">
-                        <h4>Our Services</h4>
-                        <ul class="footer-links">
-                            <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Architecture</span></a></li>
-                            <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Interior Design</span></a></li>
-                            <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Construction</span></a></li>
-                            <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Consultancy</span></a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-column footer-main-bottom">
-                        <h4>Contact Info</h4>
-                        <ul class="footer-links">
-                            <li><i class='bx bx-map'></i><span>Plot 6, Remi Olowude, Lekki Phase 1</span></li>
-                            <li><a href="tel:+2349049721840"><i class='bx bx-phone'></i><span>+234 904 972 1840</span></a></li>
-                            <li><a href="mailto:info@buildingpractice.biz"><i class='bx bx-envelope'></i><span>info@buildingpractice.biz</span></a></li>
-                            <li><i class='bx bx-time'></i><span>Mon - Fri: 9AM - 5PM</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="footer-newsletter">
-                    <h4 class="newsletter-title">Subscribe</h4>
-                    <p class="newsletter-description">Get the latest updates and insights</p>
-                    <form class="newsletter-form" id="footerNewsletterForm" novalidate>
-                        <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
-                        <button type="submit" class="btn btn--primary btn--sm">
-                            Subscribe
-                        </button>
-                    </form>
-                    <p class="newsletter-privacy">
-                        We respect your privacy.
-                    </p>
-                </div>
+<!-- FOOTER:START (generated by scripts/build-footer.mjs - do not edit) -->
+<footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-main">
+            <div class="footer-brand">
+              <a href="index.html" class="footer-logo">
+                <img src="../images/bp.png" alt="TBP Logo" width="600" height="562" loading="lazy" decoding="async">
+                <span class="footer-logo-text">The Building Practice</span>
+              </a>
+              <p>An architectural firm dedicated to shaping spaces that inspire, endure, and connect. Creating thoughtful, sustainable, and contextually relevant designs since 2013.</p>
+              <div class="footer-social">
+                <a href="https://www.facebook.com/thebuildingpractice" target="_blank" rel="noopener" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                <a href="https://x.com/thebplimited" target="_blank" rel="noopener" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.instagram.com/thebuildingpractice" target="_blank" rel="noopener" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.linkedin.com/company/the-building-practice-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+              </div>
             </div>
 
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    © <span id="currentYear">2024</span> The Building Practice Ltd. All Rights Reserved.
-                </p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Sitemap</a>
-                </div>
+            <div class="footer-column">
+              <h4>Quick Links</h4>
+              <ul class="footer-links">
+                <li><a href="index.html"><i class='bx bx-chevron-right'></i><span>Home</span></a></li>
+                <li><a href="about.html"><i class='bx bx-chevron-right'></i><span>About</span></a></li>
+                <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Services</span></a></li>
+                <li><a href="projects.html"><i class='bx bx-chevron-right'></i><span>Projects</span></a></li>
+              </ul>
             </div>
+
+            <div class="footer-column">
+              <h4>Our Services</h4>
+              <ul class="footer-links">
+                <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Architecture</span></a></li>
+                <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Interior Design</span></a></li>
+                <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Construction</span></a></li>
+                <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Consultancy</span></a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column footer-main-bottom">
+              <h4>Contact Info</h4>
+              <ul class="footer-links">
+                <li><i class='bx bx-map'></i><span>Plot 6, Remi Olowude, Lekki Phase 1</span></li>
+                <li><a href="tel:+2349049721840"><i class='bx bx-phone'></i><span>+234 904 972 1840</span></a></li>
+                <li><a href="mailto:info@buildingpractice.biz"><i class='bx bx-envelope'></i><span>info@buildingpractice.biz</span></a></li>
+                <li><i class='bx bx-time'></i><span>Mon - Fri: 9AM - 5PM</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-newsletter">
+            <h4 class="newsletter-title">Subscribe</h4>
+            <p class="newsletter-description">Get the latest updates and insights</p>
+            <form class="newsletter-form" id="footerNewsletterForm" novalidate>
+              <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
+              <button type="submit" class="btn btn--primary btn--sm">Subscribe</button>
+            </form>
+            <div class="form-status" id="footerNewsletterStatus" role="status" aria-live="polite"></div>
+            <p class="newsletter-privacy">We respect your privacy.</p>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copyright">&copy; <span id="currentYear">2024</span> The Building Practice Ltd. All Rights Reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
     </footer>
+<script>
+  // Keep the copyright year current without depending on per-page scripts.
+  (function () {
+    var el = document.getElementById('currentYear');
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+</script>
+<!-- FOOTER:END -->
   <script src="../js/testweb.js" defer></script>
 
     <!-- ==================== BACK TO TOP BUTTON ==================== -->
@@ -2934,7 +2544,7 @@
             <i class="bx bx-chevron-left"></i>
         </button>
         <div class="lightbox-content">
-            <img src="" alt="" id="lightboxImage">
+            <img src="" alt="" id="lightboxImage" loading="lazy" decoding="async">
         </div>
         <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">
             <i class="bx bx-chevron-right"></i>
@@ -2955,7 +2565,10 @@
             animationThreshold: 0.1,
             statsAnimationDuration: 2000,
             imageBasePath: '../images/projects/',
-            placeholderImage: 'https://via.placeholder.com/800x600/1A5F7A/FFFFFF?text=Image+Loading...'
+            // Inline SVG, so a missing image never depends on a third party.
+            // The previous value pointed at via.placeholder.com, which no longer
+            // resolves, so a failed image produced a broken icon.
+            placeholderImage: 'data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22800%22%20height%3D%22600%22%20viewBox%3D%220%200%20800%20600%22%3E%3Crect%20width%3D%22800%22%20height%3D%22600%22%20fill%3D%22%23e8e6e1%22%2F%3E%3Crect%20x%3D%22300%22%20y%3D%22250%22%20width%3D%22200%22%20height%3D%22100%22%20fill%3D%22none%22%20stroke%3D%22%23b9b4aa%22%20stroke-width%3D%222%22%2F%3E%3Cpath%20d%3D%22M300%20350l70-70%2050%2050%2040-40%2040%2060z%22%20fill%3D%22%23b9b4aa%22%2F%3E%3Ccircle%20cx%3D%22450%22%20cy%3D%22285%22%20r%3D%2214%22%20fill%3D%22%23b9b4aa%22%2F%3E%3C%2Fsvg%3E'
         };
 
         // ========== PROJECT DATA ==========
@@ -3166,7 +2779,7 @@
                         "BLOOM TOWERS/BLOOM 3A copy.jpg",
                         "BLOOM TOWERS/BLOOM 4A copy.jpg",
                         "BLOOM TOWERS/BLOOM 4A NIGHT 3 copy.jpg",
-                        "BLOOM TOWERS/Noite.png"
+                        "BLOOM TOWERS/Noite.jpg"
                     ]
                 }
             },

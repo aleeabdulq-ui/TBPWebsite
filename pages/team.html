@@ -1266,438 +1266,6 @@
         }
 
         /* ========================================
-           FOOTER
-        ======================================== */
-        .footer {
-            background: var(--bg-tertiary);
-            padding: var(--space-16) var(--space-5) var(--space-8);
-        }
-
-        [data-theme="dark"] .footer {
-            background: #0a0a0a;
-        }
-
-        .footer .container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-    /* ========================================
-       FOOTER
-       ======================================== */
-    .footer {
-      background: var(--bg-tertiary);
-      padding: 18px 0 10px;
-    }
-
-    [data-theme="dark"] .footer {
-      background: #050508;
-    }
-
-    /* ========================================
-       FOOTER (CONTINUED)
-       ======================================== */
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 20px;
-      margin-bottom: 12px;
-      align-items: start;
-    }
-
-    .footer-main {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr 1.2fr 1fr;
-      gap: 25px;
-      align-items: start;
-    }
-
-    .footer-main-bottom {
-      grid-column: auto;
-      margin-top: 0;
-    }
-
-    @media (max-width: 968px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-      }
-      .footer-main {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 640px) {
-      .footer-grid {
-        text-align: center;
-      }
-      .footer-main {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-    }
-
-    .footer-brand {
-      max-width: 200px;
-    }
-
-    @media (max-width: 640px) {
-      .footer-brand {
-        max-width: 100%;
-        margin: 0 auto;
-      }
-    }
-
-    .footer-logo {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-      margin-bottom: 6px;
-      text-decoration: none;
-    }
-
-    @media (max-width: 640px) {
-      .footer-logo {
-        justify-content: center;
-      }
-    }
-
-    .footer-logo img {
-      height: 28px;
-      width: auto;
-    }
-
-    .footer-logo-text {
-      font-size: 0.9rem;
-      font-weight: 700;
-      background: var(--gradient-blue-gold);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-    }
-
-    .footer-brand > p {
-      display: none;
-    }
-
-    .footer-social {
-      display: flex;
-      gap: 6px;
-    }
-
-    @media (max-width: 640px) {
-      .footer-social {
-        justify-content: center;
-      }
-    }
-
-    .footer-social a {
-      width: 34px;
-      height: 34px;
-      background: var(--bg-primary);
-      border: 1px solid var(--border-primary);
-      border-radius: 6px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--text-secondary);
-      font-size: 14px;
-      text-decoration: none;
-      transition: all var(--duration-normal) var(--ease-spring);
-    }
-
-    .footer-social a:hover {
-      background: var(--gradient-primary);
-      border-color: var(--primary);
-      color: var(--white);
-      transform: translateY(-3px);
-    }
-
-    .footer-column h4 {
-      font-size: 0.8rem;
-      font-weight: 700;
-      color: var(--text-primary);
-      margin-bottom: 6px;
-      position: relative;
-      padding-bottom: 3px;
-    }
-
-    .footer-column h4::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 16px;
-      height: 1.5px;
-      background: var(--gradient-blue-gold);
-      border-radius: 2px;
-    }
-
-    @media (max-width: 640px) {
-      .footer-column h4::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
-
-    .footer-links {
-      list-style: none;
-    }
-
-    .footer-links li {
-      margin-bottom: 5px;
-    }
-
-    .footer-links a {
-      font-size: 0.72rem;
-      color: var(--text-secondary);
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      transition: all var(--duration-fast) var(--ease-out);
-    }
-
-    .footer-links a i {
-      font-size: 12px;
-      color: var(--text-tertiary);
-      transition: transform var(--duration-fast);
-      display: inline;
-    }
-
-    .footer-links a:hover {
-      color: var(--primary);
-      transform: translateX(3px);
-    }
-
-    .footer-links a:hover i {
-      color: var(--primary);
-    }
-
-    .footer-links span {
-      font-size: 0.7rem;
-      color: var(--text-secondary);
-    }
-
-    @media (max-width: 640px) {
-      .footer-links a:hover {
-        transform: none;
-      }
-    }
-
-    .footer-bottom {
-      border-top: 1px solid var(--border-primary);
-      padding: 10px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    @media (max-width: 640px) {
-      .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-
-    .footer-copyright {
-      font-size: 0.6rem;
-      color: var(--text-tertiary);
-    }
-
-    .footer-copyright a {
-      color: var(--primary);
-      text-decoration: none;
-      font-weight: 700;
-    }
-
-    .footer-legal {
-      display: flex;
-      gap: 10px;
-    }
-
-    .footer-legal a {
-      font-size: 0.6rem;
-      color: var(--text-tertiary);
-      text-decoration: none;
-      transition: color var(--duration-fast);
-    }
-
-    .footer-legal a:hover {
-      color: var(--primary);
-    }
-
-    .footer-newsletter {
-      background: var(--bg-primary);
-      border: 1px solid var(--border-primary);
-      border-radius: 10px;
-      padding: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .footer-newsletter .newsletter-title {
-      font-size: 0.75rem;
-      font-weight: 700;
-      margin-bottom: 3px;
-      color: var(--text-primary);
-    }
-
-    .footer-newsletter .newsletter-description {
-      font-size: 0.65rem;
-      color: var(--text-secondary);
-      line-height: 1.3;
-      margin-bottom: 6px;
-    }
-
-    .newsletter-form {
-      display: flex;
-      gap: 4px;
-      margin-bottom: 6px;
-    }
-
-    .newsletter-form input {
-      flex: 1;
-      font-size: 0.65rem;
-      padding: 5px 8px;
-      border: 1px solid var(--border-primary);
-      border-radius: 6px;
-      background: var(--bg-tertiary);
-      color: var(--text-primary);
-    }
-
-    .newsletter-form input::placeholder {
-      color: var(--text-tertiary);
-      font-size: 0.6rem;
-    }
-
-    .newsletter-form button {
-      font-size: 0.65rem;
-      padding: 5px 10px;
-      white-space: nowrap;
-    }
-
-    .newsletter-privacy {
-      font-size: 0.6rem;
-      color: var(--text-tertiary);
-      line-height: 1.2;
-    }
-
-    .footer-newsletter .newsletter-title {
-      font-size: var(--text-base);
-      font-weight: 600;
-      margin-bottom: var(--space-2);
-      color: var(--text-primary);
-    }
-
-    .footer-newsletter .newsletter-description {
-      font-size: var(--text-xs);
-      color: var(--text-secondary);
-      line-height: 1.6;
-      margin-bottom: var(--space-4);
-    }
-
-    .footer-newsletter .newsletter-form {
-      display: flex;
-      gap: var(--space-2);
-      margin-bottom: var(--space-3);
-    }
-
-    .footer-newsletter .newsletter-form input {
-      flex: 1;
-      border: 1px solid var(--border-primary);
-      background: var(--bg-secondary);
-      border-radius: var(--radius-md);
-      padding: var(--space-2) var(--space-3);
-      font-size: var(--text-xs);
-      color: var(--text-primary);
-      outline: none;
-    }
-
-    .footer-newsletter .newsletter-form .btn {
-      padding: var(--space-2) var(--space-3);
-      font-size: var(--text-xs);
-    }
-
-    .footer-newsletter .newsletter-privacy {
-      font-size: 10px;
-      color: var(--text-tertiary);
-      margin-bottom: var(--space-3);
-    }
-
-    .footer-newsletter .newsletter-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: var(--space-2);
-    }
-
-    .footer-newsletter .newsletter-tags .tag {
-      font-size: 10px;
-    }
-
-    @media (max-width: 968px) {
-      .footer-main {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-      .footer-newsletter {
-        grid-column: auto;
-      }
-    }
-
-    @media (max-width: 640px) {
-      .footer {
-        padding: 14px 0 8px;
-      }
-      .footer-main {
-        grid-template-columns: 1fr;
-        gap: 14px;
-      }
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-        margin-bottom: 10px;
-      }
-      .footer-brand {
-        text-align: center;
-      }
-      .footer-brand > p {
-        display: none;
-      }
-      .footer-social {
-        justify-content: center;
-      }
-      .footer-logo {
-        justify-content: center;
-      }
-      .footer-main-bottom {
-        grid-column: auto;
-      }
-      .footer-newsletter {
-        width: 100%;
-      }
-      .newsletter-form {
-        flex-direction: column;
-      }
-      .footer-newsletter input {
-        width: 100%;
-      }
-      .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-        padding: 10px 0;
-        gap: 6px;
-      }
-      .footer-column h4::after {
-        left: 50%;
-        transform: translateX(-50%);
-      }
-    }
-
-        /* ========================================
            BACK TO TOP
         ======================================== */
         .back-to-top {
@@ -1824,6 +1392,9 @@
             font-size: 12px;
         }
     </style>
+  <link rel="stylesheet" href="../assets/footer.css">
+  <link rel="stylesheet" href="../css/team-directory.css">
+  <style>.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}</style>
 </head>
 <body>
 
@@ -1831,7 +1402,7 @@
     <header class="header" id="header">
         <div class="container">
             <a href="index.html" class="nav-brand">
-                <img src="../images/bp.png" alt="The Building Practice Ltd.">
+                <img src="../images/bp.png" alt="The Building Practice Ltd." width="600" height="562">
                 <div class="nav-brand-text">
                     <span class="nav-brand-name">The Building Practice Ltd.</span>
                     <span class="nav-brand-tagline">...Building Spaces that Feel</span>
@@ -1864,198 +1435,178 @@
     </header>
 
     <!-- MAIN CONTENT -->
-    <main class="main-content" id="mainContent">
-        
-        <!-- PAGE HERO -->
-        <section class="page-hero">
-            <div class="page-hero-content fade-in">
-                <div class="page-hero-badge">
-                    <i class='bx bx-group'></i>
-                    <span>Our Team</span>
+    <main class="main-content tbp-team" id="mainContent">
+
+        <!-- HERO -->
+        <section class="tbp-hero">
+            <img class="tbp-hero__img" src="../images/tbpix/Team.jpg"
+                 alt="The Building Practice team at the Lagos studio"
+                 width="2000" height="625" fetchpriority="high" decoding="async">
+            <div class="tbp-hero__scrim"></div>
+            <div class="tbp-hero__inner">
+                <div class="tbp-team__wrap">
+                    <p class="tbp-hero__eyebrow">Our Team</p>
+                    <h1 class="tbp-hero__title">The people behind the practice</h1>
+                    <p class="tbp-hero__lede">
+                        Architecture is a collective discipline. From concept to construction,
+                        our work is shaped by architects, designers, engineers, project managers
+                        and specialists who each bring a different perspective to every project.
+                    </p>
                 </div>
-                <h1 class="page-hero-title">
-                    Meet Our <span>Expert Team</span>
-                </h1>
-                <p class="page-hero-description">
-                    Talented architects, designers, and professionals dedicated to transforming visions into extraordinary spaces.
+            </div>
+        </section>
+
+        <!-- STATEMENT -->
+        <section class="tbp-statement">
+            <div class="tbp-team__wrap">
+                <p class="tbp-statement__text">
+                    Forty-seven people. One practice. Many disciplines.
                 </p>
-
-                <div class="section-tags">
-                    <a href="about.html#expertise" class="tag tag--primary tag--sm">
-                        <i class='bx bx-bulb'></i> Expertise
-                    </a>
-                    <a href="about.html#philosophy" class="tag tag--outline tag--sm">
-                        <i class='bx bx-book-open'></i> Philosophy
-                    </a>
-                    <a href="about.html#certifications" class="tag tag--outline tag--sm">
-                        <i class='bx bx-award'></i> Awards
-                    </a>
-                    <a href="about.html#vision" class="tag tag--outline tag--sm">
-                        <i class='bx bx-bullseye'></i> Vision
-                    </a>
-                    <a href="about.html#mission" class="tag tag--outline tag--sm">
-                        <i class='bx bx-rocket'></i> Mission
-                    </a>
-                    <a href="about.html" class="tag tag--outline tag--sm">
-                        <i class='bx bx-info-circle'></i> About
-                    </a>
-                    <a href="services.html" class="tag tag--outline tag--sm">
-                        <i class='bx bx-building-house'></i> Services
-                    </a>
-                    <a href="projects.html" class="tag tag--outline tag--sm">
-                        <i class='bx bx-images'></i> Projects
-                    </a>
-                    <a href="contact.html" class="tag tag--outline tag--sm">
-                        <i class='bx bx-envelope'></i> Contact
-                    </a>
-                    <a href="reviews.html" class="tag tag--outline tag--sm">
-                        <i class='bx bx-star'></i> Reviews
-                    </a>
-                    <a href="blog.html" class="tag tag--outline tag--sm">
-                        <i class='bx bx-book'></i> Blog
-                    </a>
-                    <a href="careers.html" class="tag tag--outline tag--sm">
-                        <i class='bx bx-briefcase'></i> Careers
-                    </a>
-                    <a href="about.html#ethos" class="tag tag--outline tag--sm">
-                        <i class='bx bx-heart'></i> Ethos
-                    </a>
-                    <a href="about.html#clients" class="tag tag--outline tag--sm">
-                        <i class='bx bx-handshake'></i> Clients
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <!-- CONTROLS SECTION -->
-        <section class="controls-section">
-            <div class="controls-container">
-                <div class="search-wrapper">
-                    <i class='bx bx-search search-icon'></i>
-                    <input 
-                        type="text" 
-                        class="search-input" 
-                        id="searchInput" 
-                        placeholder="Search by name or role..."
-                        autocomplete="off"
-                    >
-                </div>
-                <div class="controls-right">
-                    <div class="result-count">
-                        Showing <strong id="resultCount">0</strong> members
+                <div class="tbp-figures">
+                    <div class="tbp-figure">
+                        <span class="tbp-figure__num">47</span>
+                        <span class="tbp-figure__label">People</span>
                     </div>
-                    <div class="view-toggle">
-                        <button class="view-btn active" id="gridViewBtn" data-view="grid" aria-label="Grid view">
-                            <i class='bx bx-grid-alt'></i>
-                            <span>Grid</span>
-                        </button>
-                        <button class="view-btn" id="listViewBtn" data-view="list" aria-label="List view">
-                            <i class='bx bx-list-ul'></i>
-                            <span>List</span>
-                        </button>
+                    <div class="tbp-figure">
+                        <span class="tbp-figure__num">4</span>
+                        <span class="tbp-figure__label">Disciplines</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- TEAM SECTION -->
-        <section class="team-section">
-            <div class="team-grid" id="teamGrid">
-                <!-- Cards will be dynamically inserted here -->
-            </div>
-
-            <div class="no-results" id="noResults">
-                <div class="no-results-icon">
-                    <i class='bx bx-search-alt'></i>
+        <!-- LEADERSHIP -->
+        <section class="tbp-section">
+            <div class="tbp-team__wrap">
+                <div class="tbp-section__head">
+                    <h2 class="tbp-section__title">Leadership</h2>
                 </div>
-                <h3 class="no-results-title">No team members found</h3>
-                <p class="no-results-text">Try adjusting your search to find what you're looking for.</p>
-                <button class="no-results-btn" id="clearSearchBtn">
-                    <i class='bx bx-refresh'></i>
-                    <span>Clear Search</span>
-                </button>
+                <div class="tbp-grid tbp-grid--lead" id="leadershipGrid"></div>
+            </div>
+        </section>
+
+        <!-- DIRECTORY -->
+        <section class="tbp-section" id="directory">
+            <div class="tbp-team__wrap">
+                <div class="tbp-section__head">
+                    <h2 class="tbp-section__title">The Practice</h2>
+                    <p class="tbp-section__note">
+                        Showing <strong id="resultCount">0</strong> of 47
+                    </p>
+                </div>
+
+                <div class="tbp-controls">
+                    <div class="tbp-filters" id="disciplineFilters" role="group" aria-label="Filter by discipline"></div>
+                    <div class="tbp-search">
+                        <label class="sr-only" for="searchInput">Search the team</label>
+                        <input type="search" id="searchInput" placeholder="Search by name or role" autocomplete="off">
+                    </div>
+                </div>
+
+                <div class="tbp-grid" id="teamGrid"></div>
+
+                <div class="tbp-empty" id="noResults" hidden>
+                    <h3>No one matches that search</h3>
+                    <p>Try a different name, role or discipline.</p>
+                    <button type="button" id="clearSearchBtn">Clear filters</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- CAREERS -->
+        <section class="tbp-team__wrap">
+            <div class="tbp-cta">
+                <h2 class="tbp-cta__title">Think. Design. Build.</h2>
+                <p class="tbp-cta__text">
+                    We are always looking for people who care about the built environment.
+                </p>
+                <a class="tbp-cta__link" href="careers.html">Explore careers</a>
             </div>
         </section>
     </main>
 
     <!-- FOOTER -->
     <!-- ==================== FOOTER ==================== -->
-    <footer class="footer" id="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-main">
-                    <div class="footer-brand">
-                        <a href="index.html" class="footer-logo">
-                            <img src="../images/bp.png" alt="TBP Logo">
-                            <span class="footer-logo-text">The Building Practice</span>
-                        </a>
-                        <p>An architectural firm dedicated to shaping spaces that inspire, endure, and connect. Creating thoughtful, sustainable, and contextually relevant designs since 2013.</p>
-                        <div class="footer-social">
-                            <a href="https://www.facebook.com/thebuildingpractice" target="_blank" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
-                            <a href="https://x.com/thebplimited" target="_blank" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
-                            <a href="https://www.instagram.com/thebuildingpractice" target="_blank" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
-                            <a href="https://www.linkedin.com/company/the-building-practice-ltd/" target="_blank" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
-                        </div>
-                    </div>
-
-                    <div class="footer-column">
-                        <h4>Quick Links</h4>
-                        <ul class="footer-links">
-                            <li><a href="index.html"><i class='bx bx-chevron-right'></i><span>Home</span></a></li>
-                            <li><a href="about.html"><i class='bx bx-chevron-right'></i><span>About</span></a></li>
-                            <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Services</span></a></li>
-                            <li><a href="projects.html"><i class='bx bx-chevron-right'></i><span>Projects</span></a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-column">
-                        <h4>Our Services</h4>
-                        <ul class="footer-links">
-                            <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Architecture</span></a></li>
-                            <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Interior Design</span></a></li>
-                            <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Construction</span></a></li>
-                            <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Consultancy</span></a></li>
-                        </ul>
-                    </div>
-
-                    <div class="footer-column footer-main-bottom">
-                        <h4>Contact Info</h4>
-                        <ul class="footer-links">
-                            <li><i class='bx bx-map'></i><span>Plot 6, Remi Olowude, Lekki Phase 1</span></li>
-                            <li><a href="tel:+2349049721840"><i class='bx bx-phone'></i><span>+234 904 972 1840</span></a></li>
-                            <li><a href="mailto:info@buildingpractice.biz"><i class='bx bx-envelope'></i><span>info@buildingpractice.biz</span></a></li>
-                            <li><i class='bx bx-time'></i><span>Mon - Fri: 9AM - 5PM</span></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="footer-newsletter">
-                    <h4 class="newsletter-title">Subscribe</h4>
-                    <p class="newsletter-description">Get the latest updates and insights</p>
-                    <form class="newsletter-form" id="footerNewsletterForm" novalidate>
-                        <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
-                        <button type="submit" class="btn btn--primary btn--sm">
-                            Subscribe
-                        </button>
-                    </form>
-                    <p class="newsletter-privacy">
-                        We respect your privacy.
-                    </p>
-                </div>
+<!-- FOOTER:START (generated by scripts/build-footer.mjs - do not edit) -->
+<footer class="footer" id="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-main">
+            <div class="footer-brand">
+              <a href="index.html" class="footer-logo">
+                <img src="../images/bp.png" alt="TBP Logo" width="600" height="562" loading="lazy" decoding="async">
+                <span class="footer-logo-text">The Building Practice</span>
+              </a>
+              <p>An architectural firm dedicated to shaping spaces that inspire, endure, and connect. Creating thoughtful, sustainable, and contextually relevant designs since 2013.</p>
+              <div class="footer-social">
+                <a href="https://www.facebook.com/thebuildingpractice" target="_blank" rel="noopener" aria-label="Facebook"><i class='bx bxl-facebook'></i></a>
+                <a href="https://x.com/thebplimited" target="_blank" rel="noopener" aria-label="Twitter"><i class='bx bxl-twitter'></i></a>
+                <a href="https://www.instagram.com/thebuildingpractice" target="_blank" rel="noopener" aria-label="Instagram"><i class='bx bxl-instagram'></i></a>
+                <a href="https://www.linkedin.com/company/the-building-practice-ltd/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class='bx bxl-linkedin'></i></a>
+              </div>
             </div>
 
-            <div class="footer-bottom">
-                <p class="footer-copyright">
-                    � <span id="currentYear">2024</span> The Building Practice Ltd. All Rights Reserved.
-                </p>
-                <div class="footer-legal">
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Service</a>
-                    <a href="#">Sitemap</a>
-                </div>
+            <div class="footer-column">
+              <h4>Quick Links</h4>
+              <ul class="footer-links">
+                <li><a href="index.html"><i class='bx bx-chevron-right'></i><span>Home</span></a></li>
+                <li><a href="about.html"><i class='bx bx-chevron-right'></i><span>About</span></a></li>
+                <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Services</span></a></li>
+                <li><a href="projects.html"><i class='bx bx-chevron-right'></i><span>Projects</span></a></li>
+              </ul>
             </div>
+
+            <div class="footer-column">
+              <h4>Our Services</h4>
+              <ul class="footer-links">
+                <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Architecture</span></a></li>
+                <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Interior Design</span></a></li>
+                <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Construction</span></a></li>
+                <li><a href="services.html"><i class='bx bx-chevron-right'></i><span>Consultancy</span></a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column footer-main-bottom">
+              <h4>Contact Info</h4>
+              <ul class="footer-links">
+                <li><i class='bx bx-map'></i><span>Plot 6, Remi Olowude, Lekki Phase 1</span></li>
+                <li><a href="tel:+2349049721840"><i class='bx bx-phone'></i><span>+234 904 972 1840</span></a></li>
+                <li><a href="mailto:info@buildingpractice.biz"><i class='bx bx-envelope'></i><span>info@buildingpractice.biz</span></a></li>
+                <li><i class='bx bx-time'></i><span>Mon - Fri: 9AM - 5PM</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-newsletter">
+            <h4 class="newsletter-title">Subscribe</h4>
+            <p class="newsletter-description">Get the latest updates and insights</p>
+            <form class="newsletter-form" id="footerNewsletterForm" novalidate>
+              <input type="email" name="email" placeholder="Email address" aria-label="Email address" required>
+              <button type="submit" class="btn btn--primary btn--sm">Subscribe</button>
+            </form>
+            <div class="form-status" id="footerNewsletterStatus" role="status" aria-live="polite"></div>
+            <p class="newsletter-privacy">We respect your privacy.</p>
+          </div>
         </div>
+
+        <div class="footer-bottom">
+          <p class="footer-copyright">&copy; <span id="currentYear">2024</span> The Building Practice Ltd. All Rights Reserved.</p>
+          <div class="footer-legal">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
     </footer>
+<script>
+  // Keep the copyright year current without depending on per-page scripts.
+  (function () {
+    var el = document.getElementById('currentYear');
+    if (el) el.textContent = new Date().getFullYear();
+  })();
+</script>
+<!-- FOOTER:END -->
     <!-- ==================== BACK TO TOP BUTTON ==================== -->
     <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top">
         <i class='bx bx-up-arrow-alt'></i>
@@ -2072,53 +1623,6 @@
                 scrollOffset: 100,
                 searchDebounce: 300
             };
-
-            // ========== TEAM DATA ==========
-            const teamMembers = [
-                { name: "Michael Oluwafemi Alley", designation: "Principal Partner", hierarchy: 1, image: "../images/team/micheal.jpg", profilePage: "../team/micheal.html" },
-                { name: "Oluwagbemisola Idowu", designation: "Associate Partner", hierarchy: 2, image: "../images/team/gbemi.jpg", profilePage: "../team/gbemi.html" },
-                { name: "Gboyega Adekanbi", designation: "Associate Partner", hierarchy: 2, image: "../images/team/gboyega.jpg", profilePage: "../team/gboyega.html" },
-                { name: "Nduka Akanu", designation: "Senior Associate", hierarchy: 3, image: "../images/team/nduka.jpg", profilePage: "../team/nduka.html" },
-                { name: "Chyzoba Onwubiko", designation: "Senior Associate", hierarchy: 3, image: "../images/team/chyzoba.jpg", profilePage: "../team/chyzoba.html" },
-                { name: "Ismail Opadokun", designation: "Senior Associate", hierarchy: 3, image: "../images/team/ismail.jpg", profilePage: "../team/ismail.html" },
-                { name: "Quadri Bakare", designation: "Senior Associate", hierarchy: 3, image: "../images/team/quadri.jpg", profilePage: "../team/quadri.html" },
-                { name: "Bode Ariyo", designation: "Senior Associate", hierarchy: 3, image: "../images/team/bode.jpg", profilePage: "../team/bode.html" },
-                { name: "Kingsley Anyanwu", designation: "Senior Associate", hierarchy: 3, image: "../images/team/kingsley.jpg", profilePage: "../team/kingsley.html" },
-                { name: "Adewunmi Adegoke James", designation: "Construction Project Manager", hierarchy: 3, image: "../images/team/james.jpg", profilePage: "../team/james.html" },
-                { name: "Tienador Ghomorai", designation: "Finance Manager", hierarchy: 3, image: "../images/team/tienedor.jpg", profilePage: "../team/tienador.html" },
-                { name: "John T. Alley", designation: "Business Development Consultant", hierarchy: 3, image: "../images/team/john.jpg", profilePage: "../team/john.html" },
-                { name: "Nicole Duke", designation: "Mid-Level Associate", hierarchy: 4, image: "../images/team/nicole.jpg", profilePage: "../team/nicole.html" },
-                { name: "Fawaz Adelaja", designation: "Mid-Level Associate", hierarchy: 4, image: "../images/team/fawaz.jpg", profilePage: "../team/fawaz.html" },
-                { name: "Raphael Opeloyemi", designation: "Mid-Level Associate", hierarchy: 4, image: "../images/team/rapheal.jpg", profilePage: "../team/raphael.html" },
-                { name: "Azeez Alakufo", designation: "Mid-Level Associate", hierarchy: 4, image: "../images/team/azeez.jpg", profilePage: "../team/azeez.html" },
-                { name: "Ifeoluwa Nwajei", designation: "Mid-Level Associate", hierarchy: 4, image: "../images/team/ife.jpg", profilePage: "../team/ife.html" },
-                { name: "Mayowa Osifowora", designation: "Mid-Level Associate", hierarchy: 4, image: "../images/team/mayowa.jpg", profilePage: "../team/mayowa.html" },
-                { name: "Olumayowa Adegboye", designation: "Mid-Level Associate", hierarchy: 4, image: "../images/team/olumayowa.jpg", profilePage: "../team/olumayowa.html" },
-                { name: "Ayelo Elukpo", designation: "Construction Site Manager", hierarchy: 4, image: "../images/team/ayelo.jpg", profilePage: "../team/ayelo.html" },
-                { name: "Nnaemeka Amadi", designation: "Projects Coordinator", hierarchy: 4, image: "../images/team/nnemeka.jpg", profilePage: "../team/amadi.html" },
-                { name: "Yewande Adeyemi", designation: "Human Resources Officer", hierarchy: 4, image: "../images/team/yewande.jpg", profilePage: "../team/yewande.html" },
-                { name: "Tahir Mohammed", designation: "Quantity Surveyor", hierarchy: 4, image: "../images/team/tahir.jpg", profilePage: "../team/tahir.html" },
-                { name: "Olaosebikan Ajidagba", designation: "Arts Director", hierarchy: 4, image: "../images/team/olaosebikan.jpg", profilePage: "../team/olaosebikan.html" },
-                { name: "Ali AbdulQuadir", designation: "IT Manager", hierarchy: 4, image: "../images/team/ali.jpg", profilePage: "../team/ali.html" },
-                { name: "Adewunmi Adegoke", designation: "Site Engineer", hierarchy: 4, image: "../images/team/adewunmi.jpg", profilePage: "../team/adewunmi.html" },
-                { name: "Oluwafemi Ayanniyi", designation: "Architect", hierarchy: 4, image: "../images/team/femi.jpg", profilePage: "../team/oluwafemi.html" },
-                { name: "Olushola Adeyemi", designation: "Junior Associate", hierarchy: 5, image: "../images/team/shola.jpg", profilePage: "../team/shola.html" },
-                { name: "OreOluwa Orimogunje", designation: "Junior Associate", hierarchy: 5, image: "../images/team/ore.jpg", profilePage: "../team/ore.html" },
-                { name: "Victor Oyebode", designation: "Junior Associate", hierarchy: 5, image: "../images/team/victor.jpg", profilePage: "../team/victor.html" },
-                { name: "Ayanfeoluwa Vese", designation: "Junior Associate", hierarchy: 5, image: "../images/team/ayanfe.jpg", profilePage: "../team/ayanfe.html" },
-                { name: "Joshua Adepoju", designation: "Junior Associate", hierarchy: 5, image: "../images/team/joshua.jpg", profilePage: "../team/joshua.html" },
-                { name: "Uchechukwu Oleribe", designation: "Junior Associate", hierarchy: 5, image: "../images/team/uche.jpg", profilePage: "../team/uche.html" },
-                { name: "Ogba Chigozie", designation: "Assistant Site Engineer", hierarchy: 5, image: "../images/team/OGBA.jpg", profilePage: "../team/ogba.html" },
-                { name: "Brenda Mekwunye", designation: "Social Media Manager", hierarchy: 5, image: "../images/team/brenda.jpg", profilePage: "../team/brenda.html" },
-                { name: "Eweh Abang", designation: "Procurement Officer", hierarchy: 5, image: "../images/team/eweh.jpg", profilePage: "../team/eweh.html" },
-                { name: "Chukwunonso Isichei", designation: "Graduate Architect", hierarchy: 6, image: "../images/team/teams.jpg", profilePage: "../team/chukwunonso.html" },
-                { name: "Olabisi Jubril", designation: "Graduate Architect", hierarchy: 6, image: "../images/team/jubril.jpeg", profilePage: "../team/olabisi.html" },
-                { name: "Vanessa", designation: "Graduate Architect", hierarchy: 6, image: "../images/team/vanessa.jpg", profilePage: "../team/vanessa.html" },
-                { name: "Ayoola", designation: "Graduate Architect", hierarchy: 6, image: "../images/team/Ayoola.jpg", profilePage: "../team/ayoola.html" },
-                { name: "Esther Taiwo", designation: "Junior Accounts Officer", hierarchy: 6, image: "../images/team/esther.jpg", profilePage: "../team/esther.html" },
-                { name: "Sarah Dennis", designation: "Administrative Officer", hierarchy: 6, image: "../images/team/teams.jpg", profilePage: "../team/sarah.html" },
-                { name: "Peter Ibiang", designation: "Office Assistant", hierarchy: 7, image: "../images/team/peter.jpg", profilePage: "../team/peter.html" }
-            ].sort((a, b) => a.hierarchy - b.hierarchy);
 
             // ========== DOM HELPERS ==========
             const $ = (selector) => document.querySelector(selector);
@@ -2378,137 +1882,6 @@
                     $$('.fade-in').forEach(el => this.observer.observe(el));
                 }
             };
-
-            // ========== TEAM CARDS ==========
-            const teamCards = {
-                getProfileButton(member) {
-                    return `
-                        <a href="${member.profilePage}" class="card-btn">
-                            <span>View Profile</span>
-                            <i class='bx bx-right-arrow-alt'></i>
-                        </a>
-                    `;
-                },
-
-                createCard(member, index) {
-                    const initials = utils.getInitials(member.name);
-                    const badge = utils.getBadge(member.hierarchy);
-                    const roleIcon = utils.getRoleIcon(member.designation);
-
-                    const card = document.createElement('div');
-                    card.className = utils.getCardClass(member, index);
-                    card.style.transitionDelay = `${index * 50}ms`;
-                    card.dataset.name = member.name.toLowerCase();
-                    card.dataset.role = member.designation.toLowerCase();
-
-                    const badgeHtml = badge ? 
-                        `<div class="card-badge">
-                            <i class='bx ${badge.icon}'></i>
-                            <span>${badge.text}</span>
-                        </div>` : '';
-
-                    card.innerHTML = `
-                        <div class="card-image-wrapper">
-                            <img src="${member.image}" alt="${member.name}" loading="lazy" 
-                                 onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'; this.closest('.team-card')?.classList.add('team-card--missing-image');">
-                            <div class="card-placeholder" style="display:none;">${initials}</div>
-                            <div class="card-role-icon">
-                                <i class='bx ${roleIcon}'></i>
-                            </div>
-                            ${badgeHtml}
-                        </div>
-                        <div class="card-body">
-                            <div class="card-info">
-                                <h3 class="card-name">${member.name}</h3>
-                                <p class="card-role">${member.designation}</p>
-                            </div>
-                            ${teamCards.getProfileButton(member)}
-
-                        </div>
-                    `;
-
-                    return card;
-                },
-
-                render(searchQuery = '') {
-                    const query = searchQuery.toLowerCase().trim();
-
-                    let filtered = teamMembers;
-                    if (query) {
-                        filtered = teamMembers.filter(member =>
-                            member.name.toLowerCase().includes(query) ||
-                            member.designation.toLowerCase().includes(query)
-                        );
-                    }
-
-                    elements.teamGrid.innerHTML = '';
-                    elements.resultCount.textContent = filtered.length;
-
-                    if (filtered.length === 0) {
-                        elements.noResults.classList.add('visible');
-                        return;
-                    }
-
-                    elements.noResults.classList.remove('visible');
-
-                    filtered.forEach((member, index) => {
-                        const card = this.createCard(member, index);
-                        elements.teamGrid.appendChild(card);
-                    });
-
-                    // Animate cards
-                    requestAnimationFrame(() => {
-                        $$('.team-card').forEach((card, i) => {
-                            setTimeout(() => {
-                                card.classList.add('visible');
-                            }, i * 50);
-                        });
-                    });
-                },
-
-                init() {
-                    // Initial render
-                    this.render();
-
-                    // Search functionality
-                    let searchTimeout;
-                    elements.searchInput?.addEventListener('input', (e) => {
-                        clearTimeout(searchTimeout);
-                        searchTimeout = setTimeout(() => {
-                            this.render(e.target.value);
-                        }, CONFIG.searchDebounce);
-                                    });
-
-                    // Clear search
-                    elements.clearSearchBtn?.addEventListener('click', () => {
-                        elements.searchInput.value = '';
-                        this.render();
-                        elements.searchInput.focus();
-                    });
-
-                    // View toggle
-                    elements.gridViewBtn?.addEventListener('click', () => {
-                        elements.gridViewBtn.classList.add('active');
-                        elements.listViewBtn.classList.remove('active');
-                        elements.teamGrid.classList.remove('list-view');
-                        localStorage.setItem('teamView', 'grid');
-                    });
-
-                    elements.listViewBtn?.addEventListener('click', () => {
-                        elements.listViewBtn.classList.add('active');
-                        elements.gridViewBtn.classList.remove('active');
-                        elements.teamGrid.classList.add('list-view');
-                        localStorage.setItem('teamView', 'list');
-                    });
-
-                    // Restore saved view preference
-                    const savedView = localStorage.getItem('teamView');
-                    if (savedView === 'list') {
-                        elements.listViewBtn?.click();
-                    }
-                }
-            };
-
             // ========== DYNAMIC YEAR ==========
             const setCurrentYear = () => {
                 if (elements.currentYear) {
@@ -2522,7 +1895,6 @@
                 theme.init();
                 navigation.init();
                 backToTop.init();
-                teamCards.init();
                 setCurrentYear();
             };
 
@@ -2535,6 +1907,7 @@
 
         })();
     </script>
+  <script src="../js/team.js" defer></script>
   <script src="../js/theme-sync.js" defer></script>
 </body>
 </html>

@@ -1,173 +1,203 @@
 /**
- * TBP Team Page - JavaScript
- * Handles search, filtering, and team member display
+ * TBP Team Directory
+ *
+ * TEAM_DATA is generated from the profile pages in /team, which are the
+ * single source of truth for names and roles. Regenerate with
+ * `node scripts/build-team-data.mjs` after adding or editing a profile.
+ *
+ * image:   filename in /images/team, or null when no headshot exists yet
+ *          (the card then renders generated initials, never a broken image)
+ * profile: link to the profile page, or null when that person has no page yet
+ *          (the card renders as static text rather than a dead link)
+ *
+ * There is deliberately no per-person location field: the studio holds no
+ * such data, and defaulting everyone to "Lagos" would have been invented.
  */
 
 const TEAM_DATA = [
-  { id: 'micheal', name: 'Michael Oluwafemi Alley', role: 'Principal Partner', image: '../images/team/micheal.jpg', profile: '/team/micheal.html', specialty: 'Strategic Design & Leadership', loc: 'Lagos' },
-  { id: 'gbemi', name: 'Oluwagbemisola Idowu', role: 'Associate Partner', image: '../images/team/gbemi.jpg', profile: '/team/gbemi.html', specialty: 'Design Execution', loc: 'Lagos' },
-  { id: 'gboyega', name: 'Olugboyega Tayo-Ojo', role: 'Associate Partner', image: '../images/team/gboyega.jpg', profile: '/team/gboyega.html', specialty: 'Technical Coordination', loc: 'Abuja' },
-  { id: 'nduka', name: 'Nduka Akanu', role: 'Senior Associate', image: '../images/team/nduka.jpg', profile: '/team/nduka.html', specialty: 'Architecture', loc: 'Lagos' },
-  { id: 'chyzoba', name: 'Chyzoba Onwubiko', role: 'Senior Associate', image: '../images/team/chyzoba.jpg', profile: '/team/chyzoba.html', specialty: 'Design', loc: 'Lagos' },
-  { id: 'ismail', name: 'Ismail Opadokun', role: 'Senior Associate', image: '../images/team/ismail.jpg', profile: '/team/ismail.html', specialty: 'Technical Design', loc: 'Abuja' },
-  { id: 'quadri', name: 'Quadri Bakare', role: 'Senior Associate', image: '../images/team/quadri.jpg', profile: '/team/quadri.html', specialty: 'Project Management', loc: 'Lagos' },
-  { id: 'bode', name: 'Bode Ariyo', role: 'Senior Associate', image: '../images/team/bode.jpg', profile: '/team/bode.html', specialty: 'Design Leadership', loc: 'Lagos' },
-  { id: 'kingsley', name: 'Kingsley Anyanwu', role: 'Senior Associate', image: '../images/team/kingsley.jpg', profile: '/team/kingsley.html', specialty: 'Architecture', loc: 'Lagos' },
-  { id: 'mayowa', name: 'Mayowa Badejo', role: 'Associate', image: '../images/team/mayowa.jpg', profile: '../team/mayowa.html', specialty: 'Design & Detailing', loc: 'Lagos' },
-  { id: 'tahir', name: 'Tahir Ahmed', role: 'Associate', image: '../images/team/tahir.jpg', profile: '../team/tahir.html', specialty: 'Project Coordination', loc: 'Abuja' },
-  { id: 'esther', name: 'Esther Obi', role: 'Associate', image: '../images/team/esther.jpg', profile: '../team/esther.html', specialty: 'Architecture', loc: 'Lagos' },
-  { id: 'joshua', name: 'Joshua Tunde', role: 'Junior Associate', image: '../images/team/joshua.jpg', profile: '../team/joshua.html', specialty: 'Design Development', loc: 'Lagos' },
-  { id: 'azeez', name: 'Azeez Adebayo', role: 'Junior Associate', image: '../images/team/azeez.jpg', profile: '../team/azeez.html', specialty: 'CAD & Visualization', loc: 'Lagos' },
-  { id: 'shola', name: 'Shola Olawale', role: 'Graduate Architect', image: '../images/team/shola.jpg', profile: '../team/shola.html', specialty: 'Design Support', loc: 'Lagos' },
-  { id: 'ayelo', name: 'Ayelo Opeyemi', role: 'Graduate Engineer', image: '../images/team/ayelo.jpg', profile: '../team/ayelo.html', specialty: 'Engineering', loc: 'Lagos' },
-  { id: 'ayanfe', name: 'Ayanfe Sofela', role: 'Intern', image: '../images/team/ayanfe.jpg', profile: '../team/ayanfe.html', specialty: 'Design', loc: 'Lagos' },
-  { id: 'ali', name: 'Ali Hassan', role: 'Intern', image: '../images/team/ali.jpg', profile: '../team/ali.html', specialty: 'Design', loc: 'Lagos' },
-  { id: 'amadi', name: 'Amadi Chinedu', role: 'Junior', image: '../images/team/amadi.jpg', profile: '../team/amadi.html', specialty: 'CAD Support', loc: 'Lagos' },
-  { id: 'brenda', name: 'Brenda Anyawu', role: 'Associate', image: '../images/team/brenda.jpg', profile: '../team/brenda.html', specialty: 'Design', loc: 'Lagos' },
-  { id: 'fawaz', name: 'Fawaz Olakunle', role: 'Associate', image: '../images/team/fawaz.jpg', profile: '../team/fawaz.html', specialty: 'Architecture', loc: 'Lagos' },
-  { id: 'ife', name: 'Ife Babatunde', role: 'Senior', image: '../images/team/ife.jpg', profile: '../team/ife.html', specialty: 'Project Management', loc: 'Lagos' },
-  { id: 'micheal2', name: 'Michael Onwuka', role: 'Senior', image: '../images/team/micheal.jpg', profile: '../team/micheal.html', specialty: 'Architecture', loc: 'Lagos' },
-  { id: 'nicole', name: 'Nicole Okafor', role: 'Associate', image: '../images/team/nicole.jpg', profile: '../team/nicole.html', specialty: 'Design & Branding', loc: 'Lagos' },
-  { id: 'onyedikachi', name: 'Onyedikachi Okoro', role: 'Junior', image: '../images/team/onyedikachi.jpg', profile: '../team/onyedikachi.html', specialty: 'CAD', loc: 'Lagos' },
-  { id: 'ore', name: 'Ore Fasemilusi', role: 'Associate', image: '../images/team/ore.jpg', profile: '../team/ore.html', specialty: 'Design', loc: 'Lagos' },
-  { id: 'somto', name: 'Somto Anyanwu', role: 'Junior', image: '../images/team/somto.jpg', profile: '../team/somto.html', specialty: 'Architecture', loc: 'Lagos' },
-  { id: 'toluwase', name: 'Toluwase Adegoke', role: 'Associate', image: '../images/team/toluwase.jpg', profile: '../team/toluwase.html', specialty: 'Design Development', loc: 'Lagos' },
-  { id: 'uche', name: 'Uche Nwaebere', role: 'Senior Associate', image: '../images/team/uche.jpg', profile: '../team/uche.html', specialty: 'Project Leadership', loc: 'Lagos' },
-  { id: 'victor', name: 'Victor Okonkwo', role: 'Associate', image: '../images/team/victor.jpg', profile: '../team/victor.html', specialty: 'Engineering & CAD', loc: 'Lagos' },
-  { id: 'wale', name: 'Wale Adeyemi', role: 'Senior', image: '../images/team/wale.jpg', profile: '../team/wale.html', specialty: 'Architecture & Design', loc: 'Lagos' },
-  { id: 'yewamde', name: 'Yewamde Duku', role: 'Associate', image: '../images/team/yewamde.jpg', profile: '../team/yewamde.html', specialty: 'Design', loc: 'Lagos' }
+  { name: 'Michael Oluwafemi Alley', role: 'Principal Partner', discipline: 'Leadership', image: 'micheal.jpg', profile: '../team/micheal.html' },
+  { name: 'Gboyega Adekanbi', role: 'Associate Partner', discipline: 'Leadership', image: 'gboyega.jpg', profile: '../team/gboyega.html' },
+  { name: 'Oluwagbemisola Idowu', role: 'Associate Partner', discipline: 'Leadership', image: 'gbemi.jpg', profile: '../team/gbemi.html' },
+  { name: 'Adewunmi Adegoke James', role: 'Construction Project Manager', discipline: 'Project Delivery & Construction', image: 'james.jpg', profile: '../team/james.html' },
+  { name: 'Bode Ariyo', role: 'Senior Associate', discipline: 'Architecture & Design', image: 'bode.jpg', profile: '../team/bode.html' },
+  { name: 'Chyzoba Onwubiko', role: 'Senior Associate', discipline: 'Architecture & Design', image: 'chyzoba.jpg', profile: '../team/chyzoba.html' },
+  { name: 'Ismail Opadokun', role: 'Senior Associate', discipline: 'Architecture & Design', image: 'ismail.jpg', profile: '../team/ismail.html' },
+  { name: 'John T. Alley', role: 'Business Development Consultant', discipline: 'Operations & Support', image: null, profile: null },
+  { name: 'Kingsley Anyanwu', role: 'Senior Associate', discipline: 'Architecture & Design', image: 'kingsley.jpg', profile: '../team/kingsley.html' },
+  { name: 'Nduka Akanu', role: 'Senior Associate', discipline: 'Architecture & Design', image: 'nduka.jpg', profile: '../team/nduka.html' },
+  { name: 'Quadri Bakare', role: 'Senior Associate', discipline: 'Architecture & Design', image: 'quadri.jpg', profile: '../team/quadri.html' },
+  { name: 'Tienador Ghomorai', role: 'Finance Manager', discipline: 'Operations & Support', image: 'tienedor.jpg', profile: '../team/tienador.html' },
+  { name: 'Adewunmi Adegoke', role: 'Site Engineer', discipline: 'Project Delivery & Construction', image: null, profile: null },
+  { name: 'Ali AbdulQuadir', role: 'IT Manager', discipline: 'Operations & Support', image: 'ali.jpg', profile: '../team/ali.html' },
+  { name: 'Ayelo Elukpo', role: 'Construction Site Manager', discipline: 'Project Delivery & Construction', image: 'Ayelo.jpg', profile: '../team/ayelo.html' },
+  { name: 'Azeez Alakufo', role: 'Mid-Level Associate', discipline: 'Architecture & Design', image: 'azeez.jpg', profile: '../team/azeez.html' },
+  { name: 'Fawaz Adelaja', role: 'Mid-Level Associate', discipline: 'Architecture & Design', image: 'fawaz.jpg', profile: '../team/fawaz.html' },
+  { name: 'Ifeoluwa Nwajei', role: 'Mid-Level Associate', discipline: 'Architecture & Design', image: 'ife.jpg', profile: '../team/ife.html' },
+  { name: 'Mayowa Osifowora', role: 'Mid-Level Associate', discipline: 'Architecture & Design', image: 'mayowa.jpg', profile: '../team/mayowa.html' },
+  { name: 'Nicole Duke', role: 'Mid-Level Associate', discipline: 'Architecture & Design', image: 'nicole.jpg', profile: '../team/nicole.html' },
+  { name: 'Nnaemeka Amadi', role: 'Projects Coordinator', discipline: 'Project Delivery & Construction', image: 'nnemeka.jpg', profile: '../team/amadi.html' },
+  { name: 'Olaosebikan Ajidagba', role: 'Arts Director', discipline: 'Operations & Support', image: null, profile: null },
+  { name: 'Olumayowa Adegboye', role: 'Mid-Level Associate', discipline: 'Architecture & Design', image: null, profile: null },
+  { name: 'Oluwafemi Ayanniyi', role: 'Architect', discipline: 'Architecture & Design', image: 'femi.jpg', profile: '../team/oluwafemi.html' },
+  { name: 'Onyedikachi Nwosu', role: 'Architect', discipline: 'Architecture & Design', image: null, profile: '../team/onyedikachi.html' },
+  { name: 'Raphael Opeloyemi', role: 'Mid-Level Associate', discipline: 'Architecture & Design', image: 'rapheal.jpg', profile: '../team/raphael.html' },
+  { name: 'Tahir Mohammed', role: 'Quantity Surveyor', discipline: 'Project Delivery & Construction', image: 'tahir.jpg', profile: '../team/tahir.html' },
+  { name: 'Toluwalase Akinpelumi', role: 'Architectural Designer', discipline: 'Architecture & Design', image: null, profile: '../team/toluwase.html' },
+  { name: 'Yewande Adeyemi', role: 'Human Resources Officer', discipline: 'Operations & Support', image: 'yewande.jpg', profile: '../team/yewamde.html' },
+  { name: 'Adebiyi Gbolahan', role: 'Architect', discipline: 'Architecture & Design', image: null, profile: '../team/gbolahan.html' },
+  { name: 'Ayanfeoluwa Vese', role: 'Junior Associate', discipline: 'Architecture & Design', image: 'ayanfe.jpg', profile: '../team/ayanfe.html' },
+  { name: 'Brenda Mekwunye', role: 'Social Media Manager', discipline: 'Operations & Support', image: 'brenda.jpg', profile: '../team/brenda.html' },
+  { name: 'Eweh Abang', role: 'Procurement Officer', discipline: 'Operations & Support', image: 'eweh.jpg', profile: '../team/eweh.html' },
+  { name: 'Ikwuazom Somtochukwu Henry', role: 'SEO & Digital Marketing Manager', discipline: 'Operations & Support', image: 'somto.jpg', profile: '../team/somto.html' },
+  { name: 'Joshua Adepoju', role: 'Junior Associate', discipline: 'Architecture & Design', image: 'joshua.jpg', profile: '../team/joshua.html' },
+  { name: 'Ogba Chigozie', role: 'Assistant Site Engineer', discipline: 'Project Delivery & Construction', image: 'OGBA.jpg', profile: '../team/ogba.html' },
+  { name: 'Olushola Adeyemi', role: 'Junior Associate', discipline: 'Architecture & Design', image: 'shola.jpg', profile: '../team/shola.html' },
+  { name: 'OreOluwa Orimogunje', role: 'Junior Associate', discipline: 'Architecture & Design', image: 'ore.jpg', profile: '../team/ore.html' },
+  { name: 'Uchechukwu Oleribe', role: 'Junior Associate', discipline: 'Architecture & Design', image: null, profile: '../team/uche.html' },
+  { name: 'Victor Oyebode', role: 'Junior Associate', discipline: 'Architecture & Design', image: 'victor.jpg', profile: '../team/victor.html' },
+  { name: 'Ayoola', role: 'Graduate Architect', discipline: 'Architecture & Design', image: 'Ayoola.jpg', profile: '../team/ayoola.html' },
+  { name: 'Chukwunonso Isichei', role: 'Graduate Architect', discipline: 'Architecture & Design', image: null, profile: '../team/chukwunonso.html' },
+  { name: 'Esther Taiwo', role: 'Junior Accounts Officer', discipline: 'Operations & Support', image: 'esther.jpg', profile: '../team/esther.html' },
+  { name: 'Olabisi Jubril', role: 'Graduate Architect', discipline: 'Architecture & Design', image: 'jubril.jpeg', profile: '../team/olabisi.html' },
+  { name: 'Sarah Dennis', role: 'Administrative Officer', discipline: 'Operations & Support', image: 'SARAH.jpg', profile: '../team/sarah.html' },
+  { name: 'Vanessa', role: 'Graduate Architect', discipline: 'Architecture & Design', image: 'vanessa.jpg', profile: '../team/vanessa.html' },
+  { name: 'Peter Ibiang', role: 'Office Assistant', discipline: 'Operations & Support', image: 'peter.jpg', profile: '../team/peter.html' },
 ];
 
-class TeamApp {
+const DISCIPLINES = ['Leadership', 'Architecture & Design', 'Project Delivery & Construction', 'Operations & Support'];
+
+const IMG_BASE = '../images/team/';
+
+/* Deterministic initials avatar, drawn inline as an SVG data URI.
+   No network request, so it cannot fail the way the old
+   via.placeholder.com fallback did. */
+function initialsAvatar(name) {
+  const parts = name.replace(/[^A-Za-z ]/g, '').trim().split(/\s+/);
+  const initials = ((parts[0] || '')[0] || '' ) + ((parts[parts.length - 1] || '')[0] || '');
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) hash = (hash * 31 + name.charCodeAt(i)) % 360;
+  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="400" height="480">
+    <rect width="400" height="480" fill="hsl(${hash} 32% 88%)"/>
+    <text x="50%" y="50%" dy="0.35em" text-anchor="middle"
+      font-family="Georgia, 'Times New Roman', serif" font-size="150"
+      fill="hsl(${hash} 38% 34%)">${initials.toUpperCase()}</text>
+  </svg>`;
+  return 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(svg);
+}
+
+function escapeHtml(s) {
+  return String(s).replace(/[&<>"']/g, c =>
+    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+}
+
+class TeamDirectory {
   constructor() {
-    this.viewMode = 'grid';
-    this.searchQuery = '';
-    this.filteredData = [...TEAM_DATA];
+    this.query = '';
+    this.discipline = 'All';
   }
 
   init() {
-    this.cacheElements();
-    this.attachEventListeners();
-    this.renderTeam();
-  }
+    this.grid       = document.getElementById('teamGrid');
+    this.leadGrid   = document.getElementById('leadershipGrid');
+    this.countEl    = document.getElementById('resultCount');
+    this.noResults  = document.getElementById('noResults');
+    this.searchEl   = document.getElementById('searchInput');
+    this.filterWrap = document.getElementById('disciplineFilters');
+    if (!this.grid) return;
 
-  cacheElements() {
-    this.elements = {
-      searchInput: document.getElementById('teamSearch'),
-      viewToggleBtns: document.querySelectorAll('.view-toggle button'),
-      teamGrid: document.getElementById('teamGrid')
-    };
-  }
+    this.buildFilters();
 
-  attachEventListeners() {
-    if (this.elements.searchInput) {
-      this.elements.searchInput.addEventListener('input', (e) => {
-        this.searchQuery = e.target.value.toLowerCase();
-        this.filterTeam();
-        this.renderTeam();
+    if (this.searchEl) {
+      this.searchEl.addEventListener('input', e => {
+        this.query = e.target.value.trim().toLowerCase();
+        this.render();
       });
     }
 
-    this.elements.viewToggleBtns.forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        this.elements.viewToggleBtns.forEach(b => b.classList.remove('active'));
-        e.target.closest('button').classList.add('active');
-        this.viewMode = e.target.closest('button').dataset.view;
-        this.renderTeam();
+    const clear = document.getElementById('clearSearchBtn');
+    if (clear) {
+      clear.addEventListener('click', () => {
+        this.query = '';
+        this.discipline = 'All';
+        if (this.searchEl) this.searchEl.value = '';
+        this.syncFilterButtons();
+        this.render();
+      });
+    }
+
+    this.renderLeadership();
+    this.render();
+  }
+
+  buildFilters() {
+    if (!this.filterWrap) return;
+    const counts = {};
+    TEAM_DATA.forEach(m => { counts[m.discipline] = (counts[m.discipline] || 0) + 1; });
+    const all = ['All', ...DISCIPLINES.filter(d => counts[d])];
+    this.filterWrap.innerHTML = all.map(d => {
+      const n = d === 'All' ? TEAM_DATA.length : counts[d];
+      return `<button type="button" class="filter-chip${d === 'All' ? ' is-active' : ''}"
+        data-discipline="${escapeHtml(d)}" aria-pressed="${d === 'All'}">
+        ${escapeHtml(d)} <span class="filter-chip__count">${n}</span></button>`;
+    }).join('');
+    this.filterWrap.querySelectorAll('.filter-chip').forEach(btn => {
+      btn.addEventListener('click', () => {
+        this.discipline = btn.dataset.discipline;
+        this.syncFilterButtons();
+        this.render();
       });
     });
   }
 
-  filterTeam() {
-    this.filteredData = TEAM_DATA.filter(member => {
-      const q = this.searchQuery;
-      return member.name.toLowerCase().includes(q) ||
-             member.role.toLowerCase().includes(q) ||
-             member.specialty.toLowerCase().includes(q);
+  syncFilterButtons() {
+    if (!this.filterWrap) return;
+    this.filterWrap.querySelectorAll('.filter-chip').forEach(b => {
+      const on = b.dataset.discipline === this.discipline;
+      b.classList.toggle('is-active', on);
+      b.setAttribute('aria-pressed', String(on));
     });
   }
 
-  renderTeam() {
-    const grid = this.elements.teamGrid;
+  matches(m) {
+    if (this.discipline !== 'All' && m.discipline !== this.discipline) return false;
+    if (!this.query) return true;
+    return [m.name, m.role, m.discipline].join(' ').toLowerCase().includes(this.query);
+  }
 
-    if (this.filteredData.length === 0) {
-      grid.innerHTML = `
-        <div class="team-card empty-state">
-          <div class="empty-state-icon">🔍</div>
-          <h3 class="empty-state-title">No Members Found</h3>
-          <p class="empty-state-text">Try different search terms</p>
-        </div>
-      `;
-      return;
-    }
-
-    grid.classList.toggle('list-view', this.viewMode === 'list');
-
-    // Build HTML for all team members first
-    const html = this.filteredData.map((m, i) => `
-      <div class="team-card fade-in-up" style="animation-delay: ${i * 50}ms">
-        <div class="card-image">
-          <img src="${m.image}" alt="${m.name}" 
-            onerror="this.src='https://via.placeholder.com/280?text=${encodeURIComponent(m.name)}&bg=dbeafe&fg=1e3a8a'" />
-        </div>
-        <div class="card-content">
-          <h3 class="card-name">${m.name}</h3>
-          <p class="card-role">${m.role}</p>
-          <div class="card-tags">
-            <span class="tag">${m.specialty}</span>
-            <span class="tag">${m.loc}</span>
-          </div>
-          <p class="card-description">${m.name} brings expertise in ${m.specialty.toLowerCase()} to The Building Practice.</p>
-          <div class="card-footer">
-            <a href="${m.profile}" class="profile-btn">View Profile →</a>
-            <button class="action-btn" onclick="window.app.shareProfile('${m.name}')">📤</button>
-          </div>
-        </div>
+  card(m, variant) {
+    const src   = m.image ? IMG_BASE + m.image : initialsAvatar(m.name);
+    const inner = `
+      <div class="person__media">
+        <img src="${src}" alt="${escapeHtml(m.name)}" loading="lazy" decoding="async"
+             width="400" height="480"
+             onerror="this.onerror=null;this.src='${initialsAvatar(m.name)}'">
       </div>
-    `).join('');
-
-    // Clear grid and add new content with proper visibility
-    grid.innerHTML = html;
-    
-    // Force visibility on grid and all children
-    grid.style.opacity = '1';
-    grid.style.visibility = 'visible';
-    grid.style.pointerEvents = 'auto';
+      <div class="person__body">
+        <h3 class="person__name">${escapeHtml(m.name)}</h3>
+        <p class="person__role">${escapeHtml(m.role)}</p>
+        <p class="person__meta"><span>${escapeHtml(m.discipline)}</span></p>
+      </div>`;
+    const cls = `person person--${variant}`;
+    return m.profile
+      ? `<a class="${cls}" href="${escapeHtml(m.profile)}">${inner}</a>`
+      : `<div class="${cls} person--nolink">${inner}</div>`;
   }
 
-  shareProfile(name) {
-    if (navigator.share) {
-      navigator.share({
-        title: `${name} - The Building Practice`,
-        text: `Discover ${name}'s profile`,
-        url: window.location.href
-      });
-    } else {
-      alert(`Share ${name}'s profile!`);
-    }
+  renderLeadership() {
+    if (!this.leadGrid) return;
+    const leads = TEAM_DATA.filter(m => m.discipline === 'Leadership');
+    this.leadGrid.innerHTML = leads.map(m => this.card(m, 'lead')).join('');
+  }
+
+  render() {
+    const list = TEAM_DATA.filter(m => this.matches(m));
+    this.grid.innerHTML = list.map(m => this.card(m, 'grid')).join('');
+    if (this.countEl) this.countEl.textContent = String(list.length);
+    if (this.noResults) this.noResults.hidden = list.length !== 0;
   }
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  // Create app instance
-  window.app = new TeamApp();
-  
-  // Initialize app
-  window.app.init();
-  
-  // Ensure visibility of team grid
-  const teamGrid = document.getElementById('teamGrid');
-  if (teamGrid) {
-    teamGrid.style.opacity = '1';
-    teamGrid.style.visibility = 'visible';
-    teamGrid.style.pointerEvents = 'auto';
-  }
-  
-  // Slight delay to ensure DOM is fully painted
-  setTimeout(() => {
-    if (teamGrid) {
-      teamGrid.style.opacity = '1';
-      teamGrid.style.visibility = 'visible';
-    }
-  }, 100);
+  window.teamDirectory = new TeamDirectory();
+  window.teamDirectory.init();
 });

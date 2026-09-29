@@ -1,0 +1,18 @@
+{
+  "_comment": "Configuration for scripts/check-links.mjs. Entries here are known, deliberate exceptions. Shrink this file over time - every entry is a real to-do.",
+  "ignoreFiles": [
+    "assets/footer.html"
+  ],
+  "_ignoreFilesWhy": {
+    "assets/footer.html": "Template fragment containing {{PAGES}}/{{ROOT}} tokens, injected into pages by scripts/build-footer.mjs. Not a standalone document."
+  },
+  "allowMissing": [
+    "images/team/gbolahan.jpg",
+    "images/team/onyedikachi.jpg",
+    "images/team/toluwalase.jpg",
+    "images/team/uche.jpg"
+  ],
+  "_allowMissingWhy": {
+    "images/team/*": "Team member headshots that were never added to the repo. Cards fall back to generated initials, so the page still renders correctly. Supply the photos to close these out."
+  }
+}

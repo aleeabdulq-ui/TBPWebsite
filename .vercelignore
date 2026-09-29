@@ -1,0 +1,30 @@
+# Files excluded from the Vercel deployment.
+#
+# Anything listed here is never uploaded, so it cannot be requested at any
+# URL. This is the strongest control available to a static site: there is no
+# gate to misconfigure because the file does not exist on the CDN.
+
+# --- Admin area -------------------------------------------------------------
+# These pages have no server-side authentication. The login form only ever
+# compared a password in client-side JavaScript, which any visitor can read
+# and bypass, and admin-dashboard.html had no check at all. The admin area is
+# not in use, so it is kept out of production entirely.
+#
+# To bring it back: put a real gate in front of it first (see deploy/README.md),
+# then remove these lines.
+pages/admin-blog.html
+pages/admin-dashboard.html
+pages/admin-login.html
+pages/blog-login.html
+
+# --- Not needed by a static deployment --------------------------------------
+# The local development server and its helpers.
+server.js
+api/
+scripts/
+deploy/
+.github/
+
+# Source notes and planning documents.
+BACKLOG.md
+TODO-*.md

@@ -10,6 +10,17 @@ const cssDir = path.join(__dirname, "css");
 const assetsDir = path.join(__dirname, "assets");
 const teamDir = path.join(__dirname, "team");
 const dataDir = path.join(__dirname, "data");
+const videosDir = path.join(__dirname, "videos");
+const blogDir = path.join(__dirname, "blog");
+
+// Served from the repository root, not from pages/.
+const ROOT_FILES = new Set([
+  "robots.txt",
+  "sitemap.xml",
+  "favicon.ico",
+  "apple-touch-icon.png",
+  "site.webmanifest"
+]);
 
 const mimeTypes = {
   ".html": "text/html; charset=utf-8",
@@ -22,7 +33,11 @@ const mimeTypes = {
   ".gif": "image/gif",
   ".svg": "image/svg+xml",
   ".ico": "image/x-icon",
-  ".webp": "image/webp"
+  ".webp": "image/webp",
+  ".xml": "application/xml; charset=utf-8",
+  ".txt": "text/plain; charset=utf-8",
+  ".webmanifest": "application/manifest+json",
+  ".mp4": "video/mp4"
 };
 
 function send(res, statusCode, body, contentType = "text/plain; charset=utf-8") {
@@ -59,6 +74,21 @@ function safePath(urlPath) {
     return path.join(dataDir, normalized.replace(/^[/\\]data/, ""));
   }
 
+  if (normalized.startsWith(path.sep + "blog" + path.sep) || normalized === path.sep + "blog") {
+    return path.join(blogDir, normalized.replace(/^[/\\]blog/, ""));
+  }
+
+  if (normalized.startsWith(path.sep + "videos" + path.sep) || normalized === path.sep + "videos") {
+    return path.join(videosDir, normalized.replace(/^[/\\]videos/, ""));
+  }
+
+  // Files that live at the site root in production (robots.txt, sitemap.xml,
+  // favicon.ico, ...) rather than inside pages/.
+  const rootFile = normalized.replace(/^[/\\]/, "");
+  if (ROOT_FILES.has(rootFile)) {
+    return path.join(__dirname, rootFile);
+  }
+
   return path.join(rootDir, normalized);
 }
 
@@ -66,7 +96,9 @@ const server = http.createServer((req, res) => {
   const urlPath = req.url === "/" ? "/index.html" : req.url;
   const filePath = safePath(urlPath);
 
-  if (!filePath.startsWith(rootDir) && !filePath.startsWith(imagesDir) && !filePath.startsWith(jsDir) && !filePath.startsWith(cssDir) && !filePath.startsWith(assetsDir) && !filePath.startsWith(teamDir) && !filePath.startsWith(dataDir)) {
+  const isRootFile = ROOT_FILES.has(path.basename(filePath)) && path.dirname(filePath) === __dirname;
+
+  if (!isRootFile && !filePath.startsWith(rootDir) && !filePath.startsWith(imagesDir) && !filePath.startsWith(jsDir) && !filePath.startsWith(cssDir) && !filePath.startsWith(assetsDir) && !filePath.startsWith(teamDir) && !filePath.startsWith(dataDir) && !filePath.startsWith(videosDir) && !filePath.startsWith(blogDir)) {
     return send(res, 403, "Forbidden");
   }
 
