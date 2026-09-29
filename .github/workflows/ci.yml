@@ -1,8 +1,65 @@
-#2 fix-ci          ec6000d  ── in #9
-#3 optimise-images 9756eb4  ── in #9
-#4 cleanup         9b37e51  ── in #9
-#5 unify-footer    c95c10f  ── in #9
-#6 admin-auth      5a9b9a9  ── in #9
-#7 perf-seo        d2ebd42  ── in #9
-#8 ci-workflow     14cd5fb  ── in #9   <-- also redundant
-#9 single-footer   37f33eb  ── KEEP (all 9 commits, 810 files)
+name: Static site CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Lint, boot and smoke-test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Verify JavaScript parses
+        run: |
+          set -euo pipefail
+          status=0
+          while IFS= read -r -d '' file; do
+            if node --check "$file"; then
+              echo "ok      $file"
+            else
+              echo "FAILED  $file"
+              status=1
+            fi
+          done < <(find . -type f -name '*.js' -not -path './node_modules/*' -not -path './.git/*' -print0)
+          exit "$status"
+
+      - name: Verify JSON parses
+        run: |
+          set -euo pipefail
+          status=0
+          while IFS= read -r -d '' file; do
+            if node -e 'JSON.parse(require("fs").readFileSync(process.argv[1], "utf8"))' "$file"; then
+              echo "ok      $file"
+            else
+              echo "FAILED  $file"
+              status=1
+            fi
+          done < <(find . -type f -name '*.json' -not -path './node_modules/*' -not -path './.git/*' -print0)
+          exit "$status"
+
+      - name: Check HTML well-formedness
+        run: node scripts/check-html.mjs
+
+      - name: Check for broken internal links
+        run: node scripts/check-links.mjs
+
+      - name: Check page footers match assets/footer.html
+        run: node scripts/build-footer.mjs --check
+
+      - name: Boot the server and smoke-test routes
+        run: node scripts/smoke-test.mjs
